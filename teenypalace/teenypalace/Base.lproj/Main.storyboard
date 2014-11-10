@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-350" y="-41"/>
+            <point key="canvasLocation" x="-282" y="-529"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0XE-8d-Bux">
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E1c-Jl-9G1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="-308"/>
+            <point key="canvasLocation" x="466" y="-529"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="m4g-Ih-Mej">
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ffb-gf-eq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="363"/>
+            <point key="canvasLocation" x="466" y="357"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="756-hh-xhg">
@@ -239,8 +239,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7Gu-wh-O2s" kind="relationship" relationship="rootViewController" id="HXT-ig-9tp"/>
-                        <segue destination="vXZ-lx-hvc" kind="presentation" id="MNc-GZ-wKb"/>
+                        <segue destination="7Gu-wh-O2s" kind="relationship" relationship="rootViewController" id="1bb-cP-jqv"/>
+                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="HomeToLoginSegue" id="rej-r9-43g"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cun-M8-yNG" userLabel="First Responder" sceneMemberID="firstResponder"/>
