@@ -47,6 +47,9 @@
 
 @implementation RTLabelComponent
 
+
+
+
 - (id)initWithString:(NSString*)aText tag:(NSString*)aTagLabel attributes:(NSMutableDictionary*)theAttributes
 {
     self = [super init];

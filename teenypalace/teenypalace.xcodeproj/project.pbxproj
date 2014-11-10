@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C55CC71A09F4BE00A4B359 /* LoginViewController.m */; };
+		71C6C4E81A0CBF73002AF859 /* RTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C6C4E71A0CBF73002AF859 /* RTLabel.m */; };
 		71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C97BD71A08B5970010A5B8 /* AppDelegate.swift */; };
 		71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C97BD91A08B5970010A5B8 /* ViewController.swift */; };
 		71C97BDD1A08B5970010A5B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C97BDB1A08B5970010A5B8 /* Main.storyboard */; };
 		71C97BDF1A08B5970010A5B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C97BDE1A08B5970010A5B8 /* Images.xcassets */; };
 		71C97BE21A08B5970010A5B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C97BE01A08B5970010A5B8 /* LaunchScreen.xib */; };
 		71C97BEE1A08B5970010A5B8 /* teenypalaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C97BED1A08B5970010A5B8 /* teenypalaceTests.swift */; };
+		71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CB85F41A10A4C000D855C8 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71C55CC51A09F4BD00A4B359 /* teenypalace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "teenypalace-Bridging-Header.h"; sourceTree = "<group>"; };
+		71C55CC61A09F4BE00A4B359 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		71C55CC71A09F4BE00A4B359 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		71C6C4E61A0CBF73002AF859 /* RTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTLabel.h; sourceTree = "<group>"; };
+		71C6C4E71A0CBF73002AF859 /* RTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTLabel.m; sourceTree = "<group>"; };
 		71C97BD21A08B5970010A5B8 /* teenypalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teenypalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C97BD61A08B5970010A5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71C97BD71A08B5970010A5B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +44,8 @@
 		71C97BE71A08B5970010A5B8 /* teenypalaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = teenypalaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C97BEC1A08B5970010A5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71C97BED1A08B5970010A5B8 /* teenypalaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teenypalaceTests.swift; sourceTree = "<group>"; };
+		71CB85F31A10A4C000D855C8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		71CB85F41A10A4C000D855C8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71C55CC41A09DC3A00A4B359 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				71C55CC61A09F4BE00A4B359 /* LoginViewController.h */,
+				71C55CC71A09F4BE00A4B359 /* LoginViewController.m */,
+				71C55CC51A09F4BD00A4B359 /* teenypalace-Bridging-Header.h */,
+				71CB85F31A10A4C000D855C8 /* HomeViewController.h */,
+				71CB85F41A10A4C000D855C8 /* HomeViewController.m */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		71C6C4E51A0CBF41002AF859 /* RTLabel */ = {
+			isa = PBXGroup;
+			children = (
+				71C6C4E61A0CBF73002AF859 /* RTLabel.h */,
+				71C6C4E71A0CBF73002AF859 /* RTLabel.m */,
+			);
+			name = RTLabel;
+			sourceTree = "<group>";
+		};
 		71C97BC91A08B5970010A5B8 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +108,8 @@
 		71C97BD41A08B5970010A5B8 /* teenypalace */ = {
 			isa = PBXGroup;
 			children = (
+				71C6C4E51A0CBF41002AF859 /* RTLabel */,
+				71C55CC41A09DC3A00A4B359 /* Class */,
 				71C97BD71A08B5970010A5B8 /* AppDelegate.swift */,
 				71C97BD91A08B5970010A5B8 /* ViewController.swift */,
 				71C97BDB1A08B5970010A5B8 /* Main.storyboard */,
@@ -214,6 +247,9 @@
 			files = (
 				71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */,
 				71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */,
+				71C6C4E81A0CBF73002AF859 /* RTLabel.m in Sources */,
+				71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */,
+				71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,9 +372,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = teenypalace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = teenypalace;
+				SWIFT_OBJC_BRIDGING_HEADER = "teenypalace/teenypalace-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +385,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = teenypalace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = teenypalace;
+				SWIFT_OBJC_BRIDGING_HEADER = "teenypalace/teenypalace-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -366,7 +407,7 @@
 				);
 				INFOPLIST_FILE = teenypalaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = teenypalaceTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/teenypalace.app/teenypalace";
 			};
 			name = Debug;
@@ -381,7 +422,7 @@
 				);
 				INFOPLIST_FILE = teenypalaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = teenypalaceTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/teenypalace.app/teenypalace";
 			};
 			name = Release;
@@ -405,6 +446,7 @@
 				71C97BF31A08B5970010A5B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71C97BF41A08B5970010A5B8 /* Build configuration list for PBXNativeTarget "teenypalaceTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +455,7 @@
 				71C97BF61A08B5970010A5B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

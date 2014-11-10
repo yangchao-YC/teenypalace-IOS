@@ -9,7 +9,9 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
-
+{
+    BOOL checkBox ;
+}
 @end
 
 @implementation LoginViewController
@@ -17,6 +19,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+   
+    
+    
+    checkBox = false;
+    self.CheckImage.userInteractionEnabled = YES;
+    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(checkBoxs)];
+    
+    [self.CheckImage addGestureRecognizer:singleTap];
+    
+}
+
+/*
+ tag:
+ 0.记住密码
+ 1.忘记密码
+ 2.登陆
+ 3.注册新用户
+ */
+-(IBAction)btnLogin:(UIButton *)sender
+{
+    switch (sender.tag) {
+
+        case 1:
+            NSLog(@"1");
+            break;
+        case 2:
+            NSLog(@"2");
+            break;
+        case 3:
+            NSLog(@"3");
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)checkBoxs
+{
+    if (checkBox) {
+        checkBox = false;
+        self.CheckImage.image = [UIImage imageNamed:@"login_check_false"];
+    }
+    else
+    {
+        checkBox = true;
+        self.CheckImage.image = [UIImage imageNamed:@"login_check_true"];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
