@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RTLabel.h"
 @interface LoginViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *LoginCheckBox;
 @property (weak, nonatomic) IBOutlet UIImageView *CheckImage;

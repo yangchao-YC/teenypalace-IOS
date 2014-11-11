@@ -42,6 +42,7 @@
     switch (sender.tag) {
 
         case 1:
+            [self dismissModalViewControllerAnimated:YES];
             NSLog(@"1");
             break;
         case 2:
