@@ -33,7 +33,15 @@
     
     [self.CheckImage addGestureRecognizer:singleTap];
     
+    self.nameTextField.delegate = self;
+    self.pwdTextField.delegate = self;
     
+    [self.pwdTextField setSecureTextEntry:YES];//设置密码框
+    
+    
+    self.nameTextField.returnKeyType = UIReturnKeyNext;
+    self.pwdTextField.returnKeyType = UIReturnKeyDefault;
+   
 }
 
 
