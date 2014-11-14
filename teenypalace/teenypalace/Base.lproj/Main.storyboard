@@ -217,6 +217,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZz-f8-ONx">
+                                <rect key="frame" x="20" y="40" width="560" height="540"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NjZ-G5-JFo">
+                                        <rect key="frame" x="157" y="26" width="72" height="86"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BG9-Lh-p9h">
+                                        <rect key="frame" x="143" y="160" width="100" height="100"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4hJ-8O-0wQ">
+                                        <rect key="frame" x="152" y="322" width="100" height="100"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="BG9-Lh-p9h" firstAttribute="top" secondItem="NjZ-G5-JFo" secondAttribute="bottom" constant="10" id="4Qa-UA-IwG"/>
+                                    <constraint firstItem="4hJ-8O-0wQ" firstAttribute="top" secondItem="BG9-Lh-p9h" secondAttribute="bottom" constant="10" id="8fi-lU-PGr"/>
+                                    <constraint firstItem="BG9-Lh-p9h" firstAttribute="leading" secondItem="IZz-f8-ONx" secondAttribute="leading" id="FQH-cX-6RN"/>
+                                    <constraint firstItem="NjZ-G5-JFo" firstAttribute="leading" secondItem="IZz-f8-ONx" secondAttribute="leading" id="KZP-QG-jul"/>
+                                    <constraint firstAttribute="trailing" secondItem="BG9-Lh-p9h" secondAttribute="trailing" id="Kmy-13-JnO"/>
+                                    <constraint firstAttribute="trailing" secondItem="4hJ-8O-0wQ" secondAttribute="trailing" id="RaB-5B-b4B"/>
+                                    <constraint firstItem="BG9-Lh-p9h" firstAttribute="width" secondItem="NjZ-G5-JFo" secondAttribute="width" id="Srs-br-P2h"/>
+                                    <constraint firstItem="4hJ-8O-0wQ" firstAttribute="leading" secondItem="IZz-f8-ONx" secondAttribute="leading" id="VpV-Jy-RMO"/>
+                                    <constraint firstAttribute="trailing" secondItem="NjZ-G5-JFo" secondAttribute="trailing" id="ced-qy-OGM"/>
+                                    <constraint firstItem="BG9-Lh-p9h" firstAttribute="height" secondItem="NjZ-G5-JFo" secondAttribute="height" id="ihb-KF-eKY"/>
+                                    <constraint firstItem="BG9-Lh-p9h" firstAttribute="height" secondItem="4hJ-8O-0wQ" secondAttribute="height" id="jo4-An-p4a"/>
+                                    <constraint firstItem="BG9-Lh-p9h" firstAttribute="width" secondItem="4hJ-8O-0wQ" secondAttribute="width" id="m1X-L1-Kuk"/>
+                                    <constraint firstItem="NjZ-G5-JFo" firstAttribute="top" secondItem="IZz-f8-ONx" secondAttribute="top" id="rq6-Fk-hVi"/>
+                                    <constraint firstAttribute="bottom" secondItem="4hJ-8O-0wQ" secondAttribute="bottom" id="tJ9-aH-aep"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcY-3Y-NPf">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
@@ -389,13 +423,18 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="jcY-3Y-NPf" secondAttribute="bottom" id="JOd-PO-LdQ"/>
                             <constraint firstItem="jcY-3Y-NPf" firstAttribute="top" secondItem="DxB-As-Y1S" secondAttribute="top" id="SPP-jK-emo"/>
+                            <constraint firstItem="IZz-f8-ONx" firstAttribute="top" secondItem="DxB-As-Y1S" secondAttribute="top" constant="40" id="Ueb-zq-qoi"/>
+                            <constraint firstItem="IZz-f8-ONx" firstAttribute="leading" secondItem="DxB-As-Y1S" secondAttribute="leading" constant="20" id="VGH-Ck-8zS"/>
                             <constraint firstAttribute="trailing" secondItem="jcY-3Y-NPf" secondAttribute="trailing" id="dM1-oy-2qb"/>
+                            <constraint firstAttribute="trailing" secondItem="IZz-f8-ONx" secondAttribute="trailing" constant="20" id="dOp-tL-mPf"/>
                             <constraint firstItem="jcY-3Y-NPf" firstAttribute="leading" secondItem="DxB-As-Y1S" secondAttribute="leading" id="jqT-0i-uvn"/>
+                            <constraint firstAttribute="bottom" secondItem="IZz-f8-ONx" secondAttribute="bottom" constant="20" id="rEf-nY-ku0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="23M-ct-Wbm"/>
                     <connections>
                         <outlet property="CheckImage" destination="rpK-g3-6gk" id="hru-0g-LR4"/>
+                        <outlet property="loginView" destination="jcY-3Y-NPf" id="XV8-RB-Il8"/>
                         <outlet property="nameTextField" destination="eBy-Bq-kQ4" id="j4o-cl-bYE"/>
                         <outlet property="pwdTextField" destination="ea7-Ft-OUQ" id="lai-JX-GbB"/>
                     </connections>

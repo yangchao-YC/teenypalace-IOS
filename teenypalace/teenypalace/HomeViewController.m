@@ -11,6 +11,7 @@
 @interface HomeViewController ()
 {
     BOOL checkBox ;
+    CGRect ScreenSize;
 }
 
 @end
@@ -24,8 +25,9 @@
     //首先应该检查是否登录了。没登录就弹出登录界面
    // [self performSelector:@selector(gotoLogin) withObject:self afterDelay:.1f];
     
-    CGRect cc = [UIScreen mainScreen].bounds;
-    NSLog(@"%f",cc.size.width);//获取屏幕宽度
+    ScreenSize = [UIScreen mainScreen].bounds;
+
+   // NSLog(@"%f",cc.size.width);//获取屏幕宽度
     
     checkBox = false;
     self.CheckImage.userInteractionEnabled = YES;
@@ -68,11 +70,35 @@
             NSLog(@"2");
             break;
         case 3:
+            
+            [self loginHide];
+            
             NSLog(@"3");
+            break;
+        
+        case 4:
+            [self loginShow];
             break;
         default:
             break;
     }
+}
+
+
+
+
+-(void)loginHide
+{
+    [UIView animateWithDuration:1 animations:^{
+        self.loginView.frame = CGRectMake(-(ScreenSize.size.width), 0, ScreenSize.size.width, ScreenSize.size.height);
+    }];
+}
+
+-(void)loginShow
+{
+    [UIView animateWithDuration:1 animations:^{
+        self.loginView.frame = CGRectMake(0, 0, ScreenSize.size.width, ScreenSize.size.height);
+    }];
 }
 
 

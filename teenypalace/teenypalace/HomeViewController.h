@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *CheckImage;
+@property (weak, nonatomic) IBOutlet UIView *loginView;
 
 @end
