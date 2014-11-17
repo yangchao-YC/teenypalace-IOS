@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB93D1A19F4B10044F2DC /* ApplyViewController.m */; };
+		718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB9401A19F4CC0044F2DC /* MyViewController.m */; };
 		71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C55CC71A09F4BE00A4B359 /* LoginViewController.m */; };
 		71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C97BD71A08B5970010A5B8 /* AppDelegate.swift */; };
 		71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C97BD91A08B5970010A5B8 /* ViewController.swift */; };
@@ -29,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		718FB93C1A19F4B10044F2DC /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
+		718FB93D1A19F4B10044F2DC /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
+		718FB93F1A19F4CC0044F2DC /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		718FB9401A19F4CC0044F2DC /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		71C55CC51A09F4BD00A4B359 /* teenypalace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "teenypalace-Bridging-Header.h"; sourceTree = "<group>"; };
 		71C55CC61A09F4BE00A4B359 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71C55CC71A09F4BE00A4B359 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -73,6 +79,10 @@
 				71C55CC51A09F4BD00A4B359 /* teenypalace-Bridging-Header.h */,
 				71CB85F31A10A4C000D855C8 /* HomeViewController.h */,
 				71CB85F41A10A4C000D855C8 /* HomeViewController.m */,
+				718FB93C1A19F4B10044F2DC /* ApplyViewController.h */,
+				718FB93D1A19F4B10044F2DC /* ApplyViewController.m */,
+				718FB93F1A19F4CC0044F2DC /* MyViewController.h */,
+				718FB9401A19F4CC0044F2DC /* MyViewController.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -236,8 +246,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */,
 				71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */,
 				71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */,
+				718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */,
 				71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */,
 				71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */,
 			);

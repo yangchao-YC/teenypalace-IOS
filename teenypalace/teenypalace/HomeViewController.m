@@ -33,6 +33,8 @@
     self.CheckImage.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(checkBoxs)];
     
+   // self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"home_bg"]];
+    
     [self.CheckImage addGestureRecognizer:singleTap];
     
     self.nameTextField.delegate = self;
