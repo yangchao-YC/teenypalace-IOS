@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */; };
 		718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB93D1A19F4B10044F2DC /* ApplyViewController.m */; };
 		718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB9401A19F4CC0044F2DC /* MyViewController.m */; };
 		71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C55CC71A09F4BE00A4B359 /* LoginViewController.m */; };
@@ -31,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71735BB21A1F2233005E0067 /* ApplyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyTableViewCell.h; sourceTree = "<group>"; };
+		71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyTableViewCell.m; sourceTree = "<group>"; };
+		718A1C081A2487FA00F8F582 /* pchFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pchFile.pch; sourceTree = "<group>"; };
 		718FB93C1A19F4B10044F2DC /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
 		718FB93D1A19F4B10044F2DC /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
 		718FB93F1A19F4CC0044F2DC /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
@@ -71,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71735BB11A1F21FC005E0067 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				71735BB21A1F2233005E0067 /* ApplyTableViewCell.h */,
+				71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 		71C55CC41A09DC3A00A4B359 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +121,7 @@
 		71C97BD41A08B5970010A5B8 /* teenypalace */ = {
 			isa = PBXGroup;
 			children = (
+				71735BB11A1F21FC005E0067 /* TableViewCell */,
 				71C55CC41A09DC3A00A4B359 /* Class */,
 				71C97BD71A08B5970010A5B8 /* AppDelegate.swift */,
 				71C97BD91A08B5970010A5B8 /* ViewController.swift */,
@@ -124,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				71C97BD61A08B5970010A5B8 /* Info.plist */,
+				718A1C081A2487FA00F8F582 /* pchFile.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -251,6 +266,7 @@
 				71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */,
 				718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */,
 				71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */,
+				71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */,
 				71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +392,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/teenypalace/pchFile.pch";
 				INFOPLIST_FILE = teenypalace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -392,6 +409,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/teenypalace/pchFile.pch";
 				INFOPLIST_FILE = teenypalace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

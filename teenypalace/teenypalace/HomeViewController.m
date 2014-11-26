@@ -25,7 +25,10 @@
     //首先应该检查是否登录了。没登录就弹出登录界面
    // [self performSelector:@selector(gotoLogin) withObject:self afterDelay:.1f];
     
-    ScreenSize = [UIScreen mainScreen].bounds;
+     ScreenSize = [UIScreen mainScreen].bounds;
+    
+    
+   
 
    // NSLog(@"%f",cc.size.width);//获取屏幕宽度
     

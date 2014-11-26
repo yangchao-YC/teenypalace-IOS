@@ -1,0 +1,29 @@
+//
+//  pchFile.pch
+//  teenypalace
+//
+//  Created by 杨超 on 14/11/25.
+//  Copyright (c) 2014年 杨超. All rights reserved.
+//
+
+#ifndef teenypalace_pchFile_pch
+#define teenypalace_pchFile_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+
+#define ART @"美术,书法类"
+
+#define LITERARY @"文艺类"
+
+#define GYM @"体育类"
+
+#define LANGUAGE @"语言文化类"
+
+#define CHILDREN @"少儿艺术团"
+
+
+#endif
