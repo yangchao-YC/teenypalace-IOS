@@ -1,29 +1,27 @@
 //
-//  ApplyViewController.m
+//  ApplyProfessionalViewController.m
 //  teenypalace
 //
-//  Created by 杨超 on 14/11/17.
+//  Created by 杨超 on 14/11/26.
 //  Copyright (c) 2014年 杨超. All rights reserved.
+//
 
 
+//选择专业页面
 
 
-//  在线报名
+#import "ApplyProfessionalViewController.h"
 
-
-
-#import "ApplyViewController.h"
-
-@interface ApplyViewController ()
-
+@interface ApplyProfessionalViewController ()
 
 @end
 
-@implementation ApplyViewController
+@implementation ApplyProfessionalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
@@ -32,11 +30,8 @@
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
+    
 }
 
 
@@ -48,7 +43,7 @@
     static NSString *apply_cell_id = @"apply_cell_id";
     
     ApplyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_cell_id];
-  
+    
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -98,7 +93,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     return 70;
 }//设置模块内cell的高度
 
@@ -110,37 +105,47 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    
-    ApplyTableViewCell *cell = (ApplyTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    
-    cell.titleLabel.text = @" 张小朝";
-    
-    
-    [self performSegueWithIdentifier:@"apply_applyProfessional" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
-    
-    
-    
-    
+    switch (indexPath.row) {
+        case 0:
+            NSLog(@"0");
+            break;
+        case 1:
+            NSLog(@"1");
+            break;
+        case 2:
+            NSLog(@"2");
+            break;
+        case 3:
+            NSLog(@"3");
+            break;
+        case 4:
+            NSLog(@"4");
+            break;
+            
+        default:
+            break;
+    }
 }
 
 
 
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+
+-(IBAction)ApplyProfessionaBtn:(UIButton *)sender
 {
-    UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"applyKey"];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
 
 
 
--(IBAction)ApplyBtn:(UIButton *)sender
-{
-   [self.navigationController popViewControllerAnimated:YES];
-   // [self.navigationController popToRootViewControllerAnimated:YES];
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

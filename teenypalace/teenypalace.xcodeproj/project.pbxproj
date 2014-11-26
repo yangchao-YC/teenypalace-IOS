@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		716C03621A25A49200F64482 /* ApplyProfessionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716C03611A25A49200F64482 /* ApplyProfessionalViewController.m */; };
 		71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */; };
 		718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB93D1A19F4B10044F2DC /* ApplyViewController.m */; };
 		718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB9401A19F4CC0044F2DC /* MyViewController.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		716C03601A25A49200F64482 /* ApplyProfessionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyProfessionalViewController.h; sourceTree = "<group>"; };
+		716C03611A25A49200F64482 /* ApplyProfessionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyProfessionalViewController.m; sourceTree = "<group>"; };
 		71735BB21A1F2233005E0067 /* ApplyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyTableViewCell.h; sourceTree = "<group>"; };
 		71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyTableViewCell.m; sourceTree = "<group>"; };
 		718A1C081A2487FA00F8F582 /* pchFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pchFile.pch; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				718FB93D1A19F4B10044F2DC /* ApplyViewController.m */,
 				718FB93F1A19F4CC0044F2DC /* MyViewController.h */,
 				718FB9401A19F4CC0044F2DC /* MyViewController.m */,
+				716C03601A25A49200F64482 /* ApplyProfessionalViewController.h */,
+				716C03611A25A49200F64482 /* ApplyProfessionalViewController.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			files = (
 				718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */,
 				71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */,
+				716C03621A25A49200F64482 /* ApplyProfessionalViewController.m in Sources */,
 				71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */,
 				718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */,
 				71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */,
