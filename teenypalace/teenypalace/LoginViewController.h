@@ -11,4 +11,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *LoginCheckBox;
 @property (weak, nonatomic) IBOutlet UIImageView *CheckImage;
 
++ (void)logOut;
+
+
 @end

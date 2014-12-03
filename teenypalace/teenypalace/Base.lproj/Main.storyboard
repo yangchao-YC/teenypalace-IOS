@@ -9,15 +9,18 @@
         <!--Navigation Controller-->
         <scene sceneID="DmG-bT-AKX">
             <objects>
-                <navigationController id="5hm-cn-UaK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5hm-cn-UaK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZP2-W0-wGd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="jCM-8l-TDD"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oxu-Vo-Hek" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1916" y="-107"/>
+            <point key="canvasLocation" x="-2100" y="-473"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -198,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1064" y="-473"/>
+            <point key="canvasLocation" x="-1392" y="-473"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="psD-8a-dmZ">
@@ -353,7 +356,7 @@
                                     <constraint firstAttribute="bottom" secondItem="4hJ-8O-0wQ" secondAttribute="bottom" id="tJ9-aH-aep"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcY-3Y-NPf">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcY-3Y-NPf">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="zsW-ge-VzG">
@@ -929,7 +932,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="presentation" identifier="HomeToLoginSegue" id="rej-r9-43g"/>
                         <segue destination="7Gu-wh-O2s" kind="relationship" relationship="rootViewController" id="3eZ-Xw-0ma"/>
                     </connections>
                 </navigationController>

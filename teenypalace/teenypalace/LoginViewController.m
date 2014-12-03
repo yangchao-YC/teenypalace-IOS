@@ -16,10 +16,24 @@
 
 @implementation LoginViewController
 
+
+
++ (void)logOut
+{
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *navigationViewController = (UINavigationController *)[storyBoard instantiateViewControllerWithIdentifier:@"LoginNav"];
+    
+    [[[UIApplication sharedApplication] keyWindow].rootViewController presentViewController:navigationViewController animated:YES completion:^{
+        
+    }];
+}
+
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad];；
     // Do any additional setup after loading the view.
-   
+    
     
     
     checkBox = false;

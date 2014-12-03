@@ -30,6 +30,10 @@
     //首先应该检查是否登录了。没登录就弹出登录界面
    // [self performSelector:@selector(gotoLogin) withObject:self afterDelay:.1f];
     
+    [LoginViewController logOut];
+    
+    
+    
      ScreenSize = [UIScreen mainScreen].bounds;
     
     
@@ -126,13 +130,13 @@
 }
 
 
-/*
+
 - (void)gotoLogin
 {
     
-    [self.navigationController performSegueWithIdentifier:@"HomeToLoginSegue" sender:self];
+    [self.navigationController performSegueWithIdentifier:@"LoginNav" sender:self];
 }
- */
+
 
 
 //开始编辑输入框的时候，软键盘出现，执行此事件
