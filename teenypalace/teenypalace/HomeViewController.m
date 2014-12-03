@@ -30,9 +30,11 @@
     //首先应该检查是否登录了。没登录就弹出登录界面
    // [self performSelector:@selector(gotoLogin) withObject:self afterDelay:.1f];
     
-    [LoginViewController logOut];
+    [self performSelector:@selector(logout) withObject:self afterDelay:.5f];
     
+    //[LoginViewController logOut];
     
+    /*
     
      ScreenSize = [UIScreen mainScreen].bounds;
     
@@ -57,9 +59,15 @@
     
     self.nameTextField.returnKeyType = UIReturnKeyNext;
     self.pwdTextField.returnKeyType = UIReturnKeyDefault;
-   
+   */
+    
 }
 
+//这个方法只弹出登录界面
+- (void)logout
+{
+    [LoginViewController logOut];
+}
 
 /*
  tag:
