@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ApplyTableViewCell.h"
+#import "MJRefresh.h"
+#import "AFNetworking.h"
 @interface ApplyProfessionalViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

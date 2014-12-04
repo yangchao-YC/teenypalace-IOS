@@ -1,94 +1,68 @@
 //
-//  ApplyProfessionalViewController.m
+//  DoingViewController.m
 //  teenypalace
 //
-//  Created by 杨超 on 14/11/26.
+//  Created by 杨超 on 14/12/4.
 //  Copyright (c) 2014年 杨超. All rights reserved.
 //
 
+#import "DoingViewController.h"
 
-//选择专业页面
-
-
-#import "ApplyProfessionalViewController.h"
-
-@interface ApplyProfessionalViewController ()
+@interface DoingViewController ()
 
 @end
 
-@implementation ApplyProfessionalViewController
+@implementation DoingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    NSLog(@"我是专业面的key---%@",self.applyKey);
-    //DATE_SEARCH_PROFESSIONAL;
     
-    NSString *date = [NSString stringWithFormat:@"%@1",DATE_SEARCH_PROFESSIONAL];
-    NSLog(@"            %@            ",date);
+    // [self.tableView addHeaderWithTarget:self action:@selector(headerrereshing)];//绑定MJ刷新头部
     
-    [self dateUrl:date];
+    //  [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];//绑定MJ刷新尾部
+    
+    
+    //[self.tableView headerBeginRefreshing];//自动执行下啦刷新
+    //[self.tableView footerBeginRefreshing];
+    
     
 }
 
-
-
--(void)dateUrl:(NSString *)url
+//下拉刷新执行
+-(void)headerrereshing
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    
+    [self.tableView reloadData];//将数据放入数组后填入tableview
+    [self.tableView headerEndRefreshing];
 }
+
+//加载更多执行
+-(void)footerRereshing
+{
+    
+    [self.tableView reloadData];//将数据放入数组后填入tableview
+    [self.tableView footerEndRefreshing];
+}
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    /*
     
     static NSString *apply_cell_id = @"apply_cell_id";
     
-    ApplyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_cell_id];
+   // ApplyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_cell_id];
     
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    switch (indexPath.row) {
-        case 0:
-            cell.titleLabel.text = ART;
-            break;
-        case 1:
-            cell.titleLabel.text = LITERARY;
-            break;
-        case 2:
-            cell.titleLabel.text = GYM;
-            break;
-        case 3:
-            cell.titleLabel.text = LANGUAGE;
-            break;
-        case 4:
-            
-            cell.titleLabel.text = CHILDREN;
-            break;
-            
-        default:
-            break;
-    }
-
-    return cell;
+*/
+    
+    return nil;
     
 }
 
@@ -105,22 +79,30 @@
     return 1;//设置为只有一个模块
 }
 
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     return 70;
 }//设置模块内cell的高度
 
+
+
+
 //下面为点击事件方法
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
 }
 
 
--(IBAction)ApplyProfessionaBtn:(UIButton *)sender
+
+
+-(IBAction)DoingBtn:(UIButton *)sender
 {
-   
     switch (sender.tag) {
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
@@ -130,8 +112,8 @@
             [self.navigationController popToRootViewControllerAnimated:YES];
             break;
     }
-    
 }
+
 
 
 - (void)didReceiveMemoryWarning {

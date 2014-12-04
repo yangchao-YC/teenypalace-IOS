@@ -114,7 +114,7 @@
     
     ApplyTableViewCell *cell = (ApplyTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     
-    cell.titleLabel.text = @" 张小朝";
+  //  cell.titleLabel.text = @" 张小朝";
     
     
     [self performSegueWithIdentifier:@"apply_applyProfessional" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
