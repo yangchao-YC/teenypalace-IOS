@@ -34,32 +34,12 @@
     
     //[LoginViewController logOut];
     
-    /*
     
-     ScreenSize = [UIScreen mainScreen].bounds;
+    
+    // ScreenSize = [UIScreen mainScreen].bounds;//获取屏幕尺寸
     
     
    
-
-   // NSLog(@"%f",cc.size.width);//获取屏幕宽度
-    
-    checkBox = false;
-    self.CheckImage.userInteractionEnabled = YES;
-    UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(checkBoxs)];
-    
-   // self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"home_bg"]];
-    
-    [self.CheckImage addGestureRecognizer:singleTap];
-    
-    self.nameTextField.delegate = self;
-    self.pwdTextField.delegate = self;
-    
-    [self.pwdTextField setSecureTextEntry:YES];//设置密码框
-    
-    
-    self.nameTextField.returnKeyType = UIReturnKeyNext;
-    self.pwdTextField.returnKeyType = UIReturnKeyDefault;
-   */
     
 }
 
@@ -75,7 +55,7 @@
  1.登陆
  2.注册新用户
  3.跳过
- */
+ 
 
 -(IBAction)btnHome:(UIButton *)sender
 {
@@ -93,21 +73,21 @@
             break;
         case 3:
             
-            [self loginHide];
+          //  [self loginHide];
             
             NSLog(@"3");
             break;
         
         case 4:
-            [self loginShow];
+          //  [self loginShow];
             break;
         default:
             break;
     }
 }
+*/
 
-
-
+/*
 
 -(void)loginHide
 {
@@ -122,8 +102,10 @@
         self.loginView.frame = CGRectMake(0, 0, ScreenSize.size.width, ScreenSize.size.height);
     }];
 }
+ 
+ */
 
-
+/*
 -(void)checkBoxs
 {
     if (checkBox) {
@@ -136,7 +118,7 @@
         self.CheckImage.image = [UIImage imageNamed:@"login_check_true"];
     }
 }
-
+*/
 
 
 - (void)gotoLogin
@@ -145,7 +127,7 @@
     [self.navigationController performSegueWithIdentifier:@"LoginNav" sender:self];
 }
 
-
+/*
 
 //开始编辑输入框的时候，软键盘出现，执行此事件
 
@@ -175,7 +157,7 @@
 {
     self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
-
+*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

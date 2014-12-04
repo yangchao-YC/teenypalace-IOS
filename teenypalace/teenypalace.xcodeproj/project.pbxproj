@@ -18,6 +18,14 @@
 		71C97BDF1A08B5970010A5B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C97BDE1A08B5970010A5B8 /* Images.xcassets */; };
 		71C97BE21A08B5970010A5B8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C97BE01A08B5970010A5B8 /* LaunchScreen.xib */; };
 		71C97BEE1A08B5970010A5B8 /* teenypalaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C97BED1A08B5970010A5B8 /* teenypalaceTests.swift */; };
+		71C9B6981A3033540011A3B1 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71C9B6881A3033540011A3B1 /* MJRefresh.bundle */; };
+		71C9B6991A3033540011A3B1 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C9B68B1A3033540011A3B1 /* MJRefreshBaseView.m */; };
+		71C9B69A1A3033540011A3B1 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C9B68D1A3033540011A3B1 /* MJRefreshConst.m */; };
+		71C9B69B1A3033540011A3B1 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C9B68F1A3033540011A3B1 /* MJRefreshFooterView.m */; };
+		71C9B69C1A3033540011A3B1 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C9B6911A3033540011A3B1 /* MJRefreshHeaderView.m */; };
+		71C9B69D1A3033540011A3B1 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C9B6931A3033540011A3B1 /* UIScrollView+MJExtension.m */; };
+		71C9B69E1A3033540011A3B1 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C9B6951A3033540011A3B1 /* UIScrollView+MJRefresh.m */; };
+		71C9B69F1A3033540011A3B1 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C9B6971A3033540011A3B1 /* UIView+MJExtension.m */; };
 		71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CB85F41A10A4C000D855C8 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +62,22 @@
 		71C97BE71A08B5970010A5B8 /* teenypalaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = teenypalaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C97BEC1A08B5970010A5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71C97BED1A08B5970010A5B8 /* teenypalaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teenypalaceTests.swift; sourceTree = "<group>"; };
+		71C9B6881A3033540011A3B1 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		71C9B6891A3033540011A3B1 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		71C9B68A1A3033540011A3B1 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		71C9B68B1A3033540011A3B1 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		71C9B68C1A3033540011A3B1 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		71C9B68D1A3033540011A3B1 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		71C9B68E1A3033540011A3B1 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		71C9B68F1A3033540011A3B1 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		71C9B6901A3033540011A3B1 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		71C9B6911A3033540011A3B1 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		71C9B6921A3033540011A3B1 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		71C9B6931A3033540011A3B1 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		71C9B6941A3033540011A3B1 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		71C9B6951A3033540011A3B1 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		71C9B6961A3033540011A3B1 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		71C9B6971A3033540011A3B1 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		71CB85F31A10A4C000D855C8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		71CB85F41A10A4C000D855C8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +148,7 @@
 		71C97BD41A08B5970010A5B8 /* teenypalace */ = {
 			isa = PBXGroup;
 			children = (
+				71C9B6861A3033400011A3B1 /* Additions */,
 				71735BB11A1F21FC005E0067 /* TableViewCell */,
 				71C55CC41A09DC3A00A4B359 /* Class */,
 				71C97BD71A08B5970010A5B8 /* AppDelegate.swift */,
@@ -160,6 +185,37 @@
 				71C97BEC1A08B5970010A5B8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71C9B6861A3033400011A3B1 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				71C9B6871A3033540011A3B1 /* MJRefresh */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+		71C9B6871A3033540011A3B1 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				71C9B6881A3033540011A3B1 /* MJRefresh.bundle */,
+				71C9B6891A3033540011A3B1 /* MJRefresh.h */,
+				71C9B68A1A3033540011A3B1 /* MJRefreshBaseView.h */,
+				71C9B68B1A3033540011A3B1 /* MJRefreshBaseView.m */,
+				71C9B68C1A3033540011A3B1 /* MJRefreshConst.h */,
+				71C9B68D1A3033540011A3B1 /* MJRefreshConst.m */,
+				71C9B68E1A3033540011A3B1 /* MJRefreshFooterView.h */,
+				71C9B68F1A3033540011A3B1 /* MJRefreshFooterView.m */,
+				71C9B6901A3033540011A3B1 /* MJRefreshHeaderView.h */,
+				71C9B6911A3033540011A3B1 /* MJRefreshHeaderView.m */,
+				71C9B6921A3033540011A3B1 /* UIScrollView+MJExtension.h */,
+				71C9B6931A3033540011A3B1 /* UIScrollView+MJExtension.m */,
+				71C9B6941A3033540011A3B1 /* UIScrollView+MJRefresh.h */,
+				71C9B6951A3033540011A3B1 /* UIScrollView+MJRefresh.m */,
+				71C9B6961A3033540011A3B1 /* UIView+MJExtension.h */,
+				71C9B6971A3033540011A3B1 /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +300,7 @@
 			files = (
 				71C97BDD1A08B5970010A5B8 /* Main.storyboard in Resources */,
 				71C97BE21A08B5970010A5B8 /* LaunchScreen.xib in Resources */,
+				71C9B6981A3033540011A3B1 /* MJRefresh.bundle in Resources */,
 				71C97BDF1A08B5970010A5B8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,12 +319,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C9B69B1A3033540011A3B1 /* MJRefreshFooterView.m in Sources */,
+				71C9B69F1A3033540011A3B1 /* UIView+MJExtension.m in Sources */,
+				71C9B69D1A3033540011A3B1 /* UIScrollView+MJExtension.m in Sources */,
 				718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */,
 				71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */,
+				71C9B69E1A3033540011A3B1 /* UIScrollView+MJRefresh.m in Sources */,
 				716C03621A25A49200F64482 /* ApplyProfessionalViewController.m in Sources */,
 				71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */,
+				71C9B69A1A3033540011A3B1 /* MJRefreshConst.m in Sources */,
+				71C9B69C1A3033540011A3B1 /* MJRefreshHeaderView.m in Sources */,
 				718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */,
 				71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */,
+				71C9B6991A3033540011A3B1 /* MJRefreshBaseView.m in Sources */,
 				71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */,
 				71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */,
 			);
@@ -328,8 +392,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: CHENG NAN (R79JFQ5VKW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHENG NAN (R79JFQ5VKW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: qin zhou (9K5BK6JQ7D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: qin zhou (9K5BK6JQ7D)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -371,7 +435,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: qin zhou (9K5BK6JQ7D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: qin zhou (9K5BK6JQ7D)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -395,8 +460,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: CHENG NAN (R79JFQ5VKW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHENG NAN (R79JFQ5VKW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: qin zhou (9K5BK6JQ7D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: qin zhou (9K5BK6JQ7D)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/teenypalace/pchFile.pch";
 				INFOPLIST_FILE = teenypalace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -415,6 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: qin zhou (9K5BK6JQ7D)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/teenypalace/pchFile.pch";
 				INFOPLIST_FILE = teenypalace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;

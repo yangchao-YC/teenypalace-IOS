@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *LoginCheckBox;
 @property (weak, nonatomic) IBOutlet UIImageView *CheckImage;
+@property (weak, nonatomic) IBOutlet UITextField *pwdTextField;
 
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 + (void)logOut;
 
 
