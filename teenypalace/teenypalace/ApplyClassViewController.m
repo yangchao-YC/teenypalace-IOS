@@ -1,75 +1,43 @@
 //
-//  ApplyProfessionalViewController.m
+//  ApplyClassViewController.m
 //  teenypalace
 //
-//  Created by 杨超 on 14/11/26.
+//  Created by 杨超 on 14/12/9.
 //  Copyright (c) 2014年 杨超. All rights reserved.
 //
 
+#import "ApplyClassViewController.h"
 
-//选择专业页面
-
-
-#import "ApplyProfessionalViewController.h"
-
-@interface ApplyProfessionalViewController ()
+@interface ApplyClassViewController ()
 
 @end
 
-@implementation ApplyProfessionalViewController
+@implementation ApplyClassViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    NSLog(@"我是专业面的key---%@",self.applyKey);
-    //DATE_SEARCH_PROFESSIONAL;
-    
-    NSString *date = [NSString stringWithFormat:@"%@1",DATE_SEARCH_PROFESSIONAL];
-    NSLog(@"            %@            ",date);
-    
-    [self dateUrl:date];
-    
-    
-    
+    NSLog(@"我是层次页面的key---%@",self.applyClassKey);
     
     
 }
 
 
-
--(void)dateUrl:(NSString *)url
-{
-
-
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-
-    
-}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    static NSString *apply_cell_id = @"apply_cell_id";
+    static NSString *apply_class_cell_id = @"apply_class_cell_id";
     
-    ApplyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_cell_id];
+    ApplyClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_class_cell_id];
     
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -95,7 +63,7 @@
         default:
             break;
     }
-
+    
     return cell;
     
 }
@@ -116,19 +84,19 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 70;
+    return 130;
 }//设置模块内cell的高度
 
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"applyProfessional_applyLevel" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+    
 }
 
 
--(IBAction)ApplyProfessionaBtn:(UIButton *)sender
+-(IBAction)ApplyClassBtn:(UIButton *)sender
 {
-   
+    
     switch (sender.tag) {
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
@@ -142,10 +110,11 @@
 }
 
 
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"applyLevelKey"];
+    //[push setValue:sender forKey:@"applyLevelKey"];
 }
 
 

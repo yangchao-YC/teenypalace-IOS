@@ -12,6 +12,9 @@
 		718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB93D1A19F4B10044F2DC /* ApplyViewController.m */; };
 		718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB9401A19F4CC0044F2DC /* MyViewController.m */; };
 		71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C55CC71A09F4BE00A4B359 /* LoginViewController.m */; };
+		71C6082B1A358200001CE8BA /* DoingApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C6082A1A358200001CE8BA /* DoingApplyViewController.m */; };
+		71C6082E1A35AFCA001CE8BA /* ApplyLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C6082D1A35AFCA001CE8BA /* ApplyLevelViewController.m */; };
+		71C95E251A32E68E0057E6AF /* DoingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C95E241A32E68E0057E6AF /* DoingDetailsViewController.m */; };
 		71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C97BD71A08B5970010A5B8 /* AppDelegate.swift */; };
 		71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C97BD91A08B5970010A5B8 /* ViewController.swift */; };
 		71C97BDD1A08B5970010A5B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C97BDB1A08B5970010A5B8 /* Main.storyboard */; };
@@ -41,6 +44,8 @@
 		71C9B6C41A305C120011A3B1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C9B6C31A305C120011A3B1 /* Security.framework */; };
 		71C9B6C71A305FDD0011A3B1 /* DoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C9B6C61A305FDD0011A3B1 /* DoingViewController.m */; };
 		71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CB85F41A10A4C000D855C8 /* HomeViewController.m */; };
+		71CC78D11A36DE41000A4E55 /* ApplyClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CC78D01A36DE41000A4E55 /* ApplyClassViewController.m */; };
+		71CC78D41A36E00B000A4E55 /* ApplyClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CC78D31A36E00B000A4E55 /* ApplyClassTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +71,12 @@
 		71C55CC51A09F4BD00A4B359 /* teenypalace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "teenypalace-Bridging-Header.h"; sourceTree = "<group>"; };
 		71C55CC61A09F4BE00A4B359 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71C55CC71A09F4BE00A4B359 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		71C608291A358200001CE8BA /* DoingApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingApplyViewController.h; sourceTree = "<group>"; };
+		71C6082A1A358200001CE8BA /* DoingApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingApplyViewController.m; sourceTree = "<group>"; };
+		71C6082C1A35AFCA001CE8BA /* ApplyLevelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyLevelViewController.h; sourceTree = "<group>"; };
+		71C6082D1A35AFCA001CE8BA /* ApplyLevelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyLevelViewController.m; sourceTree = "<group>"; };
+		71C95E231A32E68E0057E6AF /* DoingDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingDetailsViewController.h; sourceTree = "<group>"; };
+		71C95E241A32E68E0057E6AF /* DoingDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingDetailsViewController.m; sourceTree = "<group>"; };
 		71C97BD21A08B5970010A5B8 /* teenypalace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teenypalace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C97BD61A08B5970010A5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71C97BD71A08B5970010A5B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +130,10 @@
 		71C9B6C61A305FDD0011A3B1 /* DoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingViewController.m; sourceTree = "<group>"; };
 		71CB85F31A10A4C000D855C8 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		71CB85F41A10A4C000D855C8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		71CC78CF1A36DE41000A4E55 /* ApplyClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyClassViewController.h; sourceTree = "<group>"; };
+		71CC78D01A36DE41000A4E55 /* ApplyClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyClassViewController.m; sourceTree = "<group>"; };
+		71CC78D21A36E00B000A4E55 /* ApplyClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyClassTableViewCell.h; sourceTree = "<group>"; };
+		71CC78D31A36E00B000A4E55 /* ApplyClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyClassTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +163,8 @@
 			children = (
 				71735BB21A1F2233005E0067 /* ApplyTableViewCell.h */,
 				71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */,
+				71CC78D21A36E00B000A4E55 /* ApplyClassTableViewCell.h */,
+				71CC78D31A36E00B000A4E55 /* ApplyClassTableViewCell.m */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -162,12 +179,20 @@
 				71CB85F41A10A4C000D855C8 /* HomeViewController.m */,
 				718FB93C1A19F4B10044F2DC /* ApplyViewController.h */,
 				718FB93D1A19F4B10044F2DC /* ApplyViewController.m */,
-				718FB93F1A19F4CC0044F2DC /* MyViewController.h */,
-				718FB9401A19F4CC0044F2DC /* MyViewController.m */,
 				716C03601A25A49200F64482 /* ApplyProfessionalViewController.h */,
 				716C03611A25A49200F64482 /* ApplyProfessionalViewController.m */,
+				71C6082C1A35AFCA001CE8BA /* ApplyLevelViewController.h */,
+				71C6082D1A35AFCA001CE8BA /* ApplyLevelViewController.m */,
+				71CC78CF1A36DE41000A4E55 /* ApplyClassViewController.h */,
+				71CC78D01A36DE41000A4E55 /* ApplyClassViewController.m */,
 				71C9B6C51A305FDD0011A3B1 /* DoingViewController.h */,
 				71C9B6C61A305FDD0011A3B1 /* DoingViewController.m */,
+				71C95E231A32E68E0057E6AF /* DoingDetailsViewController.h */,
+				71C95E241A32E68E0057E6AF /* DoingDetailsViewController.m */,
+				71C608291A358200001CE8BA /* DoingApplyViewController.h */,
+				71C6082A1A358200001CE8BA /* DoingApplyViewController.m */,
+				718FB93F1A19F4CC0044F2DC /* MyViewController.h */,
+				718FB9401A19F4CC0044F2DC /* MyViewController.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -395,11 +420,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C6082B1A358200001CE8BA /* DoingApplyViewController.m in Sources */,
 				71C9B69B1A3033540011A3B1 /* MJRefreshFooterView.m in Sources */,
 				71C9B69F1A3033540011A3B1 /* UIView+MJExtension.m in Sources */,
 				71C9B69D1A3033540011A3B1 /* UIScrollView+MJExtension.m in Sources */,
 				71C9B6B61A305BB60011A3B1 /* AFHTTPSessionManager.m in Sources */,
 				718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */,
+				71C6082E1A35AFCA001CE8BA /* ApplyLevelViewController.m in Sources */,
+				71C95E251A32E68E0057E6AF /* DoingDetailsViewController.m in Sources */,
 				71C9B6B71A305BB60011A3B1 /* AFNetworkReachabilityManager.m in Sources */,
 				71C9B6B41A305BB60011A3B1 /* AFHTTPRequestOperation.m in Sources */,
 				71C9B6BA1A305BB60011A3B1 /* AFURLRequestSerialization.m in Sources */,
@@ -414,6 +442,8 @@
 				718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */,
 				71C9B6C71A305FDD0011A3B1 /* DoingViewController.m in Sources */,
 				71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */,
+				71CC78D11A36DE41000A4E55 /* ApplyClassViewController.m in Sources */,
+				71CC78D41A36E00B000A4E55 /* ApplyClassTableViewCell.m in Sources */,
 				71C9B6991A3033540011A3B1 /* MJRefreshBaseView.m in Sources */,
 				71C9B6B81A305BB60011A3B1 /* AFSecurityPolicy.m in Sources */,
 				71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */,

@@ -157,11 +157,8 @@
 }
 //关闭键盘
 - (void) handleBackgroundTap:(UITapGestureRecognizer*)sender
-
 {
-    
-    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
-    
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];  
 }
 
 

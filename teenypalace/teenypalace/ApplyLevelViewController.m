@@ -1,22 +1,18 @@
 //
-//  ApplyProfessionalViewController.m
+//  ApplyLevelViewController.m
 //  teenypalace
 //
-//  Created by 杨超 on 14/11/26.
+//  Created by 杨超 on 14/12/8.
 //  Copyright (c) 2014年 杨超. All rights reserved.
-//
+//在线报名-层次页面
 
+#import "ApplyLevelViewController.h"
 
-//选择专业页面
-
-
-#import "ApplyProfessionalViewController.h"
-
-@interface ApplyProfessionalViewController ()
+@interface ApplyLevelViewController ()
 
 @end
 
-@implementation ApplyProfessionalViewController
+@implementation ApplyLevelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,43 +21,19 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    NSLog(@"我是专业面的key---%@",self.applyKey);
+    NSLog(@"我是层次页面的key---%@",self.applyLevelKey);
     //DATE_SEARCH_PROFESSIONAL;
     
-    NSString *date = [NSString stringWithFormat:@"%@1",DATE_SEARCH_PROFESSIONAL];
-    NSLog(@"            %@            ",date);
-    
-    [self dateUrl:date];
-    
-    
-    
-    
     
 }
 
 
 
--(void)dateUrl:(NSString *)url
-{
 
-
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-
-    
-}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -95,7 +67,7 @@
         default:
             break;
     }
-
+    
     return cell;
     
 }
@@ -122,13 +94,14 @@
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"applyProfessional_applyLevel" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+    [self performSegueWithIdentifier:@"applyLevel_applyClass" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+
 }
 
 
--(IBAction)ApplyProfessionaBtn:(UIButton *)sender
+-(IBAction)ApplyLevelBtn:(UIButton *)sender
 {
-   
+    
     switch (sender.tag) {
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
@@ -141,11 +114,10 @@
     
 }
 
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"applyLevelKey"];
+    [push setValue:sender forKey:@"applyClassKey"];
 }
 
 

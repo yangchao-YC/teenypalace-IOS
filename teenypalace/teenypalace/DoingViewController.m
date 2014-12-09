@@ -109,9 +109,15 @@
             break;
             
         default:
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [self performSegueWithIdentifier:@"doing_doingDetails" sender:@"yy"];
             break;
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController *push = segue.destinationViewController;
+    [push setValue:sender forKey:@"doingKey"];
 }
 
 
