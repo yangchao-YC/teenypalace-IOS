@@ -4,7 +4,8 @@
 //
 //  Created by 杨超 on 14/12/9.
 //  Copyright (c) 2014年 杨超. All rights reserved.
-//
+//在线报名-班级列表页面
+
 
 #import "ApplyClassViewController.h"
 
@@ -90,7 +91,8 @@
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self performSegueWithIdentifier:@"applyClass_applyDetails" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+
 }
 
 
@@ -114,7 +116,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *push = segue.destinationViewController;
-    //[push setValue:sender forKey:@"applyLevelKey"];
+    [push setValue:sender forKey:@"applyDetailsKey"];
 }
 
 
