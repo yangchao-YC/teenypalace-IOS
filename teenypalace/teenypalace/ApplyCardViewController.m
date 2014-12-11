@@ -17,8 +17,79 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    
+    self.tableView.bounces = NO;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    NSLog(@"我是层次页面的key---%@",self.applyCardKey);
+    
+    
 }
 
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    static NSString *apply_class_cell_id = @"apply_card_cell_id";
+    
+    ApplyCardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_class_cell_id];
+    
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    switch (indexPath.row) {
+        case 0:
+            cell.cardLabel.text = ART;
+            break;
+        case 1:
+            cell.cardLabel.text = LITERARY;
+            break;
+        case 2:
+            cell.cardLabel.text = GYM;
+            break;
+        case 3:
+            cell.cardLabel.text = LANGUAGE;
+            break;
+        case 4:
+            cell.cardLabel.text = CHILDREN;
+            break;
+            
+        default:
+            break;
+    }
+    
+    return cell;
+    
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 5;//设置显示行数
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;//设置为只有一个模块
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 89;
+}//设置模块内cell的高度
+
+//下面为点击事件方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 
 

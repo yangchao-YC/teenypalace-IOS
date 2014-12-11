@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ApplyCardTableViewCell.h"
+@interface ApplyCardViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@interface ApplyCardViewController : UIViewController
 
 @property(strong,nonatomic)NSString *applyCardKey;
 
