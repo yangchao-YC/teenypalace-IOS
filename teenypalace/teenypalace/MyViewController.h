@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ApplyTableViewCell.h"
+@interface MyViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@interface MyViewController : UIViewController
+@property(strong,nonatomic)NSString *MyKey;
 
 @end

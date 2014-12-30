@@ -1,55 +1,39 @@
 //
-//  DoingDetailsViewController.m
+//  MyMoneyViewController.m
 //  teenypalace
 //
-//  Created by 杨超 on 14/12/6.
+//  Created by 杨超 on 14/12/23.
 //  Copyright (c) 2014年 杨超. All rights reserved.
 //
 
+//用户中心-结算中心
 
-//活动详情页面
+#import "MyMoneyViewController.h"
 
-
-#import "DoingDetailsViewController.h"
-
-@interface DoingDetailsViewController ()
+@interface MyMoneyViewController ()
 
 @end
 
-@implementation DoingDetailsViewController
+@implementation MyMoneyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    
-    
 }
 
 
--(IBAction)DoingDetailsBtn:(UIButton *)sender
+
+-(IBAction)MyMoneyBtn:(UIButton *)sender
 {
     switch (sender.tag) {
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
             break;
-        
-        case 2:
-            [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:@"yy"];
-            break;
+            
         default:
             
             break;
     }
-}
-
-
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"doingApplyKey"];
 }
 
 

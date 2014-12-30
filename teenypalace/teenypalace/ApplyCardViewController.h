@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "ApplyCardTableViewCell.h"
+#import "ApplyAlertView.h"
 @interface ApplyCardViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 @property(strong,nonatomic)NSString *applyCardKey;
+
+
+-(void)ApplyCardBlock:(void (^)(void))blok;
+
+
 
 @end

@@ -10,7 +10,10 @@
 
 @interface ApplyCardViewController ()
 
+@property (nonatomic,strong)ApplyAlertView *alertView ;
 @end
+
+
 
 @implementation ApplyCardViewController
 
@@ -88,8 +91,25 @@
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    __unsafe_unretained ApplyCardViewController *safe_self = self;
+    self.alertView = [[ApplyAlertView alloc]initWithView:self.view title:@"报名成功，是否跳转到结算中心"];
     
+    self.alertView.ApplyCardBlock = ^(int a)
+    {
+        [safe_self.alertView hide];
+        
+    };
+    
+    [self.alertView show];
 }
+
+
+-(void)ApplyCardBlock:(void (^)(void))blok
+{
+    NSLog(@"我收到了要跳转的消息");
+   
+}
+
 
 
 

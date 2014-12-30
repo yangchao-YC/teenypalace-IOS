@@ -1,56 +1,42 @@
 //
-//  DoingDetailsViewController.m
+//  PrettyViewController.m
 //  teenypalace
 //
-//  Created by 杨超 on 14/12/6.
+//  Created by 杨超 on 14/12/20.
 //  Copyright (c) 2014年 杨超. All rights reserved.
 //
 
+//美丽青宫
 
-//活动详情页面
+#import "PrettyViewController.h"
 
-
-#import "DoingDetailsViewController.h"
-
-@interface DoingDetailsViewController ()
+@interface PrettyViewController ()
 
 @end
 
-@implementation DoingDetailsViewController
+@implementation PrettyViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-    
-    
 }
 
 
--(IBAction)DoingDetailsBtn:(UIButton *)sender
+
+
+-(IBAction)PrettyBtn:(UIButton *)sender
 {
     switch (sender.tag) {
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
             break;
-        
-        case 2:
-            [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:@"yy"];
-            break;
+            
         default:
             
             break;
     }
 }
 
-
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"doingApplyKey"];
-}
 
 
 - (void)didReceiveMemoryWarning {

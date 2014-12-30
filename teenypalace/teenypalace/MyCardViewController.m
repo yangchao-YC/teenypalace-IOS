@@ -1,77 +1,58 @@
 //
-//  DoingViewController.m
+//  MyCardViewController.m
 //  teenypalace
 //
-//  Created by 杨超 on 14/12/4.
+//  Created by 杨超 on 14/12/23.
 //  Copyright (c) 2014年 杨超. All rights reserved.
-//
 
-//公益活动
 
-#import "DoingViewController.h"
+//用户中心-学员卡管理
 
-@interface DoingViewController ()
+#import "MyCardViewController.h"
+
+
+@interface MyCardViewController ()
 
 @end
 
-@implementation DoingViewController
+@implementation MyCardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    
+    self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    
-    // [self.tableView addHeaderWithTarget:self action:@selector(headerrereshing)];//绑定MJ刷新头部
-    
-    //  [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];//绑定MJ刷新尾部
-    
-    
-    //[self.tableView headerBeginRefreshing];//自动执行下啦刷新
-    //[self.tableView footerBeginRefreshing];
-    
-    
 }
 
-//下拉刷新执行
--(void)headerrereshing
-{
-    [self.tableView reloadData];//将数据放入数组后填入tableview
-    [self.tableView headerEndRefreshing];
-}
 
-//加载更多执行
--(void)footerRereshing
-{
-    
-    [self.tableView reloadData];//将数据放入数组后填入tableview
-    [self.tableView footerEndRefreshing];
-}
 
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
     
-    static NSString *apply_cell_id = @"apply_cell_id";
+    static NSString *myCard_cell_id = @"myCard_cell_id";
     
-   // ApplyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_cell_id];
+    CardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myCard_cell_id];
     
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-*/
-    
-    return nil;
+ 
+    return cell;
     
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;//设置显示行数
+    return 4;//设置显示行数
 }
 
 
@@ -81,20 +62,13 @@
     return 1;//设置为只有一个模块
 }
 
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 70;
+    return 80;
 }//设置模块内cell的高度
 
-
-
-
 //下面为点击事件方法
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -103,24 +77,34 @@
 
 
 
--(IBAction)DoingBtn:(UIButton *)sender
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // UIViewController *push = segue.destinationViewController;
+    // [push setValue:sender forKey:@"MyKey"];
+}
+
+
+
+-(IBAction)MyCardBtn:(UIButton *)sender
 {
     switch (sender.tag) {
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
             break;
             
+        case 1:
+            [self performSegueWithIdentifier:@"myCard_myNewCard" sender:@"0"];
+            break;
+        case 2:
+            [self performSegueWithIdentifier:@"myCard_myNewCard" sender:@"1"];
+            break;
+
         default:
-            [self performSegueWithIdentifier:@"doing_doingDetails" sender:@"yy"];
+            
             break;
     }
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"doingKey"];
-}
 
 
 
