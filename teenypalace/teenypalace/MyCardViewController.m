@@ -79,8 +79,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // UIViewController *push = segue.destinationViewController;
-    // [push setValue:sender forKey:@"MyKey"];
+     UIViewController *push = segue.destinationViewController;
+     [push setValue:sender forKey:@"MyNewKey"];
 }
 
 

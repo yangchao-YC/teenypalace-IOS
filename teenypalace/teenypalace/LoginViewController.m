@@ -47,8 +47,8 @@
      [self.pwdTextField setSecureTextEntry:YES];//设置密码框
      
      
-     self.nameTextField.returnKeyType = UIReturnKeyNext;
-     self.pwdTextField.returnKeyType = UIReturnKeyDefault;
+    self.nameTextField.returnKeyType = UIReturnKeyNext;
+    self.pwdTextField.returnKeyType = UIReturnKeyDefault;
     
     self.nameTextField.clearsOnBeginEditing = YES;//再次编辑清空
     self.pwdTextField.clearsOnBeginEditing = YES;
@@ -130,6 +130,7 @@
 //当用户按下return键或者按回车键，键盘消失
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+
     [textField resignFirstResponder];
     return YES;
 }
