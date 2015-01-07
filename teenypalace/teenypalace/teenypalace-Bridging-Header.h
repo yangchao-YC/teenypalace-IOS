@@ -3,3 +3,8 @@
 //
 
 #import "LoginViewController.h"
+#import "MobClick.h"
+#import "MobClickSocialAnalytics.h"
+#import "UMSocialData.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialSnsService.h"

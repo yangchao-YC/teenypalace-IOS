@@ -7,7 +7,8 @@
 //
 
 #import "LoginViewController.h"
-
+#import "MobClick.h"
+#import "UMSocial.h"
 @interface LoginViewController ()
 {
     BOOL checkBox ;
@@ -82,6 +83,15 @@
  
         case 0:
             NSLog(@"0");
+            /*
+            [UMSocialSnsService
+             presentSnsIconSheetView:self
+             appKey:nil
+             shareText:@"武汉青少年宫"
+             shareImage:nil
+             shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToEmail,UMShareToSina,UMShareToSms,UMShareToTencent ,nil]
+             delegate:self];
+            */
             break;
         case 1:
             [self dismissModalViewControllerAnimated:YES];
@@ -160,6 +170,19 @@
 - (void) handleBackgroundTap:(UITapGestureRecognizer*)sender
 {
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];  
+}
+
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"PageOne"];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"PageOne"];
 }
 
 

@@ -3727,7 +3727,55 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQY-Ku-Bxd">
                                 <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ywi-Py-h79">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="hVf-ql-yWU">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hVf-ql-yWU" id="ED0-Es-YIx">
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTJ-g8-38y">
+                                                            <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学员姓名：无名氏" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3A-yb-jS2">
+                                                            <rect key="frame" x="8" y="32" width="459" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学员姓名：无名氏" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKA-CD-ouX">
+                                                            <rect key="frame" x="8" y="56" width="459" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="apply_heijr" translatesAutoresizingMaskIntoConstraints="NO" id="4Wl-Wt-5xk">
+                                                            <rect key="frame" x="567" y="33" width="20" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="15" id="Ef5-AT-83Z"/>
+                                                                <constraint firstAttribute="width" constant="10" id="hlo-0g-Hwe"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ywi-Py-h79" firstAttribute="leading" secondItem="dQY-Ku-Bxd" secondAttribute="leading" id="6sX-RP-lof"/>
+                                    <constraint firstAttribute="bottom" secondItem="ywi-Py-h79" secondAttribute="bottom" id="912-Ba-rXh"/>
+                                    <constraint firstAttribute="trailing" secondItem="ywi-Py-h79" secondAttribute="trailing" id="MNu-vZ-Waa"/>
+                                    <constraint firstItem="ywi-Py-h79" firstAttribute="top" secondItem="dQY-Ku-Bxd" secondAttribute="top" id="lYM-ST-0ec"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3865,6 +3913,6 @@
         <image name="tabbar_bg" width="640" height="91"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x8e-q3-g1J"/>
+        <segue reference="X9f-6g-kcV"/>
     </inferredMetricsTieBreakers>
 </document>
