@@ -44,6 +44,8 @@
 		715EBF2B1A45451100010D5F /* MessageWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EBF2A1A45451100010D5F /* MessageWebViewController.m */; };
 		715EBF2E1A454F8E00010D5F /* PrettyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EBF2D1A454F8E00010D5F /* PrettyViewController.m */; };
 		716C03621A25A49200F64482 /* ApplyProfessionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716C03611A25A49200F64482 /* ApplyProfessionalViewController.m */; };
+		716C188F1A5D250E004BFBAD /* CardClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 716C188E1A5D250E004BFBAD /* CardClassTableViewCell.m */; };
+		716C18951A5D2E57004BFBAD /* MyClassDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716C18941A5D2E57004BFBAD /* MyClassDetailsViewController.m */; };
 		71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */; };
 		717BA3841A496C5000E70CCD /* MyCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3831A496C5000E70CCD /* MyCardViewController.m */; };
 		717BA3871A496C7400E70CCD /* MyClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3861A496C7400E70CCD /* MyClassViewController.m */; };
@@ -167,6 +169,10 @@
 		715EBF2D1A454F8E00010D5F /* PrettyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyViewController.m; sourceTree = "<group>"; };
 		716C03601A25A49200F64482 /* ApplyProfessionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyProfessionalViewController.h; sourceTree = "<group>"; };
 		716C03611A25A49200F64482 /* ApplyProfessionalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyProfessionalViewController.m; sourceTree = "<group>"; };
+		716C188D1A5D250E004BFBAD /* CardClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardClassTableViewCell.h; sourceTree = "<group>"; };
+		716C188E1A5D250E004BFBAD /* CardClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardClassTableViewCell.m; sourceTree = "<group>"; };
+		716C18931A5D2E57004BFBAD /* MyClassDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClassDetailsViewController.h; sourceTree = "<group>"; };
+		716C18941A5D2E57004BFBAD /* MyClassDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClassDetailsViewController.m; sourceTree = "<group>"; };
 		71735BB21A1F2233005E0067 /* ApplyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyTableViewCell.h; sourceTree = "<group>"; };
 		71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyTableViewCell.m; sourceTree = "<group>"; };
 		717BA3821A496C5000E70CCD /* MyCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCardViewController.h; sourceTree = "<group>"; };
@@ -440,6 +446,8 @@
 				71CC92941A39693100EFDE67 /* ApplyCardTableViewCell.m */,
 				717E2AE11A51545E0070570B /* CardTableViewCell.h */,
 				717E2AE21A51545E0070570B /* CardTableViewCell.m */,
+				716C188D1A5D250E004BFBAD /* CardClassTableViewCell.h */,
+				716C188E1A5D250E004BFBAD /* CardClassTableViewCell.m */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -490,6 +498,8 @@
 				717BA3891A496C8700E70CCD /* MyMoneyViewController.m */,
 				717BA38B1A496CAB00E70CCD /* MySiteViewController.h */,
 				717BA38C1A496CAB00E70CCD /* MySiteViewController.m */,
+				716C18931A5D2E57004BFBAD /* MyClassDetailsViewController.h */,
+				716C18941A5D2E57004BFBAD /* MyClassDetailsViewController.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -778,6 +788,7 @@
 				71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */,
 				71C9B69E1A3033540011A3B1 /* UIScrollView+MJRefresh.m in Sources */,
 				717BA3841A496C5000E70CCD /* MyCardViewController.m in Sources */,
+				716C18951A5D2E57004BFBAD /* MyClassDetailsViewController.m in Sources */,
 				716C03621A25A49200F64482 /* ApplyProfessionalViewController.m in Sources */,
 				71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */,
 				71C9B69A1A3033540011A3B1 /* MJRefreshConst.m in Sources */,
@@ -792,6 +803,7 @@
 				717E2AE31A51545E0070570B /* CardTableViewCell.m in Sources */,
 				71C9B6991A3033540011A3B1 /* MJRefreshBaseView.m in Sources */,
 				71C9B6B81A305BB60011A3B1 /* AFSecurityPolicy.m in Sources */,
+				716C188F1A5D250E004BFBAD /* CardClassTableViewCell.m in Sources */,
 				71CC92951A39693100EFDE67 /* ApplyCardTableViewCell.m in Sources */,
 				71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */,
 				71CC37C31A3AC31C0057F4C9 /* ApplyAlertView.m in Sources */,

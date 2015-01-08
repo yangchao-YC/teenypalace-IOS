@@ -9,7 +9,7 @@
 //用户中心-已报名课程
 
 #import "MyClassViewController.h"
-
+#import "CardClassTableViewCell.h"
 @interface MyClassViewController ()
 
 @end
@@ -19,6 +19,70 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    
+    self.tableView.bounces = NO;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+}
+
+
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    static NSString *myCardClass_cell_id = @"myCardClass_cell_id";
+    
+    CardClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myCardClass_cell_id];
+    
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    
+    return cell;
+    
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 4;//设置显示行数
+}
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;//设置为只有一个模块
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 80;
+}//设置模块内cell的高度
+
+//下面为点击事件方法
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [self puls:indexPath.row];
+}
+
+
+-(void)puls:(int)key
+{
+    [self performSegueWithIdentifier:@"myClass_myClassDteails" sender:@"0"];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController *push = segue.destinationViewController;
+    [push setValue:sender forKey:@"MyClassDetailsKey"];
 }
 
 
