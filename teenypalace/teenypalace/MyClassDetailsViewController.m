@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 杨超. All rights reserved.
 //
 
+//用户中心-班级信息详情
+
 #import "MyClassDetailsViewController.h"
 
 @interface MyClassDetailsViewController ()
@@ -36,7 +38,16 @@
 }
 
 
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"PageOne"];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"PageOne"];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

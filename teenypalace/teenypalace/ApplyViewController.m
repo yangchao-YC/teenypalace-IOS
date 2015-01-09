@@ -142,7 +142,16 @@
    [self.navigationController popViewControllerAnimated:YES];
    // [self.navigationController popToRootViewControllerAnimated:YES];
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"PageOne"];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"PageOne"];
+}
 /*
 #pragma mark - Navigation
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */; };
+		710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1F1A5E8B0900513143 /* PwdViewController.m */; };
 		715E42001A5BD85900A3C4F1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 715E41FF1A5BD85900A3C4F1 /* libz.dylib */; };
 		715E42821A5BDB3B00A3C4F1 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715E427F1A5BDB3B00A3C4F1 /* libMobClickLibrary.a */; };
 		715E42BE1A5BED1500A3C4F1 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 715E42851A5BED1500A3C4F1 /* UMSocialLocalizable.strings */; };
@@ -107,6 +109,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		710ADA1B1A5E8A6100513143 /* InformationProcessingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationProcessingViewController.h; sourceTree = "<group>"; };
+		710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationProcessingViewController.m; sourceTree = "<group>"; };
+		710ADA1E1A5E8B0900513143 /* PwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PwdViewController.h; sourceTree = "<group>"; };
+		710ADA1F1A5E8B0900513143 /* PwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PwdViewController.m; sourceTree = "<group>"; };
 		715E41FF1A5BD85900A3C4F1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		715E427F1A5BDB3B00A3C4F1 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		715E42801A5BDB3B00A3C4F1 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
@@ -457,6 +463,10 @@
 			children = (
 				71C55CC61A09F4BE00A4B359 /* LoginViewController.h */,
 				71C55CC71A09F4BE00A4B359 /* LoginViewController.m */,
+				710ADA1B1A5E8A6100513143 /* InformationProcessingViewController.h */,
+				710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */,
+				710ADA1E1A5E8B0900513143 /* PwdViewController.h */,
+				710ADA1F1A5E8B0900513143 /* PwdViewController.m */,
 				71C55CC51A09F4BD00A4B359 /* teenypalace-Bridging-Header.h */,
 				71CB85F31A10A4C000D855C8 /* HomeViewController.h */,
 				71CB85F41A10A4C000D855C8 /* HomeViewController.m */,
@@ -788,6 +798,8 @@
 				71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */,
 				71C9B69E1A3033540011A3B1 /* UIScrollView+MJRefresh.m in Sources */,
 				717BA3841A496C5000E70CCD /* MyCardViewController.m in Sources */,
+				710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */,
+				710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */,
 				716C18951A5D2E57004BFBAD /* MyClassDetailsViewController.m in Sources */,
 				716C03621A25A49200F64482 /* ApplyProfessionalViewController.m in Sources */,
 				71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */,

@@ -52,6 +52,16 @@
     [push setValue:sender forKey:@"doingApplyKey"];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"PageOne"];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"PageOne"];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -1,30 +1,38 @@
 //
-//  MessageProfessionalViewController.m
+//  PwdViewController.m
 //  teenypalace
 //
-//  Created by 杨超 on 14/12/20.
-//  Copyright (c) 2014年 杨超. All rights reserved.
+//  Created by 杨超 on 15/1/8.
+//  Copyright (c) 2015年 杨超. All rights reserved.
 //
 
-//招生信息预览-专业介绍
+//设置密码
 
-#import "MessageProfessionalViewController.h"
+#import "PwdViewController.h"
 
-@interface MessageProfessionalViewController ()
+@interface PwdViewController ()
 
 @end
 
-@implementation MessageProfessionalViewController
+@implementation PwdViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+-(IBAction)pwdBtn:(UIButton *)sender
+{
+    
+    switch (sender.tag) {
+        case 0:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+    }
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -35,6 +43,11 @@
 {
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"PageOne"];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

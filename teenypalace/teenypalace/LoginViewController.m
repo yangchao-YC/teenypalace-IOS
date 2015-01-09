@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "MobClick.h"
 #import "UMSocial.h"
 @interface LoginViewController ()
 {
@@ -92,13 +91,17 @@
              shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToEmail,UMShareToSina,UMShareToSms,UMShareToTencent ,nil]
              delegate:self];
             */
+            
+            [self performSegueWithIdentifier:@"login_InformationProcessing" sender:@"0"];
+
+            
             break;
         case 1:
             [self dismissModalViewControllerAnimated:YES];
-            NSLog(@"1");
             break;
         case 2:
-            NSLog(@"2");
+            
+            [self performSegueWithIdentifier:@"login_InformationProcessing" sender:@"1"];
             break;
         case 3:
             [self dismissModalViewControllerAnimated:YES];
@@ -170,6 +173,14 @@
 - (void) handleBackgroundTap:(UITapGestureRecognizer*)sender
 {
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];  
+}
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController *push = segue.destinationViewController;
+    [push setValue:sender forKey:@"InformationProcessingKey"];
 }
 
 
