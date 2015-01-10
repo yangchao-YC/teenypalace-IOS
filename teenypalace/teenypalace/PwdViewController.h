@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PwdViewController : UIViewController
+@interface PwdViewController : UIViewController<UITextFieldDelegate>
 
 
 @property(strong,nonatomic)NSString *pwdKey;
 
+@property (weak, nonatomic) IBOutlet UITextField *pwdOneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *pwdTwoTextField;
+@property (weak, nonatomic) IBOutlet UIButton *pwdBtn;
 
 @end

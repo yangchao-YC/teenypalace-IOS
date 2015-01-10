@@ -11,7 +11,9 @@
 #import "PwdViewController.h"
 
 @interface PwdViewController ()
-
+{
+      BOOL checkBox ;//是否显示密码
+}
 @end
 
 @implementation PwdViewController
@@ -19,6 +21,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    checkBox = NO;
+    self.pwdBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_check_false"]];
+    
+    
+    
+    //点击键盘外区域关闭键盘
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
+    tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapRecognizer];
+    
+    
 }
 
 
@@ -30,8 +44,45 @@
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
             break;
+        case 1:
+            if (checkBox) {
+                checkBox = NO;
+                [self.pwdOneTextField setSecureTextEntry:YES];//设置密码框
+                [self.pwdTwoTextField setSecureTextEntry:YES];//设置密码框
+                self.pwdBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_check_false"]];
+            }
+            else
+            {
+                checkBox = YES;
+                [self.pwdOneTextField setSecureTextEntry:NO];//设置密码框
+                [self.pwdTwoTextField setSecureTextEntry:NO];//设置密码框
+                self.pwdBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_check_true"]];
+            }
+            break;
+            
+        default:
+            break;
     }
 }
+
+
+
+
+//当用户按下return键或者按回车键，键盘消失
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+//关闭键盘
+- (void) handleBackgroundTap:(UITapGestureRecognizer*)sender
+{
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+}
+
+
 
 
 - (void)viewWillAppear:(BOOL)animated
