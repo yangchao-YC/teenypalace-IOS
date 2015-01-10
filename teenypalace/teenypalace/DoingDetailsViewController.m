@@ -27,14 +27,29 @@
     
 }
 
-
+/*
+ tag
+ 0:返回
+ 1：分享
+ 2：报名
+ */
 -(IBAction)DoingDetailsBtn:(UIButton *)sender
 {
     switch (sender.tag) {
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
             break;
-        
+        case 1:
+            /*
+             [UMSocialSnsService
+             presentSnsIconSheetView:self
+             appKey:nil
+             shareText:@"武汉青少年宫"
+             shareImage:nil
+             shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToEmail,UMShareToSina,UMShareToSms,UMShareToTencent ,nil]
+             delegate:self];
+             */
+            break;
         case 2:
             [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:@"yy"];
             break;

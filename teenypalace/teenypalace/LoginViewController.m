@@ -40,29 +40,20 @@
     self.CheckImage.userInteractionEnabled = YES;
     UITapGestureRecognizer *singleTap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(checkBoxs)];
     [self.CheckImage addGestureRecognizer:singleTap];
-    
-    
 
-     
-     [self.pwdTextField setSecureTextEntry:YES];//设置密码框
-     
-     
+    [self.pwdTextField setSecureTextEntry:YES];//设置密码框
+
     self.nameTextField.returnKeyType = UIReturnKeyNext;
     self.pwdTextField.returnKeyType = UIReturnKeyDefault;
     
     self.nameTextField.clearsOnBeginEditing = YES;//再次编辑清空
     self.pwdTextField.clearsOnBeginEditing = YES;
     
-    
-
     //点击键盘外区域关闭键盘
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
     tapRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapRecognizer];
-    
-    
-    
-    
+
 }
 
 
@@ -81,37 +72,19 @@
     switch (sender.tag) {
  
         case 0:
-            NSLog(@"0");
-            /*
-            [UMSocialSnsService
-             presentSnsIconSheetView:self
-             appKey:nil
-             shareText:@"武汉青少年宫"
-             shareImage:nil
-             shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToEmail,UMShareToSina,UMShareToSms,UMShareToTencent ,nil]
-             delegate:self];
-            */
-            
             [self performSegueWithIdentifier:@"login_InformationProcessing" sender:@"0"];
-
-            
             break;
         case 1:
             [self dismissModalViewControllerAnimated:YES];
             break;
         case 2:
-            
             [self performSegueWithIdentifier:@"login_InformationProcessing" sender:@"1"];
             break;
         case 3:
             [self dismissModalViewControllerAnimated:YES];
-            //  [self loginHide];
- 
-            NSLog(@"3");
-            break;
+             break;
  
         case 4:
-            //  [self loginShow];
             break;
         default:
             break;
