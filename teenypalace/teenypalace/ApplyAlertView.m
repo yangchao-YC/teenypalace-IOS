@@ -135,6 +135,7 @@
         
     }];
     */
+    NSLog(@" 是按钮");
     self.ApplyCardBlock(1);
     
 }

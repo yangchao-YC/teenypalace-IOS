@@ -59,12 +59,13 @@
                 self.pwdBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_check_true"]];
             }
             break;
-            
+        case 2:
+             [self dismissModalViewControllerAnimated:YES];//关闭Login系列界面
+            break;
         default:
             break;
     }
 }
-
 
 
 

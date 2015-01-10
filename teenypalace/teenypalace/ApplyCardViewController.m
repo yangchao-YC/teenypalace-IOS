@@ -96,6 +96,7 @@
     
     self.alertView.ApplyCardBlock = ^(int a)
     {
+        NSLog(@"%d",a);
         [safe_self.alertView hide];
         
     };
