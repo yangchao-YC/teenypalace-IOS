@@ -13,8 +13,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+   
+    var UserName: String = ""//账号
+    var ParentId: String = ""//家长ID
+    var LastloginTime: String = ""//最后登陆时间
+    var Login: Bool = false//判断是否登陆
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         

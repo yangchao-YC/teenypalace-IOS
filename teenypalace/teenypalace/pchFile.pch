@@ -10,12 +10,22 @@
 #define teenypalace_pchFile_pch
 
 #import "MobClick.h"
-
+#import "AFNetworking.h"
+#import "teenypalace-Swift.h"//混编：OC调用Swift代码
+#import "SVProgressHUD.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-
+/*
+ 本地数据信息
+ 
+ check：是否记住密码   0：不记住。1：记住
+ user：记录账号（用户名）
+ loginOK：记录上次是否登陆成功     0：否。1：成功
+ token：token密码
+ 
+ */
 
 #define ART @"美术,书法类"
 
@@ -32,7 +42,12 @@
 
 #define DATE_URL @"http://oa.ycpwh.cn:8085/"
 
+#define DATE_LOGIN [DATE_URL stringByAppendingString:@"register/login/phone/"]//密码登陆
+
+#define DATE_LOGIN_TOKEN [DATE_URL stringByAppendingString:@"register/login_by_token/"]//token密码登陆
+
 #define DATE_SEARCH_PROFESSIONAL [DATE_URL stringByAppendingString:@"signup/get_zhuanye_from_app/"]   //查询专业
+
 
 
 

@@ -32,6 +32,8 @@
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

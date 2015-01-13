@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */; };
 		710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1F1A5E8B0900513143 /* PwdViewController.m */; };
+		715916BA1A64CE740090CE5C /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715916B51A64CE730090CE5C /* SVIndefiniteAnimatedView.m */; };
+		715916BB1A64CE740090CE5C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 715916B71A64CE730090CE5C /* SVProgressHUD.bundle */; };
+		715916BC1A64CE740090CE5C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 715916B91A64CE730090CE5C /* SVProgressHUD.m */; };
 		715E42001A5BD85900A3C4F1 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 715E41FF1A5BD85900A3C4F1 /* libz.dylib */; };
 		715E42821A5BDB3B00A3C4F1 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715E427F1A5BDB3B00A3C4F1 /* libMobClickLibrary.a */; };
 		715E42BE1A5BED1500A3C4F1 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 715E42851A5BED1500A3C4F1 /* UMSocialLocalizable.strings */; };
@@ -113,6 +116,12 @@
 		710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationProcessingViewController.m; sourceTree = "<group>"; };
 		710ADA1E1A5E8B0900513143 /* PwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PwdViewController.h; sourceTree = "<group>"; };
 		710ADA1F1A5E8B0900513143 /* PwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PwdViewController.m; sourceTree = "<group>"; };
+		715916B41A64CE730090CE5C /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		715916B51A64CE730090CE5C /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		715916B61A64CE730090CE5C /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		715916B71A64CE730090CE5C /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		715916B81A64CE730090CE5C /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		715916B91A64CE730090CE5C /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		715E41FF1A5BD85900A3C4F1 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		715E427F1A5BDB3B00A3C4F1 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		715E42801A5BDB3B00A3C4F1 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
@@ -304,6 +313,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		715916B31A64CE730090CE5C /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				715916B41A64CE730090CE5C /* SVIndefiniteAnimatedView.h */,
+				715916B51A64CE730090CE5C /* SVIndefiniteAnimatedView.m */,
+				715916B61A64CE730090CE5C /* SVProgressHUD-Prefix.pch */,
+				715916B71A64CE730090CE5C /* SVProgressHUD.bundle */,
+				715916B81A64CE730090CE5C /* SVProgressHUD.h */,
+				715916B91A64CE730090CE5C /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		715E427E1A5BDB3B00A3C4F1 /* UMAnalytics_Sdk_3.1.8 */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,6 +605,7 @@
 		71C9B6861A3033400011A3B1 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				715916B31A64CE730090CE5C /* SVProgressHUD */,
 				71CC37C01A3AC3060057F4C9 /* AlertView */,
 				71C9B6A01A305BB60011A3B1 /* AFNetworking */,
 				71C9B6871A3033540011A3B1 /* MJRefresh */,
@@ -734,6 +757,7 @@
 				715E42C11A5BED1500A3C4F1 /* UMSCommentInputController.xib in Resources */,
 				715E42C01A5BED1500A3C4F1 /* UMSCommentDetailController.xib in Resources */,
 				71C97BDD1A08B5970010A5B8 /* Main.storyboard in Resources */,
+				715916BB1A64CE740090CE5C /* SVProgressHUD.bundle in Resources */,
 				715E42D61A5BED1500A3C4F1 /* ios-social-sdk-login-quick.html in Resources */,
 				715E42DB1A5BED1500A3C4F1 /* markdown.css in Resources */,
 				71C97BE21A08B5970010A5B8 /* LaunchScreen.xib in Resources */,
@@ -793,6 +817,7 @@
 				715EBF281A4544D800010D5F /* MessageProfessionalViewController.m in Sources */,
 				717BA38A1A496C8700E70CCD /* MyMoneyViewController.m in Sources */,
 				71C9B6BA1A305BB60011A3B1 /* AFURLRequestSerialization.m in Sources */,
+				715916BA1A64CE740090CE5C /* SVIndefiniteAnimatedView.m in Sources */,
 				71C9B6B91A305BB60011A3B1 /* AFURLConnectionOperation.m in Sources */,
 				71C9B6BC1A305BB60011A3B1 /* AFURLSessionManager.m in Sources */,
 				71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */,
@@ -810,6 +835,7 @@
 				718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */,
 				71C9B6C71A305FDD0011A3B1 /* DoingViewController.m in Sources */,
 				71CB85F51A10A4C000D855C8 /* HomeViewController.m in Sources */,
+				715916BC1A64CE740090CE5C /* SVProgressHUD.m in Sources */,
 				71CC78D11A36DE41000A4E55 /* ApplyClassViewController.m in Sources */,
 				71CC78D41A36E00B000A4E55 /* ApplyClassTableViewCell.m in Sources */,
 				717E2AE31A51545E0070570B /* CardTableViewCell.m in Sources */,
