@@ -14,6 +14,10 @@
 {
       BOOL checkBox ;//是否显示密码
 }
+
+@property(nonatomic,retain)NSDictionary *dic;
+
+
 @end
 
 @implementation PwdViewController
@@ -25,13 +29,35 @@
     checkBox = NO;
     self.pwdBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_check_false"]];
     
+    NSLog(@"%@",[self.pwdKey objectForKey:@"key"]);
     
+    NSLog(@"%@",[self.pwdKey objectForKey:@"phone"]);
     
     //点击键盘外区域关闭键盘
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
     tapRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapRecognizer];
     
+    
+}
+
+
+-(void)dateUrl:(NSString *)url
+{
+    [SVProgressHUD showWithStatus:@"正在申请验证码" maskType:2];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.dic = responseObject;
+
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showInfoWithStatus:@"网络异常，请稍后再试" maskType:2];//异常提示
+        NSLog(@"Error: %@", error);
+    }];
     
 }
 

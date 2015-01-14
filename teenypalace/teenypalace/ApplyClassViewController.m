@@ -57,10 +57,8 @@
             cell.titleLabel.text = LANGUAGE;
             break;
         case 4:
-            
             cell.titleLabel.text = CHILDREN;
             break;
-            
         default:
             break;
     }

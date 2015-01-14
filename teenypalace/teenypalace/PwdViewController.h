@@ -11,7 +11,7 @@
 @interface PwdViewController : UIViewController<UITextFieldDelegate>
 
 
-@property(strong,nonatomic)NSString *pwdKey;
+@property(strong,nonatomic)NSDictionary *pwdKey;
 
 @property (weak, nonatomic) IBOutlet UITextField *pwdOneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTwoTextField;

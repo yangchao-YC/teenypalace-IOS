@@ -46,6 +46,12 @@
 
 #define DATE_LOGIN_TOKEN [DATE_URL stringByAppendingString:@"register/login_by_token/"]//token密码登陆
 
+#define DATE_REGISTER_MD5 @"f%+#-@p0&V.)H*u^%zFm"// 注册干扰字符
+
+#define DATE_REGISTER_IDENTIFY [DATE_URL stringByAppendingString:@"register/getverifycode/phone/"]//注册注册获取验证码
+
+#define DATE_FYCODE_IDENTIFY [DATE_URL stringByAppendingString:@"register/getnewpwdverifycode/phone/"]//修改密码获取验证码
+
 #define DATE_SEARCH_PROFESSIONAL [DATE_URL stringByAppendingString:@"signup/get_zhuanye_from_app/"]   //查询专业
 
 

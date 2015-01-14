@@ -9,10 +9,16 @@
 //信息处理，账号注册，忘记密码
 
 #import "InformationProcessingViewController.h"
+#import<CommonCrypto/CommonDigest.h>
 
 @interface InformationProcessingViewController ()
-
+{
+    NSString *verifycode;//验证码
+    NSString *phone;//验证账号
+}
+@property(nonatomic,retain)NSDictionary *dic;
 @end
+
 
 @implementation InformationProcessingViewController
 
@@ -22,7 +28,10 @@
     
     timeStart = YES;
     
-    NSLog(@"aa%@",self.InformationProcessingKey);//0为忘记密码，1为注册
+   // NSLog(@"aa%@",self.InformationProcessingKey);//0为忘记密码，1为注册
+    
+    
+    verifycode = @"";
     
     if ([self.InformationProcessingKey isEqualToString:@"1"]) {
         self.tabbarLabel.text = @"注册新用户";
@@ -35,6 +44,7 @@
     [self.view addGestureRecognizer:tapRecognizer];
     
 }
+
 
 
 
@@ -51,19 +61,144 @@
             [self.navigationController popViewControllerAnimated:YES];
             break;
         case 1:
-            if (timeStart) {//判断时候启动定时器
-                timeStart = NO;
-                [self Time];
-            }
+            [self identifyCheCk];
             break;
         case 2:
-           [self performSegueWithIdentifier:@"InformationProcessing_pwd" sender:@"1"];
+            [self next];
             break;
         default:
             [self.navigationController popToRootViewControllerAnimated:YES];
             break;
     }
     
+}
+
+/*
+下一步
+ */
+-(void)next
+{
+   
+    NSString *identify;
+    identify = [self.identifyTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+     NSLog(@"identify    %@",identify);
+    NSLog(@"verifycode    %@",verifycode);
+    if (identify.length == 4) {
+        if ([identify intValue] == [verifycode intValue]) {
+            NSLog(@"匹配成功");
+            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:verifycode,@"verifycode",phone,@"phone",@"1",@"key", nil];
+ 
+            [self performSegueWithIdentifier:@"InformationProcessing_pwd" sender:dic];
+        }
+        else
+        {
+            [SVProgressHUD showInfoWithStatus:@"验证码不正确" maskType:2];
+        }
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"验证码长度不对" maskType:2];
+    }
+
+}
+
+/*
+ 获取验证码
+ */
+-(void)identifyCheCk
+{
+    NSString *phoneString;
+    phoneString = [self.phoneTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (phoneString.length == 11) {//判断号码长度时候正确
+        
+        if (timeStart) {//判断时候启动定时器
+
+            timeStart = NO;
+            
+            [self Time];
+            
+            if ([self.InformationProcessingKey isEqualToString:@"1"]) {
+                NSString *MD5 =[self md5HexDigest:[self md5HexDigest:[NSString stringWithFormat:@"%@%@",phoneString,DATE_REGISTER_MD5]]];
+                NSString *url = [NSString stringWithFormat:@"%@%@/%@",DATE_REGISTER_IDENTIFY,phoneString,MD5];
+                [self dateUrl:url Key:1];
+            }
+            else
+            {
+                NSString *url = [NSString stringWithFormat:@"%@%@",DATE_FYCODE_IDENTIFY,phoneString];
+                [self dateUrl:url Key:0];
+            }
+        }
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"请输入11位手机号码" maskType:2];//提示手机号码错误
+    }
+}
+
+/*
+ 注册用验证码验证
+ */
+-(void)RidentifyHandle
+{
+    if ([[ self.dic objectForKey:@"status"]intValue] == 0) {//请求发送成功
+        [SVProgressHUD showSuccessWithStatus:@"已发送请求" maskType:2];
+        verifycode = [self.dic objectForKey:@"verifycode"];//存储验证码
+        phone = [self.dic objectForKey:@"phone"];//存储账号
+        
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:[self.dic objectForKey:@"message"] maskType:2];
+    }
+}
+/*
+ 修改密码验证码验证
+ */
+-(void)PidentifyHandle
+{
+    
+}
+
+
+-(void)dateUrl:(NSString *)url Key:(int)key
+{
+    [SVProgressHUD showWithStatus:@"正在申请验证码" maskType:2];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.dic = responseObject;
+        if (key == 1) {
+            [self RidentifyHandle];//调用注册验证
+        }
+        else
+        {
+            [self PidentifyHandle];//调用修改密码验证
+        }
+  
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showInfoWithStatus:@"网络异常，请稍后再试" maskType:2];//异常提示
+        NSLog(@"Error: %@", error);
+    }];
+  
+}
+
+
+
+/*
+ MD5加密
+ */
+- (NSString *)md5HexDigest:(NSString *)url
+{
+    const char *original_str = [url UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(original_str, strlen(original_str), result);
+    NSMutableString *hash = [NSMutableString string];
+    for (int i = 0; i < 16; i++)
+        [hash appendFormat:@"%02X", result[i]];
+    return [hash lowercaseString];
 }
 
 //开始获取验证码，准备开始计时
@@ -75,6 +210,8 @@
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(startTimer) userInfo:nil repeats:YES];
     [self.identifyBtn setTitle:@"重新获取(60秒)" forState:UIControlStateNormal];
 }
+
+
 /*
  开始计时
  */
@@ -99,6 +236,7 @@
     timeStart = YES;
     
 }
+
 
 
 //当用户按下return键或者按回车键，键盘消失
