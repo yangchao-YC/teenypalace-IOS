@@ -42,25 +42,13 @@
 }
 
 
--(void)dateUrl:(NSString *)url
-{
-    [SVProgressHUD showWithStatus:@"正在申请验证码" maskType:2];
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        self.dic = responseObject;
 
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [SVProgressHUD showInfoWithStatus:@"网络异常，请稍后再试" maskType:2];//异常提示
-        NSLog(@"Error: %@", error);
-    }];
-    
-}
 
+/*
+ 0:返回
+ 1：设置是否显示密码
+ 2：确定
+ */
 
 
 -(IBAction)pwdBtn:(UIButton *)sender
@@ -86,13 +74,100 @@
             }
             break;
         case 2:
-             [self dismissModalViewControllerAnimated:YES];//关闭Login系列界面
+            [self okBtn];
             break;
         default:
             break;
     }
 }
 
+/*
+ 确定按钮触发
+ */
+-(void)okBtn
+{
+    NSString *onePwd;
+    NSString *twoPwd;
+   
+    onePwd = [self.pwdOneTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    twoPwd = [self.pwdTwoTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (onePwd.length>5) {
+        if ([onePwd isEqualToString:twoPwd]) {
+            NSString *urlString;
+            
+            if([[self.pwdKey objectForKey:@"key"] isEqualToString:@"1"])//1为注册   0为修改密码
+            {
+                urlString = [NSString stringWithFormat:@"%@%@/verifycode/%@/password/%@",DATE_REGISTER_SET_PWD,[self.pwdKey objectForKey:@"phone"],[self.pwdKey objectForKey:@"verifycode"],onePwd];
+            }
+            else
+            {
+                urlString = [NSString stringWithFormat:@"%@%@/%@/%@",DATE_FYCODE_SET_PWD,[self.pwdKey objectForKey:@"phone"],[self.pwdKey objectForKey:@"verifycode"],onePwd];
+            }
+            
+            
+            [SVProgressHUD showWithStatus:@"正在设置密码"];
+            [self dateUrl:urlString];
+ 
+        }
+        else
+        {
+            [SVProgressHUD showInfoWithStatus:@"2次密码不一致" maskType:2];
+        }
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"密码长度小于6位" maskType:2];
+    }
+
+}
+
+
+
+-(void)dateUrl:(NSString *)url
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.dic = responseObject;
+        [self dateHandle];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSString *errorString = [NSString stringWithFormat:@"%@",error];
+        [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
+        NSLog(@"Error: %@", error);
+        
+    }];
+    
+}
+
+/*
+ 数据处理
+ */
+-(void)dateHandle
+{
+    if ([[self.dic objectForKey:@"status"]intValue] == 0) {//密码设置成功
+        [SVProgressHUD showSuccessWithStatus:@"密码设置成功" maskType:2];
+        
+        AppDelegate *app = [[UIApplication sharedApplication]delegate];
+        
+        app.UserName = [self.pwdKey objectForKey:@"phone"];//存储账号
+        app.ParentId = [self.dic objectForKey:@"parentid"];//存储家长ID
+        app.LastloginTime = [self.dic objectForKey:@"lastlogintime"];//存储最后登陆时间
+        app.Login = true;//更改登陆状态
+
+        
+        [self dismissModalViewControllerAnimated:YES];//关闭Login系列界面
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:[self.dic objectForKey:@"message"] maskType:2];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 
 
 //当用户按下return键或者按回车键，键盘消失

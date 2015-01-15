@@ -52,6 +52,19 @@
 
 #define DATE_FYCODE_IDENTIFY [DATE_URL stringByAppendingString:@"register/getnewpwdverifycode/phone/"]//修改密码获取验证码
 
+
+#define DATE_REGISTER_Marry_IDENTIFY [DATE_URL stringByAppendingString:@"register/verificationcode/phone/"]//注册验证码验证
+
+
+#define DATE_FYCODE_Marry_IDENTIFY [DATE_URL stringByAppendingString:@"register/resetpasswordverify/"]//修改密码验证码验证
+
+
+
+#define DATE_REGISTER_SET_PWD [DATE_URL stringByAppendingString:@"register/setpassword/phone/"]//注册密码设置
+
+#define DATE_FYCODE_SET_PWD [DATE_URL stringByAppendingString:@"register/resetpassword/"]//修改密码
+
+
 #define DATE_SEARCH_PROFESSIONAL [DATE_URL stringByAppendingString:@"signup/get_zhuanye_from_app/"]   //查询专业
 
 

@@ -73,34 +73,6 @@
     
 }
 
-/*
-下一步
- */
--(void)next
-{
-   
-    NSString *identify;
-    identify = [self.identifyTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-     NSLog(@"identify    %@",identify);
-    NSLog(@"verifycode    %@",verifycode);
-    if (identify.length == 4) {
-        if ([identify intValue] == [verifycode intValue]) {
-            NSLog(@"匹配成功");
-            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:verifycode,@"verifycode",phone,@"phone",@"1",@"key", nil];
- 
-            [self performSegueWithIdentifier:@"InformationProcessing_pwd" sender:dic];
-        }
-        else
-        {
-            [SVProgressHUD showInfoWithStatus:@"验证码不正确" maskType:2];
-        }
-    }
-    else
-    {
-        [SVProgressHUD showInfoWithStatus:@"验证码长度不对" maskType:2];
-    }
-
-}
 
 /*
  获取验证码
@@ -112,21 +84,21 @@
     if (phoneString.length == 11) {//判断号码长度时候正确
         
         if (timeStart) {//判断时候启动定时器
-
-            timeStart = NO;
-            
-            [self Time];
-            
+            NSString *urlString;
             if ([self.InformationProcessingKey isEqualToString:@"1"]) {
                 NSString *MD5 =[self md5HexDigest:[self md5HexDigest:[NSString stringWithFormat:@"%@%@",phoneString,DATE_REGISTER_MD5]]];
-                NSString *url = [NSString stringWithFormat:@"%@%@/%@",DATE_REGISTER_IDENTIFY,phoneString,MD5];
-                [self dateUrl:url Key:1];
+                urlString = [NSString stringWithFormat:@"%@%@/%@",DATE_REGISTER_IDENTIFY,phoneString,MD5];
             }
             else
             {
-                NSString *url = [NSString stringWithFormat:@"%@%@",DATE_FYCODE_IDENTIFY,phoneString];
-                [self dateUrl:url Key:0];
+                 urlString = [NSString stringWithFormat:@"%@%@",DATE_FYCODE_IDENTIFY,phoneString];
+                
             }
+            
+            [SVProgressHUD showWithStatus:@"正在申请验证码"];
+
+            
+            [self dateUrl:urlString Key:0];
         }
     }
     else
@@ -138,31 +110,25 @@
 /*
  注册用验证码验证
  */
--(void)RidentifyHandle
+-(void)identifyObtainHandle
 {
     if ([[ self.dic objectForKey:@"status"]intValue] == 0) {//请求发送成功
-        [SVProgressHUD showSuccessWithStatus:@"已发送请求" maskType:2];
-        verifycode = [self.dic objectForKey:@"verifycode"];//存储验证码
-        phone = [self.dic objectForKey:@"phone"];//存储账号
+
+        timeStart = NO;
+         [self Time];
         
+        [SVProgressHUD showSuccessWithStatus:@"已发送请求" maskType:2];
     }
     else
     {
         [SVProgressHUD showInfoWithStatus:[self.dic objectForKey:@"message"] maskType:2];
     }
 }
-/*
- 修改密码验证码验证
- */
--(void)PidentifyHandle
-{
-    
-}
+
 
 
 -(void)dateUrl:(NSString *)url Key:(int)key
 {
-    [SVProgressHUD showWithStatus:@"正在申请验证码" maskType:2];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -170,14 +136,9 @@
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         self.dic = responseObject;
-        if (key == 1) {
-            [self RidentifyHandle];//调用注册验证
-        }
-        else
-        {
-            [self PidentifyHandle];//调用修改密码验证
-        }
-  
+
+        [self dateHandle:key];
+
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [SVProgressHUD showInfoWithStatus:@"网络异常，请稍后再试" maskType:2];//异常提示
         NSLog(@"Error: %@", error);
@@ -185,7 +146,92 @@
   
 }
 
+/*
+ 数据处理
+ */
+-(void)dateHandle:(int)key
+{
+    if (key == 0) {
+        [self identifyObtainHandle];//获取验证码后续处理
+    }
+    else
+    {
+        [self identifyMarryHandle];//验证验证码后续处理
+    }
+}
 
+/*
+ 下一步
+ */
+-(void)next
+{
+    
+    NSString *identify;
+    NSString *phoneString;
+    phoneString = [self.phoneTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    identify = [self.identifyTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if (identify.length == 4) {
+        NSString *urlString;
+        if ([self.InformationProcessingKey isEqualToString:@"1"]) {
+            urlString = [NSString stringWithFormat:@"%@%@/verifycode/%@",DATE_REGISTER_Marry_IDENTIFY,phoneString,identify];
+        }
+        else
+        {
+            urlString = [NSString stringWithFormat:@"%@%@/%@",DATE_FYCODE_Marry_IDENTIFY,phoneString,identify];
+        }
+        
+        [SVProgressHUD showWithStatus:@"正在校验验证码"];
+        
+        [self dateUrl:urlString Key:1];
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"验证码长度不对" maskType:2];
+    }
+    
+}
+
+
+
+/*
+ 匹配验证码后续处理
+ */
+-(void)identifyMarryHandle
+{
+    if ([[ self.dic objectForKey:@"status"]intValue] == 0) {//验证成功
+        
+        NSString *identify;
+        NSString *phoneString;
+        phoneString = [self.phoneTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        identify = [self.identifyTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        NSDictionary *dicDictionary;
+        
+        if ([self.InformationProcessingKey isEqualToString:@"1"]) {
+            dicDictionary = [NSDictionary dictionaryWithObjectsAndKeys:identify,@"verifycode",phoneString,@"phone",@"1",@"key", nil];
+
+        }
+        else
+        {
+            dicDictionary  = [NSDictionary dictionaryWithObjectsAndKeys:identify,@"verifycode",phoneString,@"phone",@"0",@"key", nil];
+
+        }
+        
+        [SVProgressHUD dismiss];
+        
+        [self performSegueWithIdentifier:@"InformationProcessing_pwd" sender:dicDictionary];
+        
+        
+    }
+    else
+    {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showInfoWithStatus:[self.dic objectForKey:@"message"] maskType:2];
+    }
+   
+
+}
 
 /*
  MD5加密
@@ -204,7 +250,6 @@
 //开始获取验证码，准备开始计时
 -(void)Time
 {
-    
     self.identifyBtn.backgroundColor = [UIColor grayColor];
     time = 60;
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(startTimer) userInfo:nil repeats:YES];

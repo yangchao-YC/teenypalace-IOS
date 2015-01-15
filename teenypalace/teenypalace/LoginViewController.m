@@ -186,6 +186,7 @@
         if ([[responseObject objectForKey:@"status"] intValue] == 0) {
            
              NSLog(@"登陆成功");
+            
             AppDelegate *app = [[UIApplication sharedApplication]delegate];
             
             app.UserName = self.nameTextField.text;//存储账号
