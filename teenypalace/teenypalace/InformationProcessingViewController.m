@@ -12,10 +12,7 @@
 #import<CommonCrypto/CommonDigest.h>
 
 @interface InformationProcessingViewController ()
-{
-    NSString *verifycode;//验证码
-    NSString *phone;//验证账号
-}
+
 @property(nonatomic,retain)NSDictionary *dic;
 @end
 
@@ -26,12 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    timeStart = YES;
-    
-   // NSLog(@"aa%@",self.InformationProcessingKey);//0为忘记密码，1为注册
-    
-    
-    verifycode = @"";
+    timeStart = YES;//初始化计时器
     
     if ([self.InformationProcessingKey isEqualToString:@"1"]) {
         self.tabbarLabel.text = @"注册新用户";

@@ -10,6 +10,9 @@
 
 @interface ApplyLevelViewController ()
 
+
+@property (nonatomic,retain) NSMutableArray *articles;
+
 @end
 
 @implementation ApplyLevelViewController
@@ -17,18 +20,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
+    
+    
     NSLog(@"我是层次页面的key---%@",self.applyLevelKey);
-    //DATE_SEARCH_PROFESSIONAL;
+    
+    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_LEVEL,self.applyLevelKey];
+    
+    [SVProgressHUD showInfoWithStatus:LOADING maskType:2];
+    
+    [self dateUrl:date];
+    
+}
+
+
+
+-(void)dateUrl:(NSString *)url
+{
     
     
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.articles = responseObject;
+        dispatch_async(dispatch_get_main_queue(), ^{//脱离异步线程，在主线程中执行
+            [self dateHandle];
+        });
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
+}
+/*
+ 数据处理
+ */
+-(void)dateHandle
+{
+    
+    [self.tableView reloadData];
+    
+    [SVProgressHUD dismiss];
 }
 
 
@@ -43,30 +81,11 @@
     
     ApplyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_cell_id];
     
-    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    switch (indexPath.row) {
-        case 0:
-            cell.titleLabel.text = ART;
-            break;
-        case 1:
-            cell.titleLabel.text = LITERARY;
-            break;
-        case 2:
-            cell.titleLabel.text = GYM;
-            break;
-        case 3:
-            cell.titleLabel.text = LANGUAGE;
-            break;
-        case 4:
-            
-            cell.titleLabel.text = CHILDREN;
-            break;
-            
-        default:
-            break;
-    }
+    NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+    
+    cell.titleLabel.text = [dic objectForKey:@"levelname"];
     
     return cell;
     
@@ -75,7 +94,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;//设置显示行数
+    return self.articles.count;//设置显示行数
 }
 
 
@@ -94,7 +113,9 @@
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"applyLevel_applyClass" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+    NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"applyLevel_applyClass" sender:dic];
 
 }
 

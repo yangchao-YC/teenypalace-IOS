@@ -13,5 +13,5 @@
 @interface ApplyClassViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property(strong,nonatomic)NSString *applyClassKey;
+@property(strong,nonatomic)NSDictionary *applyClassKey;
 @end

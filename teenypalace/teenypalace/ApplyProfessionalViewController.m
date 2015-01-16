@@ -14,7 +14,12 @@
 
 @interface ApplyProfessionalViewController ()
 
+
+@property (nonatomic,retain) NSMutableArray *articles;
+
+
 @end
+
 
 @implementation ApplyProfessionalViewController
 
@@ -30,18 +35,13 @@
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    NSLog(@"我是专业面的key---%@",self.applyKey);
-    //DATE_SEARCH_PROFESSIONAL;
     
-    NSString *date = [NSString stringWithFormat:@"%@1",DATE_SEARCH_PROFESSIONAL];
-    NSLog(@"            %@            ",date);
+    NSString *date = [NSString stringWithFormat:@"%@%d",DATE_SEARCH_PROFESSIONAL,[self.applyProfessionaKey intValue]+1];
+    
+    [SVProgressHUD showInfoWithStatus:LOADING maskType:2];
     
     [self dateUrl:date];
-    
-    
-    
-    
-    
+  
 }
 
 
@@ -56,13 +56,27 @@
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        self.articles = responseObject;
+        dispatch_async(dispatch_get_main_queue(), ^{//脱离异步线程，在主线程中执行
+            [self dateHandle];
+        });
+         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 
     
 }
-
+/*
+ 数据处理
+ */
+-(void)dateHandle
+{
+    [SVProgressHUD dismiss];
+    [self.tableView reloadData];
+    
+    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -72,30 +86,13 @@
     ApplyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_cell_id];
     
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;//去掉蓝色高亮
     
-    switch (indexPath.row) {
-        case 0:
-            cell.titleLabel.text = ART;
-            break;
-        case 1:
-            cell.titleLabel.text = LITERARY;
-            break;
-        case 2:
-            cell.titleLabel.text = GYM;
-            break;
-        case 3:
-            cell.titleLabel.text = LANGUAGE;
-            break;
-        case 4:
-            
-            cell.titleLabel.text = CHILDREN;
-            break;
-            
-        default:
-            break;
-    }
-
+    
+    NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+    
+    cell.titleLabel.text = [dic objectForKey:@"title"];
+    
     return cell;
     
 }
@@ -103,7 +100,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;//设置显示行数
+    return self.articles.count;//设置显示行数
 }
 
 
@@ -122,7 +119,14 @@
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"applyProfessional_applyLevel" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+    NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+    if ([[dic objectForKey:@"qc"] intValue] == 0) {
+        [SVProgressHUD showInfoWithStatus:@"该专业目前没有相应班级可以报名" maskType:3];
+    }
+    else
+    { 
+        [self performSegueWithIdentifier:@"applyProfessional_applyLevel" sender:[dic objectForKey:@"id"]];
+    }
 }
 
 

@@ -28,11 +28,7 @@
     
     checkBox = NO;
     self.pwdBtn.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login_check_false"]];
-    
-    NSLog(@"%@",[self.pwdKey objectForKey:@"key"]);
-    
-    NSLog(@"%@",[self.pwdKey objectForKey:@"phone"]);
-    
+
     //点击键盘外区域关闭键盘
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleBackgroundTap:)];
     tapRecognizer.cancelsTouchesInView = NO;

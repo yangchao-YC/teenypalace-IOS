@@ -11,6 +11,7 @@
 
 @interface ApplyClassViewController ()
 
+@property (nonatomic,retain) NSMutableArray *articles;
 @end
 
 @implementation ApplyClassViewController
@@ -25,13 +26,52 @@
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    NSLog(@"我是层次页面的key---%@",self.applyClassKey);
     
+    NSString *level1 =[self.applyClassKey objectForKey:@"level1"] == NULL?@"0":[self.applyClassKey objectForKey:@"level1"];
+    NSString *level2 =[self.applyClassKey objectForKey:@"leve2"] == NULL?@"0":[self.applyClassKey objectForKey:@"level2"];
+
+    NSString *level3 =[self.applyClassKey objectForKey:@"level3"] == NULL?@"0":[self.applyClassKey objectForKey:@"level3"];
+
+    
+    NSString *date = [NSString stringWithFormat:@"%@%@/%@/%@/%@",DATE_SEARCH_CLASS,
+                      [self.applyClassKey objectForKey:@"zhuanyid"],level1,level2,level3];
+    
+    [SVProgressHUD showInfoWithStatus:LOADING maskType:2];
+
+    [self dateUrl:date];
     
 }
 
 
 
+-(void)dateUrl:(NSString *)url
+{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.articles = responseObject;
+        dispatch_async(dispatch_get_main_queue(), ^{//脱离异步线程，在主线程中执行
+            [self dateHandle];
+        });
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
+}
+/*
+ 数据处理
+ */
+-(void)dateHandle
+{
+    [SVProgressHUD dismiss];
+    [self.tableView reloadData];
+
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -39,29 +79,18 @@
     static NSString *apply_class_cell_id = @"apply_class_cell_id";
     
     ApplyClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_class_cell_id];
-    
-    
+
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    switch (indexPath.row) {
-        case 0:
-            cell.titleLabel.text = ART;
-            break;
-        case 1:
-            cell.titleLabel.text = LITERARY;
-            break;
-        case 2:
-            cell.titleLabel.text = GYM;
-            break;
-        case 3:
-            cell.titleLabel.text = LANGUAGE;
-            break;
-        case 4:
-            cell.titleLabel.text = CHILDREN;
-            break;
-        default:
-            break;
-    }
+    NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+    
+    cell.titleLabel.text = [dic objectForKey:@"classname"];
+    cell.objectLabel.text = [NSString stringWithFormat:@"招生对象：%@-%@岁",[dic objectForKey:@"age_s"],[dic objectForKey:@"age_e"]];
+    
+    cell.timeLabel.text = [dic objectForKey:@"learnaddress"];
+
+    cell.moneyLabel.text = [NSString stringWithFormat:@"学费：%@",[dic objectForKey:@"tuition"]];
+    cell.beleftLabel.text = [NSString stringWithFormat:@"剩余名额：%@",[dic objectForKey:@"lave"]];
     
     return cell;
     
@@ -70,7 +99,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;//设置显示行数
+    return self.articles.count;//设置显示行数
 }
 
 
@@ -83,7 +112,33 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 130;
+    NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+    
+    NSString *learnaddress = [dic objectForKey:@"learnaddress"];
+    
+    
+    int line = learnaddress.length/21;
+    int lea = learnaddress.length;
+    
+    
+    NSLog(@"%d",lea);
+    
+    if (lea / 21 != 0) {
+        if (lea/line == 21) {
+            return 130 + (21*(line-1));
+        }
+        else
+        {
+            return 130;
+        }
+    }
+    else
+    {
+        return 130;
+    }
+    
+    
+    
 }//设置模块内cell的高度
 
 //下面为点击事件方法

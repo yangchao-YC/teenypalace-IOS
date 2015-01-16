@@ -37,7 +37,7 @@
 
 #define CHILDREN @"少儿艺术团"
 
-
+#define LOADING @"正在加载..."
 
 
 #define DATE_URL @"http://oa.ycpwh.cn:8085/"
@@ -67,8 +67,8 @@
 
 #define DATE_SEARCH_PROFESSIONAL [DATE_URL stringByAppendingString:@"signup/get_zhuanye_from_app/"]   //查询专业
 
+#define DATE_SEARCH_LEVEL [DATE_URL stringByAppendingString:@"signup/get_class_level/"]//查询层次
 
-
-
+#define DATE_SEARCH_CLASS [DATE_URL stringByAppendingString:@"signup/get_classes/"]//查询班级
 
 #endif

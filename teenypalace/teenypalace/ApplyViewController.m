@@ -113,17 +113,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    
-    ApplyTableViewCell *cell = (ApplyTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+  //  ApplyTableViewCell *cell = (ApplyTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     
   //  cell.titleLabel.text = @" 张小朝";
-    
-    
+
     [self performSegueWithIdentifier:@"apply_applyProfessional" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
-    
-    
-    
-    
+  
 }
 
 
@@ -132,7 +127,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"applyKey"];
+    [push setValue:sender forKey:@"applyProfessionaKey"];
 }
 
 

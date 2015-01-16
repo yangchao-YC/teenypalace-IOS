@@ -37,20 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let info = NSBundle.mainBundle().infoDictionary as NSDictionary?
         
         let version = info?.objectForKey("CFBundleShortVersionString") as String
-        
-        
-        print(version)
-        
-        
+
         MobClick.setAppVersion(version)
-        
-        
-        
+
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "tabbar_bg"), forBarMetrics: UIBarMetrics.Default)
-        
-        
-    
-        
+
         return true
     }
 
