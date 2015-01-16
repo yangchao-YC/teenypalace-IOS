@@ -71,4 +71,10 @@
 
 #define DATE_SEARCH_CLASS [DATE_URL stringByAppendingString:@"signup/get_classes/"]//查询班级
 
+#define DATE_SEARCH_CLASS_DETAILS [DATE_URL stringByAppendingString:@"signup/get_class_byid/"]//查询班级详细信息
+
+#define DATE_SEARCH_CARD [DATE_URL stringByAppendingString:@"signup/get_my_cards/"]//拉取学员卡列表
+
+#define DATE_APPLY_CLASS [DATE_URL stringByAppendingString:@"signup/createorder/"]// 报名班级
+
 #endif

@@ -36,7 +36,7 @@
     NSString *date = [NSString stringWithFormat:@"%@%@/%@/%@/%@",DATE_SEARCH_CLASS,
                       [self.applyClassKey objectForKey:@"zhuanyid"],level1,level2,level3];
     
-    [SVProgressHUD showInfoWithStatus:LOADING maskType:2];
+    [SVProgressHUD showInfoWithStatus:LOADING];
 
     [self dateUrl:date];
     
@@ -58,6 +58,8 @@
             [self dateHandle];
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorString = [NSString stringWithFormat:@"%@",error];
+        [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
         NSLog(@"Error: %@", error);
     }];
     
@@ -116,13 +118,9 @@
     
     NSString *learnaddress = [dic objectForKey:@"learnaddress"];
     
-    
     int line = learnaddress.length/21;
     int lea = learnaddress.length;
-    
-    
-    NSLog(@"%d",lea);
-    
+
     if (lea / 21 != 0) {
         if (lea/line == 21) {
             return 130 + (21*(line-1));
@@ -144,7 +142,9 @@
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"applyClass_applyDetails" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+    NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"applyClass_applyDetails" sender:dic];
 
 }
 

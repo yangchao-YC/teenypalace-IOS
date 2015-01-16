@@ -30,7 +30,7 @@
     
     NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_LEVEL,self.applyLevelKey];
     
-    [SVProgressHUD showInfoWithStatus:LOADING maskType:2];
+    [SVProgressHUD showInfoWithStatus:LOADING];
     
     [self dateUrl:date];
     
@@ -53,6 +53,8 @@
             [self dateHandle];
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorString = [NSString stringWithFormat:@"%@",error];
+        [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
         NSLog(@"Error: %@", error);
     }];
     

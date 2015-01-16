@@ -38,7 +38,7 @@
     
     NSString *date = [NSString stringWithFormat:@"%@%d",DATE_SEARCH_PROFESSIONAL,[self.applyProfessionaKey intValue]+1];
     
-    [SVProgressHUD showInfoWithStatus:LOADING maskType:2];
+    [SVProgressHUD showInfoWithStatus:LOADING];
     
     [self dateUrl:date];
   
@@ -56,12 +56,15 @@
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        self.articles = responseObject;
+        
         dispatch_async(dispatch_get_main_queue(), ^{//脱离异步线程，在主线程中执行
+            self.articles = responseObject;
             [self dateHandle];
         });
-         
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorString = [NSString stringWithFormat:@"%@",error];
+        [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
         NSLog(@"Error: %@", error);
     }];
 

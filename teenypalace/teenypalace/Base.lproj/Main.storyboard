@@ -2167,7 +2167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4i-rP-PvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="1814"/>
+            <point key="canvasLocation" x="517" y="2386"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8qM-j6-ikk">
@@ -2492,20 +2492,26 @@
                                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="星期五（18：00-20：00）B204" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtX-4u-5aA">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="星期五（18：00-20：00）B204" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtX-4u-5aA">
                                                             <rect key="frame" x="115" y="68" width="422" height="21"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                             <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="学费：480元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNX-87-wOJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="学费：480元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNX-87-wOJ">
                                                             <rect key="frame" x="8" y="92" width="529" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="ryg-hm-PUY"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.99215686270000003" green="0.50980392159999999" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="剩余名额：30人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hd-If-KYp">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="剩余名额：30人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hd-If-KYp">
                                                             <rect key="frame" x="8" y="114" width="529" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="mnG-0H-i89"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.99215686270000003" green="0.50980392159999999" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -2527,11 +2533,10 @@
                                                         <constraint firstItem="1Hd-If-KYp" firstAttribute="leading" secondItem="3SS-ka-0j0" secondAttribute="leadingMargin" id="AYz-ht-7ck"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="gtX-4u-5aA" secondAttribute="trailing" constant="33" id="EhA-JM-hEe"/>
                                                         <constraint firstItem="SON-3t-QNS" firstAttribute="top" secondItem="3SS-ka-0j0" secondAttribute="top" constant="37" id="KrZ-PE-uyz"/>
-                                                        <constraint firstItem="PNX-87-wOJ" firstAttribute="top" secondItem="gtX-4u-5aA" secondAttribute="bottom" constant="5" id="P5d-CC-ObG"/>
+                                                        <constraint firstItem="PNX-87-wOJ" firstAttribute="top" secondItem="gtX-4u-5aA" secondAttribute="bottom" constant="3" id="P5d-CC-ObG"/>
                                                         <constraint firstItem="pAN-P0-TM6" firstAttribute="leading" secondItem="3SS-ka-0j0" secondAttribute="leading" id="Tdo-Sq-bM9"/>
                                                         <constraint firstItem="gtX-4u-5aA" firstAttribute="leading" secondItem="fvc-ho-zEc" secondAttribute="trailing" constant="3" id="TjR-MD-cRa"/>
                                                         <constraint firstItem="94g-a4-6J5" firstAttribute="trailing" secondItem="3SS-ka-0j0" secondAttribute="trailingMargin" id="ZdR-8i-1sr"/>
-                                                        <constraint firstItem="pAN-P0-TM6" firstAttribute="top" secondItem="1Hd-If-KYp" secondAttribute="bottom" constant="6" id="bew-mQ-Jbe"/>
                                                         <constraint firstItem="gtX-4u-5aA" firstAttribute="top" secondItem="3SS-ka-0j0" secondAttribute="top" constant="60" id="cqk-3p-IPS"/>
                                                         <constraint firstAttribute="trailing" secondItem="pAN-P0-TM6" secondAttribute="trailing" id="dAM-lt-ZlL"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="1Hd-If-KYp" secondAttribute="trailing" constant="33" id="ft6-gy-ps0"/>
@@ -2539,16 +2544,11 @@
                                                         <constraint firstItem="fvc-ho-zEc" firstAttribute="leading" secondItem="3SS-ka-0j0" secondAttribute="leadingMargin" id="mID-Vx-6qs"/>
                                                         <constraint firstItem="94g-a4-6J5" firstAttribute="top" secondItem="3SS-ka-0j0" secondAttribute="topMargin" constant="53" id="o4u-rX-pcy"/>
                                                         <constraint firstItem="SON-3t-QNS" firstAttribute="leading" secondItem="3SS-ka-0j0" secondAttribute="leadingMargin" id="pvB-Vt-nwI"/>
-                                                        <constraint firstItem="pAN-P0-TM6" firstAttribute="top" secondItem="1Hd-If-KYp" secondAttribute="bottom" constant="5" id="ste-Qs-Cik"/>
+                                                        <constraint firstItem="pAN-P0-TM6" firstAttribute="top" secondItem="1Hd-If-KYp" secondAttribute="bottom" constant="3" id="ste-Qs-Cik"/>
                                                         <constraint firstItem="fvc-ho-zEc" firstAttribute="top" secondItem="3SS-ka-0j0" secondAttribute="top" constant="60" id="tT1-PK-TXN"/>
                                                         <constraint firstItem="PNX-87-wOJ" firstAttribute="leading" secondItem="3SS-ka-0j0" secondAttribute="leadingMargin" id="tof-gG-Zfz"/>
                                                         <constraint firstItem="1Hd-If-KYp" firstAttribute="top" secondItem="PNX-87-wOJ" secondAttribute="bottom" constant="5" id="tyC-G8-3Kf"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="bew-mQ-Jbe"/>
-                                                        </mask>
-                                                    </variation>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
@@ -2876,7 +2876,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWt-RU-WWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="1814"/>
+            <point key="canvasLocation" x="1275" y="2386"/>
         </scene>
         <!--Apply Class Details View Controller-->
         <scene sceneID="R6K-VD-ZeG">
@@ -2955,7 +2955,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJp-2U-25w">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="班级名称：儿童画启蒙7班" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58i-xH-P25">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="班级名称：" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58i-xH-P25">
                                         <rect key="frame" x="10" y="8" width="590" height="59"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="59" id="wHa-ab-cUw"/>
@@ -2971,7 +2971,7 @@
                                             <constraint firstAttribute="height" constant="1" id="Bgu-eG-DJ5"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年份：2014年" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMs-Tg-9qK">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年份：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMs-Tg-9qK">
                                         <rect key="frame" x="10" y="90" width="590" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="3dG-Yp-WMS"/>
@@ -2980,7 +2980,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="季度：秋季" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIF-fr-EGG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="季度：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIF-fr-EGG">
                                         <rect key="frame" x="10" y="114" width="590" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="EE4-eF-QH3"/>
@@ -2989,7 +2989,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开班时间开始：2014-09-05" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rO0-t3-eOI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开班时间开始：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rO0-t3-eOI">
                                         <rect key="frame" x="10" y="138" width="590" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="LeH-IX-qQj"/>
@@ -2998,7 +2998,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开班时间结束：2014-09-05" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLv-ES-qaV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开班时间结束：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLv-ES-qaV">
                                         <rect key="frame" x="10" y="162" width="590" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="0Gc-x2-VIu"/>
@@ -3017,37 +3017,16 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="星期五（18：00-20：00）B204" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKG-Js-vyF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKG-Js-vyF">
                                         <rect key="frame" x="106" y="184" width="486" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="pTw-gb-6hv"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课时费：40元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0X-AL-oB4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="总课时：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GQ-WX-dIu">
                                         <rect key="frame" x="10" y="208" width="590" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="2wO-Yx-pqT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总课时：12次" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GQ-WX-dIu">
-                                        <rect key="frame" x="10" y="232" width="590" height="21"/>
-                                        <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Nia-PJ-ulE"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学费：480元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqu-BR-3j4">
-                                        <rect key="frame" x="10" y="256" width="590" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="yZr-Jw-OxU"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -3067,10 +3046,18 @@
                                             <action selector="ApplyDetailsBtn:" destination="Tes-mn-ZA4" eventType="touchUpInside" id="xSm-fo-wsX"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="学费：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqu-BR-3j4">
+                                        <rect key="frame" x="10" y="230" width="590" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="yZr-Jw-OxU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="X0X-AL-oB4" firstAttribute="leading" secondItem="CJp-2U-25w" secondAttribute="leading" constant="10" id="0AF-hD-ijo"/>
                                     <constraint firstItem="iLv-ES-qaV" firstAttribute="top" secondItem="rO0-t3-eOI" secondAttribute="bottom" constant="3" id="0Uh-WK-rib"/>
                                     <constraint firstAttribute="trailing" secondItem="58i-xH-P25" secondAttribute="trailing" id="1oz-5d-LZ5"/>
                                     <constraint firstAttribute="trailing" secondItem="TKG-Js-vyF" secondAttribute="trailing" id="2Fh-6f-YAy"/>
@@ -3086,16 +3073,14 @@
                                     <constraint firstItem="hqu-BR-3j4" firstAttribute="leading" secondItem="CJp-2U-25w" secondAttribute="leading" constant="10" id="Kdd-yJ-e7J"/>
                                     <constraint firstItem="rO0-t3-eOI" firstAttribute="top" secondItem="gIF-fr-EGG" secondAttribute="bottom" constant="3" id="LH6-LG-Kdg"/>
                                     <constraint firstItem="dQ6-uS-nqy" firstAttribute="top" secondItem="iLv-ES-qaV" secondAttribute="bottom" constant="1" id="LWJ-sf-GNc"/>
-                                    <constraint firstItem="0GQ-WX-dIu" firstAttribute="top" secondItem="X0X-AL-oB4" secondAttribute="bottom" constant="3" id="NN0-mG-Pia"/>
+                                    <constraint firstItem="0GQ-WX-dIu" firstAttribute="top" secondItem="TKG-Js-vyF" secondAttribute="bottom" constant="3" id="Lwf-gn-7TD"/>
                                     <constraint firstItem="0GQ-WX-dIu" firstAttribute="leading" secondItem="CJp-2U-25w" secondAttribute="leading" constant="10" id="Q1g-rf-VWl"/>
                                     <constraint firstAttribute="trailing" secondItem="Yop-3R-Xng" secondAttribute="trailing" id="RHX-ZB-7Wy"/>
                                     <constraint firstItem="Yop-3R-Xng" firstAttribute="top" secondItem="58i-xH-P25" secondAttribute="bottom" constant="10" id="SMn-dG-XWH"/>
                                     <constraint firstItem="TKG-Js-vyF" firstAttribute="leading" secondItem="dQ6-uS-nqy" secondAttribute="trailing" constant="-2" id="YIO-qJ-H5s"/>
                                     <constraint firstAttribute="trailing" secondItem="hqu-BR-3j4" secondAttribute="trailing" id="Ywb-lS-jJR"/>
                                     <constraint firstItem="EJf-hS-jnv" firstAttribute="leading" secondItem="CJp-2U-25w" secondAttribute="leading" constant="10" id="Zaa-IT-IKB"/>
-                                    <constraint firstItem="X0X-AL-oB4" firstAttribute="top" secondItem="TKG-Js-vyF" secondAttribute="bottom" constant="3" id="arg-y6-Mij"/>
                                     <constraint firstItem="iLv-ES-qaV" firstAttribute="leading" secondItem="CJp-2U-25w" secondAttribute="leading" constant="10" id="avn-AE-myL"/>
-                                    <constraint firstAttribute="trailing" secondItem="X0X-AL-oB4" secondAttribute="trailing" id="bh6-7T-PgT"/>
                                     <constraint firstAttribute="trailing" secondItem="rO0-t3-eOI" secondAttribute="trailing" id="c8b-MF-6Nl"/>
                                     <constraint firstItem="gIF-fr-EGG" firstAttribute="leading" secondItem="CJp-2U-25w" secondAttribute="leading" constant="10" id="eeZ-z1-Q41"/>
                                     <constraint firstItem="58i-xH-P25" firstAttribute="leading" secondItem="CJp-2U-25w" secondAttribute="leading" constant="10" id="h4l-DK-2eB"/>
@@ -3121,6 +3106,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="jch-92-vZF"/>
                     <connections>
+                        <outlet property="ageELabel" destination="iLv-ES-qaV" id="Pn3-5o-QeK"/>
+                        <outlet property="ageSLabel" destination="rO0-t3-eOI" id="ap9-VX-Rzp"/>
+                        <outlet property="classNameLabel" destination="58i-xH-P25" id="IGK-RT-WpY"/>
+                        <outlet property="countTimeLabel" destination="0GQ-WX-dIu" id="mrd-6D-61U"/>
+                        <outlet property="moneyLabel" destination="hqu-BR-3j4" id="XCN-FF-ywz"/>
+                        <outlet property="quarterlyLabel" destination="gIF-fr-EGG" id="F52-ug-NPa"/>
+                        <outlet property="timeLabel" destination="TKG-Js-vyF" id="KRO-8E-fgB"/>
+                        <outlet property="yearLabel" destination="gMs-Tg-9qK" id="tzS-1j-DMD"/>
                         <segue destination="GpU-qi-C1Z" kind="push" identifier="applyDetails_applyCard" id="ybH-po-A9C"/>
                     </connections>
                 </viewController>
@@ -3212,7 +3205,7 @@
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZG6-MP-Yp1" id="6jW-AT-eXh">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学院卡号：9000000232" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR0-Ta-Khd">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学院卡号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR0-Ta-Khd">
                                                             <rect key="frame" x="10" y="8" width="582" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Uyz-kd-q68"/>
@@ -3221,7 +3214,7 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="姓名：王小小" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUI-Ma-9rP">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="姓名：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GUI-Ma-9rP">
                                                             <rect key="frame" x="8" y="34" width="341" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Muq-ht-2G3"/>
@@ -3230,7 +3223,7 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="性别：女" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMa-fp-yL3">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="性别：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMa-fp-yL3">
                                                             <rect key="frame" x="357" y="37" width="70" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="QJq-vE-yez"/>
@@ -3240,7 +3233,7 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出生年月：2012-03-12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLc-0o-wDO">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出生年月：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLc-0o-wDO">
                                                             <rect key="frame" x="10" y="60" width="582" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="bHV-fI-R2J"/>
@@ -3311,6 +3304,7 @@
                     <navigationItem key="navigationItem" id="PaU-9S-cRj"/>
                     <connections>
                         <outlet property="tableView" destination="FCG-NL-0ZE" id="PgJ-O4-aXS"/>
+                        <segue destination="d15-9d-fSJ" kind="push" identifier="applyCard_myMoney" id="PE1-UK-yTe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jO1-op-GLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3530,7 +3524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rz6-k8-3CJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1386" y="2529"/>
+            <point key="canvasLocation" x="1275" y="3140"/>
         </scene>
         <!--My View Controller-->
         <scene sceneID="Nu7-UE-SxV">
@@ -3784,7 +3778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skm-C9-rSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="3246"/>
+            <point key="canvasLocation" x="517" y="1706"/>
         </scene>
         <!--My Class View Controller-->
         <scene sceneID="47k-EG-Wpx">
@@ -3976,7 +3970,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drC-iO-Bh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="2528"/>
+            <point key="canvasLocation" x="517" y="3140"/>
         </scene>
         <!--My Site View Controller-->
         <scene sceneID="LiM-si-IBR">
@@ -4839,5 +4833,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="X9f-6g-kcV"/>
+        <segue reference="PE1-UK-yTe"/>
     </inferredMetricsTieBreakers>
 </document>

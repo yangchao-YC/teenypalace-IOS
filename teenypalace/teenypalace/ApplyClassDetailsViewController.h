@@ -7,10 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ApplyAlertView.h"
+#import "LoginViewController.h"
 @interface ApplyClassDetailsViewController : UIViewController
 
 
-@property(strong,nonatomic)NSString *applyDetailsKey;
+@property(strong,nonatomic)NSDictionary *applyDetailsKey;
+@property (weak, nonatomic) IBOutlet UILabel *classNameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *quarterlyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ageSLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ageELabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+
+
 
 @end
