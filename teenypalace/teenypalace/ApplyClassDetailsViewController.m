@@ -21,9 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    NSLog(@"%@",self.applyDetailsKey);
-   
+
     self.classNameLabel.text = [NSString stringWithFormat:@"班级名称：%@",[self.applyDetailsKey objectForKey:@"classname"]];
     
     self.timeLabel.text = [self.applyDetailsKey objectForKey:@"learnaddress"];

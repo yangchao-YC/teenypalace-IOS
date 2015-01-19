@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyMoneyViewController : UIViewController
+#import "MyMoneyTableViewCell.h"
+
+@interface MyMoneyViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *sumMoneyBtn;
+@property (weak, nonatomic) IBOutlet UILabel *sumMoneyLabel;
+@property (weak, nonatomic) IBOutlet UIButton *checkBtn;
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
 
 @end

@@ -36,11 +36,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 
@@ -122,6 +117,11 @@
 }
 
 
+-(IBAction)ApplyBtn:(UIButton *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    // [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -132,13 +132,14 @@
 
 
 
-
-
--(IBAction)ApplyBtn:(UIButton *)sender
-{
-   [self.navigationController popViewControllerAnimated:YES];
-   // [self.navigationController popToRootViewControllerAnimated:YES];
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
+
+
+
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

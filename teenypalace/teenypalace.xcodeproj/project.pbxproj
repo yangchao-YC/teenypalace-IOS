@@ -57,8 +57,15 @@
 		717BA38A1A496C8700E70CCD /* MyMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3891A496C8700E70CCD /* MyMoneyViewController.m */; };
 		717BA38D1A496CAB00E70CCD /* MySiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA38C1A496CAB00E70CCD /* MySiteViewController.m */; };
 		717E2AE31A51545E0070570B /* CardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 717E2AE21A51545E0070570B /* CardTableViewCell.m */; };
+		71856FF91A6CF0AD00E841CD /* MyMoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71856FF81A6CF0AD00E841CD /* MyMoneyTableViewCell.m */; };
 		718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB93D1A19F4B10044F2DC /* ApplyViewController.m */; };
 		718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB9401A19F4CC0044F2DC /* MyViewController.m */; };
+		71A3EA111A6924D300122B36 /* libUnionPaySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */; };
+		71A3EA121A6924D300122B36 /* UnionPaySDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */; };
+		71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA131A69250C00122B36 /* QuartzCore.framework */; };
+		71A3EA161A69251700122B36 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA151A69251700122B36 /* AudioToolbox.framework */; };
+		71A3EA181A69252D00122B36 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA171A69252D00122B36 /* CFNetwork.framework */; };
+		71A3EA1A1A69253B00122B36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA191A69253B00122B36 /* libxml2.dylib */; };
 		71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C55CC71A09F4BE00A4B359 /* LoginViewController.m */; };
 		71C6082B1A358200001CE8BA /* DoingApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C6082A1A358200001CE8BA /* DoingApplyViewController.m */; };
 		71C6082E1A35AFCA001CE8BA /* ApplyLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C6082D1A35AFCA001CE8BA /* ApplyLevelViewController.m */; };
@@ -200,11 +207,24 @@
 		717BA38C1A496CAB00E70CCD /* MySiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySiteViewController.m; sourceTree = "<group>"; };
 		717E2AE11A51545E0070570B /* CardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardTableViewCell.h; sourceTree = "<group>"; };
 		717E2AE21A51545E0070570B /* CardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardTableViewCell.m; sourceTree = "<group>"; };
+		71856FF71A6CF0AD00E841CD /* MyMoneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMoneyTableViewCell.h; sourceTree = "<group>"; };
+		71856FF81A6CF0AD00E841CD /* MyMoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMoneyTableViewCell.m; sourceTree = "<group>"; };
 		718A1C081A2487FA00F8F582 /* pchFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pchFile.pch; sourceTree = "<group>"; };
 		718FB93C1A19F4B10044F2DC /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
 		718FB93D1A19F4B10044F2DC /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
 		718FB93F1A19F4CC0044F2DC /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		718FB9401A19F4CC0044F2DC /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUnionPaySDK.a; sourceTree = "<group>"; };
+		71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UnionPaySDKBundle.bundle; sourceTree = "<group>"; };
+		71A3EA0C1A6924D300122B36 /* UPOMPBackStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPBackStage.h; sourceTree = "<group>"; };
+		71A3EA0D1A6924D300122B36 /* UPOMPDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPDelegate.h; sourceTree = "<group>"; };
+		71A3EA0E1A6924D300122B36 /* UPOMPStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPStage.h; sourceTree = "<group>"; };
+		71A3EA0F1A6924D300122B36 /* UPOMPXMLGenerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPXMLGenerate.h; sourceTree = "<group>"; };
+		71A3EA101A6924D300122B36 /* UPOMPXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPXMLParser.h; sourceTree = "<group>"; };
+		71A3EA131A69250C00122B36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		71A3EA151A69251700122B36 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		71A3EA171A69252D00122B36 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		71A3EA191A69253B00122B36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		71C55CC51A09F4BD00A4B359 /* teenypalace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "teenypalace-Bridging-Header.h"; sourceTree = "<group>"; };
 		71C55CC61A09F4BE00A4B359 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		71C55CC71A09F4BE00A4B359 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -288,14 +308,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				715E42001A5BD85900A3C4F1 /* libz.dylib in Frameworks */,
-				71C9B6C41A305C120011A3B1 /* Security.framework in Frameworks */,
-				715E42CF1A5BED1500A3C4F1 /* libWeChatSDK.a in Frameworks */,
+				71A3EA1A1A69253B00122B36 /* libxml2.dylib in Frameworks */,
+				71A3EA181A69252D00122B36 /* CFNetwork.framework in Frameworks */,
 				71C9B6C21A305C090011A3B1 /* MobileCoreServices.framework in Frameworks */,
+				71A3EA161A69251700122B36 /* AudioToolbox.framework in Frameworks */,
+				71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */,
+				71C9B6C01A305BFE0011A3B1 /* SystemConfiguration.framework in Frameworks */,
+				71C9B6C41A305C120011A3B1 /* Security.framework in Frameworks */,
+				715E42001A5BD85900A3C4F1 /* libz.dylib in Frameworks */,
+				715E42CF1A5BED1500A3C4F1 /* libWeChatSDK.a in Frameworks */,
 				715E42C91A5BED1500A3C4F1 /* libSocialSina.a in Frameworks */,
 				715E42CD1A5BED1500A3C4F1 /* libUMSocial_Sdk_Shake_1.0.a in Frameworks */,
 				715E42821A5BDB3B00A3C4F1 /* libMobClickLibrary.a in Frameworks */,
-				71C9B6C01A305BFE0011A3B1 /* SystemConfiguration.framework in Frameworks */,
+				71A3EA111A6924D300122B36 /* libUnionPaySDK.a in Frameworks */,
 				71C9B6BE1A305BF40011A3B1 /* CoreLocation.framework in Frameworks */,
 				715E42CB1A5BED1500A3C4F1 /* libUMSocial_Sdk_ScreenShot_1.0.a in Frameworks */,
 				715E42BF1A5BED1500A3C4F1 /* libUMSocial_Sdk_4.2.1.a in Frameworks */,
@@ -476,8 +501,24 @@
 				717E2AE21A51545E0070570B /* CardTableViewCell.m */,
 				716C188D1A5D250E004BFBAD /* CardClassTableViewCell.h */,
 				716C188E1A5D250E004BFBAD /* CardClassTableViewCell.m */,
+				71856FF71A6CF0AD00E841CD /* MyMoneyTableViewCell.h */,
+				71856FF81A6CF0AD00E841CD /* MyMoneyTableViewCell.m */,
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		71A3EA091A6924D300122B36 /* UnionPaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */,
+				71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */,
+				71A3EA0C1A6924D300122B36 /* UPOMPBackStage.h */,
+				71A3EA0D1A6924D300122B36 /* UPOMPDelegate.h */,
+				71A3EA0E1A6924D300122B36 /* UPOMPStage.h */,
+				71A3EA0F1A6924D300122B36 /* UPOMPXMLGenerate.h */,
+				71A3EA101A6924D300122B36 /* UPOMPXMLParser.h */,
+			);
+			path = UnionPaySDK;
 			sourceTree = "<group>";
 		};
 		71C55CC41A09DC3A00A4B359 /* Class */ = {
@@ -539,6 +580,10 @@
 		71C97BC91A08B5970010A5B8 = {
 			isa = PBXGroup;
 			children = (
+				71A3EA191A69253B00122B36 /* libxml2.dylib */,
+				71A3EA171A69252D00122B36 /* CFNetwork.framework */,
+				71A3EA151A69251700122B36 /* AudioToolbox.framework */,
+				71A3EA131A69250C00122B36 /* QuartzCore.framework */,
 				715E41FF1A5BD85900A3C4F1 /* libz.dylib */,
 				71C9B6C31A305C120011A3B1 /* Security.framework */,
 				71C9B6C11A305C090011A3B1 /* MobileCoreServices.framework */,
@@ -562,6 +607,7 @@
 		71C97BD41A08B5970010A5B8 /* teenypalace */ = {
 			isa = PBXGroup;
 			children = (
+				71A3EA091A6924D300122B36 /* UnionPaySDK */,
 				715E42831A5BED0800A3C4F1 /* UM */,
 				71C9B6861A3033400011A3B1 /* Additions */,
 				71735BB11A1F21FC005E0067 /* TableViewCell */,
@@ -755,6 +801,7 @@
 				715E42C41A5BED1500A3C4F1 /* UMShareEditViewControlleriPad.xib in Resources */,
 				715E42C61A5BED1500A3C4F1 /* UMSnsAccountViewController.xib in Resources */,
 				715E42C11A5BED1500A3C4F1 /* UMSCommentInputController.xib in Resources */,
+				71A3EA121A6924D300122B36 /* UnionPaySDKBundle.bundle in Resources */,
 				715E42C01A5BED1500A3C4F1 /* UMSCommentDetailController.xib in Resources */,
 				71C97BDD1A08B5970010A5B8 /* Main.storyboard in Resources */,
 				715916BB1A64CE740090CE5C /* SVProgressHUD.bundle in Resources */,
@@ -823,6 +870,7 @@
 				71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */,
 				71C9B69E1A3033540011A3B1 /* UIScrollView+MJRefresh.m in Sources */,
 				717BA3841A496C5000E70CCD /* MyCardViewController.m in Sources */,
+				71856FF91A6CF0AD00E841CD /* MyMoneyTableViewCell.m in Sources */,
 				710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */,
 				710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */,
 				716C18951A5D2E57004BFBAD /* MyClassDetailsViewController.m in Sources */,
@@ -998,7 +1046,9 @@
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_Extra_Frameworks/UMSocial_ScreenShot_Sdk",
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_Extra_Frameworks/UMSocial_Shake_Sdk",
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/teenypalace/UnionPaySDK",
 				);
+				OTHER_LIBTOOLFLAGS = "-ObjC";
 				PRODUCT_NAME = teenypalace;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "teenypalace/teenypalace-Bridging-Header.h";
@@ -1027,7 +1077,9 @@
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_Extra_Frameworks/UMSocial_ScreenShot_Sdk",
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_Extra_Frameworks/UMSocial_Shake_Sdk",
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/teenypalace/UnionPaySDK",
 				);
+				OTHER_LIBTOOLFLAGS = "-ObjC";
 				PRODUCT_NAME = teenypalace;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "teenypalace/teenypalace-Bridging-Header.h";
