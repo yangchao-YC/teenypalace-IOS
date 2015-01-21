@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface MyMoneyTableViewCell : UITableViewCell
+{
+    BOOL m_checked;
+    UIImageView*	m_checkImageView;
+}
+
+- (void)setChecked:(BOOL)checked;
+
 @property (weak, nonatomic) IBOutlet UIButton *checkBtn;
 @property (weak, nonatomic) IBOutlet UILabel *classNameLabel;
 

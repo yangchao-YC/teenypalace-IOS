@@ -68,7 +68,8 @@
     [self.bg_one_view addSubview:self.bg_view];
     
     
-    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 28, 250, 21)];
+    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 28, 250, 42)];
+    self.titleLabel.numberOfLines = 0;
     self.titleLabel.text = title;
     self.titleLabel.textColor = [UIColor blackColor];
     self.titleLabel.font = titleFont;

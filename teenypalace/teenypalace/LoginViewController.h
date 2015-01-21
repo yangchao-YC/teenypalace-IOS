@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyMoneyViewController.h"
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *LoginCheckBox;
 @property (weak, nonatomic) IBOutlet UIImageView *CheckImage;
@@ -14,5 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 + (void)logOut;
+
 
 @end

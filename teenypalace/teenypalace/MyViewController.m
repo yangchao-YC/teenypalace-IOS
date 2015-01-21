@@ -13,7 +13,7 @@
 
 
 #import "MyViewController.h"
-
+#import "LoginViewController.h"
 @interface MyViewController ()
 
 @end
@@ -59,7 +59,9 @@
         case 3:
             cell.titleLabel.text = @"设置";
             break;
-     
+        case 4:
+            cell.titleLabel.text = @"登陆";
+            break;
         default:
             break;
     }
@@ -71,7 +73,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;//设置显示行数
+    return 5;//设置显示行数
 }
 
 
@@ -103,7 +105,9 @@
         case 3:
             [self performSegueWithIdentifier:@"my_mySite" sender:nil];
             break;
-            
+        case 4:
+            [self performSelector:@selector(logout) withObject:self afterDelay:.5f];
+            break;
         default:
             break;
     }
@@ -111,7 +115,10 @@
     
 }
 
-
+- (void)logout
+{
+    [LoginViewController logOut];
+}
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

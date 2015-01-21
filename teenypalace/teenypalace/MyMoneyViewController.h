@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 
 #import "MyMoneyTableViewCell.h"
-
-@interface MyMoneyViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+#import "UPOMPDelegate.h"
+#import "UPOMPXMLParser.h"
+#import "UPOMPXMLGenerate.h"
+@interface MyMoneyViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UPOMPDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *sumMoneyBtn;
 @property (weak, nonatomic) IBOutlet UILabel *sumMoneyLabel;
 @property (weak, nonatomic) IBOutlet UIButton *checkBtn;
 @property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+
+
 
 @end

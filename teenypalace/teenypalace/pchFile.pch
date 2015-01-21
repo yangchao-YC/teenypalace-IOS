@@ -77,4 +77,12 @@
 
 #define DATE_APPLY_CLASS [DATE_URL stringByAppendingString:@"signup/createorder/"]// 报名班级
 
+#define DATE_SEARCH_MONEY [DATE_URL stringByAppendingString:@"signup/getAllOrders/"]//查询当前家长名下，未支付的订单
+
+#define DATE_SEARCH_MONEY_DELETE [DATE_URL stringByAppendingString:@"signup/deleteorder/"]//删除指定订单
+
+#define DATE_SEARCH_MONEY_PAY [DATE_URL stringByAppendingString:@"order/signunionpay"]//生成支付订单
+
+
+
 #endif

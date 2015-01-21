@@ -201,6 +201,7 @@
             }
             
             [SVProgressHUD showSuccessWithStatus:@"登陆成功" maskType:2];
+
             
             [self dismissModalViewControllerAnimated:YES];
             
