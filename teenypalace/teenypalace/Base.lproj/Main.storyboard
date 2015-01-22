@@ -2167,7 +2167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4i-rP-PvO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="2386"/>
+            <point key="canvasLocation" x="517" y="3206"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8qM-j6-ikk">
@@ -2876,7 +2876,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWt-RU-WWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="2386"/>
+            <point key="canvasLocation" x="1275" y="3206"/>
         </scene>
         <!--Apply Class Details View Controller-->
         <scene sceneID="R6K-VD-ZeG">
@@ -3447,16 +3447,13 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期天（08：30-10：30）D504" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4X-bY-syl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="星期天（08：30-10：30）D504" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4X-bY-syl">
                                         <rect key="frame" x="104" y="190" width="488" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="oMa-u8-7nb"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总课时：15次" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-Y2-Ryx">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="总课时：15次" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSc-Y2-Ryx">
                                         <rect key="frame" x="8" y="219" width="584" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="qoR-61-Aw8"/>
@@ -3465,7 +3462,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学费：480元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2l-6z-K9r">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="学费：480元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2l-6z-K9r">
                                         <rect key="frame" x="8" y="248" width="584" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Eou-Gn-Dd3"/>
@@ -3521,10 +3518,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fZ7-Ut-Cym"/>
+                    <connections>
+                        <outlet property="classNameLabel" destination="elU-jc-dSn" id="cdH-gD-Doz"/>
+                        <outlet property="moneyLabel" destination="b2l-6z-K9r" id="tj4-oj-gEZ"/>
+                        <outlet property="quarterLabel" destination="wdS-SL-3uO" id="Ycc-rf-mCK"/>
+                        <outlet property="sumTimeLabel" destination="gSc-Y2-Ryx" id="fdB-g9-21f"/>
+                        <outlet property="timeBeginLabel" destination="SsG-iO-MAw" id="3Tl-g2-vaw"/>
+                        <outlet property="timeEndLabel" destination="b0w-U6-xqX" id="4jx-b9-Hd4"/>
+                        <outlet property="timeLabel" destination="k4X-bY-syl" id="8Jl-jT-2IK"/>
+                        <outlet property="yearLabel" destination="br3-su-23X" id="gCC-BF-niN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rz6-k8-3CJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="3140"/>
+            <point key="canvasLocation" x="1275" y="2436"/>
         </scene>
         <!--My View Controller-->
         <scene sceneID="Nu7-UE-SxV">
@@ -3973,11 +3980,12 @@
                         <outlet property="sumMoneyBtn" destination="oZM-6W-7xc" id="DA6-P5-9Hg"/>
                         <outlet property="sumMoneyLabel" destination="KQY-hC-NL4" id="p62-f3-NOM"/>
                         <outlet property="tableView" destination="346-yo-enk" id="KPL-i7-VTY"/>
+                        <segue destination="zYc-PF-4Ex" kind="push" identifier="myMoney_myClassDetails" id="ubT-Rj-66z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="skm-C9-rSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="1706"/>
+            <point key="canvasLocation" x="517" y="1682"/>
         </scene>
         <!--My Class View Controller-->
         <scene sceneID="47k-EG-Wpx">
@@ -4169,7 +4177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="drC-iO-Bh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="3140"/>
+            <point key="canvasLocation" x="517" y="2436"/>
         </scene>
         <!--My Site View Controller-->
         <scene sceneID="LiM-si-IBR">
@@ -5035,5 +5043,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="X9f-6g-kcV"/>
         <segue reference="mHu-Ew-wJe"/>
+        <segue reference="ubT-Rj-66z"/>
     </inferredMetricsTieBreakers>
 </document>

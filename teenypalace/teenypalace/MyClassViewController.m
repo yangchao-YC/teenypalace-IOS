@@ -12,8 +12,9 @@
 #import "CardClassTableViewCell.h"
 @interface MyClassViewController ()
 
-@end
+@property (nonatomic,retain) NSMutableArray *articles;
 
+@end
 @implementation MyClassViewController
 
 - (void)viewDidLoad {
@@ -25,11 +26,55 @@
     
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    AppDelegate *app = [[UIApplication sharedApplication]delegate ];
+    
+    
+    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_APPLY_CLASS,app.ParentId];
+    
+    [SVProgressHUD showInfoWithStatus:LOADING];
+    
+    [self dateUrl:date];
+    
     
 }
 
 
 
+-(void)dateUrl:(NSString *)url
+{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.articles = responseObject;
+        [self dateHandle];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorString = [NSString stringWithFormat:@"%@",error];
+        [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
+}
+/*
+ 数据处理
+ */
+-(void)dateHandle
+{
+    [SVProgressHUD dismiss];
+    if (self.articles.count !=0) {
+        [self.tableView reloadData];
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"您还没有已报名课程" maskType:3];
+    }
+ 
+}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -42,7 +87,10 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    
+    NSDictionary *dic =[self.articles objectAtIndexedSubscript:indexPath.row];
+    cell.classNameLabel.text = [dic objectForKey:@"field_signup_class_name"];
+    cell.nameLabel.text = [dic objectForKey:@"field_signup_student_name"];
+    cell.cardLabel.text = [dic objectForKey:@"field_signup_student_card"];
     return cell;
     
 }
@@ -50,7 +98,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;//设置显示行数
+    return self.articles.count;//设置显示行数
 }
 
 
@@ -70,14 +118,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    [self puls:indexPath.row];
-}
+    NSDictionary *dic =[self.articles objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"myMoney_myClassDteails" sender:dic];}
 
 
--(void)puls:(int)key
-{
-    [self performSegueWithIdentifier:@"myClass_myClassDteails" sender:@"0"];
-}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

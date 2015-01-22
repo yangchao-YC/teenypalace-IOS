@@ -332,7 +332,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+    
+    NSDictionary *dic =[self.articles objectAtIndex:indexPath.row];
+   [self performSegueWithIdentifier:@"myMoney_myClassDetails" sender:dic];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+     UIViewController *push = segue.destinationViewController;
+     [push setValue:sender forKey:@"MyClassDetailsKey"];
 }
 
 
