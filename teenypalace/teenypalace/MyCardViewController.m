@@ -13,6 +13,7 @@
 
 @interface MyCardViewController ()
 
+@property (nonatomic,retain) NSMutableArray *articles;
 @end
 
 @implementation MyCardViewController
@@ -28,10 +29,61 @@
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
+    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    
+    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
+    
+    NSLog(@"%@",date);
+    
+    
+    [SVProgressHUD showInfoWithStatus:LOADING];
+    
+    [self dateUrl:date];
+    
+}
+
+/*
+ key:
+ 0.拉取学员卡列表
+ 1.是否报名成功
+ */
+
+-(void)dateUrl:(NSString *)url
+{
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        self.articles = responseObject;
+        [self dateHandle:0];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSString *errorString = [NSString stringWithFormat:@"%@",error];
+        [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
 }
 
 
-
+/*
+ 数据处理
+ */
+-(void)dateHandle:(int)key
+{
+        if (self.articles.count>0) {
+            [self.tableView reloadData];
+            [SVProgressHUD dismiss];
+        }
+        else
+        {
+            [SVProgressHUD showInfoWithStatus:@"您还没有学员卡" maskType:3];
+        }
+        
+}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -44,15 +96,30 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
- 
+    NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+    
+    cell.numberLabel.text = [NSString stringWithFormat:@"学院卡号：%@",[dic objectForKey:@"field_student_card"]];
+    cell.nameLabel.text = [NSString stringWithFormat:@"姓名：%@",[dic objectForKey:@"field_student_name"]];
+    if ([[dic objectForKey:@"field_student_sex"] intValue] == 1) {
+        cell.sexLabel.text = @"性别：男";
+    }
+    else
+    {
+        cell.sexLabel.text = @"性别：女";
+    }
+    
+    cell.birthdayLabel.text = [NSString stringWithFormat:@"出生年月：%@",[dic objectForKey:@"field_student_birthday"]];
+    
     return cell;
+    
+    
     
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;//设置显示行数
+    return self.articles.count;//设置显示行数
 }
 
 

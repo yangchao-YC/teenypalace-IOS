@@ -16,7 +16,6 @@
 {
     BOOL countMoney ;//是否全选
     NSMutableArray *contacts;//状态
-    UITableView *table;
     int sumMoney;//总价
 }
 
@@ -63,6 +62,14 @@
 
 -(void)selectMoney
 {
+    countMoney = NO;
+    sumMoney = 0;
+    
+    for (NSDictionary *dic in contacts) {
+        [dic setValue:@"NO" forKey:@"checked"];
+    }
+    
+    
     AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
     NSString *date = [NSString stringWithFormat:@"%@%@/1",DATE_SEARCH_MONEY,app.ParentId];
@@ -106,6 +113,10 @@
 }
 /*
  数据处理
+ key
+ 0:查询订单
+ 1：删除订单
+ 2：支付订单生成
  */
 -(void)dateHandle:(int)key
 {
@@ -125,6 +136,17 @@
         }
         
     }
+    else if (key == 1)
+    {
+        if ([[self.dic objectForKey:@"status"]intValue] == 0) {
+            [SVProgressHUD showSuccessWithStatus:@"删除成功,正在刷新订单" maskType:3];
+            [self selectMoney];
+        }
+        else
+        {
+            [SVProgressHUD showInfoWithStatus:[self.dic objectForKey:@"message"] maskType:3];
+        }
+    }
     else
     {
         if ([[self.dic objectForKey:@"status"]intValue] == 0) {
@@ -143,7 +165,6 @@
 
 -(void)goUPOMPView:(NSString *)infoXML
 {
-    NSLog(@"%@",infoXML);
    // NSString *retrunText = [[NSString alloc] initWithData:infoXML encoding:NSUTF8StringEncoding];
     UPOMPStage *upomp = [[UPOMPStage alloc] initUPOMPPayWithXML:infoXML PaymentMode:DefaultPayment ServerType:ServerProduct delegate:self];
     [self presentModalViewController:upomp animated:YES];
@@ -155,8 +176,43 @@
     UPOMPXMLParser *xmlParser = [[UPOMPXMLParser alloc] init];
     NSDictionary *xmlDic = [[NSDictionary alloc]initWithDictionary:[xmlParser parserXML:xmlString]];
     
+    NSString *respCode = [xmlDic objectForKey:@"respCode"];
     
-    NSLog(@"返回信息%@",xmlDic);
+    if ([respCode isEqualToString:@"0000"]) {
+        [SVProgressHUD showSuccessWithStatus:@"支付成功" maskType:3];
+        
+        [SVProgressHUD showInfoWithStatus:@"正在刷新列表"];
+        [self selectMoney];
+        
+    }
+    else if ([respCode isEqualToString:@"9000"]) {
+        [SVProgressHUD showInfoWithStatus:@"用户取消支付" maskType:3];
+    }
+    else if ([respCode isEqualToString:@"9001"]) {
+       [SVProgressHUD showInfoWithStatus:@"用户退出插件" maskType:3];
+    }
+    else if ([respCode isEqualToString:@"9002"]) {
+        [SVProgressHUD showInfoWithStatus:@"插件初始化失败" maskType:3];
+    }
+    else if ([respCode isEqualToString:@"9003"]) {
+       [SVProgressHUD showInfoWithStatus:@"商户无预授权权限" maskType:3];
+    }
+    else if ([respCode isEqualToString:@"9004"]) {
+       [SVProgressHUD showInfoWithStatus:@"单点登录成功" maskType:3];
+    }
+    else if ([respCode isEqualToString:@"9005"]) {
+       [SVProgressHUD showInfoWithStatus:@"单点登录失败" maskType:3];
+    }
+    else if ([respCode isEqualToString:@"9008"]) {
+        [SVProgressHUD showInfoWithStatus:@"共享卡列表成功" maskType:3];
+    }
+    else if ([respCode isEqualToString:@"9009"]) {
+       [SVProgressHUD showInfoWithStatus:@"共享卡列表失败" maskType:3];
+    }
+    else{
+        [SVProgressHUD showInfoWithStatus:@"支付失败" maskType:3];
+    }
+    
 }
 
 /*
@@ -367,11 +423,12 @@
             [self allSelect];
             break;
         case 2:
-            
             [self check];
-            
             break;
         case 3:
+            
+            [self delete];
+            
             break;
             
         default:
@@ -379,6 +436,69 @@
             break;
     }
 }
+/*删除订单*/
+-(void)delete
+{
+    NSMutableArray *payArray = [NSMutableArray array];
+    
+    for (int i = 0; i<contacts.count; i++) {
+        if ([[[contacts objectAtIndex:i] objectForKey:@"checked"] isEqualToString:@"YES"]) {
+            NSLog(@"%d",i);
+            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+            NSLog(@"打印删除ID  %@",[[self.articles objectAtIndex:i] objectForKey:@"orderid"]);
+            [dic setValue:[[self.articles objectAtIndex:i] objectForKey:@"orderid"] forKey:@"number"];
+            [payArray addObject:dic];
+        }
+    }
+    if (payArray.count>0) {
+        __unsafe_unretained MyMoneyViewController *safe_self = self;
+        self.alertView = [[ApplyAlertView alloc]initWithView:self.view title:@"是否删除已勾选项目？"];
+        
+        self.alertView.ApplyCardBlock = ^(int a)
+        {
+            [safe_self.alertView hide];
+            
+            NSString *orderids = @"";
+            
+            if (payArray.count == 1) {
+                orderids = [NSString stringWithFormat:@"%@",[[payArray objectAtIndex:0] objectForKey:@"number"]];
+            }
+            else
+            {
+                for (int i = 0; i<payArray.count; i++) {
+                    NSString *number =[NSString stringWithFormat:@"%@",[[payArray objectAtIndex:i] objectForKey:@"number"]];
+                    NSString *b;
+                    if (i == (payArray.count -1)) {
+                        b = @"";
+                    }
+                    else
+                    {
+                        b=@",";
+                    }
+                    orderids = [NSString stringWithFormat:@"%@%@%@",orderids,number,b];
+                }
+            }
+            
+            [SVProgressHUD showInfoWithStatus:@"正在删除订单..."];
+            
+             NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_MONEY_DELETE,orderids];
+            
+            NSLog(@"我打印删除订单   %@",date);
+            
+            [self dateUrl:date Key:1];
+   
+        };
+        
+        [self.alertView show];
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"请选择要删除的订单" maskType:3];
+    }
+}
+
+
+
 
 /*
  结算
@@ -462,14 +582,6 @@
 {
     AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
-    NSLog(@"merchantorderid    %@",merchantorderid);
-    NSLog(@"orderids    %@",orderids);
-    NSLog(@"app.ParentId    %@",app.ParentId);
-    NSLog(@"app.UserName    %@",app.UserName);
-    
-    
-    NSLog(@"%@",DATE_SEARCH_MONEY_PAY);
-    
     
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
     requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -487,7 +599,7 @@
        }success:^(AFHTTPRequestOperation *operation, id responseObject) {
            NSLog(@"JSON: %@", responseObject);
            self.dic = responseObject;
-           [self dateHandle:1];
+           [self dateHandle:2];
            
        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
            NSLog(@"Error: %@", error);
