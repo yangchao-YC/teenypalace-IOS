@@ -60,6 +60,7 @@
 		71856FF91A6CF0AD00E841CD /* MyMoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71856FF81A6CF0AD00E841CD /* MyMoneyTableViewCell.m */; };
 		718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB93D1A19F4B10044F2DC /* ApplyViewController.m */; };
 		718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB9401A19F4CC0044F2DC /* MyViewController.m */; };
+		719C82A51A722BDE001C7709 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 719C82A41A722BDE001C7709 /* ZHPickView.m */; };
 		71A3EA111A6924D300122B36 /* libUnionPaySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */; };
 		71A3EA121A6924D300122B36 /* UnionPaySDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */; };
 		71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA131A69250C00122B36 /* QuartzCore.framework */; };
@@ -214,6 +215,8 @@
 		718FB93D1A19F4B10044F2DC /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
 		718FB93F1A19F4CC0044F2DC /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		718FB9401A19F4CC0044F2DC /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		719C82A31A722BDE001C7709 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
+		719C82A41A722BDE001C7709 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
 		71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUnionPaySDK.a; sourceTree = "<group>"; };
 		71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UnionPaySDKBundle.bundle; sourceTree = "<group>"; };
 		71A3EA0C1A6924D300122B36 /* UPOMPBackStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPBackStage.h; sourceTree = "<group>"; };
@@ -507,6 +510,15 @@
 			name = TableViewCell;
 			sourceTree = "<group>";
 		};
+		719C82A21A722BC5001C7709 /* ZHpickView */ = {
+			isa = PBXGroup;
+			children = (
+				719C82A31A722BDE001C7709 /* ZHPickView.h */,
+				719C82A41A722BDE001C7709 /* ZHPickView.m */,
+			);
+			name = ZHpickView;
+			sourceTree = "<group>";
+		};
 		71A3EA091A6924D300122B36 /* UnionPaySDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,6 +663,7 @@
 		71C9B6861A3033400011A3B1 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				719C82A21A722BC5001C7709 /* ZHpickView */,
 				715916B31A64CE730090CE5C /* SVProgressHUD */,
 				71CC37C01A3AC3060057F4C9 /* AlertView */,
 				71C9B6A01A305BB60011A3B1 /* AFNetworking */,
@@ -848,6 +861,7 @@
 				71C6082B1A358200001CE8BA /* DoingApplyViewController.m in Sources */,
 				71C9B69B1A3033540011A3B1 /* MJRefreshFooterView.m in Sources */,
 				71C9B69F1A3033540011A3B1 /* UIView+MJExtension.m in Sources */,
+				719C82A51A722BDE001C7709 /* ZHPickView.m in Sources */,
 				71C9B69D1A3033540011A3B1 /* UIScrollView+MJExtension.m in Sources */,
 				715EBF2E1A454F8E00010D5F /* PrettyViewController.m in Sources */,
 				717BA3871A496C7400E70CCD /* MyClassViewController.m in Sources */,

@@ -2046,7 +2046,7 @@
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WxK-bH-j6R">
-                                        <rect key="frame" x="5" y="100" width="590" height="446"/>
+                                        <rect key="frame" x="5" y="100" width="590" height="451"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCard_cell_id" rowHeight="101" id="lUp-Yk-HIt" customClass="CardTableViewCell">
@@ -2137,7 +2137,7 @@
                                 <constraints>
                                     <constraint firstItem="J5s-zu-Aoe" firstAttribute="top" secondItem="T6O-FY-JAO" secondAttribute="top" constant="20" id="3cd-5h-vZs"/>
                                     <constraint firstItem="J5s-zu-Aoe" firstAttribute="leading" secondItem="T6O-FY-JAO" secondAttribute="leading" constant="10" id="7HL-je-835"/>
-                                    <constraint firstAttribute="bottom" secondItem="WxK-bH-j6R" secondAttribute="bottom" constant="10" id="DK4-YU-Uwu"/>
+                                    <constraint firstAttribute="bottom" secondItem="WxK-bH-j6R" secondAttribute="bottom" constant="5" id="DK4-YU-Uwu"/>
                                     <constraint firstAttribute="trailing" secondItem="WxK-bH-j6R" secondAttribute="trailing" constant="5" id="R4T-F8-hCo"/>
                                     <constraint firstAttribute="trailing" secondItem="cqV-PA-lZJ" secondAttribute="trailing" constant="10" id="WtS-UU-slA"/>
                                     <constraint firstItem="WxK-bH-j6R" firstAttribute="leading" secondItem="T6O-FY-JAO" secondAttribute="leading" constant="5" id="YH7-74-Ih5"/>

@@ -28,13 +28,18 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     AppDelegate *app = [[UIApplication sharedApplication]delegate ];
     
-    
-    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_APPLY_CLASS,app.ParentId];
-    
-    [SVProgressHUD showInfoWithStatus:LOADING];
-    
-    [self dateUrl:date];
-    
+    if (app.Login) {
+        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_APPLY_CLASS,app.ParentId];
+        
+        [SVProgressHUD showWithStatus:LOADING];
+        
+        [self dateUrl:date];
+
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"请登陆后进行操作" maskType:3];
+    }
     
 }
 
@@ -65,9 +70,10 @@
  */
 -(void)dateHandle
 {
-    [SVProgressHUD dismiss];
+    
     if (self.articles.count !=0) {
         [self.tableView reloadData];
+        [SVProgressHUD dismiss];
     }
     else
     {

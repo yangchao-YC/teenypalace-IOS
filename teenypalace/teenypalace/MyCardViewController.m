@@ -31,14 +31,20 @@
     
     AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
-    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
-    
-    NSLog(@"%@",date);
-    
-    
-    [SVProgressHUD showInfoWithStatus:LOADING];
-    
-    [self dateUrl:date];
+    if (app.Login) {
+        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
+        
+        NSLog(@"%@",date);
+        
+        
+        [SVProgressHUD showInfoWithStatus:LOADING];
+        
+        [self dateUrl:date];
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"请登陆后进行操作" maskType:3];
+    }
     
 }
 
