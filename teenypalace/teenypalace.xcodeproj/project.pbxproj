@@ -60,6 +60,11 @@
 		71856FF91A6CF0AD00E841CD /* MyMoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71856FF81A6CF0AD00E841CD /* MyMoneyTableViewCell.m */; };
 		718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB93D1A19F4B10044F2DC /* ApplyViewController.m */; };
 		718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB9401A19F4CC0044F2DC /* MyViewController.m */; };
+		71938B0D1A736F3B00ED6F29 /* XLScrollViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71938B0C1A736F3B00ED6F29 /* XLScrollViewer.m */; };
+		71938B141A7382E200ED6F29 /* View2.m in Sources */ = {isa = PBXBuildFile; fileRef = 71938B131A7382E200ED6F29 /* View2.m */; };
+		71938B181A73935300ED6F29 /* DoingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71938B161A73935300ED6F29 /* DoingTableViewCell.m */; };
+		71938B191A73935300ED6F29 /* DoingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71938B171A73935300ED6F29 /* DoingTableViewCell.xib */; };
+		71938B1C1A73AC8400ED6F29 /* Doing.m in Sources */ = {isa = PBXBuildFile; fileRef = 71938B1B1A73AC8400ED6F29 /* Doing.m */; };
 		719C82A51A722BDE001C7709 /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = 719C82A41A722BDE001C7709 /* ZHPickView.m */; };
 		71A3EA111A6924D300122B36 /* libUnionPaySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */; };
 		71A3EA121A6924D300122B36 /* UnionPaySDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */; };
@@ -215,6 +220,15 @@
 		718FB93D1A19F4B10044F2DC /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
 		718FB93F1A19F4CC0044F2DC /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		718FB9401A19F4CC0044F2DC /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		71938B0B1A736F3B00ED6F29 /* XLScrollViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLScrollViewer.h; sourceTree = "<group>"; };
+		71938B0C1A736F3B00ED6F29 /* XLScrollViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLScrollViewer.m; sourceTree = "<group>"; };
+		71938B121A7382E200ED6F29 /* View2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View2.h; sourceTree = "<group>"; };
+		71938B131A7382E200ED6F29 /* View2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View2.m; sourceTree = "<group>"; };
+		71938B151A73935300ED6F29 /* DoingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingTableViewCell.h; sourceTree = "<group>"; };
+		71938B161A73935300ED6F29 /* DoingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingTableViewCell.m; sourceTree = "<group>"; };
+		71938B171A73935300ED6F29 /* DoingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoingTableViewCell.xib; sourceTree = "<group>"; };
+		71938B1A1A73AC8400ED6F29 /* Doing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doing.h; sourceTree = "<group>"; };
+		71938B1B1A73AC8400ED6F29 /* Doing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doing.m; sourceTree = "<group>"; };
 		719C82A31A722BDE001C7709 /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
 		719C82A41A722BDE001C7709 /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
 		71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUnionPaySDK.a; sourceTree = "<group>"; };
@@ -506,8 +520,31 @@
 				716C188E1A5D250E004BFBAD /* CardClassTableViewCell.m */,
 				71856FF71A6CF0AD00E841CD /* MyMoneyTableViewCell.h */,
 				71856FF81A6CF0AD00E841CD /* MyMoneyTableViewCell.m */,
+				71938B151A73935300ED6F29 /* DoingTableViewCell.h */,
+				71938B161A73935300ED6F29 /* DoingTableViewCell.m */,
+				71938B171A73935300ED6F29 /* DoingTableViewCell.xib */,
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		71938B0A1A736F3B00ED6F29 /* XLScrollViewer */ = {
+			isa = PBXGroup;
+			children = (
+				71938B0B1A736F3B00ED6F29 /* XLScrollViewer.h */,
+				71938B0C1A736F3B00ED6F29 /* XLScrollViewer.m */,
+			);
+			path = XLScrollViewer;
+			sourceTree = "<group>";
+		};
+		71938B0E1A7381A200ED6F29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71938B121A7382E200ED6F29 /* View2.h */,
+				71938B131A7382E200ED6F29 /* View2.m */,
+				71938B1A1A73AC8400ED6F29 /* Doing.h */,
+				71938B1B1A73AC8400ED6F29 /* Doing.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		719C82A21A722BC5001C7709 /* ZHpickView */ = {
@@ -624,6 +661,7 @@
 				71C9B6861A3033400011A3B1 /* Additions */,
 				71735BB11A1F21FC005E0067 /* TableViewCell */,
 				71C55CC41A09DC3A00A4B359 /* Class */,
+				71938B0E1A7381A200ED6F29 /* View */,
 				71C97BD71A08B5970010A5B8 /* AppDelegate.swift */,
 				71C97BD91A08B5970010A5B8 /* ViewController.swift */,
 				71C97BDB1A08B5970010A5B8 /* Main.storyboard */,
@@ -663,6 +701,7 @@
 		71C9B6861A3033400011A3B1 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				71938B0A1A736F3B00ED6F29 /* XLScrollViewer */,
 				719C82A21A722BC5001C7709 /* ZHpickView */,
 				715916B31A64CE730090CE5C /* SVProgressHUD */,
 				71CC37C01A3AC3060057F4C9 /* AlertView */,
@@ -819,6 +858,7 @@
 				71C97BDD1A08B5970010A5B8 /* Main.storyboard in Resources */,
 				715916BB1A64CE740090CE5C /* SVProgressHUD.bundle in Resources */,
 				715E42D61A5BED1500A3C4F1 /* ios-social-sdk-login-quick.html in Resources */,
+				71938B191A73935300ED6F29 /* DoingTableViewCell.xib in Resources */,
 				715E42DB1A5BED1500A3C4F1 /* markdown.css in Resources */,
 				71C97BE21A08B5970010A5B8 /* LaunchScreen.xib in Resources */,
 				715E42C81A5BED1500A3C4F1 /* UMSocialSDKResourcesNew.bundle in Resources */,
@@ -865,6 +905,7 @@
 				71C9B69D1A3033540011A3B1 /* UIScrollView+MJExtension.m in Sources */,
 				715EBF2E1A454F8E00010D5F /* PrettyViewController.m in Sources */,
 				717BA3871A496C7400E70CCD /* MyClassViewController.m in Sources */,
+				71938B0D1A736F3B00ED6F29 /* XLScrollViewer.m in Sources */,
 				71C9B6B61A305BB60011A3B1 /* AFHTTPSessionManager.m in Sources */,
 				717BA38D1A496CAB00E70CCD /* MySiteViewController.m in Sources */,
 				71EAF1B11A4D6A5200C8D56D /* MyNewCardViewController.m in Sources */,
@@ -884,11 +925,13 @@
 				71C97BDA1A08B5970010A5B8 /* ViewController.swift in Sources */,
 				71C9B69E1A3033540011A3B1 /* UIScrollView+MJRefresh.m in Sources */,
 				717BA3841A496C5000E70CCD /* MyCardViewController.m in Sources */,
+				71938B181A73935300ED6F29 /* DoingTableViewCell.m in Sources */,
 				71856FF91A6CF0AD00E841CD /* MyMoneyTableViewCell.m in Sources */,
 				710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */,
 				710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */,
 				716C18951A5D2E57004BFBAD /* MyClassDetailsViewController.m in Sources */,
 				716C03621A25A49200F64482 /* ApplyProfessionalViewController.m in Sources */,
+				71938B141A7382E200ED6F29 /* View2.m in Sources */,
 				71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */,
 				71C9B69A1A3033540011A3B1 /* MJRefreshConst.m in Sources */,
 				71C9B69C1A3033540011A3B1 /* MJRefreshHeaderView.m in Sources */,
@@ -905,6 +948,7 @@
 				71C9B6B81A305BB60011A3B1 /* AFSecurityPolicy.m in Sources */,
 				716C188F1A5D250E004BFBAD /* CardClassTableViewCell.m in Sources */,
 				71CC92951A39693100EFDE67 /* ApplyCardTableViewCell.m in Sources */,
+				71938B1C1A73AC8400ED6F29 /* Doing.m in Sources */,
 				71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */,
 				71CC37C31A3AC31C0057F4C9 /* ApplyAlertView.m in Sources */,
 				71C9B6B51A305BB60011A3B1 /* AFHTTPRequestOperationManager.m in Sources */,
