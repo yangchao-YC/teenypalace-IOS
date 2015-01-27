@@ -70,7 +70,7 @@
     
     [manager GET:date parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        self.articles = responseObject;
+        self.articles = [NSMutableArray arrayWithArray:responseObject];
         [self dateHandle:key];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -120,10 +120,10 @@
     }
     else{//加载更多
         if (self.articles.count >0) {
-           // for (int i =0; self.articles.count; i++) {
-            //    NSDictionary *dic = [self.articles objectAtIndex:i];
-             //   [self.date addObjectsFromArray:dic];//[self.articles objectAtIndex:i]];
-           // }
+           for (int i =0; i< self.articles.count; i++) {
+               id data = [self.articles objectAtIndex:i];
+               [self.date addObject:data];//[self.articles objectAtIndex:i]];
+           }
             //[self.date addObject:self.articles];
            
             
