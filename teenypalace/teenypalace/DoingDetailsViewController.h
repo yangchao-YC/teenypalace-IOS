@@ -9,5 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface DoingDetailsViewController : UIViewController
-@property(strong,nonatomic)NSString *doingKey;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *checkSumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentLabel;
+
+@property(strong,nonatomic)NSDictionary *doingKey;
 @end

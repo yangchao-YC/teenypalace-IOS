@@ -22,10 +22,48 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.titleLabel.text = [self.doingKey objectForKey:@"field_charity_title"];//标题
+    int time = [[self.doingKey objectForKey:@"eck_mobileapp_created"] intValue];
+    
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:time];
+    NSLog(@"1296035591  = %@",confromTimesp);
+    
+    NSString *times = [NSString stringWithFormat:@"发布时间：%@",confromTimesp];
+    
+    self.timeLabel.text = [times substringToIndex:15];//[self.doingKey objectForKey:@""];//发布时间
+    self.checkSumLabel.text = [NSString stringWithFormat:@"点击数：%@",[self.doingKey objectForKey:@"field_charity_counter"]];//点击数
+    
+    NSString *eTime = [NSString stringWithFormat:@"%@-%@",[[self.doingKey objectForKey:@"field_charity_signup_starttime"]substringToIndex:10],[[self.doingKey objectForKey:@"field_charity_signup_endtime"]substringToIndex:10]];
     
     
+    self.endTimeLabel.text = eTime;//时间周期
+    self.startTimeLabel.text = [[self.doingKey objectForKey:@"field_charity_time"] substringToIndex:10];//开始时间
+    self.addressLabel.text = [self.doingKey objectForKey:@"field_charity_address"];//地点
+    self.phoneLabel.text = [self.doingKey objectForKey:@"field_charity_signup_tel"];//电话
+    
+    self.contentLabel.text = [self.doingKey objectForKey:@"field_charity_introduction"];//内容
+    self.contentLabel.editable = NO;
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",DATE_DOING_SUM,[self.doingKey objectForKey:@"id"]];
+    
+    [self dateUrl:urlString];
+}
+
+-(void)dateUrl:(NSString *)url
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
     
 }
+
+
 
 /*
  tag

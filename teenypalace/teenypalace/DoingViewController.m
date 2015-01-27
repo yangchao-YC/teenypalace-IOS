@@ -10,9 +10,16 @@
 
 #import "DoingViewController.h"
 
-#import "View2.h"
-#import "Doing.h"
+#import "DoingOne.h"
 @interface DoingViewController ()
+{
+    BOOL one ;
+    BOOL two;
+    BOOL three;
+}
+
+
+@property(nonatomic,strong) DoingOne *doing;
 
 @end
 
@@ -22,20 +29,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    
-    
-    // [self.tableView addHeaderWithTarget:self action:@selector(headerrereshing)];//绑定MJ刷新头部
-    
-    //  [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];//绑定MJ刷新尾部
-    
-    
-    //[self.tableView headerBeginRefreshing];//自动执行下啦刷新
-    //[self.tableView footerBeginRefreshing];
+
     CGRect frame =CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height -64);//如果没有导航栏，则去掉64
     
     //对应填写两个数组
-    NSArray *views =@[[View2 new],[View2 new],[View2 new],[View2 new]];   //创建使用
+    NSArray *views =@[[DoingOne new],[DoingOne new],[DoingOne new],[DoingOne new]];   //创建使用
     NSArray *names =@[@" 团队活动 ",@" 主题活动 ",@" 小时候活动 ",@" 小时候艺术 "];
     self.scrollNav =[XLScrollViewer scrollWithFrame:frame withViews:views withButtonNames:names withThreeAnimation:222];//三中动画都选择
     self.scrollNav.backgroundColor = [UIColor clearColor];
@@ -54,74 +52,53 @@
 
     //加入控制器视图
     [self.view addSubview:self.scrollNav];
+
+    
+    one = YES;
+    two = YES;
+    three = YES;
+    DoingOne *vv0 = views[0];
+    DoingOne *vv1 = views[1];
+    DoingOne *vv2 = views[2];
+    DoingOne *vv3 = views[3];
+    
+    [vv0 start];
+    
+    self.scrollNav.XlScrollBlock = ^(int a)
+    {
+        switch (a) {
+            case 1:
+                if (one) {
+                    [vv1 start];
+                    one = NO;
+                }
+                break;
+            case 2:
+                if (two) {
+                    [vv2 start];
+                    two = NO;
+                }
+                break;
+            case 3:
+                if (three) {
+                    [vv3 start];
+                    three = NO;
+                }
+                break;
+
+            default:
+                break;
+        }
+    };
+    
+    vv0.DoingOneBlock = ^(NSDictionary *a)
+    {
+        [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
+    };
+    
     
 }
 
-//下拉刷新执行
--(void)headerrereshing
-{
-    [self.tableView reloadData];//将数据放入数组后填入tableview
-    [self.tableView headerEndRefreshing];
-}
-
-//加载更多执行
--(void)footerRereshing
-{
-    
-    [self.tableView reloadData];//将数据放入数组后填入tableview
-    [self.tableView footerEndRefreshing];
-}
-
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    /*
-    
-    static NSString *apply_cell_id = @"apply_cell_id";
-    
-   // ApplyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:apply_cell_id];
-    
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-*/
-    
-    return nil;
-    
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 5;//设置显示行数
-}
-
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;//设置为只有一个模块
-}
-
-
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    return 70;
-}//设置模块内cell的高度
-
-
-
-
-//下面为点击事件方法
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
 
 
 
@@ -134,7 +111,7 @@
             break;
             
         default:
-            [self performSegueWithIdentifier:@"doing_doingDetails" sender:@"yy"];
+            
             break;
     }
 }

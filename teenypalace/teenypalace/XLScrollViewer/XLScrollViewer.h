@@ -12,6 +12,9 @@
 
 @interface XLScrollViewer : UIView
 
+
+@property(copy)void(^XlScrollBlock)(int a);
+
 #pragma mark -使用XLScrollView
 /**
  *     使用XLScrollView,数组如果填nil，则为默认，choose处填写三位数字，代表选择与否，1代表选择，2代表不选择。例如：你准备选择第1种和第3种动画效果，则填写121

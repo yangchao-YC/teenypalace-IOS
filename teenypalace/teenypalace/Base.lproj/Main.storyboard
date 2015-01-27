@@ -440,15 +440,6 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="武汉市小学生奇奇趣味运动会总决赛在武汉市青少年宫举行" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW7-Ov-Q4R">
-                                        <rect key="frame" x="111" y="11" width="378" height="46"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="nxP-na-iZb"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2c-vq-qY4">
                                         <rect key="frame" x="20" y="64" width="560" height="1"/>
                                         <color key="backgroundColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -456,19 +447,28 @@
                                             <constraint firstAttribute="height" constant="1" id="Ao6-CG-2Nw"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="武汉市小学生奇奇趣味运动会总决赛在武汉市青少年宫举行" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW7-Ov-Q4R">
+                                        <rect key="frame" x="111" y="10" width="378" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="nxP-na-iZb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="uW7-Ov-Q4R" firstAttribute="top" secondItem="DmH-uS-LRn" secondAttribute="top" id="0zy-1U-ROr"/>
                                     <constraint firstAttribute="bottom" secondItem="X2c-vq-qY4" secondAttribute="bottom" id="3DD-vy-Dar"/>
                                     <constraint firstAttribute="height" constant="65" id="8x8-wa-HvA"/>
-                                    <constraint firstItem="uW7-Ov-Q4R" firstAttribute="leading" secondItem="DmH-uS-LRn" secondAttribute="leading" constant="25" id="BPC-HG-Zyo"/>
-                                    <constraint firstItem="DMj-dm-pzs" firstAttribute="leading" secondItem="DmH-uS-LRn" secondAttribute="leading" constant="30" id="N6q-EX-7wl"/>
+                                    <constraint firstItem="uW7-Ov-Q4R" firstAttribute="leading" secondItem="DmH-uS-LRn" secondAttribute="leading" constant="10" id="BPC-HG-Zyo"/>
+                                    <constraint firstItem="DMj-dm-pzs" firstAttribute="leading" secondItem="DmH-uS-LRn" secondAttribute="leading" constant="20" id="N6q-EX-7wl"/>
                                     <constraint firstItem="X2c-vq-qY4" firstAttribute="leading" secondItem="DmH-uS-LRn" secondAttribute="leading" constant="20" id="Ou1-9N-JLZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="rzc-mJ-bef" secondAttribute="trailing" constant="30" id="SHQ-gA-KMS"/>
+                                    <constraint firstAttribute="trailing" secondItem="rzc-mJ-bef" secondAttribute="trailing" constant="20" id="SHQ-gA-KMS"/>
                                     <constraint firstItem="DMj-dm-pzs" firstAttribute="top" secondItem="DmH-uS-LRn" secondAttribute="top" constant="42" id="YCH-I4-8gJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="uW7-Ov-Q4R" secondAttribute="trailing" constant="25" id="beh-hx-uVU"/>
+                                    <constraint firstAttribute="trailing" secondItem="uW7-Ov-Q4R" secondAttribute="trailing" constant="10" id="beh-hx-uVU"/>
                                     <constraint firstAttribute="trailing" secondItem="X2c-vq-qY4" secondAttribute="trailing" constant="20" id="hh9-fD-9fg"/>
-                                    <constraint firstItem="rzc-mJ-bef" firstAttribute="leading" secondItem="DMj-dm-pzs" secondAttribute="trailing" constant="10" id="lQo-SZ-Nn5"/>
+                                    <constraint firstItem="rzc-mJ-bef" firstAttribute="leading" secondItem="DMj-dm-pzs" secondAttribute="trailing" id="lQo-SZ-Nn5"/>
                                     <constraint firstItem="rzc-mJ-bef" firstAttribute="top" secondItem="DmH-uS-LRn" secondAttribute="top" constant="42" id="wRR-uI-tkx"/>
                                 </constraints>
                             </view>
@@ -591,6 +591,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="eWN-li-Cnw"/>
                     <connections>
+                        <outlet property="addressLabel" destination="RQd-L1-6Lx" id="Q2X-i4-HIs"/>
+                        <outlet property="checkSumLabel" destination="rzc-mJ-bef" id="ICJ-Ff-8mh"/>
+                        <outlet property="contentLabel" destination="qaG-Cz-aXc" id="fhX-50-3Xa"/>
+                        <outlet property="endTimeLabel" destination="Tmj-nt-8JT" id="k2a-Ze-xMf"/>
+                        <outlet property="phoneLabel" destination="qK4-KU-mAY" id="wFg-B1-lpb"/>
+                        <outlet property="startTimeLabel" destination="PNR-g8-aNK" id="0Az-np-s4y"/>
+                        <outlet property="timeLabel" destination="DMj-dm-pzs" id="be4-OY-Jia"/>
+                        <outlet property="titleLabel" destination="uW7-Ov-Q4R" id="PDR-wg-cdO"/>
                         <segue destination="4rr-9r-2vO" kind="push" identifier="doingDetails_doingApply" id="dPX-xi-a0M"/>
                     </connections>
                 </viewController>

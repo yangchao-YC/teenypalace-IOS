@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MJRefresh.h"
 #import "XLScrollViewer.h"
-@interface DoingViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface DoingViewController : UIViewController
 
 @property(nonatomic,strong)XLScrollViewer *scrollNav;
+
+
+
 
 @end

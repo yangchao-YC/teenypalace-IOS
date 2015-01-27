@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Doing : UIWindow
+@interface DoingOne : UIView
+
+
+@property(nonatomic,strong)UITableView *tableView;
+
+@property(copy)void(^DoingOneBlock)(NSDictionary *a);
+
+-(void)start;
 
 @end

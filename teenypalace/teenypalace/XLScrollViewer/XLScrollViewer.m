@@ -338,7 +338,7 @@
 
 -(void)block:(int)index
 {
-    
+    self.XlScrollBlock(index);
 }
 
 @end
