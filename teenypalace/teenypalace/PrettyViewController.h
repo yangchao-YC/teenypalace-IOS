@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XLScrollViewer.h"
 @interface PrettyViewController : UIViewController
+@property(nonatomic,strong)XLScrollViewer *scrollNav;
 
 @end

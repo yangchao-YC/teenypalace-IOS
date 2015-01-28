@@ -73,23 +73,20 @@
  */
 -(IBAction)DoingDetailsBtn:(UIButton *)sender
 {
+    
     switch (sender.tag) {
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
             break;
         case 1:
-            /*
-             [UMSocialSnsService
-             presentSnsIconSheetView:self
-             appKey:nil
-             shareText:@"武汉青少年宫"
-             shareImage:nil
-             shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToEmail,UMShareToSina,UMShareToSms,UMShareToTencent ,nil]
-             delegate:self];
-             */
+            
+            
+            [self share];
+            
+            
             break;
         case 2:
-            [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:@"yy"];
+            [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:[self.doingKey objectForKey:@"id"]];
             break;
         default:
             
@@ -97,7 +94,17 @@
     }
 }
 
-
+-(void)share
+{
+     NSString *text = [NSString stringWithFormat:@"武汉青少年宫活动。详情请点击%@%@",DATE_DOING_APPLY,[self.doingKey objectForKey:@"id"]];
+    [UMSocialSnsService
+     presentSnsIconSheetView:self
+     appKey:nil
+     shareText:text
+     shareImage:nil
+     shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToEmail,UMShareToSina,UMShareToSms,UMShareToTencent ,nil]
+     delegate:self];
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

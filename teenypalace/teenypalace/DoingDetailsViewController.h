@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "UMSocial.h"
 @interface DoingDetailsViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 

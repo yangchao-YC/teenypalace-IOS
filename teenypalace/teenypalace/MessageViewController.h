@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XLScrollViewer.h"
 @interface MessageViewController : UIViewController
+
+
+@property(nonatomic,strong)XLScrollViewer *scrollNav;
+
+
 
 @end

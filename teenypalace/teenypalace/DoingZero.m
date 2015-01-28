@@ -6,12 +6,12 @@
 //  Copyright (c) 2015年 杨超. All rights reserved.
 //
 
-#import "DoingOne.h"
+#import "DoingZero.h"
 #import "MJRefresh.h"
 #import "DoingTableViewCell.h"
 #import "UIImageView+WebCache.h"
 
-@interface DoingOne()<UITableViewDelegate,UITableViewDataSource>
+@interface DoingZero()<UITableViewDelegate,UITableViewDataSource>
 {
     int mark;
 }
@@ -25,7 +25,7 @@
 
 
 
-@implementation DoingOne
+@implementation DoingZero
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -62,7 +62,9 @@
 -(void)dateUrl:(int)marks Key:(BOOL)key
 {
     
-    NSString *date = [NSString stringWithFormat:@"%@2&page=%d",DATE_SEARCH_DOING,marks];
+    NSString *date = [NSString stringWithFormat:@"%@1&page=%d",DATE_SEARCH_DOING,marks];
+    
+    NSLog(@"%@",date);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     

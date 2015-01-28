@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "UMSocial.h"
+
 
 /*
  checkBox:是否记住密码
