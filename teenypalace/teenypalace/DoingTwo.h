@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DoingOne : UIView
+@interface DoingTwo : UIView
 
 
 @property(nonatomic,strong)UITableView *tableView;

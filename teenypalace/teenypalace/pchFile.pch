@@ -93,6 +93,7 @@
 
 #define DATE_DOING_SUM [DATE_URL stringByAppendingString:@"charity/update_counter/"]//活动次数统计
 
+#define DATE_DOING_APPLY [DATE_URL stringByAppendingString:@"charity/signup"]//活动报名
 
 
 

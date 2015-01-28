@@ -89,7 +89,7 @@
              */
             break;
         case 2:
-            [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:@"yy"];
+            [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:[self.doingKey objectForKey:@"id"]];
             break;
         default:
             

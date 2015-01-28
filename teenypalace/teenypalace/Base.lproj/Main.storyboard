@@ -1003,7 +1003,7 @@
                                     <constraint firstItem="a8V-Qk-ew0" firstAttribute="leading" secondItem="aqP-Xc-vs2" secondAttribute="leading" constant="15" id="xIK-ls-B0q"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgf-q4-TS8">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgf-q4-TS8">
                                 <rect key="frame" x="16" y="555" width="568" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YwJ-fa-02w"/>
@@ -1017,7 +1017,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="DoingDetailsBtn:" destination="gKM-JN-lAq" eventType="touchUpInside" id="uUJ-Vg-Cz9"/>
+                                    <action selector="DoingApplyBtn:" destination="4rr-9r-2vO" eventType="touchUpInside" id="QjE-r1-NBh"/>
                                 </connections>
                             </button>
                         </subviews>

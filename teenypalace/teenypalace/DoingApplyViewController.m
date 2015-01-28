@@ -40,13 +40,116 @@
 
 
 
+/*
+ 报名
+ card：学员卡号
+ classID：班级ID
+ */
+-(void)datePost:(NSString *)name Phone:(NSString *)phone1 Phone2:(NSString *)phone2 Addres:(NSString *)addres
+{
+    AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
+    requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    /*
+     field_charitysignup_username        姓名
+     field_charitysignup_contactinfo1    联系方式一
+     field_charitysignup_contactinfo2    联系方式二
+     field_charitysignup_address         地址
+     field_charitysignup_charityid       活动ID
+     */
+    [requestManager POST:DATE_DOING_APPLY parameters:
+     @{@"field_charitysignup_username":name,
+       @"field_charitysignup_contactinfo1":phone1,
+       @"field_charitysignup_contactinfo2":phone2,
+       @"field_charitysignup_address":addres,
+       @"field_charitysignup_charityid":self.doingApplyKey
+       }success:^(AFHTTPRequestOperation *operation, id responseObject) {
+           NSLog(@"JSON: %@", responseObject);
+           
+           NSDictionary *dic = responseObject;
+           if ([[dic objectForKey:@"status"] intValue] == 0) {
+               [SVProgressHUD showSuccessWithStatus:@"报名成功" maskType:3];
+           }
+           else{
+               [SVProgressHUD showInfoWithStatus:[dic objectForKey:@"message"] maskType:3];
+           }
+       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+           NSLog(@"Error: %@", error);
+           NSString *errorString = [NSString stringWithFormat:@"%@",error];
+           [SVProgressHUD showInfoWithStatus:errorString maskType:3];//异常提示
+       }];
+}
+
 
 
 -(IBAction)DoingApplyBtn:(UIButton *)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    switch (sender.tag) {
+        case 0:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+        case 1:
+            [self apply];
+            break;
+        default:
+            break;
+    }
+    
 }
 
+-(void)apply
+{
+    NSString *name;
+    NSString *phone1;
+    NSString *phone2;
+    NSString *address;
+    
+    name = [self.nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    phone1 = [self.phoneTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    phone2 = [self.phoneTwoTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    address = [self.siteTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if (name.length >0) {
+        if (phone1.length == 11) {
+            if (phone2.length !=0) {
+                if (phone2.length ==11) {
+                    if (address.length !=0) {
+                        [self datePost:name Phone:phone1 Phone2:phone2 Addres:address];
+                    }
+                    else
+                    {
+                        address = @"";
+                        [self datePost:name Phone:phone1 Phone2:phone2 Addres:address];
+                    }
+                }
+                else
+                {
+                    [SVProgressHUD showInfoWithStatus:@"联系方式必须为11位手机号码" maskType:3];
+                }
+            }
+            else
+            {
+                if (address.length !=0) {
+                    [self datePost:name Phone:phone1 Phone2:phone2 Addres:address];
+                }
+                else
+                {
+                    address = @"";
+                    [self datePost:name Phone:phone1 Phone2:phone2 Addres:address];
+                }
+                
+            }
+        }
+        else
+        {
+            [SVProgressHUD showInfoWithStatus:@"联系方式必须为11位手机号码" maskType:3];
+        }
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"姓名不能为空" maskType:3];
+    }
+    
+}
 
 
 

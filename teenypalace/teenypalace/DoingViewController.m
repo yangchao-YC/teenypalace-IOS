@@ -11,15 +11,18 @@
 #import "DoingViewController.h"
 
 #import "DoingOne.h"
+#import "DoingTwo.h"
+#import "DoingZero.h"
+#import "DoingThree.h"
 @interface DoingViewController ()
 {
-    BOOL one ;
-    BOOL two;
-    BOOL three;
+    BOOL oneIndex;
+    BOOL twoIndex;
+    BOOL threeIndex;
 }
 
 
-@property(nonatomic,strong) DoingOne *doing;
+
 
 @end
 
@@ -33,7 +36,7 @@
     CGRect frame =CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height -64);//如果没有导航栏，则去掉64
     
     //对应填写两个数组
-    NSArray *views =@[[DoingOne new],[DoingOne new],[DoingOne new],[DoingOne new]];   //创建使用
+    NSArray *views =@[[DoingZero new],[DoingOne new],[DoingTwo new],[DoingThree new]];   //创建使用
     NSArray *names =@[@" 团队活动 ",@" 主题活动 ",@" 小时候活动 ",@" 小时候艺术 "];
     self.scrollNav =[XLScrollViewer scrollWithFrame:frame withViews:views withButtonNames:names withThreeAnimation:222];//三中动画都选择
     self.scrollNav.backgroundColor = [UIColor clearColor];
@@ -54,13 +57,13 @@
     [self.view addSubview:self.scrollNav];
 
     
-    one = YES;
-    two = YES;
-    three = YES;
-    DoingOne *vv0 = views[0];
+    oneIndex = YES;
+    twoIndex = YES;
+    threeIndex = YES;
+    DoingZero *vv0 = views[0];
     DoingOne *vv1 = views[1];
-    DoingOne *vv2 = views[2];
-    DoingOne *vv3 = views[3];
+    DoingTwo *vv2 = views[2];
+    DoingThree *vv3 = views[3];
     
     [vv0 start];
     
@@ -68,21 +71,21 @@
     {
         switch (a) {
             case 1:
-                if (one) {
+                if (oneIndex) {
                     [vv1 start];
-                    one = NO;
+                    oneIndex = NO;
                 }
                 break;
             case 2:
-                if (two) {
+                if (twoIndex) {
                     [vv2 start];
-                    two = NO;
+                    twoIndex = NO;
                 }
                 break;
             case 3:
-                if (three) {
+                if (threeIndex) {
                     [vv3 start];
-                    three = NO;
+                    threeIndex = NO;
                 }
                 break;
 
@@ -90,12 +93,23 @@
                 break;
         }
     };
-    
-    vv0.DoingOneBlock = ^(NSDictionary *a)
+    //回调跳转
+    vv0.DoingBlock = ^(NSDictionary *a)
     {
         [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
     };
-    
+    vv1.DoingBlock = ^(NSDictionary *a)
+    {
+        [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
+    };
+    vv2.DoingBlock = ^(NSDictionary *a)
+    {
+        [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
+    };
+    vv3.DoingBlock = ^(NSDictionary *a)
+    {
+        [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
+    };
     
 }
 
