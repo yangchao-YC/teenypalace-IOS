@@ -95,6 +95,6 @@
 
 #define DATE_DOING_APPLY [DATE_URL stringByAppendingString:@"charity/signup"]//活动报名
 
-
+#define DATE_SEARCH_MESSAGE_TEACHER [DATE_URL stringByAppendingString:@"app_service/service_teacher_profile?page="]//
 
 #endif

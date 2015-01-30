@@ -56,8 +56,15 @@
 		717BA3871A496C7400E70CCD /* MyClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3861A496C7400E70CCD /* MyClassViewController.m */; };
 		717BA38A1A496C8700E70CCD /* MyMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3891A496C8700E70CCD /* MyMoneyViewController.m */; };
 		717BA38D1A496CAB00E70CCD /* MySiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA38C1A496CAB00E70CCD /* MySiteViewController.m */; };
+		717C1F3C1A7A182E00997639 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 717C1F3B1A7A182E00997639 /* MessageView.m */; };
+		717C1F401A7A19A800997639 /* MessageProfessionaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 717C1F3E1A7A19A800997639 /* MessageProfessionaTableViewCell.m */; };
+		717C1F411A7A19A800997639 /* MessageProfessionaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717C1F3F1A7A19A800997639 /* MessageProfessionaTableViewCell.xib */; };
 		717E2AE31A51545E0070570B /* CardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 717E2AE21A51545E0070570B /* CardTableViewCell.m */; };
 		71856FF91A6CF0AD00E841CD /* MyMoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71856FF81A6CF0AD00E841CD /* MyMoneyTableViewCell.m */; };
+		718EFF4E1A7B66E600DC5900 /* MessageTeacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 718EFF4D1A7B66E600DC5900 /* MessageTeacher.m */; };
+		718EFF521A7B6ED200DC5900 /* MessageTeachreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 718EFF501A7B6ED200DC5900 /* MessageTeachreTableViewCell.m */; };
+		718EFF531A7B6ED200DC5900 /* MessageTeachreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718EFF511A7B6ED200DC5900 /* MessageTeachreTableViewCell.xib */; };
+		718EFF551A7B920600DC5900 /* template.html in Resources */ = {isa = PBXBuildFile; fileRef = 718EFF541A7B920600DC5900 /* template.html */; };
 		718FB93E1A19F4B10044F2DC /* ApplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB93D1A19F4B10044F2DC /* ApplyViewController.m */; };
 		718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718FB9401A19F4CC0044F2DC /* MyViewController.m */; };
 		71938B0D1A736F3B00ED6F29 /* XLScrollViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71938B0C1A736F3B00ED6F29 /* XLScrollViewer.m */; };
@@ -228,11 +235,22 @@
 		717BA3891A496C8700E70CCD /* MyMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMoneyViewController.m; sourceTree = "<group>"; };
 		717BA38B1A496CAB00E70CCD /* MySiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySiteViewController.h; sourceTree = "<group>"; };
 		717BA38C1A496CAB00E70CCD /* MySiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySiteViewController.m; sourceTree = "<group>"; };
+		717C1F3A1A7A182E00997639 /* MessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
+		717C1F3B1A7A182E00997639 /* MessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
+		717C1F3D1A7A19A800997639 /* MessageProfessionaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageProfessionaTableViewCell.h; sourceTree = "<group>"; };
+		717C1F3E1A7A19A800997639 /* MessageProfessionaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageProfessionaTableViewCell.m; sourceTree = "<group>"; };
+		717C1F3F1A7A19A800997639 /* MessageProfessionaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageProfessionaTableViewCell.xib; sourceTree = "<group>"; };
 		717E2AE11A51545E0070570B /* CardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardTableViewCell.h; sourceTree = "<group>"; };
 		717E2AE21A51545E0070570B /* CardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardTableViewCell.m; sourceTree = "<group>"; };
 		71856FF71A6CF0AD00E841CD /* MyMoneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMoneyTableViewCell.h; sourceTree = "<group>"; };
 		71856FF81A6CF0AD00E841CD /* MyMoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMoneyTableViewCell.m; sourceTree = "<group>"; };
 		718A1C081A2487FA00F8F582 /* pchFile.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pchFile.pch; sourceTree = "<group>"; };
+		718EFF4C1A7B66E600DC5900 /* MessageTeacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTeacher.h; sourceTree = "<group>"; };
+		718EFF4D1A7B66E600DC5900 /* MessageTeacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTeacher.m; sourceTree = "<group>"; };
+		718EFF4F1A7B6ED200DC5900 /* MessageTeachreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTeachreTableViewCell.h; sourceTree = "<group>"; };
+		718EFF501A7B6ED200DC5900 /* MessageTeachreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTeachreTableViewCell.m; sourceTree = "<group>"; };
+		718EFF511A7B6ED200DC5900 /* MessageTeachreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTeachreTableViewCell.xib; sourceTree = "<group>"; };
+		718EFF541A7B920600DC5900 /* template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = template.html; sourceTree = "<group>"; };
 		718FB93C1A19F4B10044F2DC /* ApplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyViewController.h; sourceTree = "<group>"; };
 		718FB93D1A19F4B10044F2DC /* ApplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyViewController.m; sourceTree = "<group>"; };
 		718FB93F1A19F4CC0044F2DC /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
@@ -575,6 +593,12 @@
 				71938B151A73935300ED6F29 /* DoingTableViewCell.h */,
 				71938B161A73935300ED6F29 /* DoingTableViewCell.m */,
 				71938B171A73935300ED6F29 /* DoingTableViewCell.xib */,
+				717C1F3D1A7A19A800997639 /* MessageProfessionaTableViewCell.h */,
+				717C1F3E1A7A19A800997639 /* MessageProfessionaTableViewCell.m */,
+				717C1F3F1A7A19A800997639 /* MessageProfessionaTableViewCell.xib */,
+				718EFF4F1A7B6ED200DC5900 /* MessageTeachreTableViewCell.h */,
+				718EFF501A7B6ED200DC5900 /* MessageTeachreTableViewCell.m */,
+				718EFF511A7B6ED200DC5900 /* MessageTeachreTableViewCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -599,6 +623,10 @@
 				71A180341A78CED700466755 /* DoingTwo.m */,
 				71A180381A78CEDE00466755 /* DoingThree.h */,
 				71A180331A78CED700466755 /* DoingThree.m */,
+				717C1F3A1A7A182E00997639 /* MessageView.h */,
+				717C1F3B1A7A182E00997639 /* MessageView.m */,
+				718EFF4C1A7B66E600DC5900 /* MessageTeacher.h */,
+				718EFF4D1A7B66E600DC5900 /* MessageTeacher.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -795,6 +823,7 @@
 		71C9B6861A3033400011A3B1 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				718EFF541A7B920600DC5900 /* template.html */,
 				71966F3B1A75EF0900802380 /* SDWebImage */,
 				71938B0A1A736F3B00ED6F29 /* XLScrollViewer */,
 				719C82A21A722BC5001C7709 /* ZHpickView */,
@@ -957,6 +986,8 @@
 				71C97BE21A08B5970010A5B8 /* LaunchScreen.xib in Resources */,
 				715E42C81A5BED1500A3C4F1 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				715E42CC1A5BED1500A3C4F1 /* ios-social-sdk-shake.html in Resources */,
+				717C1F411A7A19A800997639 /* MessageProfessionaTableViewCell.xib in Resources */,
+				718EFF531A7B6ED200DC5900 /* MessageTeachreTableViewCell.xib in Resources */,
 				715E42D31A5BED1500A3C4F1 /* ios-social-sdk-comment-quick.html in Resources */,
 				715E42C21A5BED1500A3C4F1 /* UMSCommentInputControlleriPad.xib in Resources */,
 				715E42D21A5BED1500A3C4F1 /* ios-social-sdk-comment-detail.html in Resources */,
@@ -964,6 +995,7 @@
 				715E42D51A5BED1500A3C4F1 /* ios-social-sdk-login-detail.html in Resources */,
 				715E42D41A5BED1500A3C4F1 /* ios-social-sdk-like.html in Resources */,
 				715E42D71A5BED1500A3C4F1 /* ios-social-sdk-shake.html in Resources */,
+				718EFF551A7B920600DC5900 /* template.html in Resources */,
 				715E42D01A5BED1500A3C4F1 /* iOS-social-analytics-releasenote.html in Resources */,
 				715E42CA1A5BED1500A3C4F1 /* ios-social-sdk-shake.html in Resources */,
 				715E42D81A5BED1500A3C4F1 /* ios-social-sdk-share-detail.html in Resources */,
@@ -992,9 +1024,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				718EFF521A7B6ED200DC5900 /* MessageTeachreTableViewCell.m in Sources */,
 				71966F621A75EF0A00802380 /* UIImage+GIF.m in Sources */,
 				71C6082B1A358200001CE8BA /* DoingApplyViewController.m in Sources */,
 				71966F5A1A75EF0A00802380 /* SDImageCache.m in Sources */,
+				717C1F401A7A19A800997639 /* MessageProfessionaTableViewCell.m in Sources */,
 				71966F5D1A75EF0A00802380 /* SDWebImageDownloader.m in Sources */,
 				71C9B69B1A3033540011A3B1 /* MJRefreshFooterView.m in Sources */,
 				71966F631A75EF0A00802380 /* UIImage+MultiFormat.m in Sources */,
@@ -1010,6 +1044,8 @@
 				718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */,
 				71966F5E1A75EF0A00802380 /* SDWebImageDownloaderOperation.m in Sources */,
 				715EBF251A45336300010D5F /* MessageViewController.m in Sources */,
+				718EFF4E1A7B66E600DC5900 /* MessageTeacher.m in Sources */,
+				717C1F3C1A7A182E00997639 /* MessageView.m in Sources */,
 				71966F591A75EF0A00802380 /* NSData+ImageContentType.m in Sources */,
 				71966F601A75EF0A00802380 /* SDWebImagePrefetcher.m in Sources */,
 				71C6082E1A35AFCA001CE8BA /* ApplyLevelViewController.m in Sources */,

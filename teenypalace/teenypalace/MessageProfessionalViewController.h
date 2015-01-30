@@ -10,4 +10,8 @@
 
 @interface MessageProfessionalViewController : UIViewController
 
+
+
+@property(strong,nonatomic)NSString *messageKey;
+
 @end

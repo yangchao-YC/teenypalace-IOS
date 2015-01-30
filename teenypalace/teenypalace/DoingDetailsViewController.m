@@ -43,6 +43,13 @@
     
     self.contentLabel.text = [self.doingKey objectForKey:@"field_charity_introduction"];//内容
     self.contentLabel.editable = NO;
+   // self.contentLabel.textAlignment = NSTextAlignmentLeft;
+   // self.contentLabel.contentInset = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
+   // if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
+        
+     //   self.automaticallyAdjustsScrollViewInsets = NO;
+ 
+//    }
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@",DATE_DOING_SUM,[self.doingKey objectForKey:@"id"]];
     
@@ -70,6 +77,7 @@
  0:返回
  1：分享
  2：报名
+ 3:电话
  */
 -(IBAction)DoingDetailsBtn:(UIButton *)sender
 {
@@ -79,19 +87,31 @@
             [self.navigationController popViewControllerAnimated:YES];
             break;
         case 1:
-            
-            
             [self share];
-            
-            
             break;
         case 2:
             [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:[self.doingKey objectForKey:@"id"]];
+            break;
+        case 3:
+            [self phone];
             break;
         default:
             
             break;
     }
+}
+
+
+
+-(void)phone
+{
+   // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",[self.doingKey objectForKey:@"field_charity_signup_tel"]]]];
+    
+    NSLog(@"我被调用了");
+    UIWebView *callWebView = [[UIWebView alloc]init];
+    NSURL *telUrl = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",[self.doingKey objectForKey:@"field_charity_signup_tel"]]];
+    [callWebView loadRequest:[NSURLRequest requestWithURL:telUrl]];
+    [self.view addSubview:callWebView];
 }
 
 -(void)share

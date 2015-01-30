@@ -10,7 +10,7 @@
 //招生信息预览-老师详情页面
 
 #import "MessageWebViewController.h"
-
+#import "UIImageView+WebCache.h"
 @interface MessageWebViewController ()
 
 @end
@@ -20,6 +20,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tabbarLabel.text = [self.messageKey objectForKey:@"field_teacher_name"];
+    
+    self.nameLabel.text = [NSString stringWithFormat:@"%@   %@",[self.messageKey objectForKey:@"field_teacher_name"],[self.messageKey objectForKey:@"field_teacher_class"]];
+    
+    [self.images setImageWithURL:[NSURL URLWithString:[self.messageKey objectForKey:@"field_teacher_closeup"]]];
+    
+    
+    [self webViewDate];
+    
+}
+
+-(IBAction)messageWebBtn:(UIButton *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)webViewDate
+{
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"html"];
+    NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    //获取本条数据
+    
+
+    NSString *date = [self.messageKey objectForKey:@"field_teacher_about_intro"];
+    
+    //进行数据添加
+
+    html = [html stringByReplacingOccurrencesOfString:@"{Content}" withString:date];
+    [self.webView loadHTMLString:html baseURL:baseURL];
 }
 
 - (void)didReceiveMemoryWarning {

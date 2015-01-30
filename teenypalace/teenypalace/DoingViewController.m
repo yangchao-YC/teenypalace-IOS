@@ -36,8 +36,8 @@
     CGRect frame =CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height -64);//如果没有导航栏，则去掉64
     
     //对应填写两个数组
-    NSArray *views =@[[DoingZero new],[DoingOne new],[DoingTwo new],[DoingThree new]];   //创建使用
-    NSArray *names =@[@" 团队活动 ",@" 主题活动 ",@" 小时候活动 ",@" 小时候艺术 "];
+    NSArray *views =@[[DoingZero new],[DoingOne new],[DoingTwo new],[DoingThree new],[DoingThree new],[DoingThree new],[DoingThree new],[DoingThree new]];   //创建使用
+    NSArray *names =@[@" 团队活动 ",@" 主题活动 ",@" 小时候活动 ",@" 小时候艺术 ",@" 小时候艺术 ",@" 小时候艺术 ",@" 小时候艺术 ",@" 小时候艺术 "];
     self.scrollNav =[XLScrollViewer scrollWithFrame:frame withViews:views withButtonNames:names withThreeAnimation:222];//三中动画都选择
     self.scrollNav.backgroundColor = [UIColor clearColor];
     //自定义各种属性。。打开查看

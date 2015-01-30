@@ -10,9 +10,12 @@
 
 
 #import "MessageViewController.h"
-#import "DoingOne.h"
+#import "MessageTeacher.h"
+#import "MessageView.h"
 @interface MessageViewController ()
-
+{
+    BOOL index ;
+}
 @end
 
 @implementation MessageViewController
@@ -25,7 +28,7 @@
     CGRect frame =CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height -64);//如果没有导航栏，则去掉64
     
     //对应填写两个数组
-    NSArray *views =@[[DoingOne new],[DoingOne new]];   //创建使用
+    NSArray *views =@[[MessageView new],[MessageTeacher new]];   //创建使用
     NSArray *names =@[@" 项目介绍 ",@" 名师简介 "];
     self.scrollNav =[XLScrollViewer scrollWithFrame:frame withViews:views withButtonNames:names withThreeAnimation:222];//三中动画都选择
     self.scrollNav.backgroundColor = [UIColor clearColor];
@@ -44,16 +47,57 @@
     
     //加入控制器视图
     [self.view addSubview:self.scrollNav];
-
+    
+    
+    
+    
+    index = YES;
+    
+    
+    
+    
+    MessageView *message = views[0];
+    MessageTeacher *tracher = views[1];
+    
+    message.MessageBlock = ^(int a)
+    {
+         [self performSegueWithIdentifier:@"message_messageProfessional" sender:[NSString stringWithFormat:@"%d",a]];
+    };
+    
+    tracher.MessageBlock = ^(NSDictionary * a)
+    {
+        [self performSegueWithIdentifier:@"message_messageWeb" sender:a];
+    };
+    
     
     self.scrollNav.XlScrollBlock = ^(int a)
     {
-        NSLog(@"%d",a);
+        
+        if (a == 1) {
+            if (index) {
+                [tracher start];
+                index = NO;
+            }
+        }
     };
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
 
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController *push = segue.destinationViewController;
+    [push setValue:sender forKey:@"messageKey"];
+}
 
 
 
