@@ -26,9 +26,9 @@
     
     
     
-    NSLog(@"我是层次页面的key---%@",self.applyLevelKey);
+    NSLog(@"我是层次页面的key---%@",self.applyProfessionalKey);
     
-    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_LEVEL,self.applyLevelKey];
+    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_LEVEL,self.applyProfessionalKey];
     
     [SVProgressHUD showInfoWithStatus:LOADING];
     

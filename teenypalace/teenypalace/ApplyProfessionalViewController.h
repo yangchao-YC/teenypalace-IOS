@@ -13,6 +13,6 @@
 @interface ApplyProfessionalViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property(strong,nonatomic)NSString *applyProfessionaKey;
+@property(strong,nonatomic)NSDictionary *applyProfessionaKey;
 
 @end

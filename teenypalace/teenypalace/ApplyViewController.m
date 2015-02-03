@@ -112,7 +112,9 @@
     
   //  cell.titleLabel.text = @" 张小朝";
 
-    [self performSegueWithIdentifier:@"apply_applyProfessional" sender:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%ld",(long)indexPath.row],@"id",@"0",@"key" ,nil];
+    
+    [self performSegueWithIdentifier:@"apply_applyProfessional" sender:dic];
   
 }
 

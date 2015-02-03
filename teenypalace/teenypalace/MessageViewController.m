@@ -61,7 +61,10 @@
     
     message.MessageBlock = ^(int a)
     {
-         [self performSegueWithIdentifier:@"message_messageProfessional" sender:[NSString stringWithFormat:@"%d",a]];
+        
+        NSLog(@"%d",a);
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%d",a],@"id",@"1",@"key" ,nil];
+         [self performSegueWithIdentifier:@"message_applyProfessional" sender:dic];
     };
     
     tracher.MessageBlock = ^(NSDictionary * a)
@@ -96,7 +99,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"messageKey"];
+    [push setValue:sender forKey:@"applyProfessionaKey"];
 }
 
 

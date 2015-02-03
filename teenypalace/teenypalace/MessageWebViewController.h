@@ -11,7 +11,7 @@
 @interface MessageWebViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *tabbarLabel;
-@property(strong,nonatomic)NSDictionary *messageKey;
+@property(strong,nonatomic)NSDictionary *applyProfessionaKey;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *images;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

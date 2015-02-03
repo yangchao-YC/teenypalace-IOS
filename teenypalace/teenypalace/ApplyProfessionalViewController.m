@@ -36,7 +36,7 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     
-    NSString *date = [NSString stringWithFormat:@"%@%d",DATE_SEARCH_PROFESSIONAL,[self.applyProfessionaKey intValue]+1];
+    NSString *date = [NSString stringWithFormat:@"%@%d",DATE_SEARCH_PROFESSIONAL,[[self.applyProfessionaKey objectForKey:@"id"] intValue]+1];
     
     [SVProgressHUD showInfoWithStatus:LOADING];
     
@@ -127,8 +127,14 @@
         [SVProgressHUD showInfoWithStatus:@"该专业目前没有相应班级可以报名" maskType:3];
     }
     else
-    { 
-        [self performSegueWithIdentifier:@"applyProfessional_applyLevel" sender:[dic objectForKey:@"id"]];
+    {
+        if ([[self.applyProfessionaKey objectForKey:@"key"] intValue] == 0) {//值为0则进入层次页面
+            [self performSegueWithIdentifier:@"applyProfessional_applyLevel" sender:[dic objectForKey:@"id"]];
+        }
+        else//值为1则进入专业说明页面
+        {
+            [self performSegueWithIdentifier:@"applyProfessional_messageProfessional" sender:dic];
+        }
     }
 }
 
@@ -152,7 +158,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"applyLevelKey"];
+    [push setValue:sender forKey:@"applyProfessionalKey"];
 }
 
 - (void)viewWillAppear:(BOOL)animated

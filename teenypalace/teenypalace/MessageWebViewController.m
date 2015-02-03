@@ -21,11 +21,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tabbarLabel.text = [self.messageKey objectForKey:@"field_teacher_name"];
+    self.tabbarLabel.text = [self.applyProfessionaKey objectForKey:@"field_teacher_name"];
     
-    self.nameLabel.text = [NSString stringWithFormat:@"%@   %@",[self.messageKey objectForKey:@"field_teacher_name"],[self.messageKey objectForKey:@"field_teacher_class"]];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@   %@",[self.applyProfessionaKey objectForKey:@"field_teacher_name"],[self.applyProfessionaKey objectForKey:@"field_teacher_class"]];
     
-    [self.images setImageWithURL:[NSURL URLWithString:[self.messageKey objectForKey:@"field_teacher_closeup"]]];
+    [self.images setImageWithURL:[NSURL URLWithString:[self.applyProfessionaKey objectForKey:@"field_teacher_closeup"]]];
     
     
     [self webViewDate];
@@ -44,7 +44,7 @@
     //获取本条数据
     
 
-    NSString *date = [self.messageKey objectForKey:@"field_teacher_about_intro"];
+    NSString *date = [self.applyProfessionaKey objectForKey:@"field_teacher_about_intro"];
     
     //进行数据添加
 

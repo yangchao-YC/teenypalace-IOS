@@ -104,7 +104,7 @@
     }
 
     [cell.bgBtn addTarget:self action:@selector(tableBtnClick:event:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [cell.btn addTarget:self action:@selector(pushBtn:event:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
     
 }
@@ -126,7 +126,17 @@
     }
 }
 
-
+-(IBAction)pushBtn:(id)sender event:(id)event
+{
+    NSSet *touches = [event allTouches];//把触摸的事件放到集合里
+    UITouch *touch = [touches anyObject];//把事件放到触摸的对象里
+    
+    CGPoint currentTouchPosition = [touch locationInView:self.tableView];//把触发的这个点转成二位坐标
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:currentTouchPosition];//匹配坐标点
+    if (indexPath != nil) {
+        [self tableView:self.tableView didSelectRowAtIndexPath:indexPath];
+    }
+}
 
 //按钮的触发方法
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
