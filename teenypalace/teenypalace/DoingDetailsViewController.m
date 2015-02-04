@@ -116,7 +116,7 @@
 
 -(void)share
 {
-     NSString *text = [NSString stringWithFormat:@"武汉青少年宫活动。详情请点击%@%@",DATE_DOING_APPLY,[self.doingKey objectForKey:@"id"]];
+     NSString *text = [NSString stringWithFormat:@"武汉青少年宫活动。详情请点击%@%@",SHARE,[self.doingKey objectForKey:@"id"]];
     [UMSocialSnsService
      presentSnsIconSheetView:self
      appKey:nil

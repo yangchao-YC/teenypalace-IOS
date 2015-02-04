@@ -51,6 +51,15 @@
 		716C03621A25A49200F64482 /* ApplyProfessionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716C03611A25A49200F64482 /* ApplyProfessionalViewController.m */; };
 		716C188F1A5D250E004BFBAD /* CardClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 716C188E1A5D250E004BFBAD /* CardClassTableViewCell.m */; };
 		716C18951A5D2E57004BFBAD /* MyClassDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716C18941A5D2E57004BFBAD /* MyClassDetailsViewController.m */; };
+		71705B0A1A81C3FC0066B6E5 /* PrettyTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 71705B091A81C3FC0066B6E5 /* PrettyTwo.m */; };
+		71705B0D1A81C4570066B6E5 /* PrettyOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 71705B0C1A81C4570066B6E5 /* PrettyOne.m */; };
+		71705B101A81C47E0066B6E5 /* PrettyThree.m in Sources */ = {isa = PBXBuildFile; fileRef = 71705B0F1A81C47E0066B6E5 /* PrettyThree.m */; };
+		71705B131A81C4A90066B6E5 /* PrettyFour.m in Sources */ = {isa = PBXBuildFile; fileRef = 71705B121A81C4A90066B6E5 /* PrettyFour.m */; };
+		71705B171A81D2780066B6E5 /* PrettyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71705B151A81D2780066B6E5 /* PrettyTableViewCell.m */; };
+		71705B181A81D2780066B6E5 /* PrettyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71705B161A81D2780066B6E5 /* PrettyTableViewCell.xib */; };
+		71705B1C1A81E8F80066B6E5 /* PrettyBumenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71705B1A1A81E8F80066B6E5 /* PrettyBumenTableViewCell.m */; };
+		71705B1D1A81E8F80066B6E5 /* PrettyBumenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71705B1B1A81E8F80066B6E5 /* PrettyBumenTableViewCell.xib */; };
+		71705B201A81F0680066B6E5 /* PrettyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71705B1F1A81F0680066B6E5 /* PrettyWebViewController.m */; };
 		71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */; };
 		717BA3841A496C5000E70CCD /* MyCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3831A496C5000E70CCD /* MyCardViewController.m */; };
 		717BA3871A496C7400E70CCD /* MyClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3861A496C7400E70CCD /* MyClassViewController.m */; };
@@ -91,6 +100,7 @@
 		71A1803A1A78CEDE00466755 /* DoingOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A180371A78CEDE00466755 /* DoingOne.m */; };
 		71A1803D1A78CEE400466755 /* DoingZero.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1803C1A78CEE400466755 /* DoingZero.m */; };
 		71A1803F1A78CF5300466755 /* DoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1803E1A78CF5300466755 /* DoingViewController.m */; };
+		71A3A3F31A80D71900F85558 /* PrettyZero.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A3A3F21A80D71900F85558 /* PrettyZero.m */; };
 		71A3EA111A6924D300122B36 /* libUnionPaySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */; };
 		71A3EA121A6924D300122B36 /* UnionPaySDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */; };
 		71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA131A69250C00122B36 /* QuartzCore.framework */; };
@@ -225,6 +235,22 @@
 		716C188E1A5D250E004BFBAD /* CardClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardClassTableViewCell.m; sourceTree = "<group>"; };
 		716C18931A5D2E57004BFBAD /* MyClassDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClassDetailsViewController.h; sourceTree = "<group>"; };
 		716C18941A5D2E57004BFBAD /* MyClassDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClassDetailsViewController.m; sourceTree = "<group>"; };
+		71705B081A81C3FC0066B6E5 /* PrettyTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyTwo.h; sourceTree = "<group>"; };
+		71705B091A81C3FC0066B6E5 /* PrettyTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyTwo.m; sourceTree = "<group>"; };
+		71705B0B1A81C4570066B6E5 /* PrettyOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyOne.h; sourceTree = "<group>"; };
+		71705B0C1A81C4570066B6E5 /* PrettyOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyOne.m; sourceTree = "<group>"; };
+		71705B0E1A81C47E0066B6E5 /* PrettyThree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyThree.h; sourceTree = "<group>"; };
+		71705B0F1A81C47E0066B6E5 /* PrettyThree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyThree.m; sourceTree = "<group>"; };
+		71705B111A81C4A90066B6E5 /* PrettyFour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyFour.h; sourceTree = "<group>"; };
+		71705B121A81C4A90066B6E5 /* PrettyFour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyFour.m; sourceTree = "<group>"; };
+		71705B141A81D2780066B6E5 /* PrettyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyTableViewCell.h; sourceTree = "<group>"; };
+		71705B151A81D2780066B6E5 /* PrettyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyTableViewCell.m; sourceTree = "<group>"; };
+		71705B161A81D2780066B6E5 /* PrettyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrettyTableViewCell.xib; sourceTree = "<group>"; };
+		71705B191A81E8F80066B6E5 /* PrettyBumenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyBumenTableViewCell.h; sourceTree = "<group>"; };
+		71705B1A1A81E8F80066B6E5 /* PrettyBumenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyBumenTableViewCell.m; sourceTree = "<group>"; };
+		71705B1B1A81E8F80066B6E5 /* PrettyBumenTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrettyBumenTableViewCell.xib; sourceTree = "<group>"; };
+		71705B1E1A81F0680066B6E5 /* PrettyWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyWebViewController.h; sourceTree = "<group>"; };
+		71705B1F1A81F0680066B6E5 /* PrettyWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyWebViewController.m; sourceTree = "<group>"; };
 		71735BB21A1F2233005E0067 /* ApplyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyTableViewCell.h; sourceTree = "<group>"; };
 		71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyTableViewCell.m; sourceTree = "<group>"; };
 		717BA3821A496C5000E70CCD /* MyCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCardViewController.h; sourceTree = "<group>"; };
@@ -301,6 +327,8 @@
 		71A1803B1A78CEE400466755 /* DoingZero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingZero.h; sourceTree = "<group>"; };
 		71A1803C1A78CEE400466755 /* DoingZero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingZero.m; sourceTree = "<group>"; };
 		71A1803E1A78CF5300466755 /* DoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingViewController.m; sourceTree = "<group>"; };
+		71A3A3F11A80D71900F85558 /* PrettyZero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyZero.h; sourceTree = "<group>"; };
+		71A3A3F21A80D71900F85558 /* PrettyZero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyZero.m; sourceTree = "<group>"; };
 		71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUnionPaySDK.a; sourceTree = "<group>"; };
 		71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UnionPaySDKBundle.bundle; sourceTree = "<group>"; };
 		71A3EA0C1A6924D300122B36 /* UPOMPBackStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPBackStage.h; sourceTree = "<group>"; };
@@ -599,6 +627,12 @@
 				718EFF4F1A7B6ED200DC5900 /* MessageTeachreTableViewCell.h */,
 				718EFF501A7B6ED200DC5900 /* MessageTeachreTableViewCell.m */,
 				718EFF511A7B6ED200DC5900 /* MessageTeachreTableViewCell.xib */,
+				71705B141A81D2780066B6E5 /* PrettyTableViewCell.h */,
+				71705B151A81D2780066B6E5 /* PrettyTableViewCell.m */,
+				71705B161A81D2780066B6E5 /* PrettyTableViewCell.xib */,
+				71705B191A81E8F80066B6E5 /* PrettyBumenTableViewCell.h */,
+				71705B1A1A81E8F80066B6E5 /* PrettyBumenTableViewCell.m */,
+				71705B1B1A81E8F80066B6E5 /* PrettyBumenTableViewCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -627,6 +661,16 @@
 				717C1F3B1A7A182E00997639 /* MessageView.m */,
 				718EFF4C1A7B66E600DC5900 /* MessageTeacher.h */,
 				718EFF4D1A7B66E600DC5900 /* MessageTeacher.m */,
+				71A3A3F11A80D71900F85558 /* PrettyZero.h */,
+				71A3A3F21A80D71900F85558 /* PrettyZero.m */,
+				71705B0B1A81C4570066B6E5 /* PrettyOne.h */,
+				71705B0C1A81C4570066B6E5 /* PrettyOne.m */,
+				71705B081A81C3FC0066B6E5 /* PrettyTwo.h */,
+				71705B091A81C3FC0066B6E5 /* PrettyTwo.m */,
+				71705B0E1A81C47E0066B6E5 /* PrettyThree.h */,
+				71705B0F1A81C47E0066B6E5 /* PrettyThree.m */,
+				71705B111A81C4A90066B6E5 /* PrettyFour.h */,
+				71705B121A81C4A90066B6E5 /* PrettyFour.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -728,6 +772,8 @@
 				715EBF2A1A45451100010D5F /* MessageWebViewController.m */,
 				715EBF2C1A454F8E00010D5F /* PrettyViewController.h */,
 				715EBF2D1A454F8E00010D5F /* PrettyViewController.m */,
+				71705B1E1A81F0680066B6E5 /* PrettyWebViewController.h */,
+				71705B1F1A81F0680066B6E5 /* PrettyWebViewController.m */,
 				718FB93F1A19F4CC0044F2DC /* MyViewController.h */,
 				718FB9401A19F4CC0044F2DC /* MyViewController.m */,
 				717BA3821A496C5000E70CCD /* MyCardViewController.h */,
@@ -996,6 +1042,7 @@
 				715E42D41A5BED1500A3C4F1 /* ios-social-sdk-like.html in Resources */,
 				715E42D71A5BED1500A3C4F1 /* ios-social-sdk-shake.html in Resources */,
 				718EFF551A7B920600DC5900 /* template.html in Resources */,
+				71705B1D1A81E8F80066B6E5 /* PrettyBumenTableViewCell.xib in Resources */,
 				715E42D01A5BED1500A3C4F1 /* iOS-social-analytics-releasenote.html in Resources */,
 				715E42CA1A5BED1500A3C4F1 /* ios-social-sdk-shake.html in Resources */,
 				715E42D81A5BED1500A3C4F1 /* ios-social-sdk-share-detail.html in Resources */,
@@ -1006,6 +1053,7 @@
 				715E42D91A5BED1500A3C4F1 /* ios-social-sdk-share-quick.html in Resources */,
 				71C9B6981A3033540011A3B1 /* MJRefresh.bundle in Resources */,
 				71C97BDF1A08B5970010A5B8 /* Images.xcassets in Resources */,
+				71705B181A81D2780066B6E5 /* PrettyTableViewCell.xib in Resources */,
 				715E42C51A5BED1500A3C4F1 /* UMSLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1025,6 +1073,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				718EFF521A7B6ED200DC5900 /* MessageTeachreTableViewCell.m in Sources */,
+				71705B201A81F0680066B6E5 /* PrettyWebViewController.m in Sources */,
 				71966F621A75EF0A00802380 /* UIImage+GIF.m in Sources */,
 				71C6082B1A358200001CE8BA /* DoingApplyViewController.m in Sources */,
 				71966F5A1A75EF0A00802380 /* SDImageCache.m in Sources */,
@@ -1039,14 +1088,17 @@
 				717BA3871A496C7400E70CCD /* MyClassViewController.m in Sources */,
 				71938B0D1A736F3B00ED6F29 /* XLScrollViewer.m in Sources */,
 				71C9B6B61A305BB60011A3B1 /* AFHTTPSessionManager.m in Sources */,
+				71705B171A81D2780066B6E5 /* PrettyTableViewCell.m in Sources */,
 				717BA38D1A496CAB00E70CCD /* MySiteViewController.m in Sources */,
 				71EAF1B11A4D6A5200C8D56D /* MyNewCardViewController.m in Sources */,
 				718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */,
 				71966F5E1A75EF0A00802380 /* SDWebImageDownloaderOperation.m in Sources */,
+				71A3A3F31A80D71900F85558 /* PrettyZero.m in Sources */,
 				715EBF251A45336300010D5F /* MessageViewController.m in Sources */,
 				718EFF4E1A7B66E600DC5900 /* MessageTeacher.m in Sources */,
 				717C1F3C1A7A182E00997639 /* MessageView.m in Sources */,
 				71966F591A75EF0A00802380 /* NSData+ImageContentType.m in Sources */,
+				71705B101A81C47E0066B6E5 /* PrettyThree.m in Sources */,
 				71966F601A75EF0A00802380 /* SDWebImagePrefetcher.m in Sources */,
 				71C6082E1A35AFCA001CE8BA /* ApplyLevelViewController.m in Sources */,
 				71C95E251A32E68E0057E6AF /* DoingDetailsViewController.m in Sources */,
@@ -1065,9 +1117,12 @@
 				71966F5B1A75EF0A00802380 /* SDWebImageCompat.m in Sources */,
 				71966F641A75EF0A00802380 /* UIImageView+HighlightedWebCache.m in Sources */,
 				71C9B69E1A3033540011A3B1 /* UIScrollView+MJRefresh.m in Sources */,
+				71705B1C1A81E8F80066B6E5 /* PrettyBumenTableViewCell.m in Sources */,
 				717BA3841A496C5000E70CCD /* MyCardViewController.m in Sources */,
 				71938B181A73935300ED6F29 /* DoingTableViewCell.m in Sources */,
+				71705B0A1A81C3FC0066B6E5 /* PrettyTwo.m in Sources */,
 				71856FF91A6CF0AD00E841CD /* MyMoneyTableViewCell.m in Sources */,
+				71705B131A81C4A90066B6E5 /* PrettyFour.m in Sources */,
 				71A1803D1A78CEE400466755 /* DoingZero.m in Sources */,
 				710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */,
 				710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */,
@@ -1089,6 +1144,7 @@
 				71CC78D41A36E00B000A4E55 /* ApplyClassTableViewCell.m in Sources */,
 				717E2AE31A51545E0070570B /* CardTableViewCell.m in Sources */,
 				71A180351A78CED700466755 /* DoingThree.m in Sources */,
+				71705B0D1A81C4570066B6E5 /* PrettyOne.m in Sources */,
 				71C9B6991A3033540011A3B1 /* MJRefreshBaseView.m in Sources */,
 				71C9B6B81A305BB60011A3B1 /* AFSecurityPolicy.m in Sources */,
 				716C188F1A5D250E004BFBAD /* CardClassTableViewCell.m in Sources */,

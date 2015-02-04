@@ -10,10 +10,18 @@
 
 #import "PrettyViewController.h"
 
-#import "DoingOne.h"
-
+#import "PrettyZero.h"
+#import "PrettyOne.h"
+#import "PrettyTwo.h"
+#import "PrettyThree.h"
+#import "PrettyFour.h"
 @interface PrettyViewController ()
-
+{
+    BOOL oneIndex;
+    BOOL twoIndex;
+    BOOL threeIndex;
+    BOOL fourIndex;
+}
 @end
 
 @implementation PrettyViewController
@@ -25,7 +33,7 @@
     CGRect frame =CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height -64);//如果没有导航栏，则去掉64
     
     //对应填写两个数组
-    NSArray *views =@[[DoingOne new],[DoingOne new],[DoingOne new],[DoingOne new],[DoingOne new]];   //创建使用
+    NSArray *views =@[[PrettyZero new],[PrettyOne new],[PrettyTwo new],[PrettyThree new],[PrettyFour new]];   //创建使用
     NSArray *names =@[@"青少年宫简介",@" 工作动态 ",@" 媒体聚焦 ",@" 部门社区 ",@"青少年宫平面图"];
     self.scrollNav =[XLScrollViewer scrollWithFrame:frame withViews:views withButtonNames:names withThreeAnimation:222];//三中动画都选择
     self.scrollNav.backgroundColor = [UIColor clearColor];
@@ -45,14 +53,78 @@
     //加入控制器视图
     [self.view addSubview:self.scrollNav];
     
+
+    
+    
+    oneIndex = YES;
+    twoIndex = YES;
+    threeIndex = YES;
+    fourIndex = YES;
+    PrettyOne *vv1 = views[1];
+    PrettyTwo *vv2 = views[2];
+    PrettyThree *vv3 = views[3];
+    PrettyFour *vv4 = views[4];
+    
+    
     self.scrollNav.XlScrollBlock = ^(int a)
     {
         NSLog(@"%d",a);
+        switch (a) {
+            case 1:
+                if (oneIndex) {
+                    [vv1 start];
+                    oneIndex = NO;
+                }
+                break;
+            case 2:
+                if (twoIndex) {
+                    [vv2 start];
+                    twoIndex = NO;
+                }
+                break;
+            case 3:
+                if (threeIndex) {
+                    [vv3 start];
+                    threeIndex = NO;
+                }
+                break;
+            case 4:
+                if (fourIndex) {
+                    [vv4 start];
+                    fourIndex = NO;
+                }
+                break;
+            default:
+                break;
+        }
     };
+    //回调跳转
+
+    vv1.PrettyBlock = ^(NSDictionary *a)
+    {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0",@"key",[a objectForKey:@"field_news_events_title"],@"title", [a objectForKey:@"field_news_events_body"],@"body",[a objectForKey:@"id"],@"id",nil];
+        [self performSegueWithIdentifier:@"pretty_prettyWeb" sender:dic];
+    };
+    vv2.PrettyBlock = ^(NSDictionary *a)
+    {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0",@"key",[a objectForKey:@"field_news_events_title"],@"title", [a objectForKey:@"field_news_events_body"],@"body",[a objectForKey:@"id"],@"id",nil];
+        [self performSegueWithIdentifier:@"pretty_prettyWeb" sender:dic];
+    };
+    vv3.PrettyBlock = ^(NSDictionary *a)
+    {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"1",@"key",[a objectForKey:@"body"],@"body", [a objectForKey:@"title"],@"title",nil];
+        [self performSegueWithIdentifier:@"pretty_prettyWeb" sender:dic];
+    };
+    
+    
     
 }
 
-
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController *push = segue.destinationViewController;
+    [push setValue:sender forKey:@"PrettyKey"];
+}
 
 
 -(IBAction)PrettyBtn:(UIButton *)sender

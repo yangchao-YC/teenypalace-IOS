@@ -95,6 +95,22 @@
 
 #define DATE_DOING_APPLY [DATE_URL stringByAppendingString:@"charity/signup"]//活动报名
 
-#define DATE_SEARCH_MESSAGE_TEACHER [DATE_URL stringByAppendingString:@"app_service/service_teacher_profile?page="]//
+#define DATE_SEARCH_MESSAGE_TEACHER [DATE_URL stringByAppendingString:@"app_service/service_teacher_profile?page="]//活动查询
+
+#define DATE_PRETTY_INTRODUCE [DATE_URL stringByAppendingString:@"app_service/mobile_service_beautiful_green_palaces_about"]//青少年宫简介
+
+#define DATE_PRETTY_TRENDS [DATE_URL stringByAppendingString:@"app_service/mobile_service_beautiful_green_palaces_news/?category="]//工作动态  媒体聚焦
+
+
+
+#define DATE_PRETTY_DEPARTMENTS [DATE_URL stringByAppendingString:@"beautiful/bumen"]//青少年宫部门
+
+#define DATE_PRETTY_PLAN [DATE_URL stringByAppendingString:@"app_service/mobile_service_beautiful_green_palaces_plans/?page="]//青少年宫平面图
+
+
+
+#define DATE_PRETTY_DEPARTMENTS [DATE_URL stringByAppendingString:@"beautiful/bumen"]//青少年宫部门
+
+#define SHARE [DATE_URL stringByAppendingString:@"sharing/news/"]//青少年宫部门
 
 #endif

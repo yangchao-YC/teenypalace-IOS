@@ -10,5 +10,8 @@
 
 @interface MessageTeachreTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *images;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imagesHeight;
+@property (weak, nonatomic) IBOutlet UIImageView *buttomImage;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageTop;
 
 @end

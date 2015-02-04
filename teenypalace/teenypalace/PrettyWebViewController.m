@@ -1,41 +1,33 @@
 //
-//  MessageWebViewController.m
+//  PrettyWebViewController.m
 //  teenypalace
 //
-//  Created by 杨超 on 14/12/20.
-//  Copyright (c) 2014年 杨超. All rights reserved.
+//  Created by 杨超 on 15/2/4.
+//  Copyright (c) 2015年 杨超. All rights reserved.
 //
 
+#import "PrettyWebViewController.h"
 
-//招生信息预览-老师详情页面
-
-#import "MessageWebViewController.h"
-#import "UIImageView+WebCache.h"
-@interface MessageWebViewController ()
+@interface PrettyWebViewController ()
 
 @end
 
-@implementation MessageWebViewController
+@implementation PrettyWebViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tabbarLabel.text = [self.applyProfessionaKey objectForKey:@"field_teacher_name"];
+    if ([[self.PrettyKey objectForKey:@"key"] intValue] == 1) {
+        self.shareBtn.hidden = YES;
+    }
     
-    self.nameLabel.text = [NSString stringWithFormat:@"%@   %@",[self.applyProfessionaKey objectForKey:@"field_teacher_name"],[self.applyProfessionaKey objectForKey:@"field_teacher_class"]];
-    
-    [self.images setImageWithURL:[NSURL URLWithString:[self.applyProfessionaKey objectForKey:@"field_teacher_closeup"]]];
-    
+    self.tabbarLabel.text = [self.PrettyKey objectForKey:@"title"];
     
     [self webViewDate];
     
 }
 
--(IBAction)messageWebBtn:(UIButton *)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 -(void)webViewDate
 {
     NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
@@ -43,20 +35,40 @@
     NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     //获取本条数据
     
-
-    NSString *date = [self.applyProfessionaKey objectForKey:@"field_teacher_about_intro"];
+    
+    NSString *date = [self.PrettyKey objectForKey:@"body"];
     
     //进行数据添加
     NSString *base = [NSString stringWithFormat:@"<base href=%@/>",DATE_URL];
     html = [html stringByReplacingOccurrencesOfString:@"{Base}" withString:base];
-
+    
     html = [html stringByReplacingOccurrencesOfString:@"{Content}" withString:date];
     [self.webView loadHTMLString:html baseURL:baseURL];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(IBAction)PrettyWebBtn:(UIButton *)sender
+{
+    switch (sender.tag) {
+        case 0:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+            
+        default:
+            [self share];
+            break;
+    }
+}
+
+-(void)share
+{
+    NSString *text = [NSString stringWithFormat:@"武汉青少年宫活动。详情请点击%@%@",SHARE,[self.PrettyKey objectForKey:@"id"]];
+    [UMSocialSnsService
+     presentSnsIconSheetView:self
+     appKey:nil
+     shareText:text
+     shareImage:nil
+     shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToEmail,UMShareToSina,UMShareToSms,UMShareToTencent ,nil]
+     delegate:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -68,6 +80,11 @@
 {
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"PageOne"];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

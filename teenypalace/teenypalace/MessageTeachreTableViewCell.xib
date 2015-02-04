@@ -38,7 +38,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="buttomImage" destination="tSq-Io-RpX" id="40E-d9-Eeb"/>
+                <outlet property="imageTop" destination="dwL-OU-M4F" id="WqY-gr-ehv"/>
                 <outlet property="images" destination="TMC-IP-o9h" id="P04-Na-fvV"/>
+                <outlet property="imagesHeight" destination="CKu-bm-6y3" id="VW9-gE-aZv"/>
             </connections>
             <point key="canvasLocation" x="539" y="372.5"/>
         </tableViewCell>
