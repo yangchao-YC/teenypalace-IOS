@@ -213,7 +213,8 @@
 
     
     //进行数据添加
-    
+    NSString *base = [NSString stringWithFormat:@"<base href=%@/>",DATE_URL];
+    html = [html stringByReplacingOccurrencesOfString:@"{Base}" withString:base];
     html = [html stringByReplacingOccurrencesOfString:@"{Content}" withString:key];
     [webView loadHTMLString:html baseURL:baseURL];
 }

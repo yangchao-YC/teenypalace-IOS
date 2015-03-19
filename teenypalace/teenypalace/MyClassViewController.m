@@ -125,7 +125,7 @@
 {
     
     NSDictionary *dic =[self.articles objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"myMoney_myClassDteails" sender:dic];}
+    [self performSegueWithIdentifier:@"myClass_myClassDteails" sender:dic];}
 
 
 

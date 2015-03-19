@@ -517,7 +517,7 @@
         }
     }
     if (payArray.count>0) {
-        NSString *money = [NSString stringWithFormat:@"您选择的项目总金额为人民币%d.00元是否现在进行支付？",sumMoney];
+        NSString *money = [NSString stringWithFormat:@"您选择的项目总金额为人民币%d.00元,是否现在进行支付？",sumMoney];
         
         __unsafe_unretained MyMoneyViewController *safe_self = self;
         self.alertView = [[ApplyAlertView alloc]initWithView:self.view title:money];

@@ -34,7 +34,7 @@
     
     //对应填写两个数组
     NSArray *views =@[[PrettyZero new],[PrettyOne new],[PrettyTwo new],[PrettyThree new],[PrettyFour new]];   //创建使用
-    NSArray *names =@[@"青少年宫简介",@" 工作动态 ",@" 媒体聚焦 ",@" 部门社区 ",@"青少年宫平面图"];
+    NSArray *names =@[@" 本宫简介 ",@" 工作动态 ",@" 媒体聚焦 ",@" 部门社区 ",@"  平面图  "];
     self.scrollNav =[XLScrollViewer scrollWithFrame:frame withViews:views withButtonNames:names withThreeAnimation:222];//三中动画都选择
     self.scrollNav.backgroundColor = [UIColor clearColor];
     //自定义各种属性。。打开查看
