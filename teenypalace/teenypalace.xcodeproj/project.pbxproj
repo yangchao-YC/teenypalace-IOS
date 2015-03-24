@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */; };
 		710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1F1A5E8B0900513143 /* PwdViewController.m */; };
+		71494E151AC1190D00362749 /* DoingBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E141AC1190D00362749 /* DoingBookViewController.m */; };
+		71494E181AC1192400362749 /* DoingCeremonyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E171AC1192400362749 /* DoingCeremonyViewController.m */; };
+		71494E1B1AC1193B00362749 /* DoingCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E1A1AC1193B00362749 /* DoingCommentViewController.m */; };
 		715916BA1A64CE740090CE5C /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715916B51A64CE730090CE5C /* SVIndefiniteAnimatedView.m */; };
 		715916BB1A64CE740090CE5C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 715916B71A64CE730090CE5C /* SVProgressHUD.bundle */; };
 		715916BC1A64CE740090CE5C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 715916B91A64CE730090CE5C /* SVProgressHUD.m */; };
@@ -163,6 +166,12 @@
 		710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationProcessingViewController.m; sourceTree = "<group>"; };
 		710ADA1E1A5E8B0900513143 /* PwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PwdViewController.h; sourceTree = "<group>"; };
 		710ADA1F1A5E8B0900513143 /* PwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PwdViewController.m; sourceTree = "<group>"; };
+		71494E131AC1190D00362749 /* DoingBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingBookViewController.h; sourceTree = "<group>"; };
+		71494E141AC1190D00362749 /* DoingBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingBookViewController.m; sourceTree = "<group>"; };
+		71494E161AC1192400362749 /* DoingCeremonyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingCeremonyViewController.h; sourceTree = "<group>"; };
+		71494E171AC1192400362749 /* DoingCeremonyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingCeremonyViewController.m; sourceTree = "<group>"; };
+		71494E191AC1193A00362749 /* DoingCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingCommentViewController.h; sourceTree = "<group>"; };
+		71494E1A1AC1193B00362749 /* DoingCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingCommentViewController.m; sourceTree = "<group>"; };
 		715916B41A64CE730090CE5C /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		715916B51A64CE730090CE5C /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		715916B61A64CE730090CE5C /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
@@ -760,6 +769,12 @@
 				71CF28611A37EFA800062CCB /* ApplyCardViewController.m */,
 				71C9B6C51A305FDD0011A3B1 /* DoingViewController.h */,
 				71A1803E1A78CF5300466755 /* DoingViewController.m */,
+				71494E131AC1190D00362749 /* DoingBookViewController.h */,
+				71494E141AC1190D00362749 /* DoingBookViewController.m */,
+				71494E161AC1192400362749 /* DoingCeremonyViewController.h */,
+				71494E171AC1192400362749 /* DoingCeremonyViewController.m */,
+				71494E191AC1193A00362749 /* DoingCommentViewController.h */,
+				71494E1A1AC1193B00362749 /* DoingCommentViewController.m */,
 				71C95E231A32E68E0057E6AF /* DoingDetailsViewController.h */,
 				71C95E241A32E68E0057E6AF /* DoingDetailsViewController.m */,
 				71C608291A358200001CE8BA /* DoingApplyViewController.h */,
@@ -1094,6 +1109,7 @@
 				718FB9411A19F4CC0044F2DC /* MyViewController.m in Sources */,
 				71966F5E1A75EF0A00802380 /* SDWebImageDownloaderOperation.m in Sources */,
 				71A3A3F31A80D71900F85558 /* PrettyZero.m in Sources */,
+				71494E1B1AC1193B00362749 /* DoingCommentViewController.m in Sources */,
 				715EBF251A45336300010D5F /* MessageViewController.m in Sources */,
 				718EFF4E1A7B66E600DC5900 /* MessageTeacher.m in Sources */,
 				717C1F3C1A7A182E00997639 /* MessageView.m in Sources */,
@@ -1117,6 +1133,7 @@
 				71966F5B1A75EF0A00802380 /* SDWebImageCompat.m in Sources */,
 				71966F641A75EF0A00802380 /* UIImageView+HighlightedWebCache.m in Sources */,
 				71C9B69E1A3033540011A3B1 /* UIScrollView+MJRefresh.m in Sources */,
+				71494E151AC1190D00362749 /* DoingBookViewController.m in Sources */,
 				71705B1C1A81E8F80066B6E5 /* PrettyBumenTableViewCell.m in Sources */,
 				717BA3841A496C5000E70CCD /* MyCardViewController.m in Sources */,
 				71938B181A73935300ED6F29 /* DoingTableViewCell.m in Sources */,
@@ -1131,6 +1148,7 @@
 				71966F651A75EF0A00802380 /* UIImageView+WebCache.m in Sources */,
 				71C97BD81A08B5970010A5B8 /* AppDelegate.swift in Sources */,
 				71C9B69A1A3033540011A3B1 /* MJRefreshConst.m in Sources */,
+				71494E181AC1192400362749 /* DoingCeremonyViewController.m in Sources */,
 				71C9B69C1A3033540011A3B1 /* MJRefreshHeaderView.m in Sources */,
 				71CF28621A37EFA800062CCB /* ApplyCardViewController.m in Sources */,
 				71A1803A1A78CEDE00466755 /* DoingOne.m in Sources */,
