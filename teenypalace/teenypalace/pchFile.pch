@@ -40,7 +40,7 @@
 #define LOADING @"正在加载..."
 
 
-#define DATE_URL @"http://oa.ycpwh.cn:8085/"
+#define DATE_URL @"http://mobile.ycpwh.cn:80/"
 
 #define DATE_LOGIN [DATE_URL stringByAppendingString:@"register/login/phone/"]//密码登陆
 
