@@ -41,7 +41,7 @@
     
     //对应填写两个数组
     NSArray *views =@[[DoingZero new],[DoingOne new],[DoingTwo new],[DoingThree new],[DoingFour new],[DoingFive new]];   //创建使用
-    NSArray *names =@[@" 团队活动 ",@" 主题活动 ",@"小时候活动  ",@" 小时候艺术 ",@"  读书活动 ",@" 祭奠活动 "];
+    NSArray *names =@[@" 团队活动 ",@" 主题活动 ",@"小时候活动  ",@" 小时候艺术 ",@" 读书活动 ",@" 祭奠活动 "];
     self.scrollNav =[XLScrollViewer scrollWithFrame:frame withViews:views withButtonNames:names withThreeAnimation:222];//三中动画都选择
     self.scrollNav.backgroundColor = [UIColor clearColor];
     //自定义各种属性。。打开查看
@@ -135,11 +135,11 @@
     
     vv4.DoingBlock = ^(NSDictionary *a)
     {
-        //[self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
+        [self performSegueWithIdentifier:@"doing_doingBook" sender:a];//读书活动
     };
     vv5.DoingBlock = ^(NSDictionary *a)
     {
-        //[self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
+        [self performSegueWithIdentifier:@"doing_doingCeremony" sender:a];//祭奠活动
     };
     
 }

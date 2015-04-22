@@ -19,7 +19,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"%@",self.doingKey);
 }
+
+
+
+
+
+-(IBAction)DoingCeremonyBtn:(UIButton *)sender
+{
+    switch (sender.tag) {
+        case 0:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    UIViewController *push = segue.destinationViewController;
+    [push setValue:sender forKey:@"doingApplyKey"];
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

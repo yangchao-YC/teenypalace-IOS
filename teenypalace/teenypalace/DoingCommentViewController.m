@@ -21,6 +21,28 @@
     // Do any additional setup after loading the view.
 }
 
+
+
+
+
+-(IBAction)DoingCommentBtn:(UIButton *)sender
+{
+    switch (sender.tag) {
+        case 0:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

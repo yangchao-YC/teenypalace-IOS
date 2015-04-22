@@ -10,4 +10,6 @@
 
 @interface DoingBookViewController : UIViewController
 
+@property(strong,nonatomic)NSDictionary *doingKey;
+
 @end

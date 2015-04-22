@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DoingCeremonyViewController : UIViewController
+@interface DoingCeremonyViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@property(strong,nonatomic)NSDictionary *doingKey;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

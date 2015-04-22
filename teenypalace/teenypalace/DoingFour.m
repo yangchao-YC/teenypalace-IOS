@@ -73,14 +73,14 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     [manager GET:date parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+      //  NSLog(@"JSON: %@", responseObject);
         self.articles = [NSMutableArray arrayWithArray:responseObject];
         [self dateHandle:key];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString *errorString = [NSString stringWithFormat:@"%@",error];
         [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
-        NSLog(@"Error: %@", error);
+     //   NSLog(@"Error: %@", error);
     }];
 }
 
@@ -114,7 +114,7 @@
             [ self.tableView reloadData];//将数据放入数组后填入tableview
         }
 
-        NSLog(@"%@",self.date);
+      //  NSLog(@"%@",self.date);
         [ self.tableView footerEndRefreshing];
     }
     
