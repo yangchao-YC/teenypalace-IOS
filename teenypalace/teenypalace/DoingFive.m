@@ -6,12 +6,12 @@
 //  Copyright (c) 2015年 杨超. All rights reserved.
 //
 
-#import "DoingThree.h"
+#import "DoingFive.h"
 #import "MJRefresh.h"
 #import "DoingTableViewCell.h"
 #import "UIImageView+WebCache.h"
 
-@interface DoingThree()<UITableViewDelegate,UITableViewDataSource>
+@interface DoingFive()<UITableViewDelegate,UITableViewDataSource>
 {
     int mark;
 }
@@ -25,7 +25,7 @@
 
 
 
-@implementation DoingThree
+@implementation DoingFive
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -62,21 +62,23 @@
 -(void)dateUrl:(int)marks Key:(BOOL)key
 {
     
-    NSString *date = [NSString stringWithFormat:@"%@4&page=%d",DATE_SEARCH_DOING,marks];
+    NSString *date = [NSString stringWithFormat:@"%@%d/pager/10",DATE_SEARCH_DOING_CRTRMONY,marks];
+    
+    NSLog(@"%@",date);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     [manager GET:date parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-      //  NSLog(@"JSON: %@", responseObject);
+        NSLog(@"JSON: %@", responseObject);
         self.articles = [NSMutableArray arrayWithArray:responseObject];
         [self dateHandle:key];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString *errorString = [NSString stringWithFormat:@"%@",error];
         [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
-      //  NSLog(@"Error: %@", error);
+        NSLog(@"Error: %@", error);
     }];
 }
 
@@ -87,29 +89,10 @@
 -(void)dateHandle:(BOOL)key
 {
     if (key) {//下拉刷新
-        //[self.tableView reloadData];
         if (self.articles.count >0) {
-           // if (start) {//如果是第一次刷新
                 self.date = self.articles;
                 [ self.tableView reloadData];//将数据放入数组后填入tableview
                 [ self.tableView headerEndRefreshing];
-          //  }
-            /*
-            else
-            {
-                if ([[[self.articles objectAtIndex:0] objectForKey:@"id"] intValue] == [[[self.date objectAtIndex:0] objectForKey:@"id"]intValue]) {
-                    NSLog(@"没有更新");
-                }
-                else
-                {
-                    NSLog(@"更新数据");
-                    self.date = self.articles;
-                    [ self.tableView reloadData];//将数据放入数组后填入tableview
-                    [ self.tableView headerEndRefreshing];
-                    
-                }
-            }
-             */
         }
         else
         {
@@ -126,23 +109,10 @@
             }
             
 
-            //[self.date addObject:self.articles];
-           
-            
-            //[self.date arrayByAddingObjectsFromArray:self.articles];
-            
-            /*
-            
-            for (id one in self.articles) {
-                [self.date addObject:one];
-            }
-            
-            [self.date arrayByAddingObject:self.articles];
-            */
             [ self.tableView reloadData];//将数据放入数组后填入tableview
         }
 
-     //   NSLog(@"%@",self.date);
+        NSLog(@"%@",self.date);
         [ self.tableView footerEndRefreshing];
     }
     
@@ -152,8 +122,8 @@
 //下拉刷新执行
 -(void)headerrereshing
 {
-    mark = 0;
-    [self dateUrl:0 Key:YES];
+    mark = 1;
+    [self dateUrl:mark Key:YES];
     
 }
 
@@ -189,20 +159,16 @@
     
     NSDictionary *dic = [self.date objectAtIndex:indexPath.row];
     
-    cell.titleLabel.text = [dic objectForKey:@"field_charity_title"];
-    if ([[dic objectForKey:@"field_charity_signup_maxnumber"]intValue] == 0) {
-        cell.countLabel.text = @"无上限";
-    }
-    else{
-        int count = [[dic objectForKey:@"field_charity_signup_maxnumber"]intValue] -[[dic objectForKey:@"field_charity_signupnumber"]intValue];
-        cell.countLabel.text = [NSString stringWithFormat:@"还剩%d个名额",count];
-    }
+    cell.titleLabel.text = [dic objectForKey:@"title"];
     
-    NSString *time = [dic objectForKey:@"field_charity_time"];
+    cell.countLabel.hidden = YES;
+    
+    
+    NSString *time = [dic objectForKey:@"created"];
     time = [time substringToIndex:10];
     
-    cell.timeLabel.text = [NSString stringWithFormat:@"活动时间：%@",time];
-    [cell.images setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"field_charity_thumb"]]
+    cell.timeLabel.text = [NSString stringWithFormat:@"更新时间：%@",time];
+    [cell.images setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"thumb"]]
                    placeholderImage:[UIImage imageNamed:@"defaults"]];
      return cell;
     

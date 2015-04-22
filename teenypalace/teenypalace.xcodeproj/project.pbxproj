@@ -12,6 +12,8 @@
 		71494E151AC1190D00362749 /* DoingBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E141AC1190D00362749 /* DoingBookViewController.m */; };
 		71494E181AC1192400362749 /* DoingCeremonyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E171AC1192400362749 /* DoingCeremonyViewController.m */; };
 		71494E1B1AC1193B00362749 /* DoingCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E1A1AC1193B00362749 /* DoingCommentViewController.m */; };
+		714B74801AE61C9F0078FFB3 /* DoingFour.m in Sources */ = {isa = PBXBuildFile; fileRef = 714B747F1AE61C9F0078FFB3 /* DoingFour.m */; };
+		714B74831AE63E650078FFB3 /* DoingFive.m in Sources */ = {isa = PBXBuildFile; fileRef = 714B74821AE63E650078FFB3 /* DoingFive.m */; };
 		715916BA1A64CE740090CE5C /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715916B51A64CE730090CE5C /* SVIndefiniteAnimatedView.m */; };
 		715916BB1A64CE740090CE5C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 715916B71A64CE730090CE5C /* SVProgressHUD.bundle */; };
 		715916BC1A64CE740090CE5C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 715916B91A64CE730090CE5C /* SVProgressHUD.m */; };
@@ -172,6 +174,10 @@
 		71494E171AC1192400362749 /* DoingCeremonyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingCeremonyViewController.m; sourceTree = "<group>"; };
 		71494E191AC1193A00362749 /* DoingCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingCommentViewController.h; sourceTree = "<group>"; };
 		71494E1A1AC1193B00362749 /* DoingCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingCommentViewController.m; sourceTree = "<group>"; };
+		714B747E1AE61C9F0078FFB3 /* DoingFour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingFour.h; sourceTree = "<group>"; };
+		714B747F1AE61C9F0078FFB3 /* DoingFour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingFour.m; sourceTree = "<group>"; };
+		714B74811AE63E650078FFB3 /* DoingFive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingFive.h; sourceTree = "<group>"; };
+		714B74821AE63E650078FFB3 /* DoingFive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingFive.m; sourceTree = "<group>"; };
 		715916B41A64CE730090CE5C /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		715916B51A64CE730090CE5C /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		715916B61A64CE730090CE5C /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
@@ -666,6 +672,10 @@
 				71A180341A78CED700466755 /* DoingTwo.m */,
 				71A180381A78CEDE00466755 /* DoingThree.h */,
 				71A180331A78CED700466755 /* DoingThree.m */,
+				714B747E1AE61C9F0078FFB3 /* DoingFour.h */,
+				714B747F1AE61C9F0078FFB3 /* DoingFour.m */,
+				714B74811AE63E650078FFB3 /* DoingFive.h */,
+				714B74821AE63E650078FFB3 /* DoingFive.m */,
 				717C1F3A1A7A182E00997639 /* MessageView.h */,
 				717C1F3B1A7A182E00997639 /* MessageView.m */,
 				718EFF4C1A7B66E600DC5900 /* MessageTeacher.h */,
@@ -1093,11 +1103,13 @@
 				71C6082B1A358200001CE8BA /* DoingApplyViewController.m in Sources */,
 				71966F5A1A75EF0A00802380 /* SDImageCache.m in Sources */,
 				717C1F401A7A19A800997639 /* MessageProfessionaTableViewCell.m in Sources */,
+				714B74831AE63E650078FFB3 /* DoingFive.m in Sources */,
 				71966F5D1A75EF0A00802380 /* SDWebImageDownloader.m in Sources */,
 				71C9B69B1A3033540011A3B1 /* MJRefreshFooterView.m in Sources */,
 				71966F631A75EF0A00802380 /* UIImage+MultiFormat.m in Sources */,
 				71C9B69F1A3033540011A3B1 /* UIView+MJExtension.m in Sources */,
 				719C82A51A722BDE001C7709 /* ZHPickView.m in Sources */,
+				714B74801AE61C9F0078FFB3 /* DoingFour.m in Sources */,
 				71C9B69D1A3033540011A3B1 /* UIScrollView+MJExtension.m in Sources */,
 				715EBF2E1A454F8E00010D5F /* PrettyViewController.m in Sources */,
 				717BA3871A496C7400E70CCD /* MyClassViewController.m in Sources */,

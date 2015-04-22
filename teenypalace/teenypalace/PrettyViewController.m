@@ -43,11 +43,11 @@
     self.scrollNav.xl_sliderColor = [UIColor whiteColor];//[UIColor colorWithPatternImage:[UIImage imageNamed:@"baidi"]];//[UIColor whiteColor];//选中背景框
     self.scrollNav.xl_buttonColorNormal =[UIColor whiteColor];//未选中字体颜色
     self.scrollNav.xl_buttonColorSelected =[UIColor colorWithRed:255.0f/255.0f green:132.0f/255.0f blue:0.0f/255.0f alpha:1];//选中字体颜色
-    self.scrollNav.xl_buttonFont =14;
+    self.scrollNav.xl_buttonFont =12;
     self.scrollNav.xl_buttonToSlider =30;
     self.scrollNav.xl_sliderHeight =35;//滑块高度
     self.scrollNav.xl_topHeight =35;
-    self.scrollNav.xl_sliderCorner = 7;
+    self.scrollNav.xl_sliderCorner = 5;
     self.scrollNav.xl_isSliderCorner =YES;
     
     //加入控制器视图

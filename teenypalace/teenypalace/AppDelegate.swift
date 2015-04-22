@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let info = NSBundle.mainBundle().infoDictionary as NSDictionary?
         
-        let version = info?.objectForKey("CFBundleShortVersionString") as String
+        let version = info?.objectForKey("CFBundleShortVersionString") as! String
 
         MobClick.setAppVersion(version)
 
