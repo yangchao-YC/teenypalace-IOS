@@ -7,8 +7,8 @@
 //
 
 #import "DoingZero.h"
-#import "MJRefresh.h"
 #import "DoingTableViewCell.h"
+#import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
 
 @interface DoingZero()<UITableViewDelegate,UITableViewDataSource>
@@ -228,7 +228,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 90;
+    return 90;      
 }//设置模块内cell的高度
 
 

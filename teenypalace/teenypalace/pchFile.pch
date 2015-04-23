@@ -27,6 +27,9 @@
  
  */
 
+
+#define IOS8_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending )
+
 #define ART @"美术,书法类"
 
 #define LITERARY @"文艺类"

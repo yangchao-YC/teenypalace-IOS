@@ -5766,15 +5766,15 @@
                                 <rect key="frame" x="0.0" y="45" width="600" height="555"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qyk-BX-zC0">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="dataSource" destination="ciK-k2-5No" id="EZl-p5-49N"/>
                                             <outlet property="delegate" destination="ciK-k2-5No" id="LFx-Se-dr6"/>
                                         </connections>
                                     </tableView>
-                                    <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-QX-6yr">
-                                        <rect key="frame" x="0.0" y="600" width="600" height="555"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-QX-6yr">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44h-hK-lE7">
                                                 <rect key="frame" x="10" y="10" width="580" height="280"/>
