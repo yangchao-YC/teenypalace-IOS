@@ -129,6 +129,9 @@
 -(void)dateHandle
 {
     if ([[self.dic objectForKey:@"status"] intValue] == 0) {
+        
+        self.NewCardBlock;
+        
         [SVProgressHUD showSuccessWithStatus:@"添加成功" maskType:3];
         [self.navigationController popViewControllerAnimated:YES];
     }

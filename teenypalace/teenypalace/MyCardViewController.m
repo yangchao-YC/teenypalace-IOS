@@ -9,7 +9,7 @@
 //用户中心-学员卡管理
 
 #import "MyCardViewController.h"
-
+#import "MyNewCardViewController.h"
 
 @interface MyCardViewController ()
 
@@ -45,6 +45,17 @@
     {
         [SVProgressHUD showInfoWithStatus:@"请登陆后进行操作" maskType:3];
     }
+    
+    
+    MyNewCardViewController *card = [[MyNewCardViewController alloc]init];
+    card.NewCardBlock = ^(void){
+        
+        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
+        [SVProgressHUD showInfoWithStatus:LOADING];
+        
+        [self dateUrl:date];
+    };
+    
     
 }
 

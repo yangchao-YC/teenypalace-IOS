@@ -12,6 +12,8 @@
 
 @property(strong,nonatomic)NSString *MyNewKey;
 
+@property(copy)void(^NewCardBlock)(void);
+
 @property (weak, nonatomic) IBOutlet UIButton *manBtn;
 @property (weak, nonatomic) IBOutlet UIButton *womanBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *manImage;

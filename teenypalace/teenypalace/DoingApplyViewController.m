@@ -47,6 +47,9 @@
  */
 -(void)datePost:(NSString *)name Phone:(NSString *)phone1 Phone2:(NSString *)phone2 Addres:(NSString *)addres
 {
+    
+    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
     requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     /*
@@ -59,7 +62,8 @@
     
     NSLog(@"%@-%@-%@-%@-%@-%@",name,phone1,phone2,addres,self.doingApplyKey,DATE_DOING_APPLY);
     [requestManager POST:DATE_DOING_APPLY parameters:
-     @{@"field_charitysignup_username":name,
+     @{@"field_charitysignup_parentid":app.ParentId,
+       @"field_charitysignup_username":name,
        @"field_charitysignup_contactinfo1":phone1,
        @"field_charitysignup_contactinfo2":phone2,
        @"field_charitysignup_address":addres,
