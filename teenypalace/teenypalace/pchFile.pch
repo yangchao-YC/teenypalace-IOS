@@ -103,6 +103,9 @@
 
 #define DATE_POST_COMMENT [DATE_URL stringByAppendingString:@"creviews/add"]//提交评论
 
+#define DATE_GET_DIANZHU [DATE_URL stringByAppendingString:@"memorial/dz/"]//点烛
+
+#define DATE_GET_XIANHUA [DATE_URL stringByAppendingString:@"memorial/xh/"]//献花
 
 
 #define DATE_DOING_SUM [DATE_URL stringByAppendingString:@"charity/update_counter/"]//活动次数统计

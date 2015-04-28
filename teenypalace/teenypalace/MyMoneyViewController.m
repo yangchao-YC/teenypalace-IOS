@@ -17,6 +17,7 @@
     BOOL countMoney ;//是否全选
     NSMutableArray *contacts;//状态
     int sumMoney;//总价
+    int Sum;//订单总数
 }
 
 @property (nonatomic,retain) NSMutableArray *articles;
@@ -33,6 +34,7 @@
     // Do any additional setup after loading the view.
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    Sum = 0;
 
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -84,6 +86,10 @@
     [LoginViewController logOut];
 }
 
+
+
+
+
 //key:0查询订单 1删除订单
 -(void)dateUrl:(NSString *)url Key:(int)key
 {
@@ -93,16 +99,40 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        if (key == 0) {
-            self.articles = responseObject;
+       // NSLog(@"JSON: %@", responseObject);
+        
+        if (Sum != 0) {
+            NSMutableArray *arc = responseObject;
+            NSLog(@"sum == %d    count == %d",Sum,arc.count);
+
+            if (arc.count == Sum) {
+                [self selectMoney];
+            }
+            else
+            {
+                Sum = 0 ;
+                self.articles = responseObject;
+                [self dateHandle:key];
+                [SVProgressHUD dismiss];
+            }
         }
         else
         {
-            self.dic = responseObject;
+            if (key == 0) {
+
+                self.articles = responseObject;
+            }
+            else
+            {
+                self.dic = responseObject;
+            }
+            
+            [self dateHandle:key];
+            
         }
         
-        [self dateHandle:key];
+        
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString *errorString = [NSString stringWithFormat:@"%@",error];
         [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
@@ -150,6 +180,9 @@
     else
     {
         if ([[self.dic objectForKey:@"status"]intValue] == 0) {
+            
+            Sum = self.articles.count;
+            
             [SVProgressHUD dismiss];
             [self goUPOMPView:[self.dic objectForKey:@"msg"]];
             
@@ -179,9 +212,9 @@
     NSString *respCode = [xmlDic objectForKey:@"respCode"];
     
     if ([respCode isEqualToString:@"0000"]) {
-        [SVProgressHUD showSuccessWithStatus:@"支付成功" maskType:3];
+       // [SVProgressHUD showSuccessWithStatus:@"支付成功" maskType:3];
         
-        [SVProgressHUD showInfoWithStatus:@"正在刷新列表"];
+        [SVProgressHUD showWithStatus:@"支付成功,正在核对订单!"];
         [self selectMoney];
         
     }
