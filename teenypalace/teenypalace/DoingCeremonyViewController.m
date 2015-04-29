@@ -128,6 +128,7 @@
         cell.contentLabel.text = [self.doingKey objectForKey:@"memorialintro"];
         cell.dianzhuLabel.text = [NSString stringWithFormat:@"总共被点过%@次",[self.doingKey objectForKey:@"memorialdianzhu"]];
         cell.xianhuaLabel.text = [NSString stringWithFormat:@"总共献花%@次",[self.doingKey objectForKey:@"memorialxianhua"]];
+        cell.commentLabel.text = [NSString stringWithFormat:@"评论%@条",[self.doingKey objectForKey:@"count"]];
         
         [cell.dianzhuBtn addTarget:self action:@selector(dianzhu) forControlEvents:UIControlEventTouchUpInside];
         [cell.xianhuaBtn addTarget:self action:@selector(xianhua) forControlEvents:UIControlEventTouchUpInside];
@@ -224,7 +225,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        return 210;
+        return 270;
     }
     else
     {

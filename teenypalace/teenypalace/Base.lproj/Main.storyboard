@@ -5773,7 +5773,7 @@
                                             <outlet property="delegate" destination="ciK-k2-5No" id="LFx-Se-dr6"/>
                                         </connections>
                                     </tableView>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-QX-6yr">
+                                    <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-QX-6yr">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44h-hK-lE7">
