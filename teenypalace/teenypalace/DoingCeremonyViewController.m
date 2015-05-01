@@ -16,10 +16,12 @@
 
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
+#import "Masonry.h"
+#import "DoingCeremoneyHeaderView.h"
 
 @interface DoingCeremonyViewController ()
 {
-   int mark ;
+    int mark ;
 }
 
 @property (nonatomic,retain) NSMutableArray *articles;
@@ -39,8 +41,70 @@
     [self.tableView setHeaderHidden:NO];//隐藏头部刷新控件
     
     
+    
+    [self initHeader];
+    
     [self dateUrl:mark];
     
+    
+}
+
+-(void)initHeader
+{
+    CGSize screenSize =[UIScreen mainScreen].bounds.size ;
+    UIView *headerView =  [[UIView alloc]init];
+    
+    UIImageView *imageView = [UIImageView new];//头部图片，焦点图
+    [headerView addSubview:imageView];
+    
+    // CGFloat ratio  = 300.0f / 320.0f;
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(screenSize.width, screenSize.width));//设置宽高
+        make.centerX.equalTo(imageView.superview);//针对父容器剧中
+        make.top.equalTo(imageView.superview);//.offset(5);//距离头部距离5个位置
+    }];
+    
+    
+    [imageView setImageWithURL:[NSURL URLWithString:[self.doingKey objectForKey:@"memorialthumb"]] placeholderImage:[UIImage imageNamed:@"defaults"]];
+    
+    DoingCeremoneyHeaderView *mainView = [[[NSBundle mainBundle] loadNibNamed:@"DoingCeremoneyHeaderView" owner:self options:nil] lastObject];
+    
+    
+    [headerView addSubview:mainView];
+    
+    [mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(imageView.mas_bottom);//设置在imageview的下面
+        make.left.right.equalTo(mainView.superview);//设置左右约束
+        //make.bottom.equalTo(mainView.superview);
+        
+    }];
+    
+    
+    mainView.contentLabel.text = [self.doingKey objectForKey:@"memorialintro"];
+    mainView.dianzhuLabel.text = [NSString stringWithFormat:@"总共被点过%@次",[self.doingKey objectForKey:@"memorialdianzhu"]];
+    mainView.xianhuaLabel.text = [NSString stringWithFormat:@"总共献花%@次",[self.doingKey objectForKey:@"memorialxianhua"]];
+    mainView.commentLabel.text = [NSString stringWithFormat:@"评论%@条",[self.doingKey objectForKey:@"count"]];
+    
+    [mainView.dianzhuBtn addTarget:self action:@selector(dianzhu) forControlEvents:UIControlEventTouchUpInside];
+    [mainView.xianhuaBtn addTarget:self action:@selector(xianhua) forControlEvents:UIControlEventTouchUpInside];
+    
+    [mainView layoutIfNeeded];
+    [headerView layoutIfNeeded];//刷新约束
+    
+    NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:14.0f]};
+    // NSString class method: boundingRectWithSize:options:attributes:context is
+    // available only on ios7.0 sdk.
+    
+    CGRect rect = [mainView.contentLabel.text boundingRectWithSize:CGSizeMake(screenSize.width - 16.0f, CGFLOAT_MAX)
+                                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                                        attributes:attributes
+                                                           context:nil];
+    
+    CGFloat height = imageView.layer.bounds.size.height + 150 + rect.size.height;
+    
+    
+    headerView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, height);
+    self.tableView.tableHeaderView = headerView;//添加header
 }
 
 //加载更多执行
@@ -74,7 +138,7 @@
     [manager GET:date parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // NSLog(@"JSON: %@", responseObject);
         self.articles = [NSMutableArray arrayWithArray:responseObject];
-       // [self dateHandle:key];
+        // [self dateHandle:key];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString *errorString = [NSString stringWithFormat:@"%@",error];
@@ -102,50 +166,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        static NSString *doing_cell_ceremony_top = @"doing_cell_ceremony_top";
-        
-        DoingCeremonyTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:doing_cell_ceremony_top];
-        
-        if (!cell) {
-            cell = [[[NSBundle mainBundle]loadNibNamed:@"DoingCeremonyTopTableViewCell" owner:self options:nil]lastObject];
-        }
-        
-        [cell.imageView setImageWithURL:[NSURL URLWithString:[self.doingKey objectForKey:@"memorialthumb"]] placeholderImage:[UIImage imageNamed:@"defaults"]];
-        
-        return cell;
-    }
-    else if(indexPath.section == 1)
-    {
-        static NSString *doing_cell_ceremony_content = @"doing_cell_ceremony_content";
-
-        DoingCeremonyContentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:doing_cell_ceremony_content];
-        
-        if (!cell) {
-            cell = [[[NSBundle mainBundle]loadNibNamed:@"DoingCeremonyContentTableViewCell" owner:self options:nil]lastObject];
-        }
-        
-        cell.contentLabel.text = [self.doingKey objectForKey:@"memorialintro"];
-        cell.dianzhuLabel.text = [NSString stringWithFormat:@"总共被点过%@次",[self.doingKey objectForKey:@"memorialdianzhu"]];
-        cell.xianhuaLabel.text = [NSString stringWithFormat:@"总共献花%@次",[self.doingKey objectForKey:@"memorialxianhua"]];
-        cell.commentLabel.text = [NSString stringWithFormat:@"评论%@条",[self.doingKey objectForKey:@"count"]];
-        
-        [cell.dianzhuBtn addTarget:self action:@selector(dianzhu) forControlEvents:UIControlEventTouchUpInside];
-        [cell.xianhuaBtn addTarget:self action:@selector(xianhua) forControlEvents:UIControlEventTouchUpInside];
-        return cell;
-    }
-    else
-    {
-        static NSString *doing_cell_comment = @"doing_cell_comment";
-
-        DoingCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:doing_cell_comment];
-        
-        if (!cell) {
-            cell = [[[NSBundle mainBundle]loadNibNamed:@"DoingCommentTableViewCell" owner:self options:nil]lastObject];
-        }
-        return cell;
-    }
     
+    static NSString *doing_cell_comment = @"doing_cell_comment";
+    
+    DoingCommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:doing_cell_comment];
+    
+    if (!cell) {
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"DoingCommentTableViewCell" owner:self options:nil]lastObject];
+    }
+    return cell;
 }
 
 //点烛
@@ -187,25 +216,12 @@
 //设置单元格
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {//根据分区设置单元格
-        case 0:
-            return 1;
-            break;
-        case 1:
-            return 1;
-            break;
-        case 2:
-            return self.articles.count;
-            break;
-        default:
-            break;
-    }
     return self.articles.count;
 }
 //设置分区
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 1;
 }
 //点击触发
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -224,44 +240,26 @@
 //神坑啊
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.section == 0) {
-        return 270;
-    }
-    else
+    
+    if (IOS8_OR_LATER)
     {
-        if (IOS8_OR_LATER)
-        {
-            return UITableViewAutomaticDimension;
-        }
-        return [self heightForBasicCellAtIndexPath:indexPath];
-
+        return UITableViewAutomaticDimension;
     }
+    return [self heightForBasicCellAtIndexPath:indexPath];
+    
+    
 }
 
 - (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.section == 1) {
-        static DoingCeremonyContentTableViewCell *contentCell = nil;
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            contentCell = [self.tableView dequeueReusableCellWithIdentifier:@"FriendTribalCell"];
-        });
+    static DoingCommentTableViewCell *commentCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         
-      //  [self configureBasicCell:contentCell atIndexPath:indexPath];
-        return [self calculateHeightForConfiguredSizingCell:contentCell];
-    }
-    else
-    {
-        static DoingCommentTableViewCell *commentCell = nil;
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            
-            commentCell = [self.tableView dequeueReusableCellWithIdentifier:@"FriendTribalCell"];
-        });
-        
-      //  [self configureBasicCell:commentCell atIndexPath:indexPath];
-        return [self calculateHeightForConfiguredSizingCell:commentCell];
-    }
+        commentCell = [self.tableView dequeueReusableCellWithIdentifier:@"FriendTribalCell"];
+    });
+    
+    return [self calculateHeightForConfiguredSizingCell:commentCell];
     
 }
 
@@ -299,13 +297,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

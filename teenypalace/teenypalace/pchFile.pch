@@ -88,6 +88,8 @@
 
 #define DATE_SEARCH_APPLY_CLASS [DATE_URL stringByAppendingString:@"signup/getAllOrders/"]//已报名课程
 
+#define DATE_SEARCH_MY_DOING [DATE_URL stringByAppendingString:@"getmycharity/"]//已报名活动
+
 #define DATE_CARD_NEW [DATE_URL stringByAppendingString:@"register/create_new_studentcard"]//添加新学员卡
 
 #define DATE_CARD_USED [DATE_URL stringByAppendingString:@"register/add_exists_studentcard"]//添加旧学员卡

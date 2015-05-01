@@ -54,12 +54,15 @@
             cell.titleLabel.text = @"已报名课程";
             break;
         case 2:
-            cell.titleLabel.text = @"结算中心";
+            cell.titleLabel.text = @"已报名活动";
             break;
         case 3:
-            cell.titleLabel.text = @"设置";
+            cell.titleLabel.text = @"结算中心";
             break;
         case 4:
+            cell.titleLabel.text = @"设置";
+            break;
+        case 5:
             cell.titleLabel.text = @"登陆";
             break;
         default:
@@ -100,12 +103,15 @@
             [self performSegueWithIdentifier:@"my_myClass" sender:nil];
             break;
         case 2:
-            [self performSegueWithIdentifier:@"my_myMoney" sender:nil];
+            [self performSegueWithIdentifier:@"my_myDoing" sender:nil];
             break;
         case 3:
-            [self performSegueWithIdentifier:@"my_mySite" sender:nil];
+            [self performSegueWithIdentifier:@"my_myMoney" sender:nil];
             break;
         case 4:
+            [self performSegueWithIdentifier:@"my_mySite" sender:nil];
+            break;
+        case 5:
             [self performSelector:@selector(logout) withObject:self afterDelay:.5f];
             break;
         default:
