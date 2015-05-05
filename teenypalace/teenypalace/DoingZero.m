@@ -89,29 +89,10 @@
 -(void)dateHandle:(BOOL)key
 {
     if (key) {//下拉刷新
-        //[self.tableView reloadData];
         if (self.articles.count >0) {
-           // if (start) {//如果是第一次刷新
                 self.date = self.articles;
                 [ self.tableView reloadData];//将数据放入数组后填入tableview
                 [ self.tableView headerEndRefreshing];
-          //  }
-            /*
-            else
-            {
-                if ([[[self.articles objectAtIndex:0] objectForKey:@"id"] intValue] == [[[self.date objectAtIndex:0] objectForKey:@"id"]intValue]) {
-                    NSLog(@"没有更新");
-                }
-                else
-                {
-                    NSLog(@"更新数据");
-                    self.date = self.articles;
-                    [ self.tableView reloadData];//将数据放入数组后填入tableview
-                    [ self.tableView headerEndRefreshing];
-                    
-                }
-            }
-             */
         }
         else
         {
@@ -127,20 +108,6 @@
                 [self.date addObject:dic];//[self.articles objectAtIndex:i]];
             }
             
-
-            //[self.date addObject:self.articles];
-           
-            
-            //[self.date arrayByAddingObjectsFromArray:self.articles];
-            
-            /*
-            
-            for (id one in self.articles) {
-                [self.date addObject:one];
-            }
-            
-            [self.date arrayByAddingObject:self.articles];
-            */
             [ self.tableView reloadData];//将数据放入数组后填入tableview
         }
 

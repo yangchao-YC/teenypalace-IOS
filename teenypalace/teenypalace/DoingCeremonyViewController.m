@@ -35,13 +35,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@",self.doingKey);
+  //    NSLog(@"%@",self.doingKey);
     mark = 1;
     [ self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];//绑定MJ刷新尾部
     [self.tableView setHeaderHidden:NO];//隐藏头部刷新控件
     
     
-    
+    self.date = [NSMutableArray array];
     [self initHeader];
     
     [self dateUrl:mark];
@@ -110,7 +110,7 @@
 //加载更多执行
 -(void)footerRereshing
 {
-    if (self.date.count/(mark +1) == 5) {
+    if (self.date.count/mark == 5) {
         mark +=1;
         [self dateUrl:mark];
     }
@@ -122,7 +122,6 @@
 
 /*
  mark:页数
- key:YES为下啦刷新   NO为加载更多
  */
 -(void)dateUrl:(int)marks
 {
@@ -138,7 +137,7 @@
     [manager GET:date parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // NSLog(@"JSON: %@", responseObject);
         self.articles = [NSMutableArray arrayWithArray:responseObject];
-        // [self dateHandle:key];
+        [self dateHandle];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString *errorString = [NSString stringWithFormat:@"%@",error];
@@ -148,7 +147,21 @@
 }
 
 
-
+-(void)dateHandle
+{
+    NSLog(@"我是预留数组的总数   %d",self.articles.count);
+    if (self.articles.count >0) {
+        for (int i =0; i < self.articles.count; i++) {
+            id dic = [self.articles objectAtIndex:i];
+            [self.date addObject:dic];//[self.articles objectAtIndex:i]];
+        }
+        
+        [ self.tableView reloadData];
+    }
+    
+    NSLog(@"我是加载后的总数   %d",self.date.count);
+    [ self.tableView footerEndRefreshing];
+}
 
 
 -(IBAction)DoingCeremonyBtn:(UIButton *)sender
@@ -174,6 +187,14 @@
     if (!cell) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"DoingCommentTableViewCell" owner:self options:nil]lastObject];
     }
+    
+    
+    NSDictionary *dic = [self.date objectAtIndex:indexPath.row];
+    
+    cell.phoneLabel.text = [dic objectForKey:@"phone"];
+    cell.timeLabel.text = [dic objectForKey:@"created"];
+    cell.contentLabel.text = [dic objectForKey:@"message"];
+    
     return cell;
 }
 
@@ -216,7 +237,7 @@
 //设置单元格
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.articles.count;
+    return self.date.count;
 }
 //设置分区
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -228,6 +249,7 @@
 {
     
 }
+
 
 //预判高度
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath

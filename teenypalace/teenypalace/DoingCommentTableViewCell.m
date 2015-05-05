@@ -12,6 +12,10 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    if (!IOS8_OR_LATER) {
+        self.contentLabel.preferredMaxLayoutWidth = screenWidth - 16.0f;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

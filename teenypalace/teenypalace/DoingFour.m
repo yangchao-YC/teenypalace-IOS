@@ -114,7 +114,7 @@
             [ self.tableView reloadData];//将数据放入数组后填入tableview
         }
 
-      //  NSLog(@"%@",self.date);
+        
         [ self.tableView footerEndRefreshing];
     }
     
@@ -132,7 +132,8 @@
 //加载更多执行
 -(void)footerRereshing
 {
-    if (self.date.count/(mark +1) == 10) {
+    
+    if (self.date.count/mark== 10) {
         mark +=1;
         [self dateUrl:mark Key:NO];
     }

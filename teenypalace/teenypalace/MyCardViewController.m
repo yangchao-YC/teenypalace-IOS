@@ -53,6 +53,7 @@
         NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
         [SVProgressHUD showInfoWithStatus:LOADING];
         
+        
         [self dateUrl:date];
     };
     

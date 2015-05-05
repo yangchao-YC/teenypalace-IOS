@@ -130,7 +130,7 @@
 //加载更多执行
 -(void)footerRereshing
 {
-    if (self.date.count/(mark +1) == 10) {
+    if (self.date.count/mark == 10) {
         mark +=1;
         [self dateUrl:mark Key:NO];
     }
