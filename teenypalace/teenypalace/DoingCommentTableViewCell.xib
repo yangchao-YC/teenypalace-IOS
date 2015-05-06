@@ -19,7 +19,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="k4R-9E-WJq"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.12549019610000001" green="0.37254901959999998" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -28,17 +28,19 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="zI8-x5-QOU"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jx6-Ar-C3I">
                         <rect key="frame" x="8" y="32" width="304" height="68"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.95686274510000002" green="0.94117647059999998" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="jx6-Ar-C3I" firstAttribute="trailing" secondItem="IOi-kP-fuO" secondAttribute="trailingMargin" id="1Qb-WH-j0H"/>
                     <constraint firstItem="r9A-23-qst" firstAttribute="leading" secondItem="ZAP-xN-nW0" secondAttribute="trailing" id="5Cu-Qh-kZE"/>

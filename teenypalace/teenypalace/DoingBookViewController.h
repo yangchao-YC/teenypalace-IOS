@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DoingBookViewController : UIViewController
+@interface DoingBookViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property(strong,nonatomic)NSDictionary *doingKey;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

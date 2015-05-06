@@ -169,6 +169,8 @@
 		71CC92951A39693100EFDE67 /* ApplyCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CC92941A39693100EFDE67 /* ApplyCardTableViewCell.m */; };
 		71CF285F1A37EF8E00062CCB /* ApplyClassDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF285E1A37EF8E00062CCB /* ApplyClassDetailsViewController.m */; };
 		71CF28621A37EFA800062CCB /* ApplyCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF28611A37EFA800062CCB /* ApplyCardViewController.m */; };
+		71DAADBF1AFA02D6008402F2 /* DoingBookHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DAADBE1AFA02D6008402F2 /* DoingBookHeaderView.m */; };
+		71DAADC11AFA02F3008402F2 /* DoingBookHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DAADC01AFA02F3008402F2 /* DoingBookHeaderView.xib */; };
 		71DD2F151AF0DA6A005C37F6 /* MyDoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD2F141AF0DA6A005C37F6 /* MyDoingViewController.m */; };
 		71DD2F181AF0DEA6005C37F6 /* MyDoingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD2F171AF0DEA6005C37F6 /* MyDoingTableViewCell.m */; };
 		71EAF1B11A4D6A5200C8D56D /* MyNewCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EAF1B01A4D6A5200C8D56D /* MyNewCardViewController.m */; };
@@ -487,6 +489,9 @@
 		71CF285E1A37EF8E00062CCB /* ApplyClassDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyClassDetailsViewController.m; sourceTree = "<group>"; };
 		71CF28601A37EFA800062CCB /* ApplyCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyCardViewController.h; sourceTree = "<group>"; };
 		71CF28611A37EFA800062CCB /* ApplyCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyCardViewController.m; sourceTree = "<group>"; };
+		71DAADBD1AFA02D6008402F2 /* DoingBookHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingBookHeaderView.h; sourceTree = "<group>"; };
+		71DAADBE1AFA02D6008402F2 /* DoingBookHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingBookHeaderView.m; sourceTree = "<group>"; };
+		71DAADC01AFA02F3008402F2 /* DoingBookHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoingBookHeaderView.xib; sourceTree = "<group>"; };
 		71DD2F131AF0DA6A005C37F6 /* MyDoingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDoingViewController.h; sourceTree = "<group>"; };
 		71DD2F141AF0DA6A005C37F6 /* MyDoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDoingViewController.m; sourceTree = "<group>"; };
 		71DD2F161AF0DEA6005C37F6 /* MyDoingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDoingTableViewCell.h; sourceTree = "<group>"; };
@@ -1072,6 +1077,9 @@
 				71BEABB11AF35C8F00ECC748 /* DoingCeremoneyHeaderView.h */,
 				71BEABB21AF35C8F00ECC748 /* DoingCeremoneyHeaderView.m */,
 				71BEABAF1AF3586B00ECC748 /* DoingCeremoneyHeaderView.xib */,
+				71DAADBD1AFA02D6008402F2 /* DoingBookHeaderView.h */,
+				71DAADBE1AFA02D6008402F2 /* DoingBookHeaderView.m */,
+				71DAADC01AFA02F3008402F2 /* DoingBookHeaderView.xib */,
 			);
 			name = AlertView;
 			sourceTree = "<group>";
@@ -1195,6 +1203,7 @@
 				715E42D91A5BED1500A3C4F1 /* ios-social-sdk-share-quick.html in Resources */,
 				71C9B6981A3033540011A3B1 /* MJRefresh.bundle in Resources */,
 				71C97BDF1A08B5970010A5B8 /* Images.xcassets in Resources */,
+				71DAADC11AFA02F3008402F2 /* DoingBookHeaderView.xib in Resources */,
 				71705B181A81D2780066B6E5 /* PrettyTableViewCell.xib in Resources */,
 				715E42C51A5BED1500A3C4F1 /* UMSLoginViewController.xib in Resources */,
 				71BD03811AE89B7F0062EE29 /* DoingCeremonyTopTableViewCell.xib in Resources */,
@@ -1301,6 +1310,7 @@
 				71BEABAC1AF34F9200ECC748 /* NSArray+MASAdditions.m in Sources */,
 				71BEABA61AF34F9200ECC748 /* MASCompositeConstraint.m in Sources */,
 				715916BC1A64CE740090CE5C /* SVProgressHUD.m in Sources */,
+				71DAADBF1AFA02D6008402F2 /* DoingBookHeaderView.m in Sources */,
 				71CC78D11A36DE41000A4E55 /* ApplyClassViewController.m in Sources */,
 				71CC78D41A36E00B000A4E55 /* ApplyClassTableViewCell.m in Sources */,
 				717E2AE31A51545E0070570B /* CardTableViewCell.m in Sources */,

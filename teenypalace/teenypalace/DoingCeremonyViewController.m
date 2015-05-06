@@ -35,17 +35,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  //    NSLog(@"%@",self.doingKey);
     mark = 1;
     [ self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];//绑定MJ刷新尾部
     [self.tableView setHeaderHidden:NO];//隐藏头部刷新控件
-    
+    self.tableView.backgroundColor = [UIColor colorWithRed:244.0f/255.0f green:240.0f/255.0f blue:245.0f/255.0f alpha:1];
     
     self.date = [NSMutableArray array];
     [self initHeader];
     
     [self dateUrl:mark];
-    
     
 }
 
@@ -128,8 +126,6 @@
     
     NSString *date = [NSString stringWithFormat:@"%@%@/page/%d",DATE_SEARCH_COMMENT,[self.doingKey objectForKey:@"id"],marks];
     
-    NSLog(@"%@",date);
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
@@ -149,7 +145,6 @@
 
 -(void)dateHandle
 {
-    NSLog(@"我是预留数组的总数   %d",self.articles.count);
     if (self.articles.count >0) {
         for (int i =0; i < self.articles.count; i++) {
             id dic = [self.articles objectAtIndex:i];
@@ -158,8 +153,6 @@
         
         [ self.tableView reloadData];
     }
-    
-    NSLog(@"我是加载后的总数   %d",self.date.count);
     [ self.tableView footerEndRefreshing];
 }
 
@@ -170,10 +163,16 @@
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
             break;
-            
+        case 2:
+            [self push];
+            break;
         default:
             break;
     }
+}
+-(void)push
+{
+    [self performSegueWithIdentifier:@"doingCeremony_doingComment" sender:self.doingKey];//进入评论
 }
 
 
@@ -188,10 +187,15 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:@"DoingCommentTableViewCell" owner:self options:nil]lastObject];
     }
     
-    
     NSDictionary *dic = [self.date objectAtIndex:indexPath.row];
     
-    cell.phoneLabel.text = [dic objectForKey:@"phone"];
+    
+    
+    NSString *phone = [dic objectForKey:@"phone"];
+    phone = [phone substringToIndex:7];
+    
+    cell.phoneLabel.text = [NSString stringWithFormat:@"%@****",phone];
+    
     cell.timeLabel.text = [dic objectForKey:@"created"];
     cell.contentLabel.text = [dic objectForKey:@"message"];
     
@@ -239,11 +243,7 @@
 {
     return self.date.count;
 }
-//设置分区
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
+
 //点击触发
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -261,57 +261,24 @@
 #pragma mark 计算cell高度
 //神坑啊
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
     if (IOS8_OR_LATER)
     {
         return UITableViewAutomaticDimension;
     }
-    return [self heightForBasicCellAtIndexPath:indexPath];
+    UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+    [cell layoutIfNeeded];
+    [cell.contentView layoutIfNeeded];
+    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     
-    
-}
-
-- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static DoingCommentTableViewCell *commentCell = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        
-        commentCell = [self.tableView dequeueReusableCellWithIdentifier:@"FriendTribalCell"];
-    });
-    
-    return [self calculateHeightForConfiguredSizingCell:commentCell];
-    
-}
-
-- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
-    [sizingCell setNeedsLayout];
-    [sizingCell layoutIfNeeded];
-    
-    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return size.height + 1.0f; // Add 1.0f for the cell separator height
+    
 }
-
-
-
-
-
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *push = segue.destinationViewController;
-    //[push setValue:sender forKey:@"doingApplyKey"];
+    [push setValue:sender forKey:@"doingCommentKey"];
 }
-
-
-
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

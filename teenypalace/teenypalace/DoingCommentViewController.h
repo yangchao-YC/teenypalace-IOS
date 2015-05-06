@@ -10,4 +10,9 @@
 
 @interface DoingCommentViewController : UIViewController
 
+@property(strong,nonatomic)NSDictionary *doingCommentKey;
+
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+
+
 @end
