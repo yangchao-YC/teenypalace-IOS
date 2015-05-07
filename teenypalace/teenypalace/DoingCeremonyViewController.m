@@ -18,7 +18,7 @@
 #import "UIImageView+WebCache.h"
 #import "Masonry.h"
 #import "DoingCeremoneyHeaderView.h"
-
+#import "DoingCommentViewController.h"
 @interface DoingCeremonyViewController ()
 {
     int mark ;
@@ -172,7 +172,8 @@
 }
 -(void)push
 {
-    [self performSegueWithIdentifier:@"doingCeremony_doingComment" sender:self.doingKey];//进入评论
+    NSDictionary *dic = self.doingKey;
+    [self performSegueWithIdentifier:@"doingCeremony_doingComment" sender:dic];//进入评论
 }
 
 
@@ -274,11 +275,22 @@
     
 }
 
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    UIViewController *push = segue.destinationViewController;
-    [push setValue:sender forKey:@"doingCommentKey"];
+  //  UIViewController *push = segue.destinationViewController;
+   // [push setValue:sender forKey:@"doingCommentContentKey"];
+    
+    
+    if ([segue.identifier isEqualToString:@"doingCeremony_doingComment"]) {
+        DoingCommentViewController *controller = (DoingCommentViewController *)segue.destinationViewController;
+        controller.Key = sender;
+    }
+    
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -6354,10 +6354,10 @@
         <image name="tabbar_bg" width="640" height="91"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bVJ-DV-Wg1"/>
-        <segue reference="qn2-al-Psq"/>
         <segue reference="X9f-6g-kcV"/>
+        <segue reference="qn2-al-Psq"/>
         <segue reference="mHu-Ew-wJe"/>
         <segue reference="IHq-kI-aOp"/>
+        <segue reference="bVJ-DV-Wg1"/>
     </inferredMetricsTieBreakers>
 </document>
