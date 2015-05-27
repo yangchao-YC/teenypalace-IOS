@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */; };
 		710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1F1A5E8B0900513143 /* PwdViewController.m */; };
+		71111A881AFB612A000A45C5 /* DoingceshiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71111A871AFB612A000A45C5 /* DoingceshiViewController.m */; };
 		71494E151AC1190D00362749 /* DoingBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E141AC1190D00362749 /* DoingBookViewController.m */; };
 		71494E181AC1192400362749 /* DoingCeremonyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E171AC1192400362749 /* DoingCeremonyViewController.m */; };
 		71494E1B1AC1193B00362749 /* DoingCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E1A1AC1193B00362749 /* DoingCommentViewController.m */; };
@@ -191,6 +192,8 @@
 		710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationProcessingViewController.m; sourceTree = "<group>"; };
 		710ADA1E1A5E8B0900513143 /* PwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PwdViewController.h; sourceTree = "<group>"; };
 		710ADA1F1A5E8B0900513143 /* PwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PwdViewController.m; sourceTree = "<group>"; };
+		71111A861AFB612A000A45C5 /* DoingceshiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingceshiViewController.h; sourceTree = "<group>"; };
+		71111A871AFB612A000A45C5 /* DoingceshiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingceshiViewController.m; sourceTree = "<group>"; };
 		71494E131AC1190D00362749 /* DoingBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingBookViewController.h; sourceTree = "<group>"; };
 		71494E141AC1190D00362749 /* DoingBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingBookViewController.m; sourceTree = "<group>"; };
 		71494E161AC1192400362749 /* DoingCeremonyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingCeremonyViewController.h; sourceTree = "<group>"; };
@@ -891,6 +894,8 @@
 				71CF28611A37EFA800062CCB /* ApplyCardViewController.m */,
 				71C9B6C51A305FDD0011A3B1 /* DoingViewController.h */,
 				71A1803E1A78CF5300466755 /* DoingViewController.m */,
+				71111A861AFB612A000A45C5 /* DoingceshiViewController.h */,
+				71111A871AFB612A000A45C5 /* DoingceshiViewController.m */,
 				71494E131AC1190D00362749 /* DoingBookViewController.h */,
 				71494E141AC1190D00362749 /* DoingBookViewController.m */,
 				71494E161AC1192400362749 /* DoingCeremonyViewController.h */,
@@ -1317,6 +1322,7 @@
 				71A180351A78CED700466755 /* DoingThree.m in Sources */,
 				71BEABAA1AF34F9200ECC748 /* MASViewAttribute.m in Sources */,
 				71705B0D1A81C4570066B6E5 /* PrettyOne.m in Sources */,
+				71111A881AFB612A000A45C5 /* DoingceshiViewController.m in Sources */,
 				71C9B6991A3033540011A3B1 /* MJRefreshBaseView.m in Sources */,
 				71C9B6B81A305BB60011A3B1 /* AFSecurityPolicy.m in Sources */,
 				716C188F1A5D250E004BFBAD /* CardClassTableViewCell.m in Sources */,

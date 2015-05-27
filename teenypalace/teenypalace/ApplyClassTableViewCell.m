@@ -12,6 +12,12 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    //兼容ios7 label自动换行的问题
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    if (!IOS8_OR_LATER) {
+        self.timeLabel.preferredMaxLayoutWidth = screenWidth - 130.0f;
+    }
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"进入评论页面");
+    
+    
 }
 
 
@@ -32,14 +34,22 @@
         case 0:
             [self.navigationController popViewControllerAnimated:YES];
             break;
-            
+        case 2:
+            [self pushComment];
+            break;
         default:
             break;
     }
 }
 
 
-
+-(void)pushComment
+{
+    NSString *content= self.contentTextView.text;
+    
+    
+    
+}
 
 
 

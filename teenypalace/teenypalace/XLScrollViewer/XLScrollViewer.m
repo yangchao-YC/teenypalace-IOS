@@ -75,7 +75,7 @@
     
     self.scroll1 =[[UIScrollView alloc]initWithFrame:CGRectMake(17, 0, screen_width-34, self.xl_topHeight?self.xl_topHeight:50)];
     
-    if (self.xl_buttonNames.count <=5) {
+    if (self.xl_buttonNames.count <5) {
         self.scroll1.contentSize =CGSizeMake(screen_width, 0);
     }else {
         self.scroll1.contentSize =CGSizeMake(screen_width/5*self.xl_buttonNames.count, 0);
@@ -99,7 +99,7 @@
     for (int i =0; i<self.xl_buttonNames.count; i++) {
         UIButton *temp =[UIButton buttonWithType:UIButtonTypeCustom];
         temp.tag = i;
-        if (self.xl_buttonNames.count <=5) {
+        if (self.xl_buttonNames.count <5) {
             temp.frame =CGRectMake(screen_width/self.xl_buttonNames.count*i, 0, screen_width/self.xl_buttonNames.count, self.xl_topHeight?self.xl_topHeight:50);
         }else {
             temp.frame =CGRectMake(screen_width/5*i, 0, screen_width/5, self.xl_topHeight?self.xl_topHeight:50);
@@ -129,6 +129,11 @@
     [self.scroll1 insertSubview:self.view2 atIndex:0];
     
     [self addSubview:self.scroll1];
+    
+    if (self.xl_buttonNames.count == 3) {
+        self.scroll1.contentOffset =CGPointMake(16, 0);
+    }
+    
 }
 
 -(void)addScroll2{
@@ -194,7 +199,7 @@
     
     self.scroll2.delegate =nil;
     
-    if (self.xl_buttonNames.count <=5) {
+    if (self.xl_buttonNames.count <5) {
         self.scroll2.contentOffset =CGPointMake(button.center.x*self.xl_buttonNames.count -screen_width/2, 0);
     }else {
         self.scroll2.contentOffset =CGPointMake(button.center.x*5 -screen_width/2, 0);
@@ -236,7 +241,7 @@
     self.scroll2.contentOffset =point;
     
     if (self.xl_isMoveButton) {
-        if (self.xl_buttonNames.count <=5) {
+        if (self.xl_buttonNames.count <5) {
             button.transform =CGAffineTransformMakeTranslation((scrollView.contentOffset.x -button.frame.size.width*self.xl_buttonNames.count*_x)/self.xl_buttonNames.count/3, 0);
             self.view2.transform =CGAffineTransformMakeTranslation(scrollView.contentOffset.x/self.xl_buttonNames.count, 0);
         }else {

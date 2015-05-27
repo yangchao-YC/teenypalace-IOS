@@ -226,11 +226,18 @@
     
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UIViewController *destinationController = segue.destinationViewController;
+    [destinationController setValue:sender forKey:@"commentKey"];
+}
+
+/*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *push = segue.destinationViewController;
     [push setValue:sender forKey:@"doingCommentKey"];
 }
+ */
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

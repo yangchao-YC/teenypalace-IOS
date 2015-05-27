@@ -278,15 +278,17 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    NSLog(@"%@",sender);
   //  UIViewController *push = segue.destinationViewController;
-   // [push setValue:sender forKey:@"doingCommentContentKey"];
+ //   [push setValue:sender forKey:@"commentKey"];
     
-    
+    /*
     if ([segue.identifier isEqualToString:@"doingCeremony_doingComment"]) {
         DoingCommentViewController *controller = (DoingCommentViewController *)segue.destinationViewController;
-        controller.Key = sender;
+        controller.commentKey = sender;
     }
-    
+    */
 }
 
 
