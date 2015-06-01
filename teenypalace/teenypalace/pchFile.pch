@@ -97,6 +97,7 @@
 #define DATE_SEARCH_DOING [DATE_URL stringByAppendingString:@"charity/get_mobile_service_charity?charity_category="]//活动列表拉取
 
 
+
 #define DATE_SEARCH_DOING_BOOK [DATE_URL stringByAppendingString:@"getreadinglist/page/"]//读书活动列表拉取
 
 #define DATE_SEARCH_DOING_CRTRMONY [DATE_URL stringByAppendingString:@"getmemoriallist/page/"]//祭奠活动列表拉取
@@ -114,6 +115,11 @@
 
 #define DATE_DOING_APPLY [DATE_URL stringByAppendingString:@"charity/signup"]//活动报名
 
+#define DATE_DOING_APPLY [DATE_URL stringByAppendingString:@"charity/signup"]//活动报名
+
+#define DATE_DOING_APPLY_CHECK [DATE_URL stringByAppendingString:@"charity/hudong_sinup_check/?id"]//活动报名检测名额
+
+
 #define DATE_SEARCH_MESSAGE_TEACHER [DATE_URL stringByAppendingString:@"app_service/service_teacher_profile?page="]//活动查询
 
 #define DATE_PRETTY_INTRODUCE [DATE_URL stringByAppendingString:@"app_service/mobile_service_beautiful_green_palaces_about"]//青少年宫简介
@@ -126,7 +132,7 @@
 
 #define DATE_PRETTY_PLAN [DATE_URL stringByAppendingString:@"app_service/mobile_service_beautiful_green_palaces_plans/?page="]//青少年宫平面图
 
-
+#define DATE_PRETTY_SUM [DATE_URL stringByAppendingString:@"news_events/update_counter/"]//美丽青宫点击数
 
 #define DATE_PRETTY_DEPARTMENTS [DATE_URL stringByAppendingString:@"beautiful/bumen"]//青少年宫部门
 

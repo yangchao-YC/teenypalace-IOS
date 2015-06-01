@@ -74,7 +74,7 @@
     [self state:intr View:self.bgView2 NSLayoutConstraint:self.viewHeight2 WebView:self.viewWeb2];
     [self state:zp View:self.bgView3 NSLayoutConstraint:self.viewHeight3 WebView:self.viewWeb3];
     [self state:fc View:self.bgView4 NSLayoutConstraint:self.viewHeight4 WebView:self.viewWeb4];
-
+    
     
     
     [self webViewDate:self.viewWeb0 Key:[self.applyProfessionalKey objectForKey:@"description"]];
@@ -140,7 +140,13 @@
             [self.navigationController popToRootViewControllerAnimated:YES];
             break;
         case 2:
-            [self performSegueWithIdentifier:@"messageProfessional_applyLevel" sender:[self.applyProfessionalKey objectForKey:@"id"]];
+            if ([[self.applyProfessionalKey objectForKey:@"qc"] intValue] == 0) {
+                [SVProgressHUD showInfoWithStatus:@"该专业目前没有相应班级可以报名" maskType:3];
+            }
+            else
+            {
+                [self performSegueWithIdentifier:@"messageProfessional_applyLevel" sender:[self.applyProfessionalKey objectForKey:@"id"]];
+            }
             break;
         case 11:
             if (view0) {
@@ -210,7 +216,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"html"];
     NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     //获取本条数据
-
+    
     
     //进行数据添加
     NSString *base = [NSString stringWithFormat:@"<base href=%@/>",DATE_URL];
@@ -244,13 +250,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

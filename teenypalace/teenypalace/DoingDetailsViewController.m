@@ -41,20 +41,42 @@
     self.addressLabel.text = [self.doingKey objectForKey:@"field_charity_address"];//地点
     self.phoneLabel.text = [self.doingKey objectForKey:@"field_charity_signup_tel"];//电话
     
-    self.contentLabel.text = [self.doingKey objectForKey:@"field_charity_introduction"];//内容
-    self.contentLabel.editable = NO;
+    //self.contentLabel.text = [self.doingKey objectForKey:@"field_charity_introduction"];//内容
+   // self.contentLabel.editable = NO;
+   // self.contentLabel.hidden = YES;
    // self.contentLabel.textAlignment = NSTextAlignmentLeft;
    // self.contentLabel.contentInset = UIEdgeInsetsMake(10.0f, 10.0f, 10.0f, 10.0f);
    // if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
         
-     //   self.automaticallyAdjustsScrollViewInsets = NO;
+    //   self.automaticallyAdjustsScrollViewInsets = NO;
  
-//    }
+    //    }
+    [self webViewDate];
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@",DATE_DOING_SUM,[self.doingKey objectForKey:@"id"]];
     
     [self dateUrl:urlString];
 }
+
+
+-(void)webViewDate
+{
+    NSURL *baseURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"template" ofType:@"html"];
+    NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    //获取本条数据
+    
+    
+    NSString *date = [self.doingKey objectForKey:@"field_charity_introduction"];
+    
+    //进行数据添加
+    NSString *base = [NSString stringWithFormat:@"<base href=%@/>",DATE_URL];
+    html = [html stringByReplacingOccurrencesOfString:@"{Base}" withString:base];
+    
+    html = [html stringByReplacingOccurrencesOfString:@"{Content}" withString:date];
+    [self.webView loadHTMLString:html baseURL:baseURL];
+}
+
 
 -(void)dateUrl:(NSString *)url
 {
@@ -90,7 +112,7 @@
             [self share];
             break;
         case 2:
-            [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:[self.doingKey objectForKey:@"id"]];
+            [self doingApplyCheck];
             break;
         case 3:
             [self phone];
@@ -101,6 +123,38 @@
     }
 }
 
+-(void)doingApplyCheck
+{
+    [SVProgressHUD showWithStatus:@"正在查询活动最新信息..."];
+    NSString *url = [NSString stringWithFormat:@"%@%@",DATE_DOING_APPLY_CHECK,[self.doingKey objectForKey:@"id"]];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        if ([[responseObject objectForKey:@"status"] intValue] == 0) {
+            [SVProgressHUD dismiss];
+            [self push];
+        }
+        else
+        {
+            [SVProgressHUD showInfoWithStatus:[responseObject objectForKey:@"message"] maskType:2];
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+
+
+
+-(void)push
+{
+    [self performSegueWithIdentifier:@"doingDetails_doingApply" sender:[self.doingKey objectForKey:@"id"]];
+}
 
 
 -(void)phone

@@ -102,12 +102,19 @@
 
     vv1.PrettyBlock = ^(NSDictionary *a)
     {
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0",@"key",[a objectForKey:@"field_news_events_title"],@"title", [a objectForKey:@"field_news_events_body"],@"body",[a objectForKey:@"id"],@"id",nil];
+        NSString *url = [NSString stringWithFormat:@"%@%@",DATE_PRETTY_SUM,[a objectForKey:@"id"]];
+        [self sumUrl:url];
+        
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0",@"key",@"工作动态",@"title", [a objectForKey:@"field_news_events_body"],@"body",[a objectForKey:@"id"],@"id",nil];
         [self performSegueWithIdentifier:@"pretty_prettyWeb" sender:dic];
     };
     vv2.PrettyBlock = ^(NSDictionary *a)
     {
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0",@"key",[a objectForKey:@"field_news_events_title"],@"title", [a objectForKey:@"field_news_events_body"],@"body",[a objectForKey:@"id"],@"id",nil];
+        
+        NSString *url = [NSString stringWithFormat:@"%@%@",DATE_PRETTY_SUM,[a objectForKey:@"id"]];
+        [self sumUrl:url];
+        
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"0",@"key",@"媒体聚焦",@"title", [a objectForKey:@"field_news_events_body"],@"body",[a objectForKey:@"id"],@"id",nil];
         [self performSegueWithIdentifier:@"pretty_prettyWeb" sender:dic];
     };
     vv3.PrettyBlock = ^(NSDictionary *a)
@@ -119,6 +126,22 @@
     
     
 }
+
+
+-(void)sumUrl:(NSString *)url
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+}
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

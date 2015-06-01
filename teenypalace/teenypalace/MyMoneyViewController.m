@@ -103,8 +103,6 @@
         
         if (Sum != 0) {
             NSMutableArray *arc = responseObject;
-            NSLog(@"sum == %d    count == %d",Sum,arc.count);
-
             if (arc.count == Sum) {
                 [self selectMoney];
             }
@@ -162,6 +160,7 @@
             [self.tableView reloadData];
         }
         else {
+            [self.tableView reloadData];
             [SVProgressHUD showInfoWithStatus:@"没有订单" maskType:3];
         }
         
@@ -170,6 +169,7 @@
     {
         if ([[self.dic objectForKey:@"status"]intValue] == 0) {
             [SVProgressHUD showSuccessWithStatus:@"删除成功,正在刷新订单" maskType:3];
+            
             [self selectMoney];
         }
         else

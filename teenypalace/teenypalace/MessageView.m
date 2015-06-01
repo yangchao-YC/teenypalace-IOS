@@ -76,27 +76,27 @@
         case 0:
             cell.titleLabel.text = ART;
             cell.images.image = [UIImage imageNamed:@"message1"];
-            cell.contentLabel.text = @"学习线描画,彩笔画,水粉画,指导儿童画创作";
+            cell.contentLabel.text = @"开设了儿童画、素描、书法、国画、等基础培训项目，以亲子课型为主的酷酷熊玩美工场，以低幼段启蒙教育的小小未来创意泥，以多种媒介为主的小魔方大画室，以青少年喜爱的卡通画面为主的恒星动漫梦工厂，以素描为基础的点线面美术工作室和长江画室。";
             break;
         case 1:
             cell.titleLabel.text = LITERARY;
             cell.images.image = [UIImage imageNamed:@"message2"];
-            cell.contentLabel.text = @"学习基本乐理知识,学习科学,系统的发声方法";
+            cell.contentLabel.text = @"开设了舞蹈、声乐、器乐、表演四大类培训项目，器乐培训包括钢琴、电子 琴、电钢琴、手风琴、小提琴、萨克斯、长笛、架子鼓、二胡、琵琶、古筝、竹笛等。";
             break;
         case 2:
             cell.titleLabel.text = GYM;
             cell.images.image = [UIImage imageNamed:@"message3"];
-            cell.contentLabel.text = @"对少年儿童的身心健康成长有不可替代的作用";
+            cell.contentLabel.text = @"开设了体育舞蹈（拉丁舞、摩登舞）、街舞、兵兵球、跆拳道、围棋、国际象棋、中国象棋、艺术体操、幼儿体操、武术、轮滑、魔术等项目。";
             break;
         case 3:
             cell.titleLabel.text = LANGUAGE;
             cell.images.image = [UIImage imageNamed:@"message4"];
-            cell.contentLabel.text = @"课程全英授课为学生打造地道的英文环境";
+            cell.contentLabel.text = @"开设了青少年语文、数学、外语、科技等兴趣培训，广泛开展英语角、科技夏令营、小记者夏令营、各类竞赛比赛等学科活动。";
             break;
         case 4:
             cell.titleLabel.text = CHILDREN;
             cell.images.image = [UIImage imageNamed:@"message5"];
-            cell.contentLabel.text = @"排演优秀的中外少儿舞蹈作品";
+            cell.contentLabel.text = @"开设了舞蹈团、少儿合唱团、民乐团、表演团等，不定期组织团员开展国内外文化艺术交流。";
             break;
             
         default:

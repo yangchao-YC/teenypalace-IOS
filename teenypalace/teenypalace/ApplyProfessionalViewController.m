@@ -123,19 +123,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
-    if ([[dic objectForKey:@"qc"] intValue] == 0) {
-        [SVProgressHUD showInfoWithStatus:@"该专业目前没有相应班级可以报名" maskType:3];
-    }
-    else
-    {
-        if ([[self.applyProfessionaKey objectForKey:@"key"] intValue] == 0) {//值为0则进入层次页面
+    
+    if ([[self.applyProfessionaKey objectForKey:@"key"] intValue] == 0) {//值为0则进入层次页面
+
+        if ([[dic objectForKey:@"qc"] intValue] == 0) {
+            [SVProgressHUD showInfoWithStatus:@"该专业目前没有相应班级可以报名" maskType:3];
+        }
+        else
+        {
             [self performSegueWithIdentifier:@"applyProfessional_applyLevel" sender:[dic objectForKey:@"id"]];
         }
-        else//值为1则进入专业说明页面
-        {
-            [self performSegueWithIdentifier:@"applyProfessional_messageProfessional" sender:dic];
-        }
+        
     }
+    else//值为1则进入专业说明页面
+    {
+        [self performSegueWithIdentifier:@"applyProfessional_messageProfessional" sender:dic];
+    }
+    
+    
 }
 
 

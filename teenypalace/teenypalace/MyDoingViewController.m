@@ -50,6 +50,8 @@
 -(void)dateUrl:(NSString *)url
 {
     
+    NSLog(@"活动页面:%@ ",url);
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];

@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentLabel;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @property(strong,nonatomic)NSDictionary *doingKey;
 @end
