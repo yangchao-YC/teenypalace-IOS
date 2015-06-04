@@ -13,6 +13,6 @@
 @interface ApplyLevelViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property(strong,nonatomic)NSString *applyProfessionalKey;
+@property(strong,nonatomic)NSDictionary *applyProfessionalKey;
 
 @end

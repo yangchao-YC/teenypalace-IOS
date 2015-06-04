@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *countTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *discountLabel;
 
 
 @end

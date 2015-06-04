@@ -131,7 +131,7 @@
         }
         else
         {
-            [self performSegueWithIdentifier:@"applyProfessional_applyLevel" sender:[dic objectForKey:@"id"]];
+            [self performSegueWithIdentifier:@"applyProfessional_applyLevel" sender:dic];
         }
         
     }

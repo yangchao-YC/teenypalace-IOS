@@ -91,7 +91,15 @@
     
     cell.timeLabel.text = [dic objectForKey:@"learnaddress"];
 
-    cell.moneyLabel.text = [NSString stringWithFormat:@"学费：%@",[dic objectForKey:@"tuition"]];
+    cell.moneyLabel.text = [NSString stringWithFormat:@"学费：%@",[dic objectForKey:@"yuanjia"]];
+    if ([[dic objectForKey:@"yuanjia"] isEqual:[dic objectForKey:@"tuition"]]) {
+        cell.discountLabel.text = @"优惠价格：暂无优惠";
+    }
+    else
+    {
+         cell.discountLabel.text = [NSString stringWithFormat:@"优惠价格：%@",[dic objectForKey:@"tuition"]];
+    }
+   
     cell.beleftLabel.text = [NSString stringWithFormat:@"剩余名额：%@",[dic objectForKey:@"lave"]];
     
     return cell;
@@ -111,6 +119,31 @@
     return 1;//设置为只有一个模块
 }
 
+//预判高度
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 130.0f;
+}
+
+
+#pragma mark 计算cell高度
+//神坑啊
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (IOS8_OR_LATER)
+    {
+        return UITableViewAutomaticDimension;
+    }
+    UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+    [cell layoutIfNeeded];
+    [cell.contentView layoutIfNeeded];
+    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+    return size.height + 1.0f; // Add 1.0f for the cell separator height
+    
+}
+
+
+/*
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -138,7 +171,7 @@
     
     
 }//设置模块内cell的高度
-
+*/
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

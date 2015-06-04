@@ -28,7 +28,7 @@
     
     NSLog(@"我是层次页面的key---%@",self.applyProfessionalKey);
     
-    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_LEVEL,self.applyProfessionalKey];
+    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_LEVEL,[self.applyProfessionalKey objectForKey:@"id"]];
     
     [SVProgressHUD showInfoWithStatus:LOADING];
     
@@ -87,7 +87,8 @@
     
     NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
     
-    cell.titleLabel.text = [dic objectForKey:@"levelname"];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%@%@",[self.applyProfessionalKey objectForKey:@"title"],[dic objectForKey:@"levelname"]];
+
     
     return cell;
     

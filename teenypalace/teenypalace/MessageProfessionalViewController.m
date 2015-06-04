@@ -145,7 +145,7 @@
             }
             else
             {
-                [self performSegueWithIdentifier:@"messageProfessional_applyLevel" sender:[self.applyProfessionalKey objectForKey:@"id"]];
+                [self performSegueWithIdentifier:@"messageProfessional_applyLevel" sender:self.applyProfessionalKey];
             }
             break;
         case 11:

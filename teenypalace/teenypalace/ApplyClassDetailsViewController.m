@@ -26,7 +26,7 @@
     
     self.timeLabel.text = [self.applyDetailsKey objectForKey:@"learnaddress"];
     
-    self.moneyLabel.text = [NSString stringWithFormat:@"学费：%@",[self.applyDetailsKey objectForKey:@"tuition"]];
+    self.moneyLabel.text = [NSString stringWithFormat:@"学费：%@",[self.applyDetailsKey objectForKey:@"yuanjia"]];
     [SVProgressHUD showInfoWithStatus:LOADING];
     
     
@@ -72,6 +72,13 @@
     self.quarterlyLabel.text = [NSString stringWithFormat:@"季度：%@",[self.dic objectForKey:@"jidu"]];
     self.ageSLabel.text = [NSString stringWithFormat:@"开班时间开始：%@",[self.dic objectForKey:@"opentime"]];
     self.ageELabel.text = [NSString stringWithFormat:@"开班时间结束：%@",[self.dic objectForKey:@"opentime_end"]];
+    if ([[self.dic objectForKey:@"yuanjia"] isEqual:[self.dic objectForKey:@"tuition"]]) {
+        self.discountLabel.text = @"优惠价格：暂无优惠";
+    }
+    else
+    {
+        self.discountLabel.text = [NSString stringWithFormat:@"优惠价格：%@",[self.dic objectForKey:@"tuition"]];
+    }
     
 }
 

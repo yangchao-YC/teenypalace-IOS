@@ -102,7 +102,7 @@
     cell.nameLabel.text = [NSString stringWithFormat:@"学生姓名：%@",[dic objectForKey:@"username"]];
     cell.phoneLabel.text = [NSString stringWithFormat:@"联系方式：%@",[dic objectForKey:@"contactinfo"]];
     cell.timeLabel.text = [NSString stringWithFormat:@"活动时间：%@",[dic objectForKey:@"createtime"]];
-
+    cell.idLabel.text = [NSString stringWithFormat:@"报名编号：%@",[dic objectForKey:@"id"]];
     return cell;
     
 }
@@ -123,7 +123,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 120;
+    return 142;
 }//设置模块内cell的高度
 
 //下面为点击事件方法
