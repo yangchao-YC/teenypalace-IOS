@@ -64,6 +64,9 @@
     
     NSString *date = [NSString stringWithFormat:@"%@3&page=%d",DATE_SEARCH_DOING,marks];
     
+    
+    NSLog(@"活动地址:%@",date);
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];

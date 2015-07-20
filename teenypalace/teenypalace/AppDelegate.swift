@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UMSocialData.setAppKey("54ace3b6fd98c5ad2f000edb")
         
-        UMSocialWechatHandler.setWXAppId("wx68c8d3985e6498c6", appSecret: "9f35d31c7880287d217d12e1f63e1440", url: "http://www.ycpwh.cn/")
+        UMSocialWechatHandler.setWXAppId("wx7f38e71156855bcc", appSecret: "d6898fad7cec6771feee6f6cc93dd3aa", url: "http://www.ycpwh.cn/")
         
         
        // var version = NSBundle.mainBundle().infoDictionary?.indexForKey("CFBundleShortVersionString")

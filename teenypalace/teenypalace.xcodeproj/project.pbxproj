@@ -1355,8 +1355,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Liangfei Yuan (KCF2NGVA9A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Liangfei Yuan (KCF2NGVA9A)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1402,8 +1402,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Liangfei Yuan (KCF2NGVA9A)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Liangfei Yuan (KCF2NGVA9A)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1431,7 +1431,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Liangfei Yuan (KCF2NGVA9A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/teenypalace/pchFile.pch";
 				INFOPLIST_FILE = teenypalace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -1450,7 +1450,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = teenypalace;
-				PROVISIONING_PROFILE = "8d8e4da2-f6e3-4151-9018-f8083e8ba5ca";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "teenypalace/teenypalace-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1482,7 +1482,7 @@
 				);
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = teenypalace;
-				PROVISIONING_PROFILE = "8d8e4da2-f6e3-4151-9018-f8083e8ba5ca";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "teenypalace/teenypalace-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

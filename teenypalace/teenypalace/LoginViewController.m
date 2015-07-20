@@ -173,6 +173,10 @@
 
 -(void)dateUrl:(NSString *)url
 {
+    
+    
+    NSLog(@"登陆打印：%@",url);
+    
     [SVProgressHUD showWithStatus:@"正在登陆"];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -209,7 +213,7 @@
         else
         {
             NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-            [user setObject:@"0" forKey:@"loginOK"];//登陆成功
+            [user setObject:@"0" forKey:@"loginOK"];//登陆失败
             [SVProgressHUD showInfoWithStatus:[responseObject objectForKey:@"message"] maskType:2];
         }
         
