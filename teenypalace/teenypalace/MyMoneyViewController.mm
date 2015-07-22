@@ -197,15 +197,25 @@
 }
 
 
--(void)goUPOMPView:(NSString *)infoXML
+-(void)goUPOMPView:(NSString *)tn
 {
-    [UPPayPlugin startPay:@"fhdgfhsgfs" mode:@"1" viewController:self delegate:(id<UPPayPluginDelegate>)self];
+    [UPPayPlugin startPay:tn mode:@"00" viewController:self delegate:(id<UPPayPluginDelegate>)self];
 }
 
 //支付成功回调方法
 -(void)UPPayPluginResult:(NSString*)result
 {
-    
+    if ([result isEqualToString:@"success"]) {
+        [SVProgressHUD showWithStatus:@"支付成功,正在核对订单!"];
+        [self selectMoney];
+    }
+    else if([result isEqualToString:@"cancel"])
+    {
+        [SVProgressHUD showInfoWithStatus:@"用户取消支付" maskType:SVProgressHUDMaskTypeBlack];
+    }
+    else{
+        [SVProgressHUD showInfoWithStatus:@"支付失败" maskType:SVProgressHUDMaskTypeBlack];
+    }
 }
 
 
@@ -589,7 +599,8 @@
      @{@"field_unionpay_merchantorderid":merchantorderid,
        @"field_unionpay_orderids":orderids,
        @"field_unionpay_parentid":app.ParentId,
-       @"field_unionpay_parent_phone":app.UserName
+       @"field_unionpay_parent_phone":app.UserName,
+       @"field_unionpay_paymethod":@"unionpay_mobileapp_new"
        }success:^(AFHTTPRequestOperation *operation, id responseObject) {
            NSLog(@"JSON: %@", responseObject);
            self.dic = responseObject;
