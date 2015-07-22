@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0291A5BD1B5F873300370F4C /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0291A5BB1B5F873300370F4C /* libUPPayPlugin.a */; };
 		7101EC8F1B2832EB00E429A7 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7101EC6E1B2832EB00E429A7 /* UMSocialLocalizable.strings */; };
 		7101EC901B2832EB00E429A7 /* libUMSocial_Sdk_4.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7101EC7C1B2832EB00E429A7 /* libUMSocial_Sdk_4.2.1.a */; };
 		7101EC911B2832EB00E429A7 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7101EC7E1B2832EB00E429A7 /* UMSCommentDetailController.xib */; };
@@ -64,7 +65,7 @@
 		71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71735BB31A1F2233005E0067 /* ApplyTableViewCell.m */; };
 		717BA3841A496C5000E70CCD /* MyCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3831A496C5000E70CCD /* MyCardViewController.m */; };
 		717BA3871A496C7400E70CCD /* MyClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3861A496C7400E70CCD /* MyClassViewController.m */; };
-		717BA38A1A496C8700E70CCD /* MyMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3891A496C8700E70CCD /* MyMoneyViewController.m */; };
+		717BA38A1A496C8700E70CCD /* MyMoneyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 717BA3891A496C8700E70CCD /* MyMoneyViewController.mm */; };
 		717BA38D1A496CAB00E70CCD /* MySiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717BA38C1A496CAB00E70CCD /* MySiteViewController.m */; };
 		717C1F3C1A7A182E00997639 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 717C1F3B1A7A182E00997639 /* MessageView.m */; };
 		717C1F401A7A19A800997639 /* MessageProfessionaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 717C1F3E1A7A19A800997639 /* MessageProfessionaTableViewCell.m */; };
@@ -102,8 +103,6 @@
 		71A1803D1A78CEE400466755 /* DoingZero.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1803C1A78CEE400466755 /* DoingZero.m */; };
 		71A1803F1A78CF5300466755 /* DoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A1803E1A78CF5300466755 /* DoingViewController.m */; };
 		71A3A3F31A80D71900F85558 /* PrettyZero.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A3A3F21A80D71900F85558 /* PrettyZero.m */; };
-		71A3EA111A6924D300122B36 /* libUnionPaySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */; };
-		71A3EA121A6924D300122B36 /* UnionPaySDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */; };
 		71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA131A69250C00122B36 /* QuartzCore.framework */; };
 		71A3EA161A69251700122B36 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA151A69251700122B36 /* AudioToolbox.framework */; };
 		71A3EA181A69252D00122B36 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA171A69252D00122B36 /* CFNetwork.framework */; };
@@ -183,6 +182,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0291A5B71B5F873300370F4C /* UPPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPlugin.h; sourceTree = "<group>"; };
+		0291A5B81B5F873300370F4C /* UPPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPluginDelegate.h; sourceTree = "<group>"; };
+		0291A5BB1B5F873300370F4C /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
 		7101EC6F1B2832EB00E429A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		7101EC711B2832EB00E429A7 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		7101EC721B2832EB00E429A7 /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -286,7 +288,7 @@
 		717BA3851A496C7400E70CCD /* MyClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyClassViewController.h; sourceTree = "<group>"; };
 		717BA3861A496C7400E70CCD /* MyClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClassViewController.m; sourceTree = "<group>"; };
 		717BA3881A496C8700E70CCD /* MyMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMoneyViewController.h; sourceTree = "<group>"; };
-		717BA3891A496C8700E70CCD /* MyMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMoneyViewController.m; sourceTree = "<group>"; };
+		717BA3891A496C8700E70CCD /* MyMoneyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyMoneyViewController.mm; sourceTree = "<group>"; };
 		717BA38B1A496CAB00E70CCD /* MySiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySiteViewController.h; sourceTree = "<group>"; };
 		717BA38C1A496CAB00E70CCD /* MySiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySiteViewController.m; sourceTree = "<group>"; };
 		717C1F3A1A7A182E00997639 /* MessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
@@ -357,13 +359,6 @@
 		71A1803E1A78CF5300466755 /* DoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingViewController.m; sourceTree = "<group>"; };
 		71A3A3F11A80D71900F85558 /* PrettyZero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrettyZero.h; sourceTree = "<group>"; };
 		71A3A3F21A80D71900F85558 /* PrettyZero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrettyZero.m; sourceTree = "<group>"; };
-		71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUnionPaySDK.a; sourceTree = "<group>"; };
-		71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UnionPaySDKBundle.bundle; sourceTree = "<group>"; };
-		71A3EA0C1A6924D300122B36 /* UPOMPBackStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPBackStage.h; sourceTree = "<group>"; };
-		71A3EA0D1A6924D300122B36 /* UPOMPDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPDelegate.h; sourceTree = "<group>"; };
-		71A3EA0E1A6924D300122B36 /* UPOMPStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPStage.h; sourceTree = "<group>"; };
-		71A3EA0F1A6924D300122B36 /* UPOMPXMLGenerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPXMLGenerate.h; sourceTree = "<group>"; };
-		71A3EA101A6924D300122B36 /* UPOMPXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPOMPXMLParser.h; sourceTree = "<group>"; };
 		71A3EA131A69250C00122B36 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		71A3EA151A69251700122B36 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		71A3EA171A69252D00122B36 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -502,12 +497,12 @@
 				71A3EA161A69251700122B36 /* AudioToolbox.framework in Frameworks */,
 				71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */,
 				7101EC9A1B2832EB00E429A7 /* libSocialWechat.a in Frameworks */,
+				0291A5BD1B5F873300370F4C /* libUPPayPlugin.a in Frameworks */,
 				71C9B6C01A305BFE0011A3B1 /* SystemConfiguration.framework in Frameworks */,
 				7101EC901B2832EB00E429A7 /* libUMSocial_Sdk_4.2.1.a in Frameworks */,
 				71C9B6C41A305C120011A3B1 /* Security.framework in Frameworks */,
 				715E42001A5BD85900A3C4F1 /* libz.dylib in Frameworks */,
 				715E42821A5BDB3B00A3C4F1 /* libMobClickLibrary.a in Frameworks */,
-				71A3EA111A6924D300122B36 /* libUnionPaySDK.a in Frameworks */,
 				71C9B6BE1A305BF40011A3B1 /* CoreLocation.framework in Frameworks */,
 				7101EC9B1B2832EB00E429A7 /* libWeChatSDK.a in Frameworks */,
 			);
@@ -523,6 +518,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0291A5B41B5F86FA00370F4C /* UPPay */ = {
+			isa = PBXGroup;
+			children = (
+				0291A5B51B5F873300370F4C /* uppaysdk */,
+			);
+			name = UPPay;
+			sourceTree = "<group>";
+		};
+		0291A5B51B5F873300370F4C /* uppaysdk */ = {
+			isa = PBXGroup;
+			children = (
+				0291A5B61B5F873300370F4C /* inc */,
+				0291A5BA1B5F873300370F4C /* libs */,
+			);
+			path = uppaysdk;
+			sourceTree = "<group>";
+		};
+		0291A5B61B5F873300370F4C /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				0291A5B71B5F873300370F4C /* UPPayPlugin.h */,
+				0291A5B81B5F873300370F4C /* UPPayPluginDelegate.h */,
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		0291A5BA1B5F873300370F4C /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				0291A5BB1B5F873300370F4C /* libUPPayPlugin.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
 		7101EC6D1B2832EB00E429A7 /* UMSocial_Sdk_4.2.1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,20 +805,6 @@
 			name = ZHpickView;
 			sourceTree = "<group>";
 		};
-		71A3EA091A6924D300122B36 /* UnionPaySDK */ = {
-			isa = PBXGroup;
-			children = (
-				71A3EA0A1A6924D300122B36 /* libUnionPaySDK.a */,
-				71A3EA0B1A6924D300122B36 /* UnionPaySDKBundle.bundle */,
-				71A3EA0C1A6924D300122B36 /* UPOMPBackStage.h */,
-				71A3EA0D1A6924D300122B36 /* UPOMPDelegate.h */,
-				71A3EA0E1A6924D300122B36 /* UPOMPStage.h */,
-				71A3EA0F1A6924D300122B36 /* UPOMPXMLGenerate.h */,
-				71A3EA101A6924D300122B36 /* UPOMPXMLParser.h */,
-			);
-			path = UnionPaySDK;
-			sourceTree = "<group>";
-		};
 		71BEAB8E1AF34F9200ECC748 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,7 +894,7 @@
 				71DD2F131AF0DA6A005C37F6 /* MyDoingViewController.h */,
 				71DD2F141AF0DA6A005C37F6 /* MyDoingViewController.m */,
 				717BA3881A496C8700E70CCD /* MyMoneyViewController.h */,
-				717BA3891A496C8700E70CCD /* MyMoneyViewController.m */,
+				717BA3891A496C8700E70CCD /* MyMoneyViewController.mm */,
 				717BA38B1A496CAB00E70CCD /* MySiteViewController.h */,
 				717BA38C1A496CAB00E70CCD /* MySiteViewController.m */,
 				716C18931A5D2E57004BFBAD /* MyClassDetailsViewController.h */,
@@ -891,16 +906,6 @@
 		71C97BC91A08B5970010A5B8 = {
 			isa = PBXGroup;
 			children = (
-				71966F391A75E25700802380 /* ImageIO.framework */,
-				71A3EA191A69253B00122B36 /* libxml2.dylib */,
-				71A3EA171A69252D00122B36 /* CFNetwork.framework */,
-				71A3EA151A69251700122B36 /* AudioToolbox.framework */,
-				71A3EA131A69250C00122B36 /* QuartzCore.framework */,
-				715E41FF1A5BD85900A3C4F1 /* libz.dylib */,
-				71C9B6C31A305C120011A3B1 /* Security.framework */,
-				71C9B6C11A305C090011A3B1 /* MobileCoreServices.framework */,
-				71C9B6BF1A305BFE0011A3B1 /* SystemConfiguration.framework */,
-				71C9B6BD1A305BF40011A3B1 /* CoreLocation.framework */,
 				71C97BD41A08B5970010A5B8 /* teenypalace */,
 				71C97BEA1A08B5970010A5B8 /* teenypalaceTests */,
 				71C97BD31A08B5970010A5B8 /* Products */,
@@ -919,8 +924,8 @@
 		71C97BD41A08B5970010A5B8 /* teenypalace */ = {
 			isa = PBXGroup;
 			children = (
+				0291A5B41B5F86FA00370F4C /* UPPay */,
 				71BEAB8E1AF34F9200ECC748 /* Masonry */,
-				71A3EA091A6924D300122B36 /* UnionPaySDK */,
 				715E42831A5BED0800A3C4F1 /* UM */,
 				71C9B6861A3033400011A3B1 /* Additions */,
 				71CC37C01A3AC3060057F4C9 /* AlertView */,
@@ -940,6 +945,16 @@
 		71C97BD51A08B5970010A5B8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71A3EA191A69253B00122B36 /* libxml2.dylib */,
+				715E41FF1A5BD85900A3C4F1 /* libz.dylib */,
+				71A3EA131A69250C00122B36 /* QuartzCore.framework */,
+				71C9B6BF1A305BFE0011A3B1 /* SystemConfiguration.framework */,
+				71C9B6C11A305C090011A3B1 /* MobileCoreServices.framework */,
+				71C9B6C31A305C120011A3B1 /* Security.framework */,
+				71A3EA151A69251700122B36 /* AudioToolbox.framework */,
+				71A3EA171A69252D00122B36 /* CFNetwork.framework */,
+				71966F391A75E25700802380 /* ImageIO.framework */,
+				71C9B6BD1A305BF40011A3B1 /* CoreLocation.framework */,
 				71C97BD61A08B5970010A5B8 /* Info.plist */,
 				718A1C081A2487FA00F8F582 /* pchFile.pch */,
 			);
@@ -1123,7 +1138,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71A3EA121A6924D300122B36 /* UnionPaySDKBundle.bundle in Resources */,
 				71C97BDD1A08B5970010A5B8 /* Main.storyboard in Resources */,
 				715916BB1A64CE740090CE5C /* SVProgressHUD.bundle in Resources */,
 				7101EC971B2832EB00E429A7 /* UMSnsAccountViewController.xib in Resources */,
@@ -1224,7 +1238,7 @@
 				71966F611A75EF0A00802380 /* UIButton+WebCache.m in Sources */,
 				71C9B6B41A305BB60011A3B1 /* AFHTTPRequestOperation.m in Sources */,
 				715EBF281A4544D800010D5F /* MessageProfessionalViewController.m in Sources */,
-				717BA38A1A496C8700E70CCD /* MyMoneyViewController.m in Sources */,
+				717BA38A1A496C8700E70CCD /* MyMoneyViewController.mm in Sources */,
 				71C9B6BA1A305BB60011A3B1 /* AFURLRequestSerialization.m in Sources */,
 				715916BA1A64CE740090CE5C /* SVIndefiniteAnimatedView.m in Sources */,
 				71C9B6B91A305BB60011A3B1 /* AFURLConnectionOperation.m in Sources */,
@@ -1341,7 +1355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1375,7 +1389,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = "";
 				SDKROOT = iphoneos;
@@ -1388,7 +1402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1427,12 +1441,18 @@
 		71C97BF21A08B5970010A5B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/teenypalace/pchFile.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/teenypalace/uppaysdk/inc",
+				);
 				INFOPLIST_FILE = teenypalace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1447,7 +1467,9 @@
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/teenypalace/UnionPaySDK",
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_4.2.3",
+					"$(PROJECT_DIR)/teenypalace/uppaysdk/libs",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = teenypalace;
 				PROVISIONING_PROFILE = "";
@@ -1460,11 +1482,17 @@
 		71C97BF31A08B5970010A5B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/teenypalace/pchFile.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/teenypalace/uppaysdk/inc",
+				);
 				INFOPLIST_FILE = teenypalace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1479,7 +1507,9 @@
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/teenypalace/UnionPaySDK",
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_4.2.3",
+					"$(PROJECT_DIR)/teenypalace/uppaysdk/libs",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_NAME = teenypalace;
 				PROVISIONING_PROFILE = "";
