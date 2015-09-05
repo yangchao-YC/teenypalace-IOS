@@ -12,4 +12,7 @@
 @interface MyCardViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property(copy)void(^DoingBlock)(NSDictionary *a);
+@property(copy)void(^Block_Card)(void);
+
 @end

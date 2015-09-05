@@ -46,7 +46,7 @@
         [SVProgressHUD showInfoWithStatus:@"请登陆后进行操作" maskType:3];
     }
     
-    
+    /*
     MyNewCardViewController *card = [[MyNewCardViewController alloc]init];
     card.NewCardBlock = ^(void){
         
@@ -57,6 +57,21 @@
         [self dateUrl:date];
     };
     
+    */
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"notifiction_mynewcard" object:nil];
+    
+}
+
+-(void)notification:(NSNotification *)not
+{
+    
+    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    
+    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
+    [SVProgressHUD showInfoWithStatus:LOADING];
+    [self dateUrl:date];
     
 }
 
@@ -116,7 +131,7 @@
     
     NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
     
-    cell.numberLabel.text = [NSString stringWithFormat:@"学院卡号：%@",[dic objectForKey:@"field_student_card"]];
+    cell.numberLabel.text = [NSString stringWithFormat:@"学员卡号：%@",[dic objectForKey:@"field_student_card"]];
     cell.nameLabel.text = [NSString stringWithFormat:@"姓名：%@",[dic objectForKey:@"field_student_name"]];
     if ([[dic objectForKey:@"field_student_sex"] intValue] == 1) {
         cell.sexLabel.text = @"性别：男";

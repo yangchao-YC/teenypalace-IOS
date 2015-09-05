@@ -25,7 +25,7 @@
     
     self.nameLabel.text = [NSString stringWithFormat:@"%@   %@",[self.applyProfessionaKey objectForKey:@"field_teacher_name"],[self.applyProfessionaKey objectForKey:@"field_teacher_class"]];
     
-    [self.images setImageWithURL:[NSURL URLWithString:[self.applyProfessionaKey objectForKey:@"field_teacher_closeup"]]];
+    [self.images setImageWithURL:[NSURL URLWithString:[self.applyProfessionaKey objectForKey:@"field_teacher_aboutimg"]]];
     
     
     [self webViewDate];

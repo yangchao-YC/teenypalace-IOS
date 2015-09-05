@@ -166,6 +166,7 @@
 		71CF28621A37EFA800062CCB /* ApplyCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF28611A37EFA800062CCB /* ApplyCardViewController.m */; };
 		71DAADBF1AFA02D6008402F2 /* DoingBookHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DAADBE1AFA02D6008402F2 /* DoingBookHeaderView.m */; };
 		71DAADC11AFA02F3008402F2 /* DoingBookHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DAADC01AFA02F3008402F2 /* DoingBookHeaderView.xib */; };
+		71DC23701B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DC236E1B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a */; };
 		71DD2F151AF0DA6A005C37F6 /* MyDoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD2F141AF0DA6A005C37F6 /* MyDoingViewController.m */; };
 		71DD2F181AF0DEA6005C37F6 /* MyDoingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD2F171AF0DEA6005C37F6 /* MyDoingTableViewCell.m */; };
 		71EAF1B11A4D6A5200C8D56D /* MyNewCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EAF1B01A4D6A5200C8D56D /* MyNewCardViewController.m */; };
@@ -477,6 +478,8 @@
 		71DAADBD1AFA02D6008402F2 /* DoingBookHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingBookHeaderView.h; sourceTree = "<group>"; };
 		71DAADBE1AFA02D6008402F2 /* DoingBookHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingBookHeaderView.m; sourceTree = "<group>"; };
 		71DAADC01AFA02F3008402F2 /* DoingBookHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoingBookHeaderView.xib; sourceTree = "<group>"; };
+		71DC236E1B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
+		71DC236F1B9AC116002F8E69 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		71DD2F131AF0DA6A005C37F6 /* MyDoingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDoingViewController.h; sourceTree = "<group>"; };
 		71DD2F141AF0DA6A005C37F6 /* MyDoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDoingViewController.m; sourceTree = "<group>"; };
 		71DD2F161AF0DEA6005C37F6 /* MyDoingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDoingTableViewCell.h; sourceTree = "<group>"; };
@@ -495,6 +498,7 @@
 				71A3EA181A69252D00122B36 /* CFNetwork.framework in Frameworks */,
 				71C9B6C21A305C090011A3B1 /* MobileCoreServices.framework in Frameworks */,
 				71A3EA161A69251700122B36 /* AudioToolbox.framework in Frameworks */,
+				71DC23701B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a in Frameworks */,
 				71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */,
 				7101EC9A1B2832EB00E429A7 /* libSocialWechat.a in Frameworks */,
 				0291A5BD1B5F873300370F4C /* libUPPayPlugin.a in Frameworks */,
@@ -643,6 +647,7 @@
 		715E42831A5BED0800A3C4F1 /* UM */ = {
 			isa = PBXGroup;
 			children = (
+				71DC236D1B9AC116002F8E69 /* UMessage_Sdk_1.1.0 */,
 				7101EC6D1B2832EB00E429A7 /* UMSocial_Sdk_4.2.1 */,
 				7101EC881B2832EB00E429A7 /* UMSocial_Sdk_Extra_Frameworks */,
 				715E42B11A5BED1500A3C4F1 /* UMSocial_Sdk_Instructions */,
@@ -1056,6 +1061,15 @@
 			name = AlertView;
 			sourceTree = "<group>";
 		};
+		71DC236D1B9AC116002F8E69 /* UMessage_Sdk_1.1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				71DC236E1B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a */,
+				71DC236F1B9AC116002F8E69 /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.1.0;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1105,7 +1119,7 @@
 				TargetAttributes = {
 					71C97BD11A08B5970010A5B8 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = JG76JH9PAJ;
+						DevelopmentTeam = 5VLHLPSGEW;
 					};
 					71C97BE61A08B5970010A5B8 = {
 						CreatedOnToolsVersion = 6.1;
@@ -1392,6 +1406,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = "";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -1432,6 +1447,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = "";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -1468,6 +1484,7 @@
 					"$(PROJECT_DIR)/teenypalace/UnionPaySDK",
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/teenypalace/uppaysdk/libs",
+					"$(PROJECT_DIR)/teenypalace/UMessage_Sdk_1.1.0",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LIBTOOLFLAGS = "";
@@ -1487,6 +1504,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/teenypalace/pchFile.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1508,6 +1526,7 @@
 					"$(PROJECT_DIR)/teenypalace/UnionPaySDK",
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/teenypalace/uppaysdk/libs",
+					"$(PROJECT_DIR)/teenypalace/UMessage_Sdk_1.1.0",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LIBTOOLFLAGS = "";
@@ -1522,6 +1541,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1533,6 +1553,7 @@
 				INFOPLIST_FILE = teenypalaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = teenypalaceTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/teenypalace.app/teenypalace";
 			};
 			name = Debug;
@@ -1541,6 +1562,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1548,6 +1570,7 @@
 				INFOPLIST_FILE = teenypalaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = teenypalaceTests;
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/teenypalace.app/teenypalace";
 			};
 			name = Release;

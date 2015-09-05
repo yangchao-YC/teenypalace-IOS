@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="un1-nK-GU0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="un1-nK-GU0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -1592,13 +1592,13 @@
                                 </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bv1-A5-Jcn">
-                                <rect key="frame" x="10" y="64" width="580" height="150"/>
+                                <rect key="frame" x="10" y="64" width="580" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="4eu-VY-Vs5"/>
+                                    <constraint firstAttribute="height" constant="120" id="4eu-VY-Vs5"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jS1-gT-E5j">
-                                <rect key="frame" x="0.0" y="222" width="600" height="21"/>
+                                <rect key="frame" x="0.0" y="192" width="600" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Gth-Ng-7r0"/>
                                 </constraints>
@@ -1607,7 +1607,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMc-8O-EwM">
-                                <rect key="frame" x="10" y="251" width="580" height="349"/>
+                                <rect key="frame" x="10" y="221" width="580" height="379"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="Brq-9V-9BW" id="nOC-7H-ug8"/>
@@ -2593,7 +2593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73c-t2-Krl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="349"/>
+            <point key="canvasLocation" x="496" y="379"/>
         </scene>
         <!--My Card View Controller-->
         <scene sceneID="gdF-BC-bOo">
@@ -4381,8 +4381,8 @@
                         <segue destination="Q9o-Cr-IVE" kind="push" identifier="my_myCard" id="gEm-dV-4ap"/>
                         <segue destination="GLZ-Af-AxI" kind="push" identifier="my_myClass" id="AB3-Jn-Gl9"/>
                         <segue destination="d15-9d-fSJ" kind="push" identifier="my_myMoney" id="mHu-Ew-wJe"/>
-                        <segue destination="OuJ-Mj-qHl" kind="push" identifier="my_mySite" id="fQP-aq-pXk"/>
                         <segue destination="RuB-gf-42k" kind="push" identifier="my_myDoing" id="Dm0-kS-1hq"/>
+                        <segue destination="41o-aV-PT1" kind="push" identifier="my_mySite" id="bRt-vg-J9Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVk-Z8-q1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4945,7 +4945,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-rK-BZK">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ttZ-rK-BZK">
                                 <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lht-TZ-wLA">
@@ -5047,7 +5047,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNZ-kQ-Fyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517" y="4724"/>
+            <point key="canvasLocation" x="-1055" y="3960"/>
         </scene>
         <!--Information Processing View Controller-->
         <scene sceneID="sJK-Cq-I4W">
@@ -5132,7 +5132,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码会以短信的形式发送至您手机上" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ls-ec-Lev">
-                                        <rect key="frame" x="8" y="58" width="584" height="21"/>
+                                        <rect key="frame" x="8" y="55" width="584" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="ysb-bc-Jyp"/>
                                         </constraints>
@@ -5141,7 +5141,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGb-fN-FsI">
-                                        <rect key="frame" x="8" y="93" width="584" height="30"/>
+                                        <rect key="frame" x="8" y="84" width="584" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="1LU-Df-fpx"/>
                                             <constraint firstAttribute="height" constant="30" id="Xfh-Dd-BHZ"/>
@@ -5161,7 +5161,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jSE-RX-9Xk">
-                                        <rect key="frame" x="8" y="148" width="584" height="30"/>
+                                        <rect key="frame" x="8" y="129" width="584" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                         <connections>
@@ -5169,7 +5169,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOg-cV-5SL">
-                                        <rect key="frame" x="8" y="199" width="584" height="30"/>
+                                        <rect key="frame" x="8" y="174" width="584" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="10N-xi-5ic"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="xIR-xj-cHa"/>
@@ -5194,7 +5194,7 @@
                                     <constraint firstAttribute="trailing" secondItem="lg6-ZM-lgE" secondAttribute="trailing" constant="8" id="2U4-tU-NxG"/>
                                     <constraint firstItem="OGb-fN-FsI" firstAttribute="leading" secondItem="qwH-J6-zIt" secondAttribute="leading" constant="8" id="9m0-yG-INY"/>
                                     <constraint firstItem="vOg-cV-5SL" firstAttribute="leading" secondItem="qwH-J6-zIt" secondAttribute="leading" constant="8" id="Fy4-WB-aaz"/>
-                                    <constraint firstItem="jSE-RX-9Xk" firstAttribute="top" secondItem="OGb-fN-FsI" secondAttribute="bottom" constant="25" id="G6j-0b-b7n"/>
+                                    <constraint firstItem="jSE-RX-9Xk" firstAttribute="top" secondItem="OGb-fN-FsI" secondAttribute="bottom" constant="15" id="G6j-0b-b7n"/>
                                     <constraint firstItem="jSE-RX-9Xk" firstAttribute="leading" secondItem="qwH-J6-zIt" secondAttribute="leading" constant="8" id="LN7-xh-4sz"/>
                                     <constraint firstItem="lg6-ZM-lgE" firstAttribute="leading" secondItem="qwH-J6-zIt" secondAttribute="leading" constant="8" id="LdU-lZ-2VU"/>
                                     <constraint firstItem="5ls-ec-Lev" firstAttribute="leading" secondItem="qwH-J6-zIt" secondAttribute="leading" constant="8" id="RPY-ji-dmq"/>
@@ -5202,9 +5202,9 @@
                                     <constraint firstAttribute="trailing" secondItem="5ls-ec-Lev" secondAttribute="trailing" constant="8" id="ceJ-ci-bS4"/>
                                     <constraint firstAttribute="trailing" secondItem="jSE-RX-9Xk" secondAttribute="trailing" constant="8" id="cgz-VP-aly"/>
                                     <constraint firstAttribute="trailing" secondItem="OGb-fN-FsI" secondAttribute="trailing" constant="8" id="hA0-pG-Dh9"/>
-                                    <constraint firstItem="5ls-ec-Lev" firstAttribute="top" secondItem="lg6-ZM-lgE" secondAttribute="bottom" constant="8" id="keC-xt-H1C"/>
-                                    <constraint firstItem="vOg-cV-5SL" firstAttribute="top" secondItem="jSE-RX-9Xk" secondAttribute="bottom" constant="21" id="obB-tb-7K1"/>
-                                    <constraint firstItem="OGb-fN-FsI" firstAttribute="top" secondItem="5ls-ec-Lev" secondAttribute="bottom" constant="14" id="rLN-7q-UD3"/>
+                                    <constraint firstItem="5ls-ec-Lev" firstAttribute="top" secondItem="lg6-ZM-lgE" secondAttribute="bottom" constant="5" id="keC-xt-H1C"/>
+                                    <constraint firstItem="vOg-cV-5SL" firstAttribute="top" secondItem="jSE-RX-9Xk" secondAttribute="bottom" constant="15" id="obB-tb-7K1"/>
+                                    <constraint firstItem="OGb-fN-FsI" firstAttribute="top" secondItem="5ls-ec-Lev" secondAttribute="bottom" constant="8" id="rLN-7q-UD3"/>
                                     <constraint firstAttribute="trailing" secondItem="vOg-cV-5SL" secondAttribute="trailing" constant="8" id="w1d-bY-1f1"/>
                                 </constraints>
                             </view>
@@ -5527,7 +5527,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IXF-AH-0GO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1283" y="4724"/>
+            <point key="canvasLocation" x="-289" y="3960"/>
         </scene>
         <!--Pretty Web View Controller-->
         <scene sceneID="YAn-vY-I2T">
@@ -6676,9 +6676,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YfK-Q2-bzQ"/>
-        <segue reference="IHq-kI-aOp"/>
         <segue reference="qn2-al-Psq"/>
-        <segue reference="X9f-6g-kcV"/>
-        <segue reference="PE1-UK-yTe"/>
+        <segue reference="x8e-q3-g1J"/>
+        <segue reference="mHu-Ew-wJe"/>
+        <segue reference="bRt-vg-J9Z"/>
+        <segue reference="IHq-kI-aOp"/>
     </inferredMetricsTieBreakers>
 </document>

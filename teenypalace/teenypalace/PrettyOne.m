@@ -110,7 +110,7 @@
             [ self.tableView reloadData];//将数据放入数组后填入tableview
         }
 
-        NSLog(@"%@",self.date);
+      //  NSLog(@"%@",self.date);
         [ self.tableView footerEndRefreshing];
     }
     

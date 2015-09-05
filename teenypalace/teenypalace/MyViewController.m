@@ -60,7 +60,7 @@
             cell.titleLabel.text = @"结算中心";
             break;
         case 4:
-            cell.titleLabel.text = @"设置";
+            cell.titleLabel.text = @"关于";
             break;
         case 5:
             cell.titleLabel.text = @"登陆";

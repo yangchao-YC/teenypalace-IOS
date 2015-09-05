@@ -130,7 +130,11 @@
 {
     if ([[self.dic objectForKey:@"status"] intValue] == 0) {
         
-        self.NewCardBlock;
+       // self.NewCardBlock();
+        
+        
+        NSNotification *notification = [NSNotification notificationWithName:@"notifiction_mynewcard" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
         
         [SVProgressHUD showSuccessWithStatus:@"添加成功" maskType:3];
         [self.navigationController popViewControllerAnimated:YES];

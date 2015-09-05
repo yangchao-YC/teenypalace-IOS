@@ -13,6 +13,7 @@
 #import "AFNetworking.h"
 #import "teenypalace-Swift.h"//混编：OC调用Swift代码
 #import "SVProgressHUD.h"
+#import "UMessage.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
@@ -28,7 +29,12 @@
  */
 
 
+#define UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+
 #define IOS8_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending )
+
+#define _IPHONE80_ 80000
 
 #define ART @"美术,书法类"
 
@@ -136,6 +142,6 @@
 
 #define DATE_PRETTY_DEPARTMENTS [DATE_URL stringByAppendingString:@"beautiful/bumen"]//青少年宫部门
 
-#define SHARE [DATE_URL stringByAppendingString:@"sharing/news/"]//青少年宫部门
+#define SHARE [DATE_URL stringByAppendingString:@"sharing/charity/"]//青少年宫部门
 
 #endif

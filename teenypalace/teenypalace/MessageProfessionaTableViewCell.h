@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UIButton *bgBtn;
+@property (weak, nonatomic) IBOutlet UIView *View_Top;
 
 @end

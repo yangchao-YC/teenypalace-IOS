@@ -8,3 +8,4 @@
 #import "UMSocialData.h"
 #import "UMSocialWechatHandler.h"
 #import "UMSocialSnsService.h"
+#import "UMessage.h"

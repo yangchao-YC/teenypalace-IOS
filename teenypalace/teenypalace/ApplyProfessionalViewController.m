@@ -49,6 +49,7 @@
 -(void)dateUrl:(NSString *)url
 {
 
+    NSLog(@"url:%@",url);
 
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 
