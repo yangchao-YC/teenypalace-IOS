@@ -155,9 +155,9 @@
     
     
     
-     NSLog(@"我是高度%f",rect_content.size.height);
+  //   NSLog(@"我是高度%f",rect_content.size.height);
 
-    NSLog(@"我是原始高度%f",cell.contentLabel.frame.size.height);
+  //  NSLog(@"我是原始高度%f",cell.contentLabel.frame.size.height);
     if (cell.contentLabel.frame.size.height == 25) { //25为xib设计contentLabel的原始高度
         if (rect_content.size.width > wigth) {
             

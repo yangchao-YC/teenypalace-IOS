@@ -142,6 +142,8 @@
 
 #define DATE_PRETTY_DEPARTMENTS [DATE_URL stringByAppendingString:@"beautiful/bumen"]//青少年宫部门
 
-#define SHARE [DATE_URL stringByAppendingString:@"sharing/charity/"]//青少年宫部门
+#define SHARE [DATE_URL stringByAppendingString:@"sharing/charity/"]//活动分享
+
+#define SHARE_PRETTY [DATE_URL stringByAppendingString:@"sharing/news/"]//活动分享
 
 #endif

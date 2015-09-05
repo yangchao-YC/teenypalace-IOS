@@ -42,14 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "tabbar_bg"), forBarMetrics: UIBarMetrics.Default)
 
-        
+      
         /*
         UMessage.startWithAppkey("54ace3b6fd98c5ad2f000edb", launchOptions: launchOptions)
         
         #if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
         if(UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("8.0"))
             {
-            
+        
             }
         #else
             

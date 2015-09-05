@@ -61,14 +61,23 @@
 
 -(void)share
 {
-    NSString *text = [NSString stringWithFormat:@"武汉青少年宫活动。详情请点击%@%@",SHARE,[self.PrettyKey objectForKey:@"id"]];
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",SHARE_PRETTY,[self.PrettyKey objectForKey:@"id"]];
+    
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = @"武汉青少年宫";//设置微信好友标题
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = @"武汉青少年宫";//设置朋友圈标题
+    
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = url;//设置好友链接
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = url;//设置朋友圈链接
+    
+    
     [UMSocialSnsService
      presentSnsIconSheetView:self
      appKey:nil
-     shareText:text
-     shareImage:nil
-     shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToEmail,UMShareToSina,UMShareToSms,UMShareToTencent ,nil]
-     delegate:self];
+     shareText:[NSString stringWithFormat:@"武汉市青少年宫手机App应用是一款以引导广大青少年参加我宫素质教育和公益活动为核心内容的APP.详情请点击%@",url]
+     shareImage:[UIImage imageNamed:@"share_image"]
+     shareToSnsNames:[NSArray arrayWithObjects:UMShareToWechatSession,UMShareToWechatTimeline,UMShareToEmail,UMShareToSina,UMShareToSms,UMShareToTencent ,nil]
+     delegate:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
