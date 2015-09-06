@@ -20,9 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var Login: Bool = false//判断是否登陆
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         // Override point for customization after application launch.
-        
-        
         MobClick.startWithAppkey("54ace3b6fd98c5ad2f000edb", reportPolicy: BATCH, channelId:nil)
         
         MobClick.checkUpdate()
@@ -43,20 +42,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "tabbar_bg"), forBarMetrics: UIBarMetrics.Default)
 
       
-        /*
+        
         UMessage.startWithAppkey("54ace3b6fd98c5ad2f000edb", launchOptions: launchOptions)
         
-        #if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
-        if(UMSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO("8.0"))
-            {
+        switch UIDevice.currentDevice().systemVersion.compare("8.0.0", options: NSStringCompareOptions.NumericSearch)
+        {
+        case .OrderedSame, .OrderedDescending:
+            
+            //register remoteNotification types
+            let action1 = UIMutableUserNotificationAction()
+            action1.identifier = "action1_identifier"
+            action1.title = "Accept"
+            action1.activationMode = .Background;//当点击的时候启动程序
+            
+            let action2 = UIMutableUserNotificationAction()  //第二按钮
+            action2.identifier = "action2_identifier"
+            action2.title = "Reject"
+            action2.activationMode = .Background //当点击的时候不启动程序，在后台处理
+            action2.authenticationRequired = true //需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground则这个属性被忽略；
+            action2.destructive = true
+            
+            let categorys = UIMutableUserNotificationCategory()
+            categorys.identifier = "category1" //这组动作的唯一标示
+            
+            categorys.setActions([action1,action2], forContext: .Default)
+            
+            let category : NSSet = NSSet(object: categorys)
+            let userSettings = UIUserNotificationSettings(forTypes: .Badge | .Sound | .Alert, categories:  category as Set<NSObject>)
+            
+            UMessage.registerRemoteNotificationAndUserNotificationSettings(userSettings)
+            
+        case .OrderedAscending:
+            
+            UMessage.registerForRemoteNotificationTypes(.Badge | .Sound | .Alert)
+            
+        }
         
-            }
-        #else
-            
-            
-        #endif
         UMessage.setLogEnabled(true)
-        */
+        
         return true
     }
 

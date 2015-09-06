@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0291A5BD1B5F873300370F4C /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0291A5BB1B5F873300370F4C /* libUPPayPlugin.a */; };
+		02BB5B471B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */; };
+		02BB5B481B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */; };
 		7101EC8F1B2832EB00E429A7 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7101EC6E1B2832EB00E429A7 /* UMSocialLocalizable.strings */; };
 		7101EC901B2832EB00E429A7 /* libUMSocial_Sdk_4.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7101EC7C1B2832EB00E429A7 /* libUMSocial_Sdk_4.2.1.a */; };
 		7101EC911B2832EB00E429A7 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7101EC7E1B2832EB00E429A7 /* UMSCommentDetailController.xib */; };
@@ -166,7 +168,6 @@
 		71CF28621A37EFA800062CCB /* ApplyCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CF28611A37EFA800062CCB /* ApplyCardViewController.m */; };
 		71DAADBF1AFA02D6008402F2 /* DoingBookHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DAADBE1AFA02D6008402F2 /* DoingBookHeaderView.m */; };
 		71DAADC11AFA02F3008402F2 /* DoingBookHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DAADC01AFA02F3008402F2 /* DoingBookHeaderView.xib */; };
-		71DC23701B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DC236E1B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a */; };
 		71DD2F151AF0DA6A005C37F6 /* MyDoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD2F141AF0DA6A005C37F6 /* MyDoingViewController.m */; };
 		71DD2F181AF0DEA6005C37F6 /* MyDoingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD2F171AF0DEA6005C37F6 /* MyDoingTableViewCell.m */; };
 		71EAF1B11A4D6A5200C8D56D /* MyNewCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EAF1B01A4D6A5200C8D56D /* MyNewCardViewController.m */; };
@@ -186,6 +187,8 @@
 		0291A5B71B5F873300370F4C /* UPPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPlugin.h; sourceTree = "<group>"; };
 		0291A5B81B5F873300370F4C /* UPPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPluginDelegate.h; sourceTree = "<group>"; };
 		0291A5BB1B5F873300370F4C /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
+		02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
+		02BB5B461B9C75960067411C /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		7101EC6F1B2832EB00E429A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		7101EC711B2832EB00E429A7 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		7101EC721B2832EB00E429A7 /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -478,8 +481,6 @@
 		71DAADBD1AFA02D6008402F2 /* DoingBookHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingBookHeaderView.h; sourceTree = "<group>"; };
 		71DAADBE1AFA02D6008402F2 /* DoingBookHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingBookHeaderView.m; sourceTree = "<group>"; };
 		71DAADC01AFA02F3008402F2 /* DoingBookHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoingBookHeaderView.xib; sourceTree = "<group>"; };
-		71DC236E1B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
-		71DC236F1B9AC116002F8E69 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		71DD2F131AF0DA6A005C37F6 /* MyDoingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDoingViewController.h; sourceTree = "<group>"; };
 		71DD2F141AF0DA6A005C37F6 /* MyDoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDoingViewController.m; sourceTree = "<group>"; };
 		71DD2F161AF0DEA6005C37F6 /* MyDoingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDoingTableViewCell.h; sourceTree = "<group>"; };
@@ -498,7 +499,7 @@
 				71A3EA181A69252D00122B36 /* CFNetwork.framework in Frameworks */,
 				71C9B6C21A305C090011A3B1 /* MobileCoreServices.framework in Frameworks */,
 				71A3EA161A69251700122B36 /* AudioToolbox.framework in Frameworks */,
-				71DC23701B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a in Frameworks */,
+				02BB5B471B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */,
 				71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */,
 				7101EC9A1B2832EB00E429A7 /* libSocialWechat.a in Frameworks */,
 				0291A5BD1B5F873300370F4C /* libUPPayPlugin.a in Frameworks */,
@@ -516,6 +517,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02BB5B481B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +556,15 @@
 				0291A5BB1B5F873300370F4C /* libUPPayPlugin.a */,
 			);
 			path = libs;
+			sourceTree = "<group>";
+		};
+		02BB5B441B9C75960067411C /* UMessage_Sdk_1.1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */,
+				02BB5B461B9C75960067411C /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.1.0;
 			sourceTree = "<group>";
 		};
 		7101EC6D1B2832EB00E429A7 /* UMSocial_Sdk_4.2.1 */ = {
@@ -647,7 +658,7 @@
 		715E42831A5BED0800A3C4F1 /* UM */ = {
 			isa = PBXGroup;
 			children = (
-				71DC236D1B9AC116002F8E69 /* UMessage_Sdk_1.1.0 */,
+				02BB5B441B9C75960067411C /* UMessage_Sdk_1.1.0 */,
 				7101EC6D1B2832EB00E429A7 /* UMSocial_Sdk_4.2.1 */,
 				7101EC881B2832EB00E429A7 /* UMSocial_Sdk_Extra_Frameworks */,
 				715E42B11A5BED1500A3C4F1 /* UMSocial_Sdk_Instructions */,
@@ -1059,15 +1070,6 @@
 				71DAADC01AFA02F3008402F2 /* DoingBookHeaderView.xib */,
 			);
 			name = AlertView;
-			sourceTree = "<group>";
-		};
-		71DC236D1B9AC116002F8E69 /* UMessage_Sdk_1.1.0 */ = {
-			isa = PBXGroup;
-			children = (
-				71DC236E1B9AC116002F8E69 /* libUMessage_Sdk_1.1.0.a */,
-				71DC236F1B9AC116002F8E69 /* UMessage.h */,
-			);
-			path = UMessage_Sdk_1.1.0;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1552,6 +1554,10 @@
 				);
 				INFOPLIST_FILE = teenypalaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/teenypalace/UMessage_Sdk_1.1.0",
+				);
 				PRODUCT_NAME = teenypalaceTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/teenypalace.app/teenypalace";
@@ -1569,6 +1575,10 @@
 				);
 				INFOPLIST_FILE = teenypalaceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/teenypalace/UMessage_Sdk_1.1.0",
+				);
 				PRODUCT_NAME = teenypalaceTests;
 				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/teenypalace.app/teenypalace";
