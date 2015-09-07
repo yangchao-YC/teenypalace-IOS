@@ -87,14 +87,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         
         
+        
         UMessage.registerDeviceToken(deviceToken)
 
+        
+     //   println("didRegisterForRemoteNotificationsWithDeviceToken success")
+        
+        
         
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        UMessage.setAutoAlert(false)
         UMessage.didReceiveRemoteNotification(userInfo)
     }
+    
+    
+    /*
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+       // var error_str: String = error
+        
+        println(error)
+        
+    }
+    */
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
         return UMSocialSnsService.handleOpenURL(url)
@@ -103,6 +119,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
         return UMSocialSnsService.handleOpenURL(url)
     }
+    
+    
+    
+    
     
     
     func applicationWillResignActive(application: UIApplication) {

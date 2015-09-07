@@ -98,6 +98,17 @@
     tapRecognizer.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapRecognizer];
 
+    
+    
+    /*
+    [UMessage addTag:@"IOS"
+            response:^(id responseObject, NSInteger remain, NSError *error) {
+                //add your codes
+            }];
+    
+    [UMessage addAlias:@"test@test.com" type:kUMessageAliasTypeSina response:^(id responseObject, NSError *error) {
+    }];
+     */
 }
 
 
