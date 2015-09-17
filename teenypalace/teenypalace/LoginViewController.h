@@ -16,5 +16,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 + (void)logOut;
 
-
++(void)addTag;
 @end

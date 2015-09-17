@@ -7,7 +7,7 @@
 //活动报名页面
 
 #import "DoingApplyViewController.h"
-
+#import "LoginViewController.h"
 @interface DoingApplyViewController ()
 
 @end
@@ -74,6 +74,7 @@
            NSDictionary *dic = responseObject;
            if ([[dic objectForKey:@"status"] intValue] == 0) {
                [SVProgressHUD showSuccessWithStatus:@"报名成功" maskType:3];
+               [LoginViewController addTag];
                [self.navigationController popViewControllerAnimated:YES];
            }
            else{

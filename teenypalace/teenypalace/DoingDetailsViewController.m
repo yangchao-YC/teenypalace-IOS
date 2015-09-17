@@ -11,7 +11,7 @@
 
 
 #import "DoingDetailsViewController.h"
-
+#import "Masonry.h"
 @interface DoingDetailsViewController ()
 
 @end
@@ -52,6 +52,24 @@
  
     //    }
     [self webViewDate];
+    
+    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    
+    if (app.DoingDetailsWebHidden) {
+        [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.left.right.equalTo(self.webView.superview);
+            
+        }];
+        
+        self.Btn_Apply.hidden = YES;
+        [self.webView layoutIfNeeded];
+    }
+    
+    
+    /*
+    
+    
+    */
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@",DATE_DOING_SUM,[self.doingKey objectForKey:@"id"]];
     

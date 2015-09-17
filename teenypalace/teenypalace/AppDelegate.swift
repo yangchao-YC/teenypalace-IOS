@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var ParentId: String = ""//家长ID
     var LastloginTime: String = ""//最后登陆时间
     var Login: Bool = false//判断是否登陆
+    var DoingDetailsWebHidden : Bool = false//控制活动详情列表是否只显示活动情况（不显示其他信息，如地址，时间等）
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -31,25 +32,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UMSocialWechatHandler.setWXAppId("wx7f38e71156855bcc", appSecret: "d6898fad7cec6771feee6f6cc93dd3aa", url: "http://www.ycpwh.cn/")
         
         
-       // var version = NSBundle.mainBundle().infoDictionary?.indexForKey("CFBundleShortVersionString")
+        // var version = NSBundle.mainBundle().infoDictionary?.indexForKey("CFBundleShortVersionString")
         
         let info = NSBundle.mainBundle().infoDictionary as NSDictionary?
         
         let version = info?.objectForKey("CFBundleShortVersionString") as! String
-
+        
         MobClick.setAppVersion(version)
-
+        
         UINavigationBar.appearance().setBackgroundImage(UIImage(named: "tabbar_bg"), forBarMetrics: UIBarMetrics.Default)
-
-      
+        
+        
         
         UMessage.startWithAppkey("54ace3b6fd98c5ad2f000edb", launchOptions: launchOptions)
         
-        switch UIDevice.currentDevice().systemVersion.compare("8.0.0", options: NSStringCompareOptions.NumericSearch)
+        if #available(iOS 8.0, *)
         {
-        case .OrderedSame, .OrderedDescending:
-            
-            //register remoteNotification types
             let action1 = UIMutableUserNotificationAction()
             action1.identifier = "action1_identifier"
             action1.title = "Accept"
@@ -68,13 +66,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             categorys.setActions([action1,action2], forContext: .Default)
             
             let category : NSSet = NSSet(object: categorys)
-            let userSettings = UIUserNotificationSettings(forTypes: .Badge | .Sound | .Alert, categories:  category as Set<NSObject>)
+            
+            let userSettings = UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: category as? Set<UIUserNotificationCategory>)
             
             UMessage.registerRemoteNotificationAndUserNotificationSettings(userSettings)
+        }
+        else
+        {
             
-        case .OrderedAscending:
-            
-            UMessage.registerForRemoteNotificationTypes(.Badge | .Sound | .Alert)
+            UMessage.registerForRemoteNotificationTypes([.Badge, .Sound, .Alert])
             
         }
         
@@ -82,16 +82,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         
         
         
         UMessage.registerDeviceToken(deviceToken)
-
         
-     //   println("didRegisterForRemoteNotificationsWithDeviceToken success")
+        
+        //   println("didRegisterForRemoteNotificationsWithDeviceToken success")
         
         
         
@@ -105,10 +105,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /*
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-       // var error_str: String = error
-        
-        println(error)
-        
+    // var error_str: String = error
+    
+    println(error)
+    
     }
     */
     
@@ -116,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UMSocialSnsService.handleOpenURL(url)
     }
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return UMSocialSnsService.handleOpenURL(url)
     }
     
@@ -129,24 +129,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
-
+    
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
-
+    
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
-
+    
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
 

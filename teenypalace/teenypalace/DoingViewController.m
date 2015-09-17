@@ -123,12 +123,17 @@
         [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
     };
      */
+    
+    
     vv1.DoingBlock = ^(NSDictionary *a)
     {
+        [self detailsWebHidden:NO];
         [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
     };
     vv2.DoingBlock = ^(NSDictionary *a)
     {
+        [self detailsWebHidden:YES];
+        
         [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
     };
     /*
@@ -149,8 +154,14 @@
     */
 }
 
-
-
+/*
+ 设置是否只显示活动内容（不显示其他信息。如电话。地址。时间等）
+ */
+-(void)detailsWebHidden:(BOOL)hidden
+{
+    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    app.DoingDetailsWebHidden = hidden;
+}
 
 
 -(IBAction)DoingBtn:(UIButton *)sender

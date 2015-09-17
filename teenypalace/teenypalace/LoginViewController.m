@@ -100,15 +100,8 @@
 
     
     
-    /*
-    [UMessage addTag:@"IOS"
-            response:^(id responseObject, NSInteger remain, NSError *error) {
-                //add your codes
-            }];
     
-    [UMessage addAlias:@"test@test.com" type:kUMessageAliasTypeSina response:^(id responseObject, NSError *error) {
-    }];
-     */
+    
 }
 
 
@@ -218,6 +211,26 @@
             [SVProgressHUD showSuccessWithStatus:@"登陆成功" maskType:2];
 
             
+            
+            /*
+             NSArray *arr = [[NSArray alloc]initWithObjects:@"OOS",@"SSO",@"DDP",@"AAA",nil];
+             
+             [UMessage addTag:arr
+             response:^(id responseObject, NSInteger remain, NSError *error) {
+             //add your codes
+             }];
+             
+             
+             [UMessage addAlias:@"test@test.com" type:kUMessageAliasTypeSina response:^(id responseObject, NSError *error) {
+             }];
+             [UMessage getTags:^(NSSet *responseTags, NSInteger remain, NSError *error) {
+             //add your codes
+             NSLog(@"%@",responseTags);
+             }];
+             */
+            
+            [LoginViewController addTag];
+            
             [self dismissModalViewControllerAnimated:YES];
             
         }
@@ -238,6 +251,48 @@
 }
 
 
++(void)addTag
+{
+    
+    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    
+
+    
+
+    NSString *url = [NSString stringWithFormat:@"%@%@",PUSH_TAG,app.ParentId];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        
+        if ([[responseObject objectForKey:@"status"] intValue] == 0) {
+
+            [UMessage removeAllTags:^(id responseObject, NSInteger remain, NSError *error) {
+                
+            }];
+            NSMutableArray *arr = [responseObject objectForKey:@"data"];
+            
+            NSArray *tagArray = [arr copy];
+            
+            [UMessage addTag:tagArray
+                    response:^(id responseObject, NSInteger remain, NSError *error) {
+                        //add your codes
+                    }];
+            
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+       // [SVProgressHUD showInfoWithStatus:@"网络异常，请稍后再试" maskType:2];//异常提示
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
+    
+    
+}
 
 
 -(void)checkBoxs

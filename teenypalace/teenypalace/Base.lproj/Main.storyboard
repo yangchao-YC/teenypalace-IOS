@@ -465,8 +465,8 @@
                                     <constraint firstItem="rzc-mJ-bef" firstAttribute="top" secondItem="DmH-uS-LRn" secondAttribute="top" constant="42" id="wRR-uI-tkx"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AtW-ra-Qg7">
-                                <rect key="frame" x="30" y="120" width="540" height="400"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtW-ra-Qg7">
+                                <rect key="frame" x="8" y="120" width="584" height="430"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="报名时间：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYZ-8T-PN5">
                                         <rect key="frame" x="8" y="8" width="63" height="21"/>
@@ -522,13 +522,6 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pI2-V9-fGp">
-                                        <rect key="frame" x="10" y="145" width="550" height="275"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="gKM-JN-lAq" id="v1v-Mn-G6l"/>
-                                        </connections>
-                                    </webView>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibh-Gf-r7H">
                                         <rect key="frame" x="188" y="95" width="22" height="21"/>
                                         <state key="normal" image="phone">
@@ -538,6 +531,13 @@
                                             <action selector="DoingDetailsBtn:" destination="gKM-JN-lAq" eventType="touchUpInside" id="ELO-gt-Et3"/>
                                         </connections>
                                     </button>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pI2-V9-fGp">
+                                        <rect key="frame" x="10" y="145" width="564" height="275"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="gKM-JN-lAq" id="v1v-Mn-G6l"/>
+                                        </connections>
+                                    </webView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -572,8 +572,8 @@
                             <constraint firstItem="LoN-Fz-41E" firstAttribute="leading" secondItem="d5h-sB-2cb" secondAttribute="leadingMargin" constant="15" id="8ax-bG-NON"/>
                             <constraint firstItem="HbR-AN-WsT" firstAttribute="top" secondItem="SHk-E8-qea" secondAttribute="bottom" id="A3A-eY-PEu"/>
                             <constraint firstItem="DmH-uS-LRn" firstAttribute="top" secondItem="SHk-E8-qea" secondAttribute="bottom" constant="50" id="YBU-FG-FCp"/>
-                            <constraint firstItem="AtW-ra-Qg7" firstAttribute="leading" secondItem="d5h-sB-2cb" secondAttribute="leading" constant="15" id="YwL-qD-Etq"/>
-                            <constraint firstAttribute="trailing" secondItem="AtW-ra-Qg7" secondAttribute="trailing" constant="15" id="hqW-Ss-cs1"/>
+                            <constraint firstItem="AtW-ra-Qg7" firstAttribute="leading" secondItem="d5h-sB-2cb" secondAttribute="leading" constant="8" id="YwL-qD-Etq"/>
+                            <constraint firstAttribute="trailing" secondItem="AtW-ra-Qg7" secondAttribute="trailing" constant="8" id="hqW-Ss-cs1"/>
                             <constraint firstItem="K6n-BI-Wby" firstAttribute="top" secondItem="LoN-Fz-41E" secondAttribute="bottom" constant="15" id="lFx-WZ-fGj"/>
                             <constraint firstAttribute="trailing" secondItem="HbR-AN-WsT" secondAttribute="trailing" id="maM-kS-5cW"/>
                             <constraint firstAttribute="trailing" secondItem="DmH-uS-LRn" secondAttribute="trailing" id="nha-JX-vUk"/>
@@ -584,6 +584,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="eWN-li-Cnw"/>
                     <connections>
+                        <outlet property="Btn_Apply" destination="LoN-Fz-41E" id="utr-KP-sOJ"/>
                         <outlet property="addressLabel" destination="RQd-L1-6Lx" id="Q2X-i4-HIs"/>
                         <outlet property="checkSumLabel" destination="rzc-mJ-bef" id="ICJ-Ff-8mh"/>
                         <outlet property="endTimeLabel" destination="Tmj-nt-8JT" id="k2a-Ze-xMf"/>
