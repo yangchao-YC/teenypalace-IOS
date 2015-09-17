@@ -79,7 +79,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString *errorString = [NSString stringWithFormat:@"%@",error];
         [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
-      //  NSLog(@"Error: %@", error);
+        NSLog(@"Error: %@", error);
     }];
 }
 
