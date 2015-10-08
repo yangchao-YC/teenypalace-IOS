@@ -16,6 +16,7 @@
 #import "DoingThree.h"
 #import "DoingFive.h"
 #import "DoingFour.h"
+#import "DoingSix.h"
 @interface DoingViewController ()
 {
     BOOL oneIndex;
@@ -23,6 +24,7 @@
     BOOL threeIndex;
     BOOL fourIndex;
     BOOL fiveIndex;
+    BOOL SixIndex;
 }
 
 
@@ -40,7 +42,7 @@
     CGRect frame =CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height -64);//如果没有导航栏，则去掉64
     
     //对应填写两个数组
-    NSArray *views =@[[DoingOne new],[DoingTwo new]];//,[DoingThree new],[DoingFour new],[DoingFive new]];   //创建使用
+    NSArray *views =@[[DoingOne new],[DoingSix new]];//,[DoingThree new],[DoingFour new],[DoingFive new]];   //创建使用
     NSArray *names =@[@" 活动预告 ",@" 活动快讯 "];//,@" 小时候艺术 ",@" 读书活动 ",@" 祭奠活动 "];
     self.scrollNav =[XLScrollViewer scrollWithFrame:frame withViews:views withButtonNames:names withThreeAnimation:222];//三中动画都选择
     self.scrollNav.backgroundColor = [UIColor clearColor];
@@ -66,13 +68,14 @@
     threeIndex = YES;
     fourIndex = YES;
     fiveIndex = YES;
+    SixIndex = YES;
  // DoingZero *vv0 = views[0];
     DoingOne *vv1 = views[0];
-    DoingTwo *vv2 = views[1];
+   // DoingTwo *vv2 = views[1];
   //  DoingThree *vv3 = views[3];
   //  DoingFour *vv4 = views[4];
   //  DoingFive *vv5 = views[5];
-    
+    DoingSix *vv6 = views[1];
     [vv1 start];
     
     self.scrollNav.XlScrollBlock = ^(int a)
@@ -81,8 +84,8 @@
         NSLog(@"我是第%d页",a);
         switch (a) {
             case 1:
-                if (oneIndex) {
-                    [vv2 start];
+                if (SixIndex) {
+                    [vv6 start];
                     oneIndex = NO;
                 }
                 break;
@@ -130,13 +133,14 @@
         [self detailsWebHidden:NO];
         [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
     };
+    /*
     vv2.DoingBlock = ^(NSDictionary *a)
     {
-        [self detailsWebHidden:YES];
+        [self detailsWebHidden:NO];
         
         [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
     };
-    /*
+    
     vv3.DoingBlock = ^(NSDictionary *a)
     {
         [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
@@ -152,6 +156,12 @@
         [self performSegueWithIdentifier:@"doing_doingCeremony" sender:a];//祭奠活动
     };
     */
+    vv6.DoingBlock = ^(NSDictionary *a)
+    {
+        [self detailsWebHidden:YES];
+        
+        [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
+    };
 }
 
 /*
