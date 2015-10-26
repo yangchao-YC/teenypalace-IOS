@@ -41,7 +41,7 @@
 -(void)dateUrl:(NSString *)url
 {
     
-    
+    NSLog(@"层次列表：  %@",url);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];

@@ -123,7 +123,7 @@
 
 #define DATE_DOING_APPLY [DATE_URL stringByAppendingString:@"charity/signup"]//活动报名
 
-#define DATE_DOING_APPLY_CHECK [DATE_URL stringByAppendingString:@"charity/hudong_sinup_check/?id"]//活动报名检测名额
+#define DATE_DOING_APPLY_CHECK [DATE_URL stringByAppendingString:@"charity/hudong_sinup_check/?id="]//活动报名检测名额
 
 
 #define DATE_SEARCH_MESSAGE_TEACHER [DATE_URL stringByAppendingString:@"app_service/service_teacher_profile?page="]//活动查询

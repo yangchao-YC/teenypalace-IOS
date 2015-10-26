@@ -28,7 +28,7 @@
     
     
     NSString *level1 =[self.applyClassKey objectForKey:@"level1"] == NULL?@"0":[self.applyClassKey objectForKey:@"level1"];
-    NSString *level2 =[self.applyClassKey objectForKey:@"leve2"] == NULL?@"0":[self.applyClassKey objectForKey:@"level2"];
+    NSString *level2 =[self.applyClassKey objectForKey:@"level2"] == NULL?@"0":[self.applyClassKey objectForKey:@"level2"];
 
     NSString *level3 =[self.applyClassKey objectForKey:@"level3"] == NULL?@"0":[self.applyClassKey objectForKey:@"level3"];
 
@@ -46,7 +46,7 @@
 
 -(void)dateUrl:(NSString *)url
 {
-    
+    NSLog(@"班级列表：  %@",url);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];

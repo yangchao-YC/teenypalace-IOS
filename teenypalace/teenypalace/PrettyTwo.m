@@ -68,7 +68,7 @@
     NSLog(@"%@",date);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    // manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     [manager GET:date parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);

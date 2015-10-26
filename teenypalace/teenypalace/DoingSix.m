@@ -203,7 +203,8 @@
     
     NSString *time = [dic objectForKey:@"field_charity_time"];
     time = [time substringToIndex:10];
-    
+    cell.timeLabel.hidden = YES;
+    cell.countLabel.hidden = YES;
     cell.timeLabel.text = [NSString stringWithFormat:@"活动时间：%@",time];
     [cell.images setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"field_charity_thumb"]]
                    placeholderImage:[UIImage imageNamed:@"defaults"]];

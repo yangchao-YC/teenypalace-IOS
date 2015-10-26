@@ -12,7 +12,14 @@
 
 #import "DoingDetailsViewController.h"
 #import "Masonry.h"
+#import "LoginViewController.h"
 @interface DoingDetailsViewController ()
+{
+    int height;
+}
+
+
+@property(nonatomic,strong)UIWebView *webView;
 
 @end
 
@@ -50,31 +57,88 @@
         
     //   self.automaticallyAdjustsScrollViewInsets = NO;
  
+    
     //    }
-    [self webViewDate];
+    
+    
+    
     
     AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
-    if (app.DoingDetailsWebHidden) {
-        [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.bottom.left.right.equalTo(self.webView.superview);
-            
-        }];
-        
+    height = 135;
+    
+    
+    if (app.DoingDetailsWebHidden) {//是否显示活动其他信息（电话，地点等）
+        height = 0;
         self.Btn_Apply.hidden = YES;
-        [self.webView layoutIfNeeded];
     }
-    
-    
     /*
+    [self.webView mas_updateConstraints:^(MASConstraintMaker *make) {
+        //make.top.bottom.left.right.equalTo(self.webView.superview);
+        // make.height.offset(self.webView.scrollView.contentSize.height);
+        
+        make.top.equalTo(self.webView.superview).offset(height);
+       // make.centerX.equalTo(self.webView.superview);
+        
+      //  make.size.mas_equalTo(CGSizeMake(100 ,800));
+      //  make.size.width.mas_equalTo(@100);
+       // make.size.height.mas_equalTo(@100);
+       // make.width.mas_equalTo(@100);
+       // make.height.mas_equalTo(@100);
+       // make.width.offset(100);
+      //  make.height.offset(100);
+        //  make.right.left.bottom.equalTo(self.webView.superview);
+        
+    }];
+     */
     
     
-    */
+    self.webView = [UIWebView new];
+    [self.ScrollView_info addSubview:self.webView];
+    self.webView.delegate = self;
+    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.webView.superview).offset(height);
+        make.left.right.bottom.equalTo(self.webView.superview);
+    }];
+    
+    [self.webView layoutIfNeeded];
+
+    [self webViewDate];
+
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@",DATE_DOING_SUM,[self.doingKey objectForKey:@"id"]];
     
     [self dateUrl:urlString];
 }
+
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+
+   
+    [self.ScrollView_info mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.View_Title.mas_bottom);
+        make.left.right.equalTo(self.ScrollView_info.superview).offset(8);
+        make.bottom.mas_equalTo(self.Btn_Apply.mas_top).offset(-8);
+    }];
+    
+     [self.ScrollView_info layoutIfNeeded];
+    
+    self.ScrollView_info.contentSize = CGSizeMake(self.ScrollView_info.frame.size.width,(height + self.webView.scrollView.contentSize.height));
+    
+    
+    int heights = self.webView.scrollView.contentSize.height;
+
+    [self.webView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.webView.superview).offset(height);
+        make.left.right.equalTo(self.webView.superview);
+        make.height.mas_equalTo(heights);
+    }];
+
+    [self.webView layoutIfNeeded];
+
+    
+}
+
 
 
 -(void)webViewDate
@@ -93,6 +157,7 @@
     
     html = [html stringByReplacingOccurrencesOfString:@"{Content}" withString:date];
     [self.webView loadHTMLString:html baseURL:baseURL];
+    
 }
 
 
@@ -143,6 +208,18 @@
 
 -(void)doingApplyCheck
 {
+    
+    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    if (!app.Login) {
+
+        [SVProgressHUD showInfoWithStatus:@"请登陆后进行操作" maskType:3];
+        
+        [self logout];
+        
+        return;
+        
+    }
+    
     [SVProgressHUD showWithStatus:@"正在查询活动最新信息..."];
     NSString *url = [NSString stringWithFormat:@"%@%@",DATE_DOING_APPLY_CHECK,[self.doingKey objectForKey:@"id"]];
     
@@ -166,7 +243,10 @@
     }];
 }
 
-
+- (void)logout
+{
+    [LoginViewController logOut];
+}
 
 
 -(void)push
