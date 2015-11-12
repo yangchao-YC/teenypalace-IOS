@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0291A5BD1B5F873300370F4C /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0291A5BB1B5F873300370F4C /* libUPPayPlugin.a */; };
 		02BB5B471B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */; };
 		02BB5B481B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */; };
 		7101EC8F1B2832EB00E429A7 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7101EC6E1B2832EB00E429A7 /* UMSocialLocalizable.strings */; };
@@ -26,7 +25,7 @@
 		710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1C1A5E8A6100513143 /* InformationProcessingViewController.m */; };
 		710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710ADA1F1A5E8B0900513143 /* PwdViewController.m */; };
 		71111A881AFB612A000A45C5 /* DoingceshiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71111A871AFB612A000A45C5 /* DoingceshiViewController.m */; };
-		712F3FD01BB3FA5A0043CFE7 /* DoingSix.m in Sources */ = {isa = PBXBuildFile; fileRef = 712F3FCE1BB3FA5A0043CFE7 /* DoingSix.m */; settings = {ASSET_TAGS = (); }; };
+		712F3FD01BB3FA5A0043CFE7 /* DoingSix.m in Sources */ = {isa = PBXBuildFile; fileRef = 712F3FCE1BB3FA5A0043CFE7 /* DoingSix.m */; };
 		71494E151AC1190D00362749 /* DoingBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E141AC1190D00362749 /* DoingBookViewController.m */; };
 		71494E181AC1192400362749 /* DoingCeremonyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E171AC1192400362749 /* DoingCeremonyViewController.m */; };
 		71494E1B1AC1193B00362749 /* DoingCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71494E1A1AC1193B00362749 /* DoingCommentViewController.m */; };
@@ -171,6 +170,7 @@
 		71DAADC11AFA02F3008402F2 /* DoingBookHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71DAADC01AFA02F3008402F2 /* DoingBookHeaderView.xib */; };
 		71DD2F151AF0DA6A005C37F6 /* MyDoingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD2F141AF0DA6A005C37F6 /* MyDoingViewController.m */; };
 		71DD2F181AF0DEA6005C37F6 /* MyDoingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DD2F171AF0DEA6005C37F6 /* MyDoingTableViewCell.m */; };
+		71E910121BF0AAC6003C7C90 /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71E910111BF0AAC6003C7C90 /* libUPPayPlugin.a */; };
 		71EAF1B11A4D6A5200C8D56D /* MyNewCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EAF1B01A4D6A5200C8D56D /* MyNewCardViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -185,9 +185,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0291A5B71B5F873300370F4C /* UPPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPlugin.h; sourceTree = "<group>"; };
-		0291A5B81B5F873300370F4C /* UPPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPluginDelegate.h; sourceTree = "<group>"; };
-		0291A5BB1B5F873300370F4C /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
 		02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		02BB5B461B9C75960067411C /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		7101EC6F1B2832EB00E429A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
@@ -488,6 +485,9 @@
 		71DD2F141AF0DA6A005C37F6 /* MyDoingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDoingViewController.m; sourceTree = "<group>"; };
 		71DD2F161AF0DEA6005C37F6 /* MyDoingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDoingTableViewCell.h; sourceTree = "<group>"; };
 		71DD2F171AF0DEA6005C37F6 /* MyDoingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDoingTableViewCell.m; sourceTree = "<group>"; };
+		71E9100F1BF0AAAE003C7C90 /* UPPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPlugin.h; sourceTree = "<group>"; };
+		71E910101BF0AAAE003C7C90 /* UPPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPluginDelegate.h; sourceTree = "<group>"; };
+		71E910111BF0AAC6003C7C90 /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
 		71EAF1AF1A4D6A5200C8D56D /* MyNewCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewCardViewController.h; sourceTree = "<group>"; };
 		71EAF1B01A4D6A5200C8D56D /* MyNewCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewCardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -501,11 +501,11 @@
 				71A3EA1A1A69253B00122B36 /* libxml2.dylib in Frameworks */,
 				71A3EA181A69252D00122B36 /* CFNetwork.framework in Frameworks */,
 				71C9B6C21A305C090011A3B1 /* MobileCoreServices.framework in Frameworks */,
+				71E910121BF0AAC6003C7C90 /* libUPPayPlugin.a in Frameworks */,
 				71A3EA161A69251700122B36 /* AudioToolbox.framework in Frameworks */,
 				02BB5B471B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */,
 				71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */,
 				7101EC9A1B2832EB00E429A7 /* libSocialWechat.a in Frameworks */,
-				0291A5BD1B5F873300370F4C /* libUPPayPlugin.a in Frameworks */,
 				71C9B6C01A305BFE0011A3B1 /* SystemConfiguration.framework in Frameworks */,
 				7101EC901B2832EB00E429A7 /* libUMSocial_Sdk_4.2.1.a in Frameworks */,
 				71C9B6C41A305C120011A3B1 /* Security.framework in Frameworks */,
@@ -547,8 +547,8 @@
 		0291A5B61B5F873300370F4C /* inc */ = {
 			isa = PBXGroup;
 			children = (
-				0291A5B71B5F873300370F4C /* UPPayPlugin.h */,
-				0291A5B81B5F873300370F4C /* UPPayPluginDelegate.h */,
+				71E9100F1BF0AAAE003C7C90 /* UPPayPlugin.h */,
+				71E910101BF0AAAE003C7C90 /* UPPayPluginDelegate.h */,
 			);
 			path = inc;
 			sourceTree = "<group>";
@@ -556,7 +556,7 @@
 		0291A5BA1B5F873300370F4C /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				0291A5BB1B5F873300370F4C /* libUPPayPlugin.a */,
+				71E910111BF0AAC6003C7C90 /* libUPPayPlugin.a */,
 			);
 			path = libs;
 			sourceTree = "<group>";

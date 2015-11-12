@@ -23,14 +23,14 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    
+    self.articles = [[NSMutableArray alloc]init];
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     AppDelegate *app = [[UIApplication sharedApplication]delegate ];
     
     if (app.Login) {
         NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_APPLY_CLASS,app.ParentId];
-        
+        NSLog(@"打印获取地址:%@",date);
         [SVProgressHUD showWithStatus:LOADING];
         
         [self dateUrl:date];
@@ -54,7 +54,7 @@
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        self.articles = responseObject;
+        self.articles = [NSMutableArray arrayWithArray:responseObject];
         [self dateHandle];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -96,7 +96,7 @@
     NSDictionary *dic =[self.articles objectAtIndexedSubscript:indexPath.row];
     cell.classNameLabel.text = [dic objectForKey:@"field_signup_class_name"];
     cell.nameLabel.text = [dic objectForKey:@"field_signup_student_name"];
-    cell.cardLabel.text = [dic objectForKey:@"field_signup_student_card"];
+    cell.cardLabel.text = [dic objectForKey:@"field_signup_student_card"];//学员卡号
     return cell;
     
 }
@@ -119,6 +119,91 @@
     
     return 80;
 }//设置模块内cell的高度
+
+
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"我是删除的%ld",(long)indexPath.row);
+        NSLog(@"打印下数组长度%lu",(unsigned long)self.articles.count);
+        @try {
+             AppDelegate *app = [[UIApplication sharedApplication]delegate];
+            
+            [SVProgressHUD showInfoWithStatus:@"正在删除,请稍后"];
+            
+            NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+            
+            
+            NSString *date = [NSString stringWithFormat:@"%@%@/%@",DATE_APPLY_CLASS_DELETE,app.ParentId,[dic objectForKey:@"field_signup_class_id"]];
+            
+            
+            NSLog(@"打印删除已报名课程：%@",date);
+            
+            AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+            
+            manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+            
+            [manager GET:date parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSLog(@"JSON: %@", responseObject);
+                
+                if ([[responseObject objectForKey:@"status"] intValue] == 0) {
+                    [self.articles removeObjectAtIndex:indexPath.row];
+                    [self.tableView reloadData];
+                    // [self dateTableView:(long)indexPath.row];
+                }
+                else
+                {
+                    [SVProgressHUD showInfoWithStatus:[responseObject objectForKey:@"message"] maskType:2];//异常提示
+                }
+                
+                
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSString *errorString = [NSString stringWithFormat:@"%@",error];
+                [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
+                NSLog(@"Error: %@", error);
+            }];
+            
+            
+        }
+        @catch (NSException *exception) {
+            NSLog(@"异常信息%@",exception);
+        }
+        @finally {
+            
+        }
+        
+        //  [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        // [self.tableView reloadData];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    {
+        
+    }
+}
+
+
+-(void)dateTableView:(int)value
+{
+    [self.articles removeObjectAtIndex:value];
+    [self.tableView reloadData];
+}
+
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+
+
 
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -1,0 +1,336 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B88C53215A2F04C00E3C9F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88C53115A2F04C00E3C9F7 /* UIKit.framework */; };
+		7B88C53415A2F04C00E3C9F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88C53315A2F04C00E3C9F7 /* Foundation.framework */; };
+		7B88C53615A2F04C00E3C9F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88C53515A2F04C00E3C9F7 /* CoreGraphics.framework */; };
+		7B88C53C15A2F04C00E3C9F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B88C53A15A2F04C00E3C9F7 /* InfoPlist.strings */; };
+		7B88C53E15A2F04C00E3C9F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B88C53D15A2F04C00E3C9F7 /* main.m */; };
+		7B88C54215A2F04C00E3C9F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B88C54115A2F04C00E3C9F7 /* AppDelegate.m */; };
+		7B88C54515A2F04C00E3C9F7 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B88C54415A2F04C00E3C9F7 /* ViewController.mm */; };
+		7B88C54815A2F04C00E3C9F7 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B88C54615A2F04C00E3C9F7 /* ViewController.xib */; };
+		7B88C55515A2F0D500E3C9F7 /* libDIRAC_iOS4-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88C55015A2F0D500E3C9F7 /* libDIRAC_iOS4-fat.a */; };
+		7B88C55615A2F0D500E3C9F7 /* EAFRead.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B88C55215A2F0D500E3C9F7 /* EAFRead.mm */; };
+		7B88C55715A2F0D500E3C9F7 /* EAFWrite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B88C55415A2F0D500E3C9F7 /* EAFWrite.mm */; };
+		7B88C55915A2F0E900E3C9F7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88C55815A2F0E900E3C9F7 /* Accelerate.framework */; };
+		7B88C55B15A2F11E00E3C9F7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88C55A15A2F11E00E3C9F7 /* AudioToolbox.framework */; };
+		7B88C55D15A2F17700E3C9F7 /* audio.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7B88C55C15A2F17700E3C9F7 /* audio.wav */; };
+		7B88C56315A2F5D900E3C9F7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B88C56215A2F5D900E3C9F7 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B88C52D15A2F04C00E3C9F7 /* ChangeVoiceDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChangeVoiceDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B88C53115A2F04C00E3C9F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7B88C53315A2F04C00E3C9F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7B88C53515A2F04C00E3C9F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7B88C53915A2F04C00E3C9F7 /* ChangeVoiceDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChangeVoiceDemo-Info.plist"; sourceTree = "<group>"; };
+		7B88C53B15A2F04C00E3C9F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7B88C53D15A2F04C00E3C9F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B88C53F15A2F04C00E3C9F7 /* ChangeVoiceDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChangeVoiceDemo-Prefix.pch"; sourceTree = "<group>"; };
+		7B88C54015A2F04C00E3C9F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7B88C54115A2F04C00E3C9F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7B88C54315A2F04C00E3C9F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7B88C54415A2F04C00E3C9F7 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		7B88C54715A2F04C00E3C9F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		7B88C54F15A2F0D500E3C9F7 /* Dirac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dirac.h; sourceTree = "<group>"; };
+		7B88C55015A2F0D500E3C9F7 /* libDIRAC_iOS4-fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libDIRAC_iOS4-fat.a"; sourceTree = "<group>"; };
+		7B88C55115A2F0D500E3C9F7 /* EAFRead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAFRead.h; sourceTree = "<group>"; };
+		7B88C55215A2F0D500E3C9F7 /* EAFRead.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAFRead.mm; sourceTree = "<group>"; };
+		7B88C55315A2F0D500E3C9F7 /* EAFWrite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAFWrite.h; sourceTree = "<group>"; };
+		7B88C55415A2F0D500E3C9F7 /* EAFWrite.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAFWrite.mm; sourceTree = "<group>"; };
+		7B88C55815A2F0E900E3C9F7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		7B88C55A15A2F11E00E3C9F7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7B88C55C15A2F17700E3C9F7 /* audio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = audio.wav; sourceTree = "<group>"; };
+		7B88C56215A2F5D900E3C9F7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B88C52A15A2F04C00E3C9F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B88C56315A2F5D900E3C9F7 /* AVFoundation.framework in Frameworks */,
+				7B88C55B15A2F11E00E3C9F7 /* AudioToolbox.framework in Frameworks */,
+				7B88C55915A2F0E900E3C9F7 /* Accelerate.framework in Frameworks */,
+				7B88C53215A2F04C00E3C9F7 /* UIKit.framework in Frameworks */,
+				7B88C53415A2F04C00E3C9F7 /* Foundation.framework in Frameworks */,
+				7B88C53615A2F04C00E3C9F7 /* CoreGraphics.framework in Frameworks */,
+				7B88C55515A2F0D500E3C9F7 /* libDIRAC_iOS4-fat.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B88C52215A2F04C00E3C9F7 = {
+			isa = PBXGroup;
+			children = (
+				7B88C53715A2F04C00E3C9F7 /* ChangeVoiceDemo */,
+				7B88C53015A2F04C00E3C9F7 /* Frameworks */,
+				7B88C52E15A2F04C00E3C9F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B88C52E15A2F04C00E3C9F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B88C52D15A2F04C00E3C9F7 /* ChangeVoiceDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B88C53015A2F04C00E3C9F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B88C56215A2F5D900E3C9F7 /* AVFoundation.framework */,
+				7B88C55A15A2F11E00E3C9F7 /* AudioToolbox.framework */,
+				7B88C55815A2F0E900E3C9F7 /* Accelerate.framework */,
+				7B88C53115A2F04C00E3C9F7 /* UIKit.framework */,
+				7B88C53315A2F04C00E3C9F7 /* Foundation.framework */,
+				7B88C53515A2F04C00E3C9F7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B88C53715A2F04C00E3C9F7 /* ChangeVoiceDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7B88C54E15A2F0C400E3C9F7 /* ThirdFiles */,
+				7B88C54015A2F04C00E3C9F7 /* AppDelegate.h */,
+				7B88C54115A2F04C00E3C9F7 /* AppDelegate.m */,
+				7B88C54315A2F04C00E3C9F7 /* ViewController.h */,
+				7B88C54415A2F04C00E3C9F7 /* ViewController.mm */,
+				7B88C54615A2F04C00E3C9F7 /* ViewController.xib */,
+				7B88C53815A2F04C00E3C9F7 /* Supporting Files */,
+			);
+			path = ChangeVoiceDemo;
+			sourceTree = "<group>";
+		};
+		7B88C53815A2F04C00E3C9F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B88C55C15A2F17700E3C9F7 /* audio.wav */,
+				7B88C53915A2F04C00E3C9F7 /* ChangeVoiceDemo-Info.plist */,
+				7B88C53A15A2F04C00E3C9F7 /* InfoPlist.strings */,
+				7B88C53D15A2F04C00E3C9F7 /* main.m */,
+				7B88C53F15A2F04C00E3C9F7 /* ChangeVoiceDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7B88C54E15A2F0C400E3C9F7 /* ThirdFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7B88C54F15A2F0D500E3C9F7 /* Dirac.h */,
+				7B88C55015A2F0D500E3C9F7 /* libDIRAC_iOS4-fat.a */,
+				7B88C55115A2F0D500E3C9F7 /* EAFRead.h */,
+				7B88C55215A2F0D500E3C9F7 /* EAFRead.mm */,
+				7B88C55315A2F0D500E3C9F7 /* EAFWrite.h */,
+				7B88C55415A2F0D500E3C9F7 /* EAFWrite.mm */,
+			);
+			name = ThirdFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B88C52C15A2F04C00E3C9F7 /* ChangeVoiceDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B88C54B15A2F04C00E3C9F7 /* Build configuration list for PBXNativeTarget "ChangeVoiceDemo" */;
+			buildPhases = (
+				7B88C52915A2F04C00E3C9F7 /* Sources */,
+				7B88C52A15A2F04C00E3C9F7 /* Frameworks */,
+				7B88C52B15A2F04C00E3C9F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChangeVoiceDemo;
+			productName = ChangeVoiceDemo;
+			productReference = 7B88C52D15A2F04C00E3C9F7 /* ChangeVoiceDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B88C52415A2F04C00E3C9F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 7B88C52715A2F04C00E3C9F7 /* Build configuration list for PBXProject "ChangeVoiceDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7B88C52215A2F04C00E3C9F7;
+			productRefGroup = 7B88C52E15A2F04C00E3C9F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B88C52C15A2F04C00E3C9F7 /* ChangeVoiceDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B88C52B15A2F04C00E3C9F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B88C53C15A2F04C00E3C9F7 /* InfoPlist.strings in Resources */,
+				7B88C54815A2F04C00E3C9F7 /* ViewController.xib in Resources */,
+				7B88C55D15A2F17700E3C9F7 /* audio.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B88C52915A2F04C00E3C9F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B88C53E15A2F04C00E3C9F7 /* main.m in Sources */,
+				7B88C54215A2F04C00E3C9F7 /* AppDelegate.m in Sources */,
+				7B88C54515A2F04C00E3C9F7 /* ViewController.mm in Sources */,
+				7B88C55615A2F0D500E3C9F7 /* EAFRead.mm in Sources */,
+				7B88C55715A2F0D500E3C9F7 /* EAFWrite.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7B88C53A15A2F04C00E3C9F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B88C53B15A2F04C00E3C9F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7B88C54615A2F04C00E3C9F7 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B88C54715A2F04C00E3C9F7 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B88C54915A2F04C00E3C9F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Huang Xiuyong (36WJ549L69)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huang Xiuyong (36WJ549L69)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "32022D1D-26FF-40A2-9FF2-AD1C83827D7F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6EAB35B0-E03B-46EA-9815-138C614FF55B";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7B88C54A15A2F04C00E3C9F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Huang Xiuyong (36WJ549L69)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Huang Xiuyong (36WJ549L69)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "32022D1D-26FF-40A2-9FF2-AD1C83827D7F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6EAB35B0-E03B-46EA-9815-138C614FF55B";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B88C54C15A2F04C00E3C9F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChangeVoiceDemo/ChangeVoiceDemo-Prefix.pch";
+				INFOPLIST_FILE = "ChangeVoiceDemo/ChangeVoiceDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ChangeVoiceDemo\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7B88C54D15A2F04C00E3C9F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ChangeVoiceDemo/ChangeVoiceDemo-Prefix.pch";
+				INFOPLIST_FILE = "ChangeVoiceDemo/ChangeVoiceDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/ChangeVoiceDemo\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B88C52715A2F04C00E3C9F7 /* Build configuration list for PBXProject "ChangeVoiceDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B88C54915A2F04C00E3C9F7 /* Debug */,
+				7B88C54A15A2F04C00E3C9F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B88C54B15A2F04C00E3C9F7 /* Build configuration list for PBXNativeTarget "ChangeVoiceDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B88C54C15A2F04C00E3C9F7 /* Debug */,
+				7B88C54D15A2F04C00E3C9F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B88C52415A2F04C00E3C9F7 /* Project object */;
+}

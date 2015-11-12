@@ -25,6 +25,7 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    self.articles = [[NSMutableArray alloc]init];
     
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -47,17 +48,17 @@
     }
     
     /*
-    MyNewCardViewController *card = [[MyNewCardViewController alloc]init];
-    card.NewCardBlock = ^(void){
-        
-        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
-        [SVProgressHUD showInfoWithStatus:LOADING];
-        
-        
-        [self dateUrl:date];
-    };
-    
-    */
+     MyNewCardViewController *card = [[MyNewCardViewController alloc]init];
+     card.NewCardBlock = ^(void){
+     
+     NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
+     [SVProgressHUD showInfoWithStatus:LOADING];
+     
+     
+     [self dateUrl:date];
+     };
+     
+     */
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"notifiction_mynewcard" object:nil];
@@ -90,7 +91,9 @@
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        self.articles = responseObject;
+        // self.articles = responseObject;
+        //[self.articles addObjectsFromArray:responseObject];
+        self.articles = [NSMutableArray arrayWithArray:responseObject];
         [self dateHandle:0];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSString *errorString = [NSString stringWithFormat:@"%@",error];
@@ -107,15 +110,15 @@
  */
 -(void)dateHandle:(int)key
 {
-        if (self.articles.count>0) {
-            [self.tableView reloadData];
-            [SVProgressHUD dismiss];
-        }
-        else
-        {
-            [SVProgressHUD showInfoWithStatus:@"您还没有学员卡" maskType:3];
-        }
-        
+    if (self.articles.count>0) {
+        [self.tableView reloadData];
+        [SVProgressHUD dismiss];
+    }
+    else
+    {
+        [SVProgressHUD showInfoWithStatus:@"您还没有学员卡" maskType:3];
+    }
+    
 }
 
 
@@ -165,7 +168,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 80;
+    return 101;
 }//设置模块内cell的高度
 
 //下面为点击事件方法
@@ -175,12 +178,89 @@
 }
 
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"我是删除的%ld",(long)indexPath.row);
+        NSLog(@"打印下数组长度%lu",(unsigned long)self.articles.count);
+        @try {
+            
+            
+            [SVProgressHUD showInfoWithStatus:@"正在删除,请稍后"];
+            
+            NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+            
+            
+            NSString *date = [NSString stringWithFormat:@"%@%@/%@",DATE_CARD_DELETE,[dic objectForKey:@"field_student_card" ],app.ParentId];
+            
+            AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+            
+            manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+            
+            [manager GET:date parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSLog(@"JSON: %@", responseObject);
+                
+                if ([[responseObject objectForKey:@"status"] intValue] == 0) {
+                    [self.articles removeObjectAtIndex:indexPath.row];
+                    [self.tableView reloadData];
+                    // [self dateTableView:(long)indexPath.row];
+                }
+                else
+                {
+                    [SVProgressHUD showInfoWithStatus:[responseObject objectForKey:@"message"] maskType:2];//异常提示
+                }
+                
+                
+                
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSString *errorString = [NSString stringWithFormat:@"%@",error];
+                [SVProgressHUD showInfoWithStatus:errorString maskType:2];//异常提示
+                NSLog(@"Error: %@", error);
+            }];
+            
+            
+        }
+        @catch (NSException *exception) {
+            NSLog(@"异常信息%@",exception);
+        }
+        @finally {
+            
+        }
+        
+        //  [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        // [self.tableView reloadData];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    {
+        
+    }
+}
+
+
+-(void)dateTableView:(int)value
+{
+    [self.articles removeObjectAtIndex:value];
+    [self.tableView reloadData];
+}
+
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-     UIViewController *push = segue.destinationViewController;
-     [push setValue:sender forKey:@"MyNewKey"];
+    UIViewController *push = segue.destinationViewController;
+    [push setValue:sender forKey:@"MyNewKey"];
 }
 
 
@@ -198,7 +278,7 @@
         case 2:
             [self performSegueWithIdentifier:@"myCard_myNewCard" sender:@"1"];
             break;
-
+            
         default:
             
             break;
@@ -223,13 +303,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
