@@ -562,9 +562,7 @@
             [SVProgressHUD showInfoWithStatus:@"正在生成支付订单..."];
             
             [self datePost:times Orderids:orderids];
-            
-            
-            
+
         };
         
         [self.alertView show];

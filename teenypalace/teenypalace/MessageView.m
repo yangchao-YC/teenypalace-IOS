@@ -153,42 +153,11 @@
     NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:14.0f]};
     CGRect rect_content = [cell.contentLabel.text boundingRectWithSize:CGSizeMake(Screensize.size.width - 14.0f, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     
-    
-    
-  //   NSLog(@"我是高度%f",rect_content.size.height);
-
-  //  NSLog(@"我是原始高度%f",cell.contentLabel.frame.size.height);
     if (cell.contentLabel.frame.size.height == 25) { //25为xib设计contentLabel的原始高度
         if (rect_content.size.width > wigth) {
             
             height = rect_content.size.height + 120;
-            
-            /*
-             int line = (14 *cell.contentLabel.text.length) / wigth;
-             
-             
-             if(line == 1)
-             {
-             height =  140 ;
-             }
-             else
-             {
-             height = 120 + (line *20);
-             }
-             
-             
-             NSLayoutConstraint *widthLabel = [NSLayoutConstraint constraintWithItem:cell.contentLabel attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0.0 constant:height-100];
-             
-             
-             [cell addConstraint:widthLabel];
-             
-             [cell.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-             make.top.equalTo(cell.View_Top).offset(12);
-             make.bottom.equalTo(cell.contentLabel.superview);
-             make.left.right.equalTo(cell.contentLabel.superview);
-             }];
-             */
-            
+
             [array replaceObjectAtIndex:indexPath.row withObject:[NSString stringWithFormat:@"%d",height]];//更改指定索引的值
             [self.tableView reloadData];
             
@@ -199,8 +168,6 @@
         [array replaceObjectAtIndex:indexPath.row withObject:[NSString stringWithFormat:@"%d",120]];//更改指定索引的值
         [self.tableView reloadData];
     }
-    
-
     
 }
 

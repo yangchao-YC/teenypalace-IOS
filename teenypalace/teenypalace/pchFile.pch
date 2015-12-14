@@ -98,6 +98,11 @@
 
 #define DATE_SEARCH_MY_DOING [DATE_URL stringByAppendingString:@"getmycharity/"]//已报名活动
 
+#define DATE_MY_DOING_DELETE [DATE_URL stringByAppendingString:@"charity/unsignup"]//删除已报名活动
+
+
+
+
 #define DATE_CARD_NEW [DATE_URL stringByAppendingString:@"register/create_new_studentcard"]//添加新学员卡
 
 #define DATE_CARD_USED [DATE_URL stringByAppendingString:@"register/add_exists_studentcard"]//添加旧学员卡
@@ -154,6 +159,7 @@
 
 
 #define PUSH_TAG [DATE_URL stringByAppendingString:@"gethdtags/"]//获取标签
+
 
 
 

@@ -25,7 +25,7 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    
+    self.articles = [[NSMutableArray alloc]init];
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     AppDelegate *app = [[UIApplication sharedApplication]delegate ];
@@ -58,7 +58,7 @@
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        self.articles = responseObject;
+        self.articles = [NSMutableArray arrayWithArray:responseObject];
         [self dateHandle];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -108,6 +108,88 @@
 }
 
 
+
+
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"我是删除的%ld",(long)indexPath.row);
+        NSLog(@"打印下数组长度%lu",(unsigned long)self.articles.count);
+        @try {
+            
+            [SVProgressHUD showInfoWithStatus:@"正在删除,请稍后"];
+            
+            NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
+
+
+            AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
+            requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+
+            [requestManager POST:DATE_MY_DOING_DELETE parameters:
+             @{@"field_charitysignup_charityid":[dic objectForKey:@"field_charitysignup_charityid"],
+               @"charitysignup_id":[dic objectForKey:@"id"],
+               }success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                   NSLog(@"JSON: %@", responseObject);
+                   
+                   if ([[responseObject objectForKey:@"status"] intValue] == 0) {
+                       [self.articles removeObjectAtIndex:indexPath.row];
+                       [self.tableView reloadData];
+                       // [self dateTableView:(long)indexPath.row];
+                   }
+                   else
+                   {
+                       [SVProgressHUD showInfoWithStatus:[responseObject objectForKey:@"message"] maskType:2];//异常提示
+                   }
+               } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                   NSLog(@"Error: %@", error);
+                   [SVProgressHUD showInfoWithStatus:@"网络异常,请稍后再试" maskType:3];//异常提示
+               }];
+
+            
+        }
+        @catch (NSException *exception) {
+            NSLog(@"异常信息%@",exception);
+        }
+        @finally {
+            
+        }
+        
+        //  [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        // [self.tableView reloadData];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    {
+        
+    }
+}
+
+
+-(void)dateTableView:(int)value
+{
+    [self.articles removeObjectAtIndex:value];
+    [self.tableView reloadData];
+}
+
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+
+
+
+
+
+
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.articles.count;//设置显示行数
@@ -129,6 +211,7 @@
 //下面为点击事件方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
 }
 
 
