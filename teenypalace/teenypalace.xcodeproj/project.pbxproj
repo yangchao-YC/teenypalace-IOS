@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02BB5B471B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */; };
-		02BB5B481B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */; };
 		7101EC8F1B2832EB00E429A7 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7101EC6E1B2832EB00E429A7 /* UMSocialLocalizable.strings */; };
 		7101EC901B2832EB00E429A7 /* libUMSocial_Sdk_4.2.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7101EC7C1B2832EB00E429A7 /* libUMSocial_Sdk_4.2.1.a */; };
 		7101EC911B2832EB00E429A7 /* UMSCommentDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7101EC7E1B2832EB00E429A7 /* UMSCommentDetailController.xib */; };
@@ -48,6 +46,7 @@
 		715E42D91A5BED1500A3C4F1 /* ios-social-sdk-share-quick.html in Resources */ = {isa = PBXBuildFile; fileRef = 715E42BB1A5BED1500A3C4F1 /* ios-social-sdk-share-quick.html */; };
 		715E42DA1A5BED1500A3C4F1 /* ios-social-sdk-socialBar.html in Resources */ = {isa = PBXBuildFile; fileRef = 715E42BC1A5BED1500A3C4F1 /* ios-social-sdk-socialBar.html */; };
 		715E42DB1A5BED1500A3C4F1 /* markdown.css in Resources */ = {isa = PBXBuildFile; fileRef = 715E42BD1A5BED1500A3C4F1 /* markdown.css */; };
+		715E94E61C214314006AA5FE /* libUMessage_Sdk_1.2.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 715E94E41C214314006AA5FE /* libUMessage_Sdk_1.2.2.a */; };
 		715EBF251A45336300010D5F /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EBF241A45336300010D5F /* MessageViewController.m */; };
 		715EBF281A4544D800010D5F /* MessageProfessionalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EBF271A4544D800010D5F /* MessageProfessionalViewController.m */; };
 		715EBF2B1A45451100010D5F /* MessageWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 715EBF2A1A45451100010D5F /* MessageWebViewController.m */; };
@@ -109,6 +108,8 @@
 		71A3EA161A69251700122B36 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA151A69251700122B36 /* AudioToolbox.framework */; };
 		71A3EA181A69252D00122B36 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA171A69252D00122B36 /* CFNetwork.framework */; };
 		71A3EA1A1A69253B00122B36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA191A69253B00122B36 /* libxml2.dylib */; };
+		71B5FD6C1C86B2830004197F /* MyNotifiactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B5FD6B1C86B2830004197F /* MyNotifiactionViewController.m */; };
+		71B5FD6F1C86B2F40004197F /* NotifiactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B5FD6E1C86B2F40004197F /* NotifiactionTableViewCell.m */; };
 		71BD03791AE89AF30062EE29 /* DoingCeremonyTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD03781AE89AF30062EE29 /* DoingCeremonyTopTableViewCell.m */; };
 		71BD037C1AE89B390062EE29 /* DoingCeremonyContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD037B1AE89B390062EE29 /* DoingCeremonyContentTableViewCell.m */; };
 		71BD037F1AE89B4B0062EE29 /* DoingCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD037E1AE89B4B0062EE29 /* DoingCommentTableViewCell.m */; };
@@ -185,8 +186,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
-		02BB5B461B9C75960067411C /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		7101EC6F1B2832EB00E429A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UMSocialLocalizable.strings; sourceTree = "<group>"; };
 		7101EC711B2832EB00E429A7 /* UMSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocial.h; sourceTree = "<group>"; };
 		7101EC721B2832EB00E429A7 /* UMSocialAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMSocialAccountManager.h; sourceTree = "<group>"; };
@@ -255,6 +254,8 @@
 		715E42BB1A5BED1500A3C4F1 /* ios-social-sdk-share-quick.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "ios-social-sdk-share-quick.html"; sourceTree = "<group>"; };
 		715E42BC1A5BED1500A3C4F1 /* ios-social-sdk-socialBar.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "ios-social-sdk-socialBar.html"; sourceTree = "<group>"; };
 		715E42BD1A5BED1500A3C4F1 /* markdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = markdown.css; sourceTree = "<group>"; };
+		715E94E41C214314006AA5FE /* libUMessage_Sdk_1.2.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.2.2.a; sourceTree = "<group>"; };
+		715E94E51C214314006AA5FE /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		715EBF231A45336300010D5F /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		715EBF241A45336300010D5F /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		715EBF261A4544D800010D5F /* MessageProfessionalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageProfessionalViewController.h; sourceTree = "<group>"; };
@@ -367,6 +368,10 @@
 		71A3EA151A69251700122B36 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		71A3EA171A69252D00122B36 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		71A3EA191A69253B00122B36 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		71B5FD6A1C86B2830004197F /* MyNotifiactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNotifiactionViewController.h; sourceTree = "<group>"; };
+		71B5FD6B1C86B2830004197F /* MyNotifiactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNotifiactionViewController.m; sourceTree = "<group>"; };
+		71B5FD6D1C86B2F40004197F /* NotifiactionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifiactionTableViewCell.h; sourceTree = "<group>"; };
+		71B5FD6E1C86B2F40004197F /* NotifiactionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifiactionTableViewCell.m; sourceTree = "<group>"; };
 		71BD03771AE89AF30062EE29 /* DoingCeremonyTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingCeremonyTopTableViewCell.h; sourceTree = "<group>"; };
 		71BD03781AE89AF30062EE29 /* DoingCeremonyTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingCeremonyTopTableViewCell.m; sourceTree = "<group>"; };
 		71BD037A1AE89B390062EE29 /* DoingCeremonyContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingCeremonyContentTableViewCell.h; sourceTree = "<group>"; };
@@ -503,9 +508,9 @@
 				71C9B6C21A305C090011A3B1 /* MobileCoreServices.framework in Frameworks */,
 				71E910121BF0AAC6003C7C90 /* libUPPayPlugin.a in Frameworks */,
 				71A3EA161A69251700122B36 /* AudioToolbox.framework in Frameworks */,
-				02BB5B471B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */,
 				71A3EA141A69250C00122B36 /* QuartzCore.framework in Frameworks */,
 				7101EC9A1B2832EB00E429A7 /* libSocialWechat.a in Frameworks */,
+				715E94E61C214314006AA5FE /* libUMessage_Sdk_1.2.2.a in Frameworks */,
 				71C9B6C01A305BFE0011A3B1 /* SystemConfiguration.framework in Frameworks */,
 				7101EC901B2832EB00E429A7 /* libUMSocial_Sdk_4.2.1.a in Frameworks */,
 				71C9B6C41A305C120011A3B1 /* Security.framework in Frameworks */,
@@ -520,7 +525,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02BB5B481B9C75960067411C /* libUMessage_Sdk_1.1.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,15 +563,6 @@
 				71E910111BF0AAC6003C7C90 /* libUPPayPlugin.a */,
 			);
 			path = libs;
-			sourceTree = "<group>";
-		};
-		02BB5B441B9C75960067411C /* UMessage_Sdk_1.1.0 */ = {
-			isa = PBXGroup;
-			children = (
-				02BB5B451B9C75960067411C /* libUMessage_Sdk_1.1.0.a */,
-				02BB5B461B9C75960067411C /* UMessage.h */,
-			);
-			path = UMessage_Sdk_1.1.0;
 			sourceTree = "<group>";
 		};
 		7101EC6D1B2832EB00E429A7 /* UMSocial_Sdk_4.2.1 */ = {
@@ -661,7 +656,7 @@
 		715E42831A5BED0800A3C4F1 /* UM */ = {
 			isa = PBXGroup;
 			children = (
-				02BB5B441B9C75960067411C /* UMessage_Sdk_1.1.0 */,
+				715E94E31C214314006AA5FE /* UMessage_Sdk_1.2.2 */,
 				7101EC6D1B2832EB00E429A7 /* UMSocial_Sdk_4.2.1 */,
 				7101EC881B2832EB00E429A7 /* UMSocial_Sdk_Extra_Frameworks */,
 				715E42B11A5BED1500A3C4F1 /* UMSocial_Sdk_Instructions */,
@@ -687,6 +682,15 @@
 				715E42BD1A5BED1500A3C4F1 /* markdown.css */,
 			);
 			path = UMSocial_Sdk_Instructions;
+			sourceTree = "<group>";
+		};
+		715E94E31C214314006AA5FE /* UMessage_Sdk_1.2.2 */ = {
+			isa = PBXGroup;
+			children = (
+				715E94E41C214314006AA5FE /* libUMessage_Sdk_1.2.2.a */,
+				715E94E51C214314006AA5FE /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.2.2;
 			sourceTree = "<group>";
 		};
 		71735BB11A1F21FC005E0067 /* TableViewCell */ = {
@@ -733,6 +737,8 @@
 				71705B191A81E8F80066B6E5 /* PrettyBumenTableViewCell.h */,
 				71705B1A1A81E8F80066B6E5 /* PrettyBumenTableViewCell.m */,
 				71705B1B1A81E8F80066B6E5 /* PrettyBumenTableViewCell.xib */,
+				71B5FD6D1C86B2F40004197F /* NotifiactionTableViewCell.h */,
+				71B5FD6E1C86B2F40004197F /* NotifiactionTableViewCell.m */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -906,6 +912,8 @@
 				71705B1F1A81F0680066B6E5 /* PrettyWebViewController.m */,
 				718FB93F1A19F4CC0044F2DC /* MyViewController.h */,
 				718FB9401A19F4CC0044F2DC /* MyViewController.m */,
+				71B5FD6A1C86B2830004197F /* MyNotifiactionViewController.h */,
+				71B5FD6B1C86B2830004197F /* MyNotifiactionViewController.m */,
 				717BA3821A496C5000E70CCD /* MyCardViewController.h */,
 				717BA3831A496C5000E70CCD /* MyCardViewController.m */,
 				71EAF1AF1A4D6A5200C8D56D /* MyNewCardViewController.h */,
@@ -1309,6 +1317,7 @@
 				71CC78D41A36E00B000A4E55 /* ApplyClassTableViewCell.m in Sources */,
 				717E2AE31A51545E0070570B /* CardTableViewCell.m in Sources */,
 				71A180351A78CED700466755 /* DoingThree.m in Sources */,
+				71B5FD6F1C86B2F40004197F /* NotifiactionTableViewCell.m in Sources */,
 				71BEABAA1AF34F9200ECC748 /* MASViewAttribute.m in Sources */,
 				71705B0D1A81C4570066B6E5 /* PrettyOne.m in Sources */,
 				71111A881AFB612A000A45C5 /* DoingceshiViewController.m in Sources */,
@@ -1319,6 +1328,7 @@
 				71CC92951A39693100EFDE67 /* ApplyCardTableViewCell.m in Sources */,
 				71966F5F1A75EF0A00802380 /* SDWebImageManager.m in Sources */,
 				71735BB41A1F2233005E0067 /* ApplyTableViewCell.m in Sources */,
+				71B5FD6C1C86B2830004197F /* MyNotifiactionViewController.m in Sources */,
 				71CC37C31A3AC31C0057F4C9 /* ApplyAlertView.m in Sources */,
 				71C9B6B51A305BB60011A3B1 /* AFHTTPRequestOperationManager.m in Sources */,
 				71C55CC81A09F4BE00A4B359 /* LoginViewController.m in Sources */,
@@ -1497,6 +1507,7 @@
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/teenypalace/uppaysdk/libs",
 					"$(PROJECT_DIR)/teenypalace/UMessage_Sdk_1.1.0",
+					"$(PROJECT_DIR)/teenypalace/UMessage_Sdk_1.2.2",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LIBTOOLFLAGS = "";
@@ -1539,6 +1550,7 @@
 					"$(PROJECT_DIR)/teenypalace/UMSocial_Sdk_4.2.3",
 					"$(PROJECT_DIR)/teenypalace/uppaysdk/libs",
 					"$(PROJECT_DIR)/teenypalace/UMessage_Sdk_1.1.0",
+					"$(PROJECT_DIR)/teenypalace/UMessage_Sdk_1.2.2",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LIBTOOLFLAGS = "";

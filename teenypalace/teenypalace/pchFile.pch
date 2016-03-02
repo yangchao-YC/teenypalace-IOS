@@ -160,7 +160,7 @@
 
 #define PUSH_TAG [DATE_URL stringByAppendingString:@"gethdtags/"]//获取标签
 
-
+#define NOTIFIACTION @"http://mobile.ycpwh.cn/getmycharitymsg/"//推送消息
 
 
 

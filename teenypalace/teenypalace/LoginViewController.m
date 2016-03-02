@@ -268,6 +268,7 @@
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         
+        
         if ([[responseObject objectForKey:@"status"] intValue] == 0) {
 
             [UMessage removeAllTags:^(id responseObject, NSInteger remain, NSError *error) {

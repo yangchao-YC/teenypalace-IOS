@@ -63,7 +63,10 @@
             cell.titleLabel.text = @"关于";
             break;
         case 5:
-            cell.titleLabel.text = @"登陆";
+            cell.titleLabel.text = @"消息中心";
+            break;
+        case 6:
+            cell.titleLabel.text = @"切换账号";
             break;
         default:
             break;
@@ -76,7 +79,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;//设置显示行数
+    return 7;//设置显示行数
 }
 
 
@@ -112,6 +115,9 @@
             [self performSegueWithIdentifier:@"my_mySite" sender:nil];
             break;
         case 5:
+            [self performSegueWithIdentifier:@"my_myNotifiaction" sender:nil];
+            break;
+        case 6:
             [self performSelector:@selector(logout) withObject:self afterDelay:.5f];
             break;
         default:
