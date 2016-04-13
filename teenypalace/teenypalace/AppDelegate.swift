@@ -14,11 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
    
-    var UserName: String = ""//账号
-    var ParentId: String = ""//家长ID
-    var LastloginTime: String = ""//最后登陆时间
-    var Login: Bool = false//判断是否登陆
+   // var UserName: String = ""//账号
+   // var ParentId: String = ""//家长ID
+   // var LastloginTime: String = ""//最后登陆时间
+   // var Login: Bool = false//判断是否登陆
     var DoingDetailsWebHidden : Bool = false//控制活动详情列表是否只显示活动情况（不显示其他信息，如地址，时间等）
+    var userInfo: NSDictionary?
+    var App_state: Bool = true//判断用户是在前台还是后台
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -78,6 +80,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
+        
+        if(launchOptions != nil)//LoginViewController.convert(launchOptions) != nil)
+        {
+            self.window?.rootViewController?.presentViewController(LoginViewController.convert(launchOptions), animated: true, completion: nil)
+        }
+        else
+        {
+            LoginViewController.convert()
+        }
+        
+        
         UMessage.setLogEnabled(true)
         
         return true
@@ -85,23 +98,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        
-        
-        
+
         UMessage.registerDeviceToken(deviceToken)
-        
-        
         //   println("didRegisterForRemoteNotificationsWithDeviceToken success")
-        
-        
         
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
         UMessage.setAutoAlert(false)
         UMessage.didReceiveRemoteNotification(userInfo)
+        
+        //HomeViewController.push(userInfo)
+       // push(userInfo)
+        
+       
+        
+        print("我打印一下")
+        print(userInfo)
+        print("我打印完了")
+        
+        if(!App_state)
+        {
+            HomeViewController.push()
+        }
+        
     }
     
+    
+    func push(userInfo: [NSObject : AnyObject]){
+        
+       // let instance = MyNotifiactionViewController()
+       // UITabBarController
+//        let view = MyNotifiactionViewCont roller
+//        let tabVC = window?.rootViewController as! UITabBarController
+//        let pushVC = tabVC.viewControllers![tabVC.selectedIndex]
+//        [pushVC .presentViewController(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)]
+        
+    }
     
     /*
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -109,8 +143,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     println(error)
     
-    }
+    } 
     */
+    
+    
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
         return UMSocialSnsService.handleOpenURL(url)
@@ -133,6 +169,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+            App_state = false
+        
     }
     
     func applicationWillEnterForeground(application: UIApplication) {
@@ -141,6 +179,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        App_state = true
+        
     }
     
     func applicationWillTerminate(application: UIApplication) {

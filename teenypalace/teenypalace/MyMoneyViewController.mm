@@ -25,7 +25,7 @@
 
 @property (nonatomic,strong)ApplyAlertView *alertView ;
 @property (nonatomic,retain) NSDictionary *dic;
-@property (nonatomic,retain) AppDelegate *app;
+//@property (nonatomic,retain) AppDelegate *app;
 @end
 
 @implementation MyMoneyViewController
@@ -36,7 +36,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     Sum = 0;
-
+    
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
@@ -45,8 +45,8 @@
     
     contacts = [NSMutableArray array];
     sumMoney = 0;
-    self.app = [[UIApplication sharedApplication]delegate];
-    if (self.app.Login) {
+   // self.app = [[UIApplication sharedApplication]delegate];
+    if ([YLLAccountManager sharedAccountManager].f_isLogined) {
         [SVProgressHUD showInfoWithStatus:LOADING];
         [self selectMoney];
     }
@@ -54,7 +54,7 @@
     {
         [SVProgressHUD showInfoWithStatus:@"请先登陆在进行操作" maskType:SVProgressHUDMaskTypeBlack];
     }
- 
+    
 }
 
 
@@ -73,13 +73,13 @@
     }
     
     
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+   // AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
-    NSString *date = [NSString stringWithFormat:@"%@%@/1",DATE_SEARCH_MONEY,app.ParentId];
+    NSString *date = [NSString stringWithFormat:@"%@%@/1",DATE_SEARCH_MONEY,[YLLAccountManager sharedAccountManager].f_userID,nil];
     
     [self dateUrl:date Key:0];
     
-
+    
 }
 
 - (void)logout
@@ -100,7 +100,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-       // NSLog(@"JSON: %@", responseObject);
+        // NSLog(@"JSON: %@", responseObject);
         
         if (Sum != 0) {
             NSMutableArray *arc = responseObject;
@@ -118,7 +118,7 @@
         else
         {
             if (key == 0) {
-
+                
                 self.articles = responseObject;
             }
             else
@@ -276,7 +276,7 @@
         [cell setChecked:YES];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    
     
     NSDictionary *dicDate = [self.articles objectAtIndex:indexPath.row];
     
@@ -394,13 +394,13 @@
 {
     
     NSDictionary *dic =[self.articles objectAtIndex:indexPath.row];
-   [self performSegueWithIdentifier:@"myMoney_myClassDetails" sender:dic];
+    [self performSegueWithIdentifier:@"myMoney_myClassDetails" sender:dic];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-     UIViewController *push = segue.destinationViewController;
-     [push setValue:sender forKey:@"MyClassDetailsKey"];
+    UIViewController *push = segue.destinationViewController;
+    [push setValue:sender forKey:@"MyClassDetailsKey"];
 }
 
 
@@ -485,12 +485,12 @@
             
             [SVProgressHUD showInfoWithStatus:@"正在删除订单..."];
             
-             NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_MONEY_DELETE,orderids];
+            NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_MONEY_DELETE,orderids];
             
             NSLog(@"我打印删除订单   %@",date);
             
             [self dateUrl:date Key:1];
-   
+            
         };
         
         [self.alertView show];
@@ -530,15 +530,15 @@
         {
             [safe_self.alertView hide];
             
-            AppDelegate *app = [[UIApplication sharedApplication]delegate];
+          //  AppDelegate *app = [[UIApplication sharedApplication]delegate];
             NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];
             NSString *time=[NSString stringWithFormat:@"%f",[dat timeIntervalSince1970]*1000];
             
             time = [time substringToIndex:13];
             
             NSLog(@"timeSp:%@",time); //时间戳的值
-
-            NSString *times = [NSString stringWithFormat:@"%@%@%@", time,app.ParentId,[[payArray objectAtIndex:0] objectForKey:@"number"]];//获取时间戳
+            
+            NSString *times = [NSString stringWithFormat:@"%@%@%@", time,[YLLAccountManager sharedAccountManager].f_userID,[[payArray objectAtIndex:0] objectForKey:@"number"]];//获取时间戳
             NSString *orderids = @"";
             if (payArray.count == 1) {
                 orderids = [NSString stringWithFormat:@"%@-%@",[[payArray objectAtIndex:0] objectForKey:@"number"],[[payArray objectAtIndex:0] objectForKey:@"money"]];
@@ -562,7 +562,7 @@
             [SVProgressHUD showInfoWithStatus:@"正在生成支付订单..."];
             
             [self datePost:times Orderids:orderids];
-
+            
         };
         
         [self.alertView show];
@@ -582,7 +582,7 @@
  */
 -(void)datePost:(NSString *)merchantorderid Orderids:(NSString *)orderids
 {
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+   // AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
     
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
@@ -596,8 +596,8 @@
     [requestManager POST:DATE_SEARCH_MONEY_PAY parameters:
      @{@"field_unionpay_merchantorderid":merchantorderid,
        @"field_unionpay_orderids":orderids,
-       @"field_unionpay_parentid":app.ParentId,
-       @"field_unionpay_parent_phone":app.UserName,
+       @"field_unionpay_parentid":[YLLAccountManager sharedAccountManager].f_userID,
+       @"field_unionpay_parent_phone":[YLLAccountManager sharedAccountManager].f_phoneNumber,
        @"field_unionpay_paymethod":@"unionpay_mobileapp_new"
        }success:^(AFHTTPRequestOperation *operation, id responseObject) {
            NSLog(@"JSON: %@", responseObject);
@@ -629,13 +629,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

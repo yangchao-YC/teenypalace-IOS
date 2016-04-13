@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *CheckImage;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIView *homeView;
-
++(void)push;
 @end

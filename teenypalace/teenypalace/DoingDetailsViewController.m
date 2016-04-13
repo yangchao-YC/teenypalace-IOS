@@ -209,8 +209,8 @@
 -(void)doingApplyCheck
 {
     
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
-    if (!app.Login) {
+ //   AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    if (![YLLAccountManager sharedAccountManager].f_isLogined) {
 
         [SVProgressHUD showInfoWithStatus:@"请登陆后进行操作" maskType:3];
         

@@ -32,6 +32,15 @@
     
     NSLog(@"我是层次页面的key---%@",self.MyKey);
     
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notification:) name:@"notifiction_my" object:nil];
+    
+}
+
+-(void)notification:(NSNotification *)not
+{
+    [self.tableView reloadData];
 }
 
 
@@ -66,7 +75,14 @@
             cell.titleLabel.text = @"消息中心";
             break;
         case 6:
-            cell.titleLabel.text = @"切换账号";
+            if ([YLLAccountManager sharedAccountManager].f_isLogined) {
+                cell.titleLabel.text = @"退出当前账号";
+                
+            }
+            else
+            {
+                cell.titleLabel.text = @"登  录";
+            }
             break;
         default:
             break;
@@ -118,7 +134,8 @@
             [self performSegueWithIdentifier:@"my_myNotifiaction" sender:nil];
             break;
         case 6:
-            [self performSelector:@selector(logout) withObject:self afterDelay:.5f];
+            
+            [self logout];
             break;
         default:
             break;
@@ -127,7 +144,24 @@
     
 }
 
+
+
 - (void)logout
+{
+    [self performSelector:@selector(dialoLogin) withObject:self afterDelay:.2f];
+    
+    YLLAccountManager *accountManager = [YLLAccountManager sharedAccountManager];
+    accountManager.f_isLogined = NO;//登陆成功
+    accountManager.f_userID = nil;//存储家长ID
+    accountManager.f_time = nil;///存储最后登陆时间
+    
+    
+    
+    
+    [self.tableView reloadData];
+    
+}
+-(void)dialoLogin
 {
     [LoginViewController logOut];
 }

@@ -110,6 +110,7 @@
 		71A3EA1A1A69253B00122B36 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71A3EA191A69253B00122B36 /* libxml2.dylib */; };
 		71B5FD6C1C86B2830004197F /* MyNotifiactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B5FD6B1C86B2830004197F /* MyNotifiactionViewController.m */; };
 		71B5FD6F1C86B2F40004197F /* NotifiactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B5FD6E1C86B2F40004197F /* NotifiactionTableViewCell.m */; };
+		71BB05E61CAA7F36008A93CD /* YLLAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BB05E51CAA7F36008A93CD /* YLLAccountManager.m */; };
 		71BD03791AE89AF30062EE29 /* DoingCeremonyTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD03781AE89AF30062EE29 /* DoingCeremonyTopTableViewCell.m */; };
 		71BD037C1AE89B390062EE29 /* DoingCeremonyContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD037B1AE89B390062EE29 /* DoingCeremonyContentTableViewCell.m */; };
 		71BD037F1AE89B4B0062EE29 /* DoingCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD037E1AE89B4B0062EE29 /* DoingCommentTableViewCell.m */; };
@@ -372,6 +373,8 @@
 		71B5FD6B1C86B2830004197F /* MyNotifiactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNotifiactionViewController.m; sourceTree = "<group>"; };
 		71B5FD6D1C86B2F40004197F /* NotifiactionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifiactionTableViewCell.h; sourceTree = "<group>"; };
 		71B5FD6E1C86B2F40004197F /* NotifiactionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifiactionTableViewCell.m; sourceTree = "<group>"; };
+		71BB05E41CAA7F36008A93CD /* YLLAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLLAccountManager.h; sourceTree = "<group>"; };
+		71BB05E51CAA7F36008A93CD /* YLLAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLLAccountManager.m; sourceTree = "<group>"; };
 		71BD03771AE89AF30062EE29 /* DoingCeremonyTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingCeremonyTopTableViewCell.h; sourceTree = "<group>"; };
 		71BD03781AE89AF30062EE29 /* DoingCeremonyTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoingCeremonyTopTableViewCell.m; sourceTree = "<group>"; };
 		71BD037A1AE89B390062EE29 /* DoingCeremonyContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoingCeremonyContentTableViewCell.h; sourceTree = "<group>"; };
@@ -953,6 +956,8 @@
 		71C97BD41A08B5970010A5B8 /* teenypalace */ = {
 			isa = PBXGroup;
 			children = (
+				71BB05E41CAA7F36008A93CD /* YLLAccountManager.h */,
+				71BB05E51CAA7F36008A93CD /* YLLAccountManager.m */,
 				0291A5B41B5F86FA00370F4C /* UPPay */,
 				71BEAB8E1AF34F9200ECC748 /* Masonry */,
 				715E42831A5BED0800A3C4F1 /* UM */,
@@ -1289,6 +1294,7 @@
 				71BEABAE1AF34F9200ECC748 /* View+MASAdditions.m in Sources */,
 				71A1803D1A78CEE400466755 /* DoingZero.m in Sources */,
 				710ADA201A5E8B0900513143 /* PwdViewController.m in Sources */,
+				71BB05E61CAA7F36008A93CD /* YLLAccountManager.m in Sources */,
 				71BD03881AE89C460062EE29 /* DoingBookTableViewCell.m in Sources */,
 				710ADA1D1A5E8A6100513143 /* InformationProcessingViewController.m in Sources */,
 				716C18951A5D2E57004BFBAD /* MyClassDetailsViewController.m in Sources */,

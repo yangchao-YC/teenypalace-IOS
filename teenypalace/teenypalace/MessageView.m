@@ -154,7 +154,7 @@
     CGRect rect_content = [cell.contentLabel.text boundingRectWithSize:CGSizeMake(Screensize.size.width - 14.0f, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     
     if (cell.contentLabel.frame.size.height == 25) { //25为xib设计contentLabel的原始高度
-        if (rect_content.size.width > wigth) {
+        if (rect_content.size.height > 25) {
             
             height = rect_content.size.height + 120;
 

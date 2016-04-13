@@ -17,4 +17,11 @@
 + (void)logOut;
 
 +(void)addTag;
+
++(UIViewController *)convert:(NSDictionary *)dic;
+
++(void)convert;
+
 @end
+
+

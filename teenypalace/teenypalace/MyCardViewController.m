@@ -30,10 +30,10 @@
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+   // AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
-    if (app.Login) {
-        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
+    if ([YLLAccountManager sharedAccountManager].f_isLogined) {
+        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,[YLLAccountManager sharedAccountManager].f_userID,nil];
         
         NSLog(@"%@",date);
         
@@ -68,9 +68,9 @@
 -(void)notification:(NSNotification *)not
 {
     
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    //AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
-    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
+    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,[YLLAccountManager sharedAccountManager].f_userID,nil];
     [SVProgressHUD showInfoWithStatus:LOADING];
     [self dateUrl:date];
     
@@ -186,7 +186,7 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+  //  AppDelegate *app = [[UIApplication sharedApplication]delegate];
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSLog(@"我是删除的%ld",(long)indexPath.row);
         NSLog(@"打印下数组长度%lu",(unsigned long)self.articles.count);
@@ -198,7 +198,7 @@
             NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
             
             
-            NSString *date = [NSString stringWithFormat:@"%@%@/%@",DATE_CARD_DELETE,[dic objectForKey:@"field_student_card" ],app.ParentId];
+            NSString *date = [NSString stringWithFormat:@"%@%@/%@",DATE_CARD_DELETE,[dic objectForKey:@"field_student_card" ],[YLLAccountManager sharedAccountManager].f_userID];
             
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
             

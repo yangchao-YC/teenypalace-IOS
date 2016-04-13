@@ -31,9 +31,9 @@
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+   // AppDelegate *app = [[UIApplication sharedApplication]delegate];
    
-    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,app.ParentId];
+    NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_CARD,[YLLAccountManager sharedAccountManager].f_userID];
     
     NSLog(@"%@",date);
     
@@ -78,7 +78,7 @@
 -(void)datePost:(NSString *)card
 {
     
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    //AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
     
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
@@ -91,11 +91,11 @@
      lastlogintime              最后登陆时间
      */
     [requestManager POST:DATE_APPLY_CLASS parameters:
-  @{@"field_signup_parents_phone":app.UserName,
-    @"field_signup_parents_id":app.ParentId,
+  @{@"field_signup_parents_phone":[YLLAccountManager sharedAccountManager].f_phoneNumber,
+    @"field_signup_parents_id":[YLLAccountManager sharedAccountManager].f_userID,
     @"field_signup_student_card":card,
     @"field_signup_class_id":self.applyCardKey,
-    @"lastlogintime":app.LastloginTime}success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    @"lastlogintime":[YLLAccountManager sharedAccountManager].f_time}success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         self.dic = responseObject;
         [self dateHandle:1];

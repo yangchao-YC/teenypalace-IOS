@@ -110,8 +110,8 @@
 
 -(void)next
 {
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
-    if (app.Login) {
+   // AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    if ([YLLAccountManager sharedAccountManager].f_isLogined) {
         [self performSegueWithIdentifier:@"applyDetails_applyCard" sender:[self.applyDetailsKey objectForKey:@"classid"]];
     }
     else

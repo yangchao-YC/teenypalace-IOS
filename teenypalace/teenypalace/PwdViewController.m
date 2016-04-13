@@ -148,12 +148,19 @@
     if ([[self.dic objectForKey:@"status"]intValue] == 0) {//密码设置成功
         [SVProgressHUD showSuccessWithStatus:@"密码设置成功" maskType:2];
         
-        AppDelegate *app = [[UIApplication sharedApplication]delegate];
+       // AppDelegate *app = [[UIApplication sharedApplication]delegate];
         
-        app.UserName = [self.pwdKey objectForKey:@"phone"];//存储账号
-        app.ParentId = [self.dic objectForKey:@"parentid"];//存储家长ID
-        app.LastloginTime = [self.dic objectForKey:@"lastlogintime"];//存储最后登陆时间
-        app.Login = true;//更改登陆状态
+        YLLAccountManager *accountManager = [YLLAccountManager sharedAccountManager];
+        accountManager.f_isLogined = YES;//登陆成功
+        accountManager.f_phoneNumber = [self.pwdKey objectForKey:@"phone"];//存储账号
+        accountManager.f_userID = [self.dic objectForKey:@"parentid"];//存储家长ID
+        accountManager.f_time = [self.dic objectForKey:@"lastlogintime"];//存储最后登陆时间
+        
+        
+//        app.UserName = [self.pwdKey objectForKey:@"phone"];//存储账号
+//        app.ParentId = [self.dic objectForKey:@"parentid"];//存储家长ID
+//        app.LastloginTime = [self.dic objectForKey:@"lastlogintime"];//存储最后登陆时间
+//        app.Login = true;//更改登陆状态
 
         
         [self dismissModalViewControllerAnimated:YES];//关闭Login系列界面

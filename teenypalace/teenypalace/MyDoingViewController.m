@@ -28,10 +28,10 @@
     self.articles = [[NSMutableArray alloc]init];
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    AppDelegate *app = [[UIApplication sharedApplication]delegate ];
+    //AppDelegate *app = [[UIApplication sharedApplication]delegate ];
     
-    if (app.Login) {
-        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_MY_DOING,app.ParentId];
+    if ([YLLAccountManager sharedAccountManager].f_isLogined) {
+        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_MY_DOING,[YLLAccountManager sharedAccountManager].f_userID,nil];
         
         [SVProgressHUD showWithStatus:LOADING];
         

@@ -62,7 +62,7 @@
     
     NSLog(@"%@-%@-%@-%@-%@-%@",name,phone1,phone2,addres,self.doingApplyKey,DATE_DOING_APPLY);
     [requestManager POST:DATE_DOING_APPLY parameters:
-     @{@"field_charitysignup_parentid":app.ParentId,
+     @{@"field_charitysignup_parentid":[YLLAccountManager sharedAccountManager].f_userID,
        @"field_charitysignup_username":name,
        @"field_charitysignup_contactinfo1":phone1,
        @"field_charitysignup_contactinfo2":phone2,

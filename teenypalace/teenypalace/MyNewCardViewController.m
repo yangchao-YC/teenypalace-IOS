@@ -66,7 +66,7 @@
 -(void)datePost
 {
     
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    //AppDelegate *app = [[UIApplication sharedApplication]delegate];
     
     
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
@@ -87,9 +87,9 @@
 
     
     if ([self.MyNewKey isEqualToString:@"1"]) {//旧学员卡
-        parameters=  @{@"lastlogintime":app.LastloginTime,
-                       @"field_student_parentsid":app.ParentId,
-                       @"phone":app.UserName,
+        parameters=  @{@"lastlogintime":[YLLAccountManager sharedAccountManager].f_time,
+                       @"field_student_parentsid":[YLLAccountManager sharedAccountManager].f_userID,
+                       @"phone":[YLLAccountManager sharedAccountManager].f_phoneNumber,
                        @"field_student_card":cardString,
                        @"field_student_name":nameString
                        };
@@ -97,9 +97,9 @@
     }
     else//新学员卡
     {
-        parameters=  @{@"phone":app.UserName,
-                       @"lastlogintime":app.LastloginTime,
-                       @"field_student_parentsid":app.ParentId,
+        parameters=  @{@"phone":[YLLAccountManager sharedAccountManager].f_phoneNumber,
+                       @"lastlogintime":[YLLAccountManager sharedAccountManager].f_time,
+                       @"field_student_parentsid":[YLLAccountManager sharedAccountManager].f_userID,
                        @"field_student_name":nameString,
                        @"field_student_sex":sexString,
                        @"field_student_birthday":timeString,

@@ -26,10 +26,10 @@
     self.articles = [[NSMutableArray alloc]init];
     self.tableView.bounces = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    AppDelegate *app = [[UIApplication sharedApplication]delegate ];
+    //AppDelegate *app = [[UIApplication sharedApplication]delegate ];
     
-    if (app.Login) {
-        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_APPLY_CLASS,app.ParentId];
+    if ([YLLAccountManager sharedAccountManager].f_isLogined) {
+        NSString *date = [NSString stringWithFormat:@"%@%@",DATE_SEARCH_APPLY_CLASS,[YLLAccountManager sharedAccountManager].f_userID];
         NSLog(@"打印获取地址:%@",date);
         [SVProgressHUD showWithStatus:LOADING];
         
@@ -134,14 +134,14 @@
         NSLog(@"我是删除的%ld",(long)indexPath.row);
         NSLog(@"打印下数组长度%lu",(unsigned long)self.articles.count);
         @try {
-             AppDelegate *app = [[UIApplication sharedApplication]delegate];
+             //AppDelegate *app = [[UIApplication sharedApplication]delegate];
             
             [SVProgressHUD showInfoWithStatus:@"正在删除,请稍后"];
             
             NSDictionary *dic = [self.articles objectAtIndex:indexPath.row];
             
             
-            NSString *date = [NSString stringWithFormat:@"%@%@/%@",DATE_APPLY_CLASS_DELETE,app.ParentId,[dic objectForKey:@"field_signup_class_id"]];
+            NSString *date = [NSString stringWithFormat:@"%@%@/%@",DATE_APPLY_CLASS_DELETE,[YLLAccountManager sharedAccountManager].f_userID,[dic objectForKey:@"field_signup_class_id"]];
             
             
             NSLog(@"打印删除已报名课程：%@",date);

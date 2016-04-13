@@ -29,18 +29,15 @@
     self.articles = [[NSMutableArray alloc]init];
     
     self.tableView.bounces = NO;
-   // [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    
-   
-    
-    
+   // AppDelegate *app = [[UIApplication sharedApplication]delegate];
+
     url = NOTIFIACTION;
     
-    if (app.Login) {
-        url = [NSString stringWithFormat:@"%@%@",url,app.ParentId];
+    if ([YLLAccountManager sharedAccountManager].f_isLogined) {
+        url = [NSString stringWithFormat:@"%@%@",url,[YLLAccountManager sharedAccountManager].f_userID,nil];
     }
     
     [SVProgressHUD showInfoWithStatus:@"正在查询"];
@@ -117,6 +114,22 @@
     cell.Label_Title.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"field_charity_title"]];
     cell.Label_Time.text = [[NSString stringWithFormat:@"%@",[dic objectForKey:@"field_charity_msg_sendtime"]]substringToIndex:10];
     cell.Label_Content.text =[NSString stringWithFormat:@"%@",[dic objectForKey:@"field_pushmsg"]];
+//   if(indexPath.row == 0)
+//   {
+//       cell.Label_Content.text =@"我是第一行，一一一一一一一一一一一一一第一，";
+//   }
+//   else if(indexPath.row == 1)
+//    {
+//        cell.Label_Content.text =@"我是第二行，二二二二二二二二二二二二二二二二二二二二二二二二二二二二二二二二二二";
+//    }
+//   else if(indexPath.row == 2)
+//   {
+//       cell.Label_Content.text =@"我是第三行，三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三";
+//   }
+//   else
+//   {
+//       cell.Label_Content.text =@"我是其他，其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他其他三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三三";
+//   }
     
     return cell;
     
@@ -155,20 +168,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NotifiactionTableViewCell *cell = (NotifiactionTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
-
+    
+    //float wigth = cell.Label_Content.frame.size.width;
+    int height = 75;
     
     CGRect Screensize = [UIScreen mainScreen].bounds;
     NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:13.0f]};
     CGRect rect_content = [cell.Label_Content.text boundingRectWithSize:CGSizeMake(Screensize.size.width - 13.0f, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
-    
-    
-    float wigth = cell.Label_Content.frame.size.width;
-    int height = 75;
-    
+
     if (cell.Label_Content.frame.size.height == 38) { //25为xib设计contentLabel的原始高度
-        if (rect_content.size.width > wigth) {
+        if (rect_content.size.height > 38) {
             
-            height = rect_content.size.height + 37;
+            height = rect_content.size.height + 40;
             [heightArray replaceObjectAtIndex:indexPath.row withObject:[NSString stringWithFormat:@"%d",height]];//更改指定索引的值
             [self.tableView reloadData];
         }
@@ -180,10 +191,6 @@
     }
     
 }
-
-
-
-
 
 
 

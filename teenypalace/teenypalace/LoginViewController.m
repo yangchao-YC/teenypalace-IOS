@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "MyNotifiactionViewController.h"
 
 /*
  checkBox:是否记住密码
@@ -31,7 +31,30 @@
 
 @implementation LoginViewController
 
++(UIViewController *)convert:(NSDictionary *)dic{
+    NSDictionary *userInfo = [dic objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (userInfo) {
+//        AppDelegate *app = [[UIApplication sharedApplication] delegate];
+//        app.userInfo = userInfo;
+        NSUserDefaults *push = [NSUserDefaults standardUserDefaults];
+        [push setObject:@"push" forKey:@"push"];
+        [push synchronize];
+        
+        MyNotifiactionViewController *view = [[MyNotifiactionViewController alloc]init];
+        
+        return view;
+        
+    }
+    return nil;
+}
 
+
++(void)convert
+{
+    NSUserDefaults *push = [NSUserDefaults standardUserDefaults];
+    [push setObject:@"pushs" forKey:@"push"];
+    [push synchronize];
+}
 
 + (void)logOut
 {
@@ -44,6 +67,17 @@
     }];
 }
 
+
+//
+//-(void)pushs:(NSDictionary *)dic
+//{
+//    id instance = [[MyNotifiactionViewController alloc]init];
+//    // 获取导航控制器
+//    UITabBarController *tabVC = (UITabBarController *)self.window.rootViewController;
+//    UINavigationController *pushClassStance = (UINavigationController *)tabVC.viewControllers[tabVC.selectedIndex];
+//    // 跳转到对应的控制器
+//    [pushClassStance pushViewController:instance animated:YES];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -193,17 +227,31 @@
         
         if ([[responseObject objectForKey:@"status"] intValue] == 0) {
 
-            AppDelegate *app = [[UIApplication sharedApplication]delegate];
+          //   AppDelegate *app = [[UIApplication sharedApplication]delegate];
             
-            app.UserName = self.nameTextField.text;//存储账号
-            app.ParentId = [responseObject objectForKey:@"parentid"];//存储家长ID
-            app.LastloginTime = [responseObject objectForKey:@"lastlogintime"];//存储最后登陆时间
-            app.Login = true;//更改登陆状态
+          //  app.UserName = self.nameTextField.text;//存储账号
+          //  app.ParentId = [responseObject objectForKey:@"parentid"];//存储家长ID
+           // app.LastloginTime = [responseObject objectForKey:@"lastlogintime"];//存储最后登陆时间
+          //  app.Login = true;//更改登陆状态
             
             
             NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
             [user setObject:self.nameTextField.text forKey:@"user"];//存储账号到本地
             [user setObject:@"1" forKey:@"loginOK"];//登陆成功
+            [user setObject:[responseObject objectForKey:@"parentid"] forKey:@"parentid"];//存储家长ID
+            [user setObject:[responseObject objectForKey:@"lastlogintime"] forKey:@"lastlogintime"];///存储最后登陆时间
+            
+            
+            YLLAccountManager *accountManager = [YLLAccountManager sharedAccountManager];
+            accountManager.f_isLogined = YES;//登陆成功
+            accountManager.f_phoneNumber = self.nameTextField.text;
+            accountManager.f_userID = [responseObject objectForKey:@"parentid"];//存储家长ID
+            accountManager.f_time = [responseObject objectForKey:@"lastlogintime"];///存储最后登陆时间
+            
+            NSNotification *notification = [NSNotification notificationWithName:@"notifiction_my" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotification:notification];
+            
+            
             if (checkBox) {
                 [user setObject:[responseObject objectForKey:@"token"] forKey:@"token"];//存储token到本地
             }
@@ -254,12 +302,10 @@
 +(void)addTag
 {
     
-    AppDelegate *app = [[UIApplication sharedApplication]delegate];
-    
+  //  AppDelegate *app = [[UIApplication sharedApplication]delegate];
 
     
-
-    NSString *url = [NSString stringWithFormat:@"%@%@",PUSH_TAG,app.ParentId];
+    NSString *url = [NSString stringWithFormat:@"%@%@",PUSH_TAG,[YLLAccountManager sharedAccountManager].f_userID,nil];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
@@ -275,23 +321,17 @@
                 
             }];
             NSMutableArray *arr = [responseObject objectForKey:@"data"];
-            
             NSArray *tagArray = [arr copy];
-            
             [UMessage addTag:tagArray
                     response:^(id responseObject, NSInteger remain, NSError *error) {
                         //add your codes
                     }];
-            
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
        // [SVProgressHUD showInfoWithStatus:@"网络异常，请稍后再试" maskType:2];//异常提示
         NSLog(@"Error: %@", error);
     }];
-    
-    
-    
     
 }
 
@@ -360,17 +400,11 @@
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];  
 }
 
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     UIViewController *push = segue.destinationViewController;
     [push setValue:sender forKey:@"InformationProcessingKey"];
 }
-
-
-
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -382,7 +416,6 @@
     [super viewWillDisappear:animated];
     [MobClick endLogPageView:@"PageOne"];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -9,3 +9,5 @@
 #import "UMSocialWechatHandler.h"
 #import "UMSocialSnsService.h"
 #import "UMessage.h"
+#import "HomeViewController.h"
+#import "MyNotifiactionViewController.h"
