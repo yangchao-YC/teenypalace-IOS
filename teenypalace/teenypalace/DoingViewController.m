@@ -42,8 +42,8 @@
     CGRect frame =CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height -64);//如果没有导航栏，则去掉64
     
     //对应填写两个数组
-    NSArray *views =@[[DoingOne new],[DoingSix new]];//,[DoingThree new],[DoingFour new],[DoingFive new]];   //创建使用
-    NSArray *names =@[@" 活动预告 ",@" 活动快讯 "];//,@" 小时候艺术 ",@" 读书活动 ",@" 祭奠活动 "];
+    NSArray *views =@[[DoingZero new],[DoingOne new],[DoingSix new]];//,[DoingThree new],[DoingFour new],[DoingFive new]];   //创建使用
+    NSArray *names =@[@" 六一活动 ",@" 活动预告 ",@" 活动快讯 "];//,@" 小时候艺术 ",@" 读书活动 ",@" 祭奠活动 "];
     self.scrollNav =[XLScrollViewer scrollWithFrame:frame withViews:views withButtonNames:names withThreeAnimation:222];//三中动画都选择
     self.scrollNav.backgroundColor = [UIColor clearColor];
     //自定义各种属性。。打开查看
@@ -69,14 +69,14 @@
     fourIndex = YES;
     fiveIndex = YES;
     SixIndex = YES;
- // DoingZero *vv0 = views[0];
-    DoingOne *vv1 = views[0];
+    DoingZero *vv0 = views[0];
+    DoingOne *vv1 = views[1];
    // DoingTwo *vv2 = views[1];
   //  DoingThree *vv3 = views[3];
   //  DoingFour *vv4 = views[4];
   //  DoingFive *vv5 = views[5];
-    DoingSix *vv6 = views[1];
-    [vv1 start];
+    DoingSix *vv6 = views[2];
+    [vv0 start];
     
     self.scrollNav.XlScrollBlock = ^(int a)
     {
@@ -84,19 +84,19 @@
         NSLog(@"我是第%d页",a);
         switch (a) {
             case 1:
-                if (SixIndex) {
-                    [vv6 start];
+                if (oneIndex) {
+                    [vv1 start];
                     oneIndex = NO;
                 }
                 break;
-                /*
+                
             case 2:
-                if (twoIndex) {
-                    [vv2 start];
-                    twoIndex = NO;
+                if (SixIndex) {
+                    [vv6 start];
+                    SixIndex = NO;
                 }
                 break;
-                
+                /*
             case 3:
                 if (threeIndex) {
                     [vv3 start];
@@ -120,12 +120,12 @@
         }
     };
     //回调跳转
-    /*
+   
     vv0.DoingBlock = ^(NSDictionary *a)
     {
         [self performSegueWithIdentifier:@"doing_doingDetails" sender:a];
     };
-     */
+     
     
     
     vv1.DoingBlock = ^(NSDictionary *a)
