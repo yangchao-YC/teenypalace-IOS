@@ -26,6 +26,7 @@
     
     [self webViewDate];
     
+    NSLog(@"打印下");
 }
 
 -(void)webViewDate

@@ -17,6 +17,7 @@
 {
     BOOL checkBox ;
     CGRect ScreenSize;
+    NSString *UpdateUrl;
 }
 
 @end
@@ -89,7 +90,7 @@
     
     
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    
+    [self Update];
     
     NSString *ns = [user stringForKey:@"push"];
     if ([ns isEqual:@"push"]) {
@@ -109,6 +110,50 @@
     
     
 }
+
+
+/*检查更新*/
+-(void)Update
+{
+    NSString *url = @"http://itunes.apple.com/lookup?id=1003716406";
+    AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
+    //  requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    
+    [requestManager POST:url parameters:
+     @{
+       }success:^(AFHTTPRequestOperation *operation, id responseObject) {
+           // NSLog(@"JSON: %@", responseObject);
+           
+           NSMutableArray *date = [NSMutableArray arrayWithArray:[responseObject objectForKey:@"results"]];
+           NSDictionary *dic = [date objectAtIndex:0];
+           //  NSLog(@"我是版本号:%@",[dic objectForKey:@"version"]);
+           
+           
+           NSDictionary *info = [[NSBundle mainBundle]infoDictionary];
+           NSString *appVersion = [info objectForKey:@"CFBundleShortVersionString"];
+           
+           //  NSLog(@"我是版本号2:%@",appVersion);
+           
+           if ([appVersion floatValue] < [[dic objectForKey:@"version"] floatValue]) {
+               UpdateUrl = [NSString stringWithFormat:@"%@", [dic objectForKey:@"trackViewUrl"],nil];
+               
+               UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"发现新版本%@", [dic objectForKey:@"version"],nil]  message:[NSString stringWithFormat:@"%@",[dic objectForKey:@"releaseNotes"],nil] delegate:self cancelButtonTitle:@"暂不更新" otherButtonTitles:@"立即更新", nil];
+               [alertView show];
+           }
+           
+           
+       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+           NSLog(@"Error: %@", error);
+       }];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UpdateUrl]];
+    }
+}
+
 
 //这个方法只弹出登录界面
 - (void)logout

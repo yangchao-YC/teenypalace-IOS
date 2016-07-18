@@ -68,7 +68,7 @@ static NSString *kUserDefaultsTime    = @"kUserDefaultsTime";
 
 - (NSString *)f_time
 {
-    return [Account_UserDefaults objectForKey:kUserDefaultsAccountID] == nil ? @"" : [Account_UserDefaults objectForKey:kUserDefaultsTime];
+    return [Account_UserDefaults objectForKey:kUserDefaultsTime] == nil ? @"" : [Account_UserDefaults objectForKey:kUserDefaultsTime];
 }
 
 - (void)setF_time:(NSString *)f_time
